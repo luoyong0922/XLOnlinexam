@@ -25,10 +25,9 @@ public class AdminController {
     @Resource
     private LoginService loginService;
 
-    //显示老师的资料
     //显示个人资料
     @RequestMapping(value = "showAdminMsg/{adminPhone}",method = RequestMethod.GET)
-    public String showStudentMessage(@PathVariable("adminPhone")String phone,
+    public String showAdminMessage(@PathVariable("adminPhone")String phone,
                                      Model model){
         List<Admin> admins = loginService.selectByAccount(phone,3);
         if(admins.size() > 0){
@@ -50,9 +49,10 @@ public class AdminController {
     public String toWelcome(){
         return"admin/welcome";
     }
-    //去更新老师界面
+
+    //去更新管理员密码界面
     @RequestMapping(value = "toModifyAdminMsg/{phone}",method = RequestMethod.GET)
-    public String toUpdateStudentPassword(@PathVariable("phone")String phone, Model model){
+    public String toUpdateAdminPassword(@PathVariable("phone")String phone, Model model){
         List admins = loginService.selectByAccount(phone,3);
         if(admins.size() > 0){
             model.addAttribute("admin",admins.get(0));
@@ -207,6 +207,7 @@ public class AdminController {
     public String ToAddTeacherPage(){
         return "admin/addteacher";
     }
+
     //添加老师
     @RequestMapping(value = "saveAddteac",method = RequestMethod.POST)
     public String doAddTeac(Teacher teacher){
@@ -216,6 +217,7 @@ public class AdminController {
         }
         return "redirect:saveAddteac";
     }
+
     //删除老师
     @RequestMapping("deleteTeacher")
     public String deleteTeacher(@RequestParam("id")Long id){
@@ -228,12 +230,13 @@ public class AdminController {
     //去老师的修改页面
     @RequestMapping("teacherUpdate/{teacId}")
     public ModelAndView ToTeacUpdatePage(@PathVariable("teacId") Long id){
-        ModelAndView mav=new ModelAndView();
+        ModelAndView mav = new ModelAndView();
         mav.addObject("teacher",adminService.getTeacherByTeacId(id));
         System.out.println(adminService.getTeacherByTeacId(id));
         mav.setViewName("admin/modifyteacher");
         return mav;
     }
+
     //保存老师的修改
     @RequestMapping("saveTeacUpdate")
     public String doUpdateTeacher(Teacher teacher){
@@ -242,6 +245,7 @@ public class AdminController {
         }
         return "500";
     }
+
     //老师的工号的验证
     @RequestMapping("teacajax")
     @ResponseBody
@@ -256,6 +260,7 @@ public class AdminController {
         }
         return msg;
     }
+
     //学生分页
     @RequestMapping("getAllStudentsByPage")
     public String doShowStudentsBypage(@RequestParam(value = "pageIndex",required = false,defaultValue = "1") Integer pageIndex,
@@ -294,18 +299,20 @@ public class AdminController {
     }
     //去学生添加页面
     @RequestMapping("addstudent")
-    public String ToAddStudentPage(){
+    public String toAddStudentPage(){
         return "admin/addstudent";
     }
+
     //添加学生
     @RequestMapping("saveAdd")
-    public String doAddUser(Student student){
+    public String doAddStudent(Student student){
         //System.out.println(user);
         if((!adminService.getStudentByStuNum(student.getStuNum()))&&adminService.addStudent(student)){
             return "redirect:getAllStudentsByPage";
         }
         return "500";
     }
+
     //验证学号是否重复
     @RequestMapping("ajax")
     @ResponseBody
