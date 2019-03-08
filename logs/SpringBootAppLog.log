@@ -1,0 +1,96 @@
+2018-12-13 15:02:25,106 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 7076 (C:\Users\royl\IdeaProjects\XLOnlinexam\target\classes started by royl in C:\Users\royl\IdeaProjects\XLOnlinexam)
+2018-12-13 15:02:25,109 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2018-12-13 15:02:25,113 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2018-12-13 15:02:26,729 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-12-13 15:02:26,733 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-13 15:02:26,845 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 93ms. Found 0 repository interfaces.
+2018-12-13 15:02:27,441 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-13 15:02:27,488 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2a4e756c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-13 15:02:28,403 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2018-12-13 15:02:28,428 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:02:28,448 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2018-12-13 15:02:28,448 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-13 15:02:28,466 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Users\royl\SoftWare\jdk1.8+\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\app\client\royl\product\12.2.0\client_1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Users\royl\SoftWare\mysql-5.7.18-winx64\bin;C:\Users\royl\SoftWare\redis;C:\Users\royl\SoftWare\Python3-7-1\Scripts\;C:\Users\royl\SoftWare\Python3-7-1\;C:\Users\royl\AppData\Local\Microsoft\WindowsApps;C:\Users\royl\SoftWare\jdk1.8+\bin;C:\Users\royl\SoftWare\jdk1.8+\jre\bin;C:\Users\royl\SoftWare\apache-maven-3.2.1\bin;C:\Users\royl\SoftWare\Git\cmd;C:\Users\royl\SoftWare\apache-tomcat-8.5.35\bin;C:\Users\royl\AppData\Roaming\npm;C:\Users\royl\SoftWare\apache-ant-1.10.5\bin;C:\Users\royl\SoftWare\mysql-5.7.18-winx64\bin;C:\Users\royl\SoftWare\redis;;.]
+2018-12-13 15:02:28,731 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2018-12-13 15:02:28,731 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 3514 ms
+2018-12-13 15:02:29,011 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2018-12-13 15:02:29,280 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2018-12-13 15:02:32,040 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:02:32,056 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2018-12-13 15:02:32,060 [main] ERROR org.apache.catalina.util.LifecycleBase:175 - Failed to start component [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1001)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:311)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.roy.SpringbootApplication.main(SpringbootApplication.java:23)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.Net.bind(Net.java:428)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1067)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1149)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:561)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:998)
+	... 14 common frames omitted
+2018-12-13 15:02:32,067 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Pausing ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:02:32,068 [main] INFO  org.apache.catalina.core.StandardService:173 - Stopping service [Tomcat]
+2018-12-13 15:02:32,078 [main] INFO  org.apache.catalina.util.LifecycleBase:173 - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2018-12-13 15:02:32,078 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Stopping ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:02:32,078 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Destroying ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:02:32,082 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:142 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-12-13 15:02:32,086 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter:42 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2018-12-13 15:02:32,110 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1825 - {dataSource-1} closed
+2018-12-13 15:06:33,367 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 7820 (C:\Users\royl\IdeaProjects\XLOnlinexam\target\classes started by royl in C:\Users\royl\IdeaProjects\XLOnlinexam)
+2018-12-13 15:06:33,375 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2018-12-13 15:06:33,378 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2018-12-13 15:06:34,984 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-12-13 15:06:34,989 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-13 15:06:35,083 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 76ms. Found 0 repository interfaces.
+2018-12-13 15:06:35,648 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-13 15:06:35,686 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$daf41f4c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-13 15:06:36,537 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2018-12-13 15:06:36,562 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:06:36,583 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2018-12-13 15:06:36,584 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-13 15:06:36,604 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Users\royl\SoftWare\jdk1.8+\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\app\client\royl\product\12.2.0\client_1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Users\royl\SoftWare\mysql-5.7.18-winx64\bin;C:\Users\royl\SoftWare\redis;C:\Users\royl\SoftWare\Python3-7-1\Scripts\;C:\Users\royl\SoftWare\Python3-7-1\;C:\Users\royl\AppData\Local\Microsoft\WindowsApps;C:\Users\royl\SoftWare\jdk1.8+\bin;C:\Users\royl\SoftWare\jdk1.8+\jre\bin;C:\Users\royl\SoftWare\apache-maven-3.2.1\bin;C:\Users\royl\SoftWare\Git\cmd;C:\Users\royl\SoftWare\apache-tomcat-8.5.35\bin;C:\Users\royl\AppData\Roaming\npm;C:\Users\royl\SoftWare\apache-ant-1.10.5\bin;C:\Users\royl\SoftWare\mysql-5.7.18-winx64\bin;C:\Users\royl\SoftWare\redis;;.]
+2018-12-13 15:06:36,846 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2018-12-13 15:06:36,847 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 3372 ms
+2018-12-13 15:06:37,113 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2018-12-13 15:06:37,358 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2018-12-13 15:06:39,995 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:06:40,010 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2018-12-13 15:06:40,031 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2018-12-13 15:06:40,035 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.347 seconds (JVM running for 8.485)
+2018-12-13 15:06:41,364 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-13 15:06:41,365 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2018-12-13 15:06:41,382 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 17 ms
