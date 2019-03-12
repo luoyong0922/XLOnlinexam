@@ -97,7 +97,7 @@
         if(teacCourseId == 0){
             alert('你还未选择课程！');
         }else {
-            window.location = '${rc.contextPath}/teacherController/pieByTeacCourseId?teacCourseId=' + teacCourseId;
+            window.location = '${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId=' + teacCourseId;
         }
     }
     function toScoreOrder() {
@@ -106,7 +106,7 @@
         if(teacCourseId == 0){
             alert('你还未选择课程！');
         }else {
-            window.location = '${rc.contextPath}/teacherController/showGradeOrder/' + courseName + '?teacCourseId=' + teacCourseId;
+            window.location = '${rc.contextPath}/achievementController/showGradeOrder/' + courseName + '?teacCourseId=' + teacCourseId;
         }
     }
 </script>

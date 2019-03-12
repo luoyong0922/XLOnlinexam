@@ -13,7 +13,7 @@
     </tr>
     <tr>
         <td>密码</td>
-        <td><input type="password" name="teacPassword" value="${teacher.teacPassword}" /></td>
+        <td><input type="password" name="teacPassword" value="......" /></td>
     </tr>
     <tr>
         <td>姓名</td>

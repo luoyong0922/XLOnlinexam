@@ -45,6 +45,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .antMatchers("/teacherController/**").hasRole("TEACHER")
 
+                .antMatchers("/achievementController/**").hasAnyRole("TEACHER","STUDENT")
+
                 .withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
                     @Override
                     public <O extends FilterSecurityInterceptor> O postProcess(O o) {

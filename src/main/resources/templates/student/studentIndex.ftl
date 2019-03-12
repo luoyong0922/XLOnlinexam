@@ -55,7 +55,7 @@
                 <a _href="${rc.contextPath}/studentController/toSelectCourse/">
                     <i class="iconfont">&#xe696;</i>
                     <cite>我要选课</cite>
-                    <i class="iconfont nav_right">&#xe6a7;</i>
+                    <i class="iconfont nav_right">></i>
                 </a>
             </li>
             <li>

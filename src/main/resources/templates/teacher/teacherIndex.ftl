@@ -77,7 +77,7 @@
                 <ul class="sub-menu">
                     <#list courses as c>
                         <li>
-                            <a _href="${rc.contextPath}/teacherController/getAllstuScore?teacCourseId=${c.id}">
+                            <a _href="${rc.contextPath}/achievementController/getAllstuScore?teacCourseId=${c.id}">
                                 <i class="iconfont">&#xe6a7;</i>
                                 <cite>${c.courseName}试卷列表</cite>
                             </a>
@@ -148,13 +148,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a _href="${rc.contextPath}/teacherController/pieByTeacCourseId?teacCourseId=${c.id}">
+                                <a _href="${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId=${c.id}">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>${c.courseName}成绩统计图</cite>
                                 </a>
                             </li >
                             <li >
-                                <a _href="${rc.contextPath}/teacherController/showGradeOrder/${c.courseName}?teacCourseId=${c.id}">
+                                <a _href="${rc.contextPath}/achievementController/showGradeOrder/${c.courseName}?teacCourseId=${c.id}">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>${c.courseName}成绩排名表</cite>
                                 </a>
