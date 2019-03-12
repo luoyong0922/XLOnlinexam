@@ -6,6 +6,7 @@ import com.roy.model.*;
 import com.roy.service.AdminService;
 import com.roy.service.CourseService;
 import com.roy.service.LoginService;
+import com.roy.utils.UserUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -65,10 +66,14 @@ public class AdminController {
     @RequestMapping("updateAdminMsg")
     @ResponseBody
     public RespResult doModifyMessage(Admin admin){
-        List admins = loginService.selectByAccount(admin.getAdminPhone(),3);
-        if(admins.size() > 0) {
-            Admin admin1 = (Admin) admins.get(0);
-            if (admin.getOldPwd().equals(admin1.getAdminPassword())) {
+        if(admin != null){
+            boolean flag = false;
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            if(admin.getOldPwd() != null) {
+                Admin admin1 = (Admin)UserUtils.getCurrentUser();
+                flag = encoder.matches(admin.getOldPwd(), admin1.getAdminPassword());
+            }
+            if (flag || admin.getAdminPassword().length() == 60) {
                 boolean result = adminService.updateAdmin(admin);
                 if (result) {
                     return new RespResult("success", "修改成功!");

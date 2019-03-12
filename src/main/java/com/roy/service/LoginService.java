@@ -26,6 +26,8 @@ public interface LoginService extends UserDetailsService {
      */
     public List selectByAccount(String account,int role);
 
+    boolean initPassword(int role, Long id);
+
     /**
      * 注销登录
      * @param session

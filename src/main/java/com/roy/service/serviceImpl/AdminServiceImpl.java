@@ -7,6 +7,7 @@ import com.roy.mapper.*;
 import com.roy.model.*;
 import com.roy.service.AdminService;
 import com.roy.service.CourseService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -214,6 +215,9 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public boolean updateAdmin(Admin admin) {
+        if(admin.getAdminPassword() != null && admin.getAdminPassword().length() < 60){
+            admin.setAdminPassword(new BCryptPasswordEncoder().encode(admin.getAdminPassword()));
+        }
         int result = adminDao.updateByPrimaryKeySelective(admin);
         return result > 0;
     }

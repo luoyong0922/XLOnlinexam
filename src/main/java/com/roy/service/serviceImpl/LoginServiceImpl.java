@@ -81,6 +81,28 @@ public class LoginServiceImpl implements LoginService{
     }
 
     /**
+     * 初始化密码：123456
+     * @param id
+     * @param role 角色：1 学生，2 教师，3 管理员
+     * @return
+     */
+    @Override
+    public boolean initPassword(int role, Long id) {
+        boolean result = false;
+        if(role == 1){//学生
+            Student student = new Student(id,"123456");
+            result = studentDao.updateByPrimaryKeySelective(student) > 0;
+        }else if(role == 2){//老师
+            Teacher teacher = new Teacher(id,"123456");
+            result = teacherDao.updateByPrimaryKeySelective(teacher) > 0;
+        }else if(role == 3){//管理员
+            Admin admin = new Admin(id,"123456");
+            result = adminDao.updateByPrimaryKeySelective(admin) >0;
+        }
+        return result;
+    }
+
+    /**
      * 注销登录
      * @param session
      * @param sessionStatus
@@ -108,9 +130,9 @@ public class LoginServiceImpl implements LoginService{
             return (Student)users.get(0);
         }
         users = teacherLogin(s,null);
-//        if(users.size() > 0){
-//            return (Teacher)users.get(0);
-//        }
+        if(users.size() > 0){
+            return (Teacher)users.get(0);
+        }
             throw new UsernameNotFoundException("用户名不对");
 
     }

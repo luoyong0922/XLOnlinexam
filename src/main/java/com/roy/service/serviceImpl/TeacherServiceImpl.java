@@ -5,6 +5,7 @@ import com.roy.mapper.*;
 import com.roy.model.*;
 import com.roy.service.CourseService;
 import com.roy.service.TeacherService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -36,6 +37,9 @@ public class TeacherServiceImpl implements TeacherService {
      */
     @Override
     public boolean updateTeacherById(Teacher teacher) {
+        if(teacher.getTeacPassword() != null && teacher.getTeacPassword().length() < 60){
+            teacher.setTeacPassword(new BCryptPasswordEncoder().encode(teacher.getTeacPassword()));
+        }
         int result = teacherDao.updateByPrimaryKeySelective(teacher);
         return result>0;
     }

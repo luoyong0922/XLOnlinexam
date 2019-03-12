@@ -5,6 +5,7 @@ import com.roy.mapper.StuCourseMapper;
 import com.roy.mapper.StudentMapper;
 import com.roy.model.*;
 import com.roy.service.StudentService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -44,6 +45,10 @@ public class StudentServiceImpl implements StudentService {
      */
     @Override
     public boolean updateStudent(Student student) {
+
+        if(student.getStuPassword() != null && student.getStuPassword().length() < 60){
+            student.setStuPassword(new BCryptPasswordEncoder().encode(student.getStuPassword()));
+        }
         return studentDao.updateByPrimaryKeySelective(student)>0;
     }
 

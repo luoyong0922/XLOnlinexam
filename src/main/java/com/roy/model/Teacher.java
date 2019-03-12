@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,6 +17,11 @@ public class Teacher implements UserDetails {
 
     //旧密码
     private String oldPwd;
+
+    public Teacher(Long id, String password) {
+        this.id = id;
+        this.teacPassword = new BCryptPasswordEncoder().encode(password);
+    }
 
     public String getOldPwd() {
         return oldPwd;

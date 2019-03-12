@@ -11,8 +11,8 @@ public class UserUtils {
         Object object = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         if(object != null) {
-
+            return object;
         }
-        return object;
+        return null;
     }
 }

@@ -4,6 +4,8 @@ import com.roy.model.*;
 import com.roy.service.LoginService;
 import com.roy.service.PaperService;
 import com.roy.service.TeacherService;
+import com.roy.utils.UserUtils;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -45,7 +47,6 @@ public class TeacherController {
      * @param model
      * @return
      */
-    //显示老师的资料
     @RequestMapping(value = "showTeacherMessage/{teacWorknum}",method = RequestMethod.GET)
     public String showTeacherMessage(@PathVariable("teacWorknum")String teacWorknum,
                                         Model model){
@@ -64,14 +65,13 @@ public class TeacherController {
      * @return
      */
     @RequestMapping(value = "toModifyMessage/{teacWorknum}",method = RequestMethod.GET)
-    public String toModifyMessage(@PathVariable("teacWorknum")String teacWorknum,
-                                     Model model){
+    public String toModifyMessage(@PathVariable("teacWorknum")String teacWorknum, Model model){
         List teacher = loginService.selectByAccount(teacWorknum,2);
         if(teacher.size() > 0){
             model.addAttribute("teacher",teacher.get(0));
             return "teacher/updateTeacherPassword";
         }
-        return "teacher/teacherIndex";
+        return "404";
     }
 
     /**
@@ -79,20 +79,28 @@ public class TeacherController {
      * @param teacher
      * @return
      */
-    @RequestMapping("modifyTeacherPassword")
+    @RequestMapping("modifyTeacherMsg")
     @ResponseBody
-    public RespResult doModifyMessage(Teacher teacher){
-        System.out.println(teacher);
-        Teacher teacher1 = (Teacher) loginService.selectByAccount(teacher.getTeacWorknum(),2).get(0);
-        if(teacher.getOldPwd().equals(teacher1.getTeacPassword())){
-            boolean result = teacherService.updateTeacherById(teacher);
-            if(result){
-                return new RespResult("success", "修改成功!");
-            }else{
-                return new RespResult("fail", "修改失败!");
+    public RespResult doModifyMessage(Teacher teacher) {
+        if (teacher != null) {
+            boolean flag = false;
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            if (teacher.getOldPwd() != null) {
+                Teacher teacher1 = (Teacher) UserUtils.getCurrentUser();
+                flag = encoder.matches(teacher.getOldPwd(), teacher1.getTeacPassword());
             }
-        }else{
-            return new RespResult("fail", "原密码错误!");
+            if (flag || teacher.getTeacPassword().length() == 60) {
+                boolean result = teacherService.updateTeacherById(teacher);
+                if (result) {
+                    return new RespResult("success", "修改成功!");
+                } else {
+                    return new RespResult("fail", "修改失败!");
+                }
+            } else {
+                return new RespResult("fail", "原密码错误!");
+            }
+        } else {
+            return new RespResult("fail", "请先登录!");
         }
     }
 

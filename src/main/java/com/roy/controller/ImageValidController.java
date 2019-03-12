@@ -43,7 +43,7 @@ public class ImageValidController extends HttpServlet {
         response.setHeader("Cache-Control", "no-cache");
         response.setDateHeader("Expires", 0);
         // 在内存中创建图象
-        int width=65,height=40;
+        int width=100,height=40;
         BufferedImage bi=new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);
         // 获取图形上下文
         Graphics g=bi.getGraphics();
@@ -76,8 +76,8 @@ public class ImageValidController extends HttpServlet {
             // 将认证码显示到图象中
             g.setColor(new Color(20+random.nextInt(110),20+random.nextInt(110),20+random.nextInt(110)));//调用函数出来的颜色相同，可能是因为种子太接近，所以只能直接生成
             //设定字体
-            g.setFont(new Font("Time NewRoman",Font.BOLD,18+random.nextInt(6)));
-            g.drawString(numRandom,6+13*i, 16);
+            g.setFont(new Font("Time NewRoman",Font.BOLD,24+random.nextInt(6)));
+            g.drawString(numRandom,18+18*i, 28);
         }
         System.out.println(strRandom);
 

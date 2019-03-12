@@ -91,7 +91,7 @@
                             $("#dosearch").attr("style", "z-index: inherit;");
                             $("#question").val(data.message);
                         } else if (data.code == "ok") {//密码查询成功
-                            alert("你的密码为：" + data.message + "，请妥善保管，千万不要告诉他人哦。");
+                            alert("你的密码已被初始化为：123456，为了你的信息安全着想，登录后请尽快修改你的初始密码。");
                             window.location = '${rc.contextPath}/loginController/tologin';
                         } else if (data.code == "fail") {
                             alert(data.message);

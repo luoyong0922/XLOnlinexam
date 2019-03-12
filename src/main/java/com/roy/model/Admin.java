@@ -3,6 +3,7 @@ package com.roy.model;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,6 +14,11 @@ public class Admin implements UserDetails {
 
     //旧密码
     private String oldPwd;
+
+    public Admin(Long id, String password) {
+        this.id = id;
+        this.adminPassword = new BCryptPasswordEncoder().encode(password);
+    }
 
     public String getOldPwd() {
         return oldPwd;

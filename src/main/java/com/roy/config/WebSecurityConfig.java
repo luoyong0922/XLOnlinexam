@@ -54,24 +54,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         return o;
                     }
                 })
-                .and()
-                .formLogin().loginPage("/loginController/tologin").loginProcessingUrl("/loginController/dologin")
-                .usernameParameter("account").passwordParameter("password")
-
+                .and().formLogin().loginPage("/loginController/tologin").loginProcessingUrl("/loginController/dologin").usernameParameter("account").passwordParameter("password")
                 //  自定义登录界面
-                .and()
-                .formLogin().loginPage("/loginController/tologin").defaultSuccessUrl("/toInitLogin").failureUrl("/loginController/errorLogin")
-                .and()
-                .logout().logoutUrl("/loginController/logout").logoutSuccessUrl("/index")
+                .and().formLogin().loginPage("/loginController/tologin").defaultSuccessUrl("/toInitLogin").failureUrl("/loginController/errorLogin")
+                .and().logout().logoutUrl("/loginController/logout").logoutSuccessUrl("/index")
                 //处理异常,拒绝访问就重定向到403页面
                 .and().exceptionHandling().accessDeniedPage("/403")
-
-                .and()
-                .logout().permitAll()
-                .and().csrf().disable()
-                .exceptionHandling()
-                .and()
-                .rememberMe()
+                .and().logout().permitAll()
+                .and().csrf().disable().exceptionHandling()
+                .and().rememberMe()
                 .tokenValiditySeconds(604800) //记住我功能，cookies有限期是一周
                 .rememberMeParameter("remember-me") //登陆时是否激活记住我功能的参数名字，在登陆页面有展示
                 .rememberMeCookieName("workspace"); //cookies的名字，登陆后可以通过浏览器查看cookies名字

@@ -55,8 +55,8 @@
 				for(var i = 0; i < lis.length; i += 2) {
 					lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
 				}
-				//定时执行，15秒后执行
-				var t1 = window.setTimeout(reDirectPage, 1000 * 15);
+				//定时执行，12秒后执行
+				var t1 = window.setTimeout(reDirectPage, 1000 * 12);
 				//去掉定时器的方法  
 			//  window.clearTimeout(t1);
 			}
