@@ -1,11 +1,17 @@
 package com.roy.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
-public class Teacher{
+public class Teacher implements UserDetails {
 // public class Teacher implements Serializable {
 
     //旧密码
@@ -402,5 +408,52 @@ public class Teacher{
                 ", teacKey='" + teacKey + '\'' +
                 ", teacPassword='" + teacPassword + '\'' +
                 '}';
+    }
+
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<GrantedAuthority> authorities = new ArrayList<>();//GrantedAuthority是security提供的权限类，
+        List<Role> roles2 = new ArrayList<>();
+        Role role = new Role();
+        role.setId(1L);
+        role.setName("ROLE_TEACHER");
+        role.setNameZh("老师");
+        roles2.add(role);
+        for (Role role1 : roles2) {
+            authorities.add(new SimpleGrantedAuthority(role1.getName()));
+        }
+        System.out.println(authorities);
+        return authorities;
+    }
+
+    @Override
+    public String getPassword() {
+        return teacPassword;
+    }
+
+    @Override
+    public String getUsername() {
+        return teacName;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }
