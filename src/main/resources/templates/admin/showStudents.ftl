@@ -34,7 +34,7 @@
             <tr>
                 <th>序号</th>
                 <th>学号</th>
-                <th>密码</th>
+                <!--<th>密码</th>-->
                 <th>名字</th>
                 <th>住址</th>
                 <th>性别</th>
@@ -52,7 +52,8 @@
          <#--<tr class="table-info">-->
              <td>${student?counter}</td>
              <td>${student.stuNum}</td>
-             <td>${student.stuPassword}</td>
+             <!--<td>${student.stuPassword}</td>-->
+              <td>涉及用户敏感信息，不予显示</td>
              <td>${student.stuName}</td>
              <td>${student.stuAddress}</td>
              <td>${student.stuGender}</td>
