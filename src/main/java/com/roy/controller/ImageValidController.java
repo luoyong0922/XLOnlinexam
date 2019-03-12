@@ -1,16 +1,14 @@
 package com.roy.controller;
 
+import com.roy.model.RespBean;
+import com.roy.model.RespResult;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.awt.*;
@@ -22,27 +20,22 @@ import java.util.Random;
 @RequestMapping("/ImageValidController")
 public class ImageValidController extends HttpServlet {
 
+    @GetMapping("/valid/{validate}")
+    @ResponseBody
+    public RespResult valid(@PathVariable(name = "validate")String valid, HttpSession session){
 
-    @RequestMapping("/valid")
-    public String valid(@RequestParam("valid")String valid,
-                              HttpServletRequest request,
-                              HttpSession session){
-        ModelAndView modelAndView = new ModelAndView();
-        session=request.getSession();
         String isValid = (String)session.getAttribute("strRandom");
         System.out.println(valid+""+isValid);
-        if(valid.equals(isValid)){
-            System.out.println("验证通过！");
-            return "/login";
-        }else {
-            System.out.println("验证码错误！");
-            return "redirect:/ImageValidController/msg";
-        }
+        if((valid.toUpperCase()).equals((isValid.toUpperCase()))){
+                return new RespResult("success", "校验成功!");
+            } else {
+                return new RespResult("fail", "验证码不正确!");
+            }
 
     }
 
     @RequestMapping("/getImage")
-    public void getImage(HttpServletRequest request, HttpServletResponse response)
+    public void getImage(HttpSession session, HttpServletResponse response)
             throws IOException {
         response.setContentType("image/jpeg");
         // 防止浏览器缓冲
@@ -73,7 +66,7 @@ public class ImageValidController extends HttpServlet {
             int yl = random.nextInt(12);
             g.drawLine(x,y,x+xl,y+yl);
         }
-        // 取随机产生的认证码(4位数字)
+        // 取随机产生的认证码(4位字符)
         String strRandom="";
         String generateRandom="02345678abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ";
         for(int i=0;i<4;i++){
@@ -88,7 +81,6 @@ public class ImageValidController extends HttpServlet {
         }
         System.out.println(strRandom);
 
-        HttpSession session=request.getSession();
         // 将认证码存入SESSION
         session.setAttribute("strRandom", strRandom);
         //编码输出

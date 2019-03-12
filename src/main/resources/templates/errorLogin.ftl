@@ -79,16 +79,6 @@
 							<label for="password">密码：</label><input type="password" class="form-control" id="password" name="password" />
 
 						</div>
-<!--
-						<div class="form-group">
-							<label for="account">角色：</label>
-							<select id="select" name="role" class="item-select" style="border-radius: 5px;height:34px;">
-								<option value="1">学生</option>
-								<option value="2">教师</option>
-								<option value="3">管理员</option>
-							</select>
-						</div>
--->
 
 						<div class="form-group">
 							<label for="validate">验证码：</label>
@@ -111,19 +101,13 @@
 	<script src="${rc.contextPath}/static/js/jquery-1.11.0.js"></script>
 	<script src="${rc.contextPath}/static/js/bootstrap.min.js"></script>
 	<script type=text/javascript>
+		alert("账号或密码错误！");
 		var i = 0;
 
 		function changeImg(img) {
 			img.src = "${rc.contextPath}/ImageValidController/getImage?id=" + i;
 			i++;
 		}
-		
-			var message = '${msg!}';
-			
-			if(message != "") {
-				alert(message);
-			}
-		
 
 		//校验 验证码
 		function checkForm() {

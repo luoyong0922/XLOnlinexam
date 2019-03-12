@@ -60,7 +60,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 //  自定义登录界面
                 .and()
-                .formLogin().loginPage("/loginController/tologin").defaultSuccessUrl("/toInitLogin").failureUrl("/loginController/tologin")
+                .formLogin().loginPage("/loginController/tologin").defaultSuccessUrl("/toInitLogin").failureUrl("/loginController/errorLogin")
                 .and()
                 .logout().logoutUrl("/loginController/logout").logoutSuccessUrl("/index")
                 //处理异常,拒绝访问就重定向到403页面

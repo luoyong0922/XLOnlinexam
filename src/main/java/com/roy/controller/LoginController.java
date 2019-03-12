@@ -108,23 +108,24 @@ public class LoginController {
         return "login";
     }
 
+    @GetMapping("/loginController/errorLogin")
+    private String errorLogin(){
+        return "errorLogin";
+    }
+
+    @RequestMapping("/loginController/dologin")
+    private void doLogin(@RequestParam String account,@RequestParam String password,HttpSession session){
+        session.setAttribute("userPwd",password);
+        Object object = UserUtils.getCurrentUser();
+        System.out.println(object);
+    }
     /**
      * 验证登录
-     * @param account
-     * @param password
-     * @param role 角色：1 学生，2 老师，3 管理员
-     * @param validate  验证码
+     * @param  role 角色：1 学生，2 老师，3 管理员
      * @param session
      * @param model
      * @return
      */
-
-    @RequestMapping("/loginController/dologin")
-    private void doLogin(@RequestParam String account,@RequestParam String passwordl){
-        Object object = UserUtils.getCurrentUser();
-        System.out.println(object);
-    }
-
     @GetMapping("/loginController/redirectPage")
     private String redirectPage(HttpSession session,Model model){
         Object object = UserUtils.getCurrentUser();
