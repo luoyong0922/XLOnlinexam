@@ -200,7 +200,6 @@ public class LoginController {
     public RespResult doFindpassword(@RequestBody String data){
         String question = "";
         String key = "";
-        String password = "";
         //解析json数据
         JSONObject json = JSON.parseObject(data);
         //账号
@@ -264,6 +263,9 @@ public class LoginController {
                 boolean isInitPassword = loginService.initPassword(actor,userId);
                 if(isInitPassword) {
                     respResult.setCode("ok");
+                }else {
+                    respResult.setCode("fail");
+                    respResult.setMessage("系统出错了！");
                 }
             }else {
                 respResult.setCode("fail");

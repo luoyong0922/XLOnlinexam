@@ -17,7 +17,10 @@
 					</tr>
 					<tr>
 						<td>密码</td>
-						<td><input type="password" name="teacPassword" value="${teacher.teacPassword}" readonly="true" /></td>
+						<td>
+							<input type="password" value="......" readonly="true" />
+							<input type="password" name="teacPassword" value="${teacher.teacPassword}" hidden="true" />
+						</td>
 					</tr>
 					<tr>
 						<td>姓名</td>

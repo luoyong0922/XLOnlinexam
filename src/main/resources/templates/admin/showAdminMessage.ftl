@@ -17,7 +17,9 @@
 					</tr>
 					<tr>
 						<td>密码</td>
-						<td><input type="password" name="adminPassword" value="${admin.adminPassword}" readonly="true"/></td>
+						<td>
+							<input type="password" value="......" readonly="true" />
+							<input type="password" name="adminPassword" value="${admin.adminPassword}" hidden="true"/></td>
 					</tr>
 					<tr>
 						<td>姓名</td>
