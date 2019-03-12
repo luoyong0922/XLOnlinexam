@@ -31,7 +31,7 @@ public class TeacherController {
      * 跳转至教师首页
      * @return
      */
-    @GetMapping("toTeacherIndex")
+    @RequestMapping("toTeacherIndex")
     public String toTeacherIndex(){
         return "teacher/teacherIndex";
     }
@@ -39,7 +39,7 @@ public class TeacherController {
      * welcome
      * @return
      */
-    @GetMapping("/toWelcome")
+    @RequestMapping("/toWelcome")
     public String toWelcome(){
         return"teacher/welcome";
     }
@@ -121,9 +121,9 @@ public class TeacherController {
 
 
     //根据老师课程id查看学生成绩统计表
-    //getAllstuScore
+    //adminViewQuestios分页
     @RequestMapping("getAllstuScore")
-    public String getAllstuScore(@RequestParam(value = "pageIndex",required =false,defaultValue = "1") Integer pageIndex,
+    public String doShowTeacherViewQuestionsBypage(@RequestParam(value = "pageIndex",required =false,defaultValue = "1") Integer pageIndex,
                                                    @RequestParam(value = "teacCourseId",required =false,defaultValue ="0") Long teacCourseId,
                                                    Model model, HttpSession session) throws IOException {
 

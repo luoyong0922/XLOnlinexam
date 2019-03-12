@@ -96,7 +96,7 @@
 					  <img style="cursor:hand;border:none;}" name="imgcode" id="imgcode" align="absmiddle" src="${rc.contextPath}/ImageValidController/getImage" onclick="changeImg(this)"/><!--验证码当图片处理，点击可刷新-->
                   </div>
                   <div class="checkbox">
-                      <label style="float:left;"><input  type="checkbox" name="remember-me" id="remember-me" />记住密码</label>
+                      <label style="float:left;"><input type="checkbox" />记住密码</label>
 					  <label style="float:right;"><a href="${rc.contextPath}/loginController/toFindPassword">忘记密码？</a></label><br/>
                   </div> 
 				  <div class="form-group"><button type="submit" class="btn btn-default center-block" style="width:70%;" onclick="msg();">登录</button></div>

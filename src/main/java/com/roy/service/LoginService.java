@@ -3,7 +3,6 @@ package com.roy.service;
 import com.roy.model.Admin;
 import com.roy.model.Student;
 import com.roy.model.Teacher;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.support.SessionStatus;
 
@@ -11,12 +10,12 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 //@Repository
-public interface LoginService extends UserDetailsService {
+public interface LoginService {
 
     // 登录校验
-    public List<Admin> adminLogin(String adminPhone, String adminPassword);
-    public List<Student> studenLogin(String stuNum, String stuPassword);
-    public List<Teacher> teacherLogin(String teacWorknum, String teacPassword);
+    public List<Admin> AdminLogin(String adminPhone, String adminPassword);
+    public List<Student> StudenLogin(String stuNum, String stuPassword);
+    public List<Teacher> TeacherLogin(String teacWorknum, String teacPassword);
     /**
      * 找回密码
      * 根据账号查询信息

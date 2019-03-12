@@ -9,7 +9,6 @@ import com.roy.model.Student;
 import com.roy.model.Teacher;
 import com.roy.service.CourseService;
 import com.roy.service.LoginService;
-import com.roy.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,18 +26,10 @@ public class LoginController {
     @Resource
     private CourseService courseService;
     /**
-     * 403
-     * @return
-     */
-    @GetMapping("/403")
-    public String to403(){
-        return"403";
-    }
-    /**
      * 404
      * @return
      */
-    @GetMapping("/to404")
+    @RequestMapping("/to404")
     public String to404(){
         return"404";
     }
@@ -46,23 +37,15 @@ public class LoginController {
      * 500
      * @return
      */
-    @GetMapping("/to500")
+    @RequestMapping("/to500")
     public String to500(){
         return"500";
-    }
-    /**
-     * initLogin
-     * @return
-     */
-    @GetMapping("/toInitLogin")
-    public String toInitLogin(){
-        return"initLogin";
     }
     /**
      * 跳转到系统主页面
      * @return
      */
-    @GetMapping({"/", "/index", "/home","toIndex"})
+    @RequestMapping("/toIndex")
     public String toIndex(){
 
         System.out.println("((    ))  ()        ");
@@ -78,7 +61,7 @@ public class LoginController {
      * 跳转到关于我们页面
      * @return
      */
-    @GetMapping("/aboutUs")
+    @RequestMapping("/aboutUs")
     public String aboutUs(){
         return"about_us";
     }
@@ -87,7 +70,7 @@ public class LoginController {
      * 跳转到产品展示页面
      * @return
      */
-    @GetMapping("/productShow")
+    @RequestMapping("/productShow")
     public String productShow(){
         return"show";
     }
@@ -95,7 +78,7 @@ public class LoginController {
      * 跳转到注册页面
      * @return
      */
-    @GetMapping("/toRegist")
+    @RequestMapping("/toRegist")
     public String toRegist(){
         return"regist";
     }
@@ -103,7 +86,7 @@ public class LoginController {
      * 跳转到登录页面
      * @return
      */
-    @GetMapping("/loginController/tologin")
+    @RequestMapping("/loginController/tologin")
     private String toLogin(){
         return "login";
     }
@@ -118,70 +101,78 @@ public class LoginController {
      * @param model
      * @return
      */
-
     @RequestMapping("/loginController/dologin")
-    private void doLogin(@RequestParam String account,@RequestParam String passwordl){
-        Object object = UserUtils.getCurrentUser();
-        System.out.println(object);
-    }
-
-    @GetMapping("/loginController/redirectPage")
-    private String redirectPage(HttpSession session,Model model){
-        Object object = UserUtils.getCurrentUser();
-        System.out.println(object.getClass());
-        Class clazz = object.getClass();
-        if(clazz.equals(Student.class)){
-            Student student = (Student) object;
-            Long id = student.getId();
-            String name = student.getStuName();
-            model.addAttribute("student", student);
-            session.setAttribute("name",student.getStuName());
-            session.setAttribute("id",student.getId());
-            session.setAttribute("num",student.getStuNum());
-            session.setAttribute("role","student");
-            //初始化课程信息
-            PageInfo pageInfo = courseService.getMyCoursesMessage(id,1,null,null, 0L);
-            System.out.println("查询课程："+pageInfo);
-            model.addAttribute("courses", pageInfo.getList());
-            System.out.println("课程："+pageInfo.getList());
-            return "student/studentIndex";
-        }else if (clazz.equals(Admin.class)) {
-            Admin admin = (Admin) object;
-
-            model.addAttribute("admin", admin);
-            session.setAttribute("name",admin.getAdminName());
-            session.setAttribute("id",admin.getId());
-            session.setAttribute("num",admin.getAdminPhone());
-            session.setAttribute("role","admin");
-            return "admin/adminIndex";
-
-        } else if (clazz.equals(Teacher.class)) {
-            Teacher teacher = (Teacher) object;
-
-            Long id = teacher.getId();
-            String name = teacher.getTeacName();
-            model.addAttribute("teacher", teacher);
-            session.setAttribute("name",name);
-            session.setAttribute("id",id);
-            session.setAttribute("num",teacher.getTeacWorknum());
-            session.setAttribute("role","teacher");
-            //初始化课程信息
-            PageInfo pageInfo = courseService.getMyCoursesMessage(id,2,null,name, 0L);
-            System.out.println("查询课程："+pageInfo);
-            System.out.println("课程："+pageInfo.getList());
-            model.addAttribute("courses", pageInfo.getList());
-            return "teacher/teacherIndex";
+    private String doLogin(@RequestParam String account,
+                           @RequestParam String password,
+                           @RequestParam int role,
+                           @RequestParam String validate,
+                           HttpSession session,Model model){
+        String key = (String) session.getAttribute("strRandom");
+        System.out.println(key);
+        String msg = "账号或密码错误";
+        if(validate != null && (key.toUpperCase()).equals(validate.toUpperCase())){
+            if (1 == role) {
+                List<Student> student = loginService.StudenLogin(account, password);
+                if (student.size() > 0) {
+                    Long id = student.get(0).getId();
+                    String name = student.get(0).getStuName();
+                    model.addAttribute("student", student);
+                    session.setAttribute("name",student.get(0).getStuName());
+                    session.setAttribute("id",student.get(0).getId());
+                    session.setAttribute("num",student.get(0).getStuNum());
+                    session.setAttribute("role","student");
+                    //初始化课程信息
+                    PageInfo pageInfo = courseService.getMyCoursesMessage(id,role,null,null, 0L);
+                    System.out.println("查询课程："+pageInfo);
+                    System.out.println("课程："+pageInfo.getList());
+                    model.addAttribute("courses", pageInfo.getList());
+                    return "student/studentIndex";
+                }else {
+                    model.addAttribute("msg", msg);
+                }
+            } else if (3 == role) {
+                List<Admin> admin = loginService.AdminLogin(account, password);
+                if (admin.size() > 0) {
+                    model.addAttribute("admin", admin);
+                    session.setAttribute("name",admin.get(0).getAdminName());
+                    session.setAttribute("id",admin.get(0).getId());
+                    session.setAttribute("num",admin.get(0).getAdminPhone());
+                    session.setAttribute("role","admin");
+                    return "admin/adminIndex";
+                }else {
+                    model.addAttribute("msg", msg);
+                }
+            } else if (2 == role) {
+                List<Teacher> teacher = loginService.TeacherLogin(account, password);
+                if (teacher.size() > 0) {
+                    Long id = teacher.get(0).getId();
+                    String name = teacher.get(0).getTeacName();
+                    model.addAttribute("teacher", teacher);
+                    session.setAttribute("name",name);
+                    session.setAttribute("id",id);
+                    session.setAttribute("num",teacher.get(0).getTeacWorknum());
+                    session.setAttribute("role","teacher");
+                    //初始化课程信息
+                    PageInfo pageInfo = courseService.getMyCoursesMessage(id,role,null,name, 0L);
+                    System.out.println("查询课程："+pageInfo);
+                    System.out.println("课程："+pageInfo.getList());
+                    model.addAttribute("courses", pageInfo.getList());
+                    return "teacher/teacherIndex";
+                }else {
+                    model.addAttribute("msg", msg);
+                }
+            }
         }else {
-            model.addAttribute("msg", "账号或密码错误");
-            return "login";
+            model.addAttribute("msg", "验证码不正确");
         }
+        return "login";
     }
 
     /**
      * 跳转到找回密码页面
      * @return
      */
-    @GetMapping("/loginController/toFindPassword")
+    @RequestMapping("/loginController/toFindPassword")
     public String FindPasswordPage(){
         return"findpassword";
     }
@@ -247,7 +238,7 @@ public class LoginController {
                 question = "系统出错了！";
             }
         }else {
-            question = "该账号不存在！";
+                question = "该账号不存在！";
         }
         if(flag){
             respResult.setCode("success");
@@ -269,73 +260,73 @@ public class LoginController {
         System.out.println("找回密码："+flag+"--"+respResult);
         return respResult;
     }
-    @GetMapping("/loginController/logout")
+    @RequestMapping("/loginController/logout")
     public String logout(HttpSession session, SessionStatus sessionStatus){
         loginService.logout(session,sessionStatus);
         //重定向跳转到系统首页
         return "redirect:/toIndex";
     }
     //去画密码的界面
-    @GetMapping("picturePwd")
+    @RequestMapping("picturePwd")
     public String toPicturePwd(@RequestParam String account, @RequestParam int role,Model model){
         model.addAttribute("account",account);
         model.addAttribute("role",role);
         return "picturePwd";
     }
-    //九宫格登录
+//九宫格登录
     @RequestMapping("/loginController/doPicPwdLogin")
     private String doPwdLogin(@RequestParam String account,
-                              @RequestParam String pwd,
-                              @RequestParam int role,
-                              HttpSession session, Model model){
+                           @RequestParam String pwd,
+                           @RequestParam int role,
+                            HttpSession session, Model model){
         String msg = "账号或密码错误";
-        if (1 == role) {
-            List<Student> student = loginService.studenLogin(account, pwd);
-            if (student.size() > 0) {
-                Long id = student.get(0).getId();
-                String name = student.get(0).getStuName();
-                model.addAttribute("student", student);
-                session.setAttribute("name",student.get(0).getStuName());
-                session.setAttribute("id",student.get(0).getId());
-                session.setAttribute("num",student.get(0).getStuNum());
-                session.setAttribute("role","student");
-                PageInfo pageInfo = courseService.getMyCoursesMessage(id,role,null,null, 0L);
-                System.out.println("查询课程："+pageInfo);
-                System.out.println("课程："+pageInfo.getList());
-                model.addAttribute("courses", pageInfo.getList());
-                return "student/studentIndex";
+            if (1 == role) {
+                List<Student> student = loginService.StudenLogin(account, pwd);
+                if (student.size() > 0) {
+                    Long id = student.get(0).getId();
+                    String name = student.get(0).getStuName();
+                    model.addAttribute("student", student);
+                    session.setAttribute("name",student.get(0).getStuName());
+                    session.setAttribute("id",student.get(0).getId());
+                    session.setAttribute("num",student.get(0).getStuNum());
+                    session.setAttribute("role","student");
+                    PageInfo pageInfo = courseService.getMyCoursesMessage(id,role,null,null, 0L);
+                    System.out.println("查询课程："+pageInfo);
+                    System.out.println("课程："+pageInfo.getList());
+                    model.addAttribute("courses", pageInfo.getList());
+                    return "student/studentIndex";
+                }
+            } else if (3 == role) {
+                List<Admin> admin = loginService.AdminLogin(account, pwd);
+                if (admin.size() > 0) {
+                    model.addAttribute("admin", admin);
+                    session.setAttribute("name",admin.get(0).getAdminName());
+                    session.setAttribute("id",admin.get(0).getId());
+                    session.setAttribute("num",admin.get(0).getAdminPhone());
+                    session.setAttribute("role","admin");
+                    return "admin/adminIndex";
+                }
+            } else if (2 == role) {
+                List<Teacher> teacher = loginService.TeacherLogin(account, pwd);
+                if (teacher.size() > 0) {
+                    Long id = teacher.get(0).getId();
+                    String name = teacher.get(0).getTeacName();
+                    model.addAttribute("teacher", teacher);
+                    session.setAttribute("name",name);
+                    session.setAttribute("id",id);
+                    session.setAttribute("num",teacher.get(0).getTeacWorknum());
+                    session.setAttribute("role","teacher");
+                    PageInfo pageInfo = courseService.getMyCoursesMessage(id,role,null,name, 0L);
+                    System.out.println("查询课程："+pageInfo);
+                    System.out.println("课程："+pageInfo.getList());
+                    model.addAttribute("courses", pageInfo.getList());
+                    return "teacher/teacherIndex";
+                }
             }
-        } else if (3 == role) {
-            List<Admin> admin = loginService.adminLogin(account, pwd);
-            if (admin.size() > 0) {
-                model.addAttribute("admin", admin);
-                session.setAttribute("name",admin.get(0).getAdminName());
-                session.setAttribute("id",admin.get(0).getId());
-                session.setAttribute("num",admin.get(0).getAdminPhone());
-                session.setAttribute("role","admin");
-                return "admin/adminIndex";
-            }
-        } else if (2 == role) {
-            List<Teacher> teacher = loginService.teacherLogin(account, pwd);
-            if (teacher.size() > 0) {
-                Long id = teacher.get(0).getId();
-                String name = teacher.get(0).getTeacName();
-                model.addAttribute("teacher", teacher);
-                session.setAttribute("name",name);
-                session.setAttribute("id",id);
-                session.setAttribute("num",teacher.get(0).getTeacWorknum());
-                session.setAttribute("role","teacher");
-                PageInfo pageInfo = courseService.getMyCoursesMessage(id,role,null,name, 0L);
-                System.out.println("查询课程："+pageInfo);
-                System.out.println("课程："+pageInfo.getList());
-                model.addAttribute("courses", pageInfo.getList());
-                return "teacher/teacherIndex";
-            }
-        }
 
-        model.addAttribute("account",account);
-        model.addAttribute("role",role);
-        return "redirect:/picturePwd";
+            model.addAttribute("account",account);
+            model.addAttribute("role",role);
+            return "redirect:/picturePwd";
     }
 
 }

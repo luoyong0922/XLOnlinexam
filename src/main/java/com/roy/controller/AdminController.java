@@ -6,7 +6,6 @@ import com.roy.model.*;
 import com.roy.service.AdminService;
 import com.roy.service.CourseService;
 import com.roy.service.LoginService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +28,7 @@ public class AdminController {
     //显示个人资料
     @RequestMapping(value = "showAdminMsg/{adminPhone}",method = RequestMethod.GET)
     public String showAdminMessage(@PathVariable("adminPhone")String phone,
-                                   Model model){
+                                     Model model){
         List<Admin> admins = loginService.selectByAccount(phone,3);
         if(admins.size() > 0){
             model.addAttribute("admin",admins.get(0));
@@ -125,10 +124,10 @@ public class AdminController {
                                        @RequestParam(value = "keywords",required =false,defaultValue ="") String keywords,
                                        Model model){
 
-        PageInfo pageInfo =adminService.searchTeacherBykeywords(pageIndex,keywords,null);
-        model.addAttribute("pageInfo",pageInfo);
-        model.addAttribute("keywords",keywords);
-        return "admin/showTeachers";
+            PageInfo pageInfo =adminService.searchTeacherBykeywords(pageIndex,keywords,null);
+            model.addAttribute("pageInfo",pageInfo);
+            model.addAttribute("keywords",keywords);
+            return "admin/showTeachers";
     }
     /**
      * 分页查看待审核老师信息
@@ -139,13 +138,13 @@ public class AdminController {
      */
     @RequestMapping("toApprovalTeachers")
     public String toApprovalTeachers(@RequestParam(value = "pageIndex",required = false,defaultValue = "1") Integer pageIndex,
-                                     @RequestParam(value = "keywords",required =false,defaultValue ="") String keywords,
-                                     Model model){
+                                       @RequestParam(value = "keywords",required =false,defaultValue ="") String keywords,
+                                       Model model){
 
-        PageInfo pageInfo = adminService.searchTeacherBykeywords(pageIndex,keywords,2);
-        model.addAttribute("pageInfo", pageInfo);
-        model.addAttribute("keywords", keywords);
-        return "admin/approvalTeachers";
+            PageInfo pageInfo = adminService.searchTeacherBykeywords(pageIndex,keywords,2);
+            model.addAttribute("pageInfo", pageInfo);
+            model.addAttribute("keywords", keywords);
+            return "admin/approvalTeachers";
 
     }
     /**
@@ -213,13 +212,8 @@ public class AdminController {
     @RequestMapping(value = "saveAddteac",method = RequestMethod.POST)
     public String doAddTeac(Teacher teacher){
         //System.out.println(user);
-        if(!adminService.getTeacherByTeacWorknum(teacher.getTeacWorknum())){
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-            String encode = encoder.encode(teacher.getTeacPassword());
-            teacher.setTeacPassword(encode);
-            if(adminService.addTeacher(teacher)){
-                return "redirect:getAllTeachersByPage";
-            }
+        if((!adminService.getTeacherByTeacWorknum(teacher.getTeacWorknum()))&&adminService.addTeacher(teacher)){
+            return "redirect:getAllTeachersByPage";
         }
         return "redirect:saveAddteac";
     }
@@ -273,10 +267,10 @@ public class AdminController {
                                        @RequestParam(value = "keywords",required =false,defaultValue ="") String keywords,
                                        Model model){
 
-        PageInfo pageInfo=adminService.searchStudentBykeywords(pageIndex,keywords,null);
-        model.addAttribute("pageInfo",pageInfo);
-        model.addAttribute("keywords",keywords);
-        return "admin/showStudents";
+            PageInfo pageInfo=adminService.searchStudentBykeywords(pageIndex,keywords,null);
+            model.addAttribute("pageInfo",pageInfo);
+            model.addAttribute("keywords",keywords);
+            return "admin/showStudents";
     }
 
     //去学生修改页面
@@ -313,13 +307,8 @@ public class AdminController {
     @RequestMapping("saveAdd")
     public String doAddStudent(Student student){
         //System.out.println(user);
-        if(!adminService.getStudentByStuNum(student.getStuNum())){
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-            String encode = encoder.encode(student.getStuPassword());
-            student.setStuPassword(encode);
-            if(adminService.addStudent(student)){
-                return "redirect:getAllStudentsByPage";
-            }
+        if((!adminService.getStudentByStuNum(student.getStuNum()))&&adminService.addStudent(student)){
+            return "redirect:getAllStudentsByPage";
         }
         return "500";
     }

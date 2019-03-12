@@ -5,8 +5,6 @@ import com.roy.mapper.StudentMapper;
 import com.roy.mapper.TeacherMapper;
 import com.roy.model.*;
 import com.roy.service.LoginService;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.support.SessionStatus;
 
@@ -25,7 +23,7 @@ public class LoginServiceImpl implements LoginService{
     TeacherMapper teacherDao;
 
     @Override
-    public List<Admin> adminLogin(String adminPhone, String adminPassword) {
+    public List<Admin> AdminLogin(String adminPhone, String adminPassword) {
         AdminExample example=new AdminExample();
         AdminExample.Criteria criteria=example.createCriteria();
 
@@ -38,7 +36,7 @@ public class LoginServiceImpl implements LoginService{
     }
 
     @Override
-    public List<Student> studenLogin(String stuNum, String stuPassword) {
+    public List<Student> StudenLogin(String stuNum, String stuPassword) {
         StudentExample example=new StudentExample();
         StudentExample.Criteria criteria=example.createCriteria();
         criteria.andStuNumEqualTo(stuNum);
@@ -50,7 +48,7 @@ public class LoginServiceImpl implements LoginService{
     }
 
     @Override
-    public List<Teacher> teacherLogin(String teacWorknum, String teacPassword) {
+    public List<Teacher> TeacherLogin(String teacWorknum, String teacPassword) {
         TeacherExample example=new TeacherExample();
         TeacherExample.Criteria criteria=example.createCriteria();
         criteria.andTeacWorknumEqualTo(teacWorknum);
@@ -71,11 +69,11 @@ public class LoginServiceImpl implements LoginService{
     public List selectByAccount(String account,int role) {
         List result = new ArrayList();
         if(role == 1){//学生
-            result = studenLogin(account,null);
+            result = StudenLogin(account,null);
         }else if(role == 2){//老师
-            result = teacherLogin(account,null);
+            result = TeacherLogin(account,null);
         }else if(role == 3){//管理员
-            result = adminLogin(account,null);
+            result = AdminLogin(account,null);
         }
         return result;
     }
@@ -96,22 +94,4 @@ public class LoginServiceImpl implements LoginService{
         }
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        List users = new ArrayList();
-        users = adminLogin(s,null);
-        if(users.size() > 0){
-            return (Admin)users.get(0);
-        }
-        users = studenLogin(s,null);
-        if(users.size() > 0){
-            return (Student)users.get(0);
-        }
-        users = teacherLogin(s,null);
-//        if(users.size() > 0){
-//            return (Teacher)users.get(0);
-//        }
-            throw new UsernameNotFoundException("用户名不对");
-
-    }
 }
