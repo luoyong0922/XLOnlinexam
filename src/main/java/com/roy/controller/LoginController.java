@@ -62,7 +62,7 @@ public class LoginController {
      * 跳转到系统主页面
      * @return
      */
-    @GetMapping({"/", "/index", "/home","toIndex"})
+    @GetMapping({"/", "/index", "/home","toIndex","/#"})
     public String toIndex(){
 
         System.out.println("((    ))  ()        ");
@@ -118,8 +118,8 @@ public class LoginController {
 
     }
     /**
-     * 验证登录
-     *   role 角色：1 学生，2 老师，3 管理员
+     * 跳转到用户首页
+     *  role 角色：1 学生，2 老师，3 管理员
      * @param session
      * @param model
      * @return
@@ -140,9 +140,8 @@ public class LoginController {
             session.setAttribute("role","student");
             //初始化课程信息
             PageInfo pageInfo = courseService.getMyCoursesMessage(id,1,null,null, 0L);
-            System.out.println("查询课程："+pageInfo);
             model.addAttribute("courses", pageInfo.getList());
-            System.out.println("课程："+pageInfo.getList());
+            System.out.println("课程信息："+pageInfo.getList());
             return "student/studentIndex";
         }else if (clazz.equals(Admin.class)) {
             Admin admin = (Admin) object;
@@ -166,8 +165,7 @@ public class LoginController {
             session.setAttribute("role","teacher");
             //初始化课程信息
             PageInfo pageInfo = courseService.getMyCoursesMessage(id,2,null,name, 0L);
-            System.out.println("查询课程："+pageInfo);
-            System.out.println("课程："+pageInfo.getList());
+            System.out.println("课程信息："+pageInfo.getList());
             model.addAttribute("courses", pageInfo.getList());
             return "teacher/teacherIndex";
         }else {

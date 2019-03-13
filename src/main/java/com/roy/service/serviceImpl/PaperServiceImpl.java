@@ -1,5 +1,9 @@
 package com.roy.service.serviceImpl;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.TypeReference;
 import com.github.pagehelper.PageInfo;
 import com.roy.mapper.*;
 import com.roy.model.*;
@@ -58,7 +62,7 @@ public class PaperServiceImpl implements PaperService {
     String subjectIds;
 
     /**
-     * 根据教师课程id查询考试标准 （学生查看考试通知）
+     * 根据教师课程id查询测评标准 （学生查看测评通知）
      * @param teac_course_id
      * @return
      */
@@ -120,6 +124,21 @@ public class PaperServiceImpl implements PaperService {
         }
         return map;
     }
+
+    /**
+     * 将数据库表PaperStandard中的json字符串转化为对象集合
+     * @param jsonStr
+     * @param clazz
+     * @return
+     */
+    private List jsonToArrayObject(String jsonStr, Class clazz){
+        JSONObject jsonObject = JSON.parseObject(jsonStr);
+        String className = clazz.getSimpleName();
+        JSONArray jsonArray = jsonObject.getJSONArray(className);
+        List parseObjectList = JSON.parseObject(jsonArray.toJSONString(), new TypeReference<List>() { });
+        return parseObjectList;
+    }
+
     /**
      * 新增考试标准  （教师发布考试）
      * @param paperStandard
@@ -236,7 +255,6 @@ public class PaperServiceImpl implements PaperService {
             }
         }
 
-
         //所有填空题
         List<Fill> allFills=this.getQuestionsByExamId(4);
         for(int i=0;i<allFills.size();i++){
@@ -312,9 +330,6 @@ public class PaperServiceImpl implements PaperService {
         return allAdminViewQuestions;
     }
 
-
-
-
     //根据teacId得到所有的teac_course记录
     public List<TeacCourse> getTeacCourseByteacId(Long teacId){
         //所有teacCourse
@@ -330,7 +345,6 @@ public class PaperServiceImpl implements PaperService {
         }
         return teacCoursesByteacId;
     }
-
 
     //得到所有teacId对应的所有课程的题目,每个老师查看的题目
     @Override
@@ -554,7 +568,7 @@ public class PaperServiceImpl implements PaperService {
     }
 
     /**
-     * 老师查看题库根据courseName，questionType，teacCourseId
+     * 老师根据courseName，questionType，teacCourseId查看题库
      * @param pageIndex
      * @param courseName
      * @param questionType
@@ -808,7 +822,7 @@ public class PaperServiceImpl implements PaperService {
     }
 
     /**
-     * 更新试卷
+     * 更新试卷信息
      *学生交卷
      * @param paper
      * @return
@@ -890,10 +904,14 @@ public class PaperServiceImpl implements PaperService {
             stuScore = getStuScoreByPaperId(id);
         }
         model.addAttribute("stuScore",stuScore);
-        // System.out.println(model);
         return model;
     }
 
+    /**
+     * 根据试卷id查询学生成绩
+     * @param paperId
+     * @return
+     */
     private StuScore getStuScoreByPaperId(Long paperId){
         StuScoreExample example = new StuScoreExample();
         StuScoreExample.Criteria criteria = example.createCriteria();
@@ -1161,7 +1179,7 @@ public class PaperServiceImpl implements PaperService {
     }
 
 
-    //得到所有这门课程的sel_ids
+    //根据教师课程id查询所有sel_ids
     @Override
     public List<String> selectAllSelectsIds(Long teaccourseid) {
         SelectExample example=new SelectExample();
@@ -1175,7 +1193,7 @@ public class PaperServiceImpl implements PaperService {
         }
         return selectIds;
     }
-    //根据sel_id去找试题
+    //根据sel_id查询试题
     @Override
     public Select getSelectBysel_id(String selId) {
         SelectExample example=new SelectExample();
@@ -1184,7 +1202,7 @@ public class PaperServiceImpl implements PaperService {
         Select select=selectDao.selectByExample(example).get(0);
         return select;
     }
-    //所有多项选择题的mutil_id
+    //根据教师课程id查询所有多项选择题的mutil_id
     @Override
     public List<String> selectAllMutilSelectsIds(Long teaccourseid) {
         MultiSelectExample example=new MultiSelectExample();
@@ -1199,7 +1217,7 @@ public class PaperServiceImpl implements PaperService {
         }
         return multiselectIds;
     }
-    //获得多项选择题题目
+    //根据id 查询 多项选择题题目
     @Override
     public MultiSelect getMultiSelectsByMultiId(String multiId) {
         MultiSelectExample example=new MultiSelectExample();
@@ -1208,7 +1226,7 @@ public class PaperServiceImpl implements PaperService {
         MultiSelect multiSelect=multiSelectDao.selectByExample(example).get(0);
         return multiSelect;
     }
-    //所有填空题的fill_id
+    //根据教师课程id查询所有填空题的fill_id
     @Override
     public List<String> selectAllFillIds(Long teaccourseid) {
         FillExample example=new FillExample();
@@ -1222,7 +1240,7 @@ public class PaperServiceImpl implements PaperService {
         }
         return fillIds;
     }
-    //根据fill_id得到填空题
+    //根据fill_id查询填空题信息
     @Override
     public Fill getFillByFillId(String fillId) {
         FillExample example=new FillExample();
@@ -1231,7 +1249,7 @@ public class PaperServiceImpl implements PaperService {
         Fill fill=fillDao.selectByExample(example).get(0);
         return fill;
     }
-    //对应课程所有计算机的calculate_id
+    //根据教师课程id查询所有计算题的calculate_id
 
     @Override
     public List<String> selectAllCalculateIds(Long teaccourseid) {
@@ -1246,7 +1264,7 @@ public class PaperServiceImpl implements PaperService {
         }
         return calculateIds;
     }
-    //根据calculate_id获得计算题
+    //根据calculate_id查询计算题信息
     @Override
     public Calculate getCalculateByCalculateId(String calculateId) {
         CalculateExample example=new CalculateExample();
@@ -1255,7 +1273,7 @@ public class PaperServiceImpl implements PaperService {
         Calculate calculate=calculateDao.selectByExample(example).get(0);
         return calculate;
     }
-    //所有判断题的judgeId
+    //根据教师课程id查询所有判断题的judgeId
     @Override
     public List<String> selectAllJudegeIds(Long teaccourseid) {
         JudgeExample example=new JudgeExample();
@@ -1269,7 +1287,7 @@ public class PaperServiceImpl implements PaperService {
         }
         return judgeIds;
     }
-    //根据judgeId取判断题
+    //根据judgeId查询判断题信息
     @Override
     public Judge getJudgeByJudgeId(String judgeId) {
         JudgeExample example=new JudgeExample();
@@ -1278,7 +1296,7 @@ public class PaperServiceImpl implements PaperService {
         Judge judge= judgeDao.selectByExample(example).get(0);
         return judge;
     }
-    //所有subject_id
+    //根据教师课程id查询所有subject_id
     @Override
     public List<String> selectAllSubjectIds(Long teaccourseid) {
         SubjectExample example=new SubjectExample();
@@ -1292,7 +1310,7 @@ public class PaperServiceImpl implements PaperService {
         }
         return subjectIds;
     }
-    //根据subject_id取subject题
+    //根据subject_id查询subject题目信息
     @Override
     public Subject getSubjectBySubjectId(String subjectId) {
         SubjectExample example=new SubjectExample();
@@ -1342,7 +1360,7 @@ public class PaperServiceImpl implements PaperService {
     }
 
     /**
-     * 获取选择题
+     * 随机抽取选择题
      * @param teaccourseid
      * @return
      */
@@ -1364,7 +1382,7 @@ public class PaperServiceImpl implements PaperService {
     }
 
     /**
-     * 获取多选题
+     * 随机抽取多选题
      * @param teaccourseid
      * @param count
      * @return
@@ -1389,7 +1407,7 @@ public class PaperServiceImpl implements PaperService {
     }
 
     /**
-     * 获取填空题
+     * 随机抽取填空题
      * @param teaccourseid
      * @param count
      * @return
@@ -1413,7 +1431,7 @@ public class PaperServiceImpl implements PaperService {
     }
 
     /**
-     * 获取计算题
+     * 随机抽取计算题
      * @param teaccourseid
      * @param count
      * @return
@@ -1437,7 +1455,7 @@ public class PaperServiceImpl implements PaperService {
     }
 
     /**
-     * 获取判断题
+     * 随机抽取判断题
      * @param teaccourseid
      * @param count
      * @return
@@ -1462,7 +1480,7 @@ public class PaperServiceImpl implements PaperService {
     }
 
     /**
-     * 获取主观题
+     * 随机抽取主观题
      * @param teaccourseid
      * @param count
      * @return

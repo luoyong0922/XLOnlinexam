@@ -91,16 +91,6 @@ public class CourseServiceImpl implements CourseService {
     }
 
     /**
-     * 根据id查询老师
-     * @param id
-     * @return
-     */
-    @Override
-    public Teacher getTeacherById(Long id){
-        Teacher teacher = teacherDao.selectByPrimaryKey(id);
-        return teacher;
-    }
-    /**
      * 查询学生表所有学生
      */
     @Override
@@ -113,17 +103,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     /**
-     * 根据id查询学生
-     * @param id
-     * @return
-     */
-    @Override
-    public Student getStudentById(Long id){
-        Student student = studentDao.selectByPrimaryKey(id);
-        return student;
-    }
-    /**
-     * 新增课程
+     * 新增课程信息
      * @param course 课程对象
      * @return
      */
@@ -145,7 +125,7 @@ public class CourseServiceImpl implements CourseService {
         return result>0;
     }
     /**
-     * 新增教师课程
+     * 新增教师课程信息
      * @param teacCourse 教师课程对象
      * @return
      */
@@ -155,7 +135,7 @@ public class CourseServiceImpl implements CourseService {
         return result>0;
     }
     /**
-     * 新增学生课程
+     * 新增学生课程信息
      * @param stuCourse 学生课程对象
      * @return
      */
@@ -166,7 +146,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     /**
-     * 修改课程
+     * 修改课程信息
      * @param course 课程对象
      * @return
      */
@@ -177,7 +157,7 @@ public class CourseServiceImpl implements CourseService {
         return result>0;
     }
     /**
-     * 修改教师课程
+     * 修改教师课程信息
      * @param teaccourse 教师课程对象
      * @return
      */
@@ -188,7 +168,7 @@ public class CourseServiceImpl implements CourseService {
         return result>0;
     }
     /**
-     * 删除课程
+     * 批量删除课程
      * @param ids 课程ID集合
      * @return result  删除记录数量
      */
@@ -201,7 +181,7 @@ public class CourseServiceImpl implements CourseService {
         return result;
     }
 
-    //得到所有的teaccourse
+    //查询所有的teaccourse
     @Override
     public List<TeacCourse> getAllTeacCourses() {
         List<TeacCourse> teacCourses = teacCourseDao.selectByExample(null);
@@ -211,7 +191,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
 
-    //得到所有课程信息
+    //查询所有课程信息
     private List<TeacCourse> getAllCoursesMessage(){
 
         List<TeacCourse> teacCourses=this.getAllTeacCourses();
@@ -221,7 +201,7 @@ public class CourseServiceImpl implements CourseService {
         for(int i=0;i<teacCourses.size();i++){
             teacCourse = teacCourses.get(i);
             teacCourse = improveCourseMsg(teacCourse);
-            //通过课程id获得课程名字，和课程学分,课程编号
+            //通过课程id查询课程名字，和课程学分,课程编号
             Long courseId = teacCourse.getCourseId();
             Map map1 = this.getCourseNCNum(courseId);
             String courseName = (String) map1.get("courseName");
@@ -231,11 +211,11 @@ public class CourseServiceImpl implements CourseService {
             teacCourse.setCourseCredit(courseCredit);
             teacCourse.setCourseNum(courseNum);
 
-            //通过老师id获得老师名字
+            //通过老师id查询老师名字
             String teacName = teacherService.getTeacByTeacId(teacCourse.getTeacId()).getTeacName();
             teacCourse.setTeacName(teacName);
 
-            //通过教师课程id获取学生课程信息
+            //通过教师课程id查询学生课程信息
             Map map = this.getStuCourseMessage(teacCourse.getId());
             String courseType = (String) map.get("courseType");
             Long stuId = (Long) map.get("stuId");
@@ -248,7 +228,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     /**
-     * 根据教师课程ID获取
+     * 根据教师课程ID查询
      * 课程类型：必修，选修  courseType
      * 学生ID   stuId
      * @param teaccourseId
@@ -271,7 +251,7 @@ public class CourseServiceImpl implements CourseService {
         return map;
     }
     /**
-     * 根据ID得到课程信息
+     * 根据ID查询课程信息
      * @param id 教师/学生id
      * @param role 1 学生， 2 教师， 3 管理员
      * @param tcid
@@ -328,7 +308,7 @@ public class CourseServiceImpl implements CourseService {
 
     /**
      *
-     * 根据课程ID去得到课程名称，课程学分，课程编号，
+     * 根据课程ID去查询课程名称，课程学分，课程编号，
      * @param courseId
      * @return
      */
@@ -348,7 +328,7 @@ public class CourseServiceImpl implements CourseService {
 
 
     /**
-     * 根据学生id获取课程信息
+     * 根据学生id查询课程信息
      * @param stuId
      * @return
      */
@@ -376,7 +356,7 @@ public class CourseServiceImpl implements CourseService {
         return courseList;
     }
     /**
-     * 根据老师id获取课程信息
+     * 根据老师id查询课程信息
      * @param teacId
      * @return
      */
@@ -394,7 +374,7 @@ public class CourseServiceImpl implements CourseService {
         //完善课程信息
         for(TeacCourse course : teacCourses){
             course = improveCourseMsg(course);
-            //通过教师课程id获取学生课程信息
+            //通过教师课程id查询学生课程信息
             Map map = this.getStuCourseMessage(course.getId());
             String courseType = (String) map.get("courseType");
             Long stuId = (Long) map.get("stuId");
@@ -412,37 +392,37 @@ public class CourseServiceImpl implements CourseService {
      */
     @Override
     public TeacCourse improveCourseMsg(TeacCourse teacCourse){
-        //通过课程id获得课程名字，和课程学分
+        //通过课程id查询课程名字，和课程学分
         String courseName = this.getCourseNameByCourseId(teacCourse.getCourseId());
         BigDecimal courseCredit = this.getCourseCreditByCourseId(teacCourse.getCourseId());
         teacCourse.setCourseName(courseName);
         teacCourse.setCourseCredit(courseCredit);
 
-        //通过老师id获得老师名字
+        //通过老师id查询老师名字
         String teacName = this.getTeacNameByTeacId(teacCourse.getTeacId());
         teacCourse.setTeacName(teacName);
         return teacCourse;
     }
-    //根据课程id得到课程的名字
+    //根据课程id查询课程的名字
     private String getCourseNameByCourseId(Long courseId) {
         Course course=courseDao.selectByPrimaryKey(courseId);
         String courseName=course.getCourseName();
         return courseName;
     }
-    //根据课程id得到课程的学分
+    //根据课程id查询课程的学分
     private BigDecimal getCourseCreditByCourseId(Long courseId){
         Course course=courseDao.selectByPrimaryKey(courseId);
         BigDecimal courseCredit=course.getCourseCredit();
         return courseCredit;
     }
-    //根据老师id得到老师的名字
+    //根据老师id查询老师的名字
     private String getTeacNameByTeacId(Long teacId){
         Teacher teacher=teacherDao.selectByPrimaryKey(teacId);
         String teacName=teacher.getTeacName();
         return teacName;
     }
 
-    //根据teacId得到所有的teac_course记录
+    //根据teacId查询所有的teac_course记录
     @Override
     public List<TeacCourse> getTeacCourseByteacId(Long teacId){
         //所有teacCourse
@@ -452,13 +432,18 @@ public class CourseServiceImpl implements CourseService {
         List<TeacCourse> teacCoursesByteacId=new ArrayList<>();
         for(int i=0;i<allTeacCourse.size();i++){
             TeacCourse teacCourse=allTeacCourse.get(i);
-            if(teacCourse.getTeacId()==teacId) {
+            if(teacCourse.getTeacId() == teacId) {
                 teacCoursesByteacId.add(teacCourse);
             }
         }
         return teacCoursesByteacId;
     }
 
+    /**
+     * 批量删除教师课程信息
+     * @param tcId 教师课程集合
+     * @return 删除的数量
+     */
     @Override
     public int deleteTeacCourse(List<Long> tcId) {
         TeacCourseExample example = new TeacCourseExample();

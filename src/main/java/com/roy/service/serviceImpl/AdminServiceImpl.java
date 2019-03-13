@@ -7,6 +7,7 @@ import com.roy.mapper.*;
 import com.roy.model.*;
 import com.roy.service.AdminService;
 import com.roy.service.CourseService;
+import com.roy.service.TeacherService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,8 @@ public class AdminServiceImpl implements AdminService {
     private PaperMapper paperDao;
     @Resource
     private CourseService courseService;
+    @Resource
+    private TeacherService teacherService;
 
     /**
      * 关键字查询老师
@@ -48,7 +51,6 @@ public class AdminServiceImpl implements AdminService {
         if(!"".equals(keywords)&& keywords != null && state == null){
 
             String condition='%'+keywords+'%';
-            TeacherExample.Criteria criteria1=example.createCriteria();
             TeacherExample.Criteria criteria2=example.createCriteria();
             TeacherExample.Criteria criteria3=example.createCriteria();
             TeacherExample.Criteria criteria4=example.createCriteria();
@@ -58,7 +60,6 @@ public class AdminServiceImpl implements AdminService {
             criteria3.andTeacPhoneLike(condition);
             criteria4.andTeacGenderLike(condition);
 
-           // example.or(criteria1);
             example.or(criteria2);
             example.or(criteria3);
             example.or(criteria4);
@@ -213,6 +214,11 @@ public class AdminServiceImpl implements AdminService {
         return result>0;
     }
 
+    /**
+     * 修改admin信息
+     * @param admin
+     * @return
+     */
     @Override
     public boolean updateAdmin(Admin admin) {
         if(admin.getAdminPassword() != null && admin.getAdminPassword().length() < 60){
@@ -222,33 +228,33 @@ public class AdminServiceImpl implements AdminService {
         return result > 0;
     }
 
-    //得到所有试卷
+    //查询所有试卷
     @Override
     public List<Paper> getAllPapers(){
         List<Paper> papers=paperDao.selectByExample(null);
         return papers;
     }
-    //根据试卷里的信息，去得到要显示的信息
+    //根据试卷里的信息，去查询要显示的信息
     public List<Paper> getAllPapersWithNeedMeg(){
         List<Paper> allPapers=this.getAllPapers();
         List<Paper> neededPapers=new ArrayList<>();
         for(int i=0;i<allPapers.size();i++){
             Paper paper=allPapers.get(i);
-            //根据stu_id去得到stu_name
+            //根据stu_id去查询stu_name
             String stuName= getStudentByStuId(paper.getStuId()).getStuName();//学生实体
             paper.setStuName(stuName);
-            //根据teacCourseId去得到老师姓名和课程名
-            //根据teacCourseId得到teacCourse记录
+            //根据teacCourseId去查询老师姓名和课程名
+            //根据teacCourseId查询teacCourse记录
             TeacCourse teacCourse= courseService.getTeacCourse(paper.getTeacCourseId());
-            //得到课程id
+            //查询课程id
             Long courseId= teacCourse.getCourseId();
-            //根据课程id得到课程名字
+            //根据课程id查询课程名字
             String courseName= courseService.getCourseById(courseId).getCourseName();
             paper.setCourseName(courseName);
             //教师id
             Long teacId=teacCourse.getTeacId();
-            //根据teacId得到老师名字
-            String teacName= courseService.getTeacherById(teacId).getTeacName();
+            //根据teacId查询老师名字
+            String teacName= teacherService.getTeacByTeacId(teacId).getTeacName();
 
             paper.setTeacName(teacName);
             neededPapers.add(paper);

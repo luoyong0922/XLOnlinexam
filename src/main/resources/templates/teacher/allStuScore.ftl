@@ -19,7 +19,7 @@
 				课程名称：
 				<select name="teacCourseId" id="selectValue">
 					<#list teacCourses as teacCourse>
-						<option value="${teacCourse.id}" <#if teacCourse.id==t eacCourseId>selected</#if>>${teacCourse.courseName}</option>
+						<option value="${teacCourse.id}" <#if teacCourse.id==teacCourseId>selected</#if>>${teacCourse.courseName}</option>
 					</#list>
 				</select>
 				<input type="submit" class="btn-primary" value="搜索">

@@ -21,6 +21,17 @@ public class StudentServiceImpl implements StudentService {
     private HomeWorkMapper homeWorkDao;
 
     /**
+     * 根据学生id查询学生信息
+     * @param id
+     * @return
+     */
+    @Override
+    public Student getStudentById(Long id){
+        Student student = studentDao.selectByPrimaryKey(id);
+        return student;
+    }
+
+    /**
      * 根据学号查询学生信息
      * @param stuNum
      * @return

@@ -17,11 +17,11 @@ public interface CourseService {
 
     List<Teacher> getAllTeacher();
 
-    Teacher getTeacherById(Long id);
+//    Teacher getTeacherById(Long id);
 
     List<Student> getAllStudent();
 
-    Student getStudentById(Long id);
+//    Student getStudentById(Long id);
 
     //新增课程
     public boolean addCourse(Course course);

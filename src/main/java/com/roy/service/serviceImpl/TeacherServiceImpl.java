@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.roy.mapper.*;
 import com.roy.model.*;
 import com.roy.service.CourseService;
+import com.roy.service.StudentService;
 import com.roy.service.TeacherService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,8 @@ public class TeacherServiceImpl implements TeacherService {
     private StuCourseMapper stuCourseDao;
     @Resource
     private CourseService courseService;
-
+    @Resource
+    private StudentService studentService;
     @Resource
     private TeacCourseMapper teacCourseDao;
     @Resource
@@ -44,18 +46,18 @@ public class TeacherServiceImpl implements TeacherService {
         return result>0;
     }
 
-    //根据老师id得到老师信息
+    //根据老师id查询老师信息
     @Override
     public Teacher getTeacByTeacId(Long teacId){
         Teacher teacher=teacherDao.selectByPrimaryKey(teacId);
         return teacher;
     }
-    //根据paperId得到试卷信息
+    //根据paperId查询试卷信息
     private Paper getPaperById(Long id){
         Paper paper = paperDao.selectByPrimaryKey(id);
         return paper;
     }
-    //根据课程id得到学生成绩对象
+    //根据教师课程id查询学生成绩对象
     @Override
     public List<StuScore> getAllStuScore(Long teacCourseId) {
         StuScoreExample example=new StuScoreExample();
@@ -65,7 +67,7 @@ public class TeacherServiceImpl implements TeacherService {
         return stuScores;
     }
 
-    //遍历teanId对应的学生成绩对象,得到所需要的stuScore对象的集合
+    //遍历teacId对应的学生成绩对象,查询所需要的stuScore对象的集合
     @Override
     public List<StuScore> getAllNeedStuScore(Long teacCourseId){
         List<StuScore> stuScores=this.getAllStuScore(teacCourseId);
@@ -73,10 +75,9 @@ public class TeacherServiceImpl implements TeacherService {
         List<StuScore> stuScores1=new ArrayList<>();
         for(int i=0;i<stuScores.size();i++){
             StuScore stuScore=stuScores.get(i);
-            //StuScore stuScore1=new StuScore();
-            String courseName= getCourseNameByteacCourseId( stuScore.getTeacCourseId()); //根据教师课程id去得到课程id--》课程名称
+            String courseName= getCourseNameByteacCourseId( stuScore.getTeacCourseId()); //根据教师课程id去查询课程id--》课程名称
             System.out.println("courseName"+courseName);
-            String stuName= getStuNameBystuId( stuScore.getStuId());  //根据学生id去得到学生姓名
+            String stuName= getStuNameBystuId( stuScore.getStuId());  //根据学生id去查询学生姓名
             System.out.println("stuName"+stuName);
             stuScore.setCourseName(courseName);
             stuScore.setStuName(stuName);
@@ -84,19 +85,19 @@ public class TeacherServiceImpl implements TeacherService {
             stuScore.setPaperState(state);
             stuScores1.add(stuScore);
         }
-        System.out.println("stuScores1"+stuScores1);
+        System.out.println("getAllNeedStuScore:"+stuScores1);
         return stuScores1;
     }
     /**
-     * 根据学生id去得到学生姓名
+     * 根据学生id去查询学生姓名
      */
     public String getStuNameBystuId(Long id){
-        Student student= courseService.getStudentById(id);
+        Student student= studentService.getStudentById(id);
         String stuName=student.getStuName();
         return stuName;
     }
     /**
-     * 根据teacCourseId去得到课程名称
+     * 根据teacCourseId去查询课程名称
      */
     public String getCourseNameByteacCourseId(Long teacCourseId){
         TeacCourse teacCourse = courseService.getTeacCourse(teacCourseId);
@@ -106,7 +107,7 @@ public class TeacherServiceImpl implements TeacherService {
         return courseName;
     }
     /**
-     * 根据teacCourseId去得到老师姓名
+     * 根据teacCourseId去查询老师姓名
      */
     private String getTeacNameByteacCourseId(Long teacCourseId){
         TeacCourse teacCourse = courseService.getTeacCourse(teacCourseId);
@@ -125,7 +126,7 @@ public class TeacherServiceImpl implements TeacherService {
     public PageInfo SearchAllNeedStuScoreByPageHelper(Integer pageIndex, Long teacCourseId) {
         List<StuScore> stuScores=this.getAllNeedStuScore(teacCourseId);
         System.out.println("stuScores++++++"+stuScores);
-       // PageHelper.startPage(pageIndex,5);
+        // PageHelper.startPage(pageIndex,5);
         PageInfo pageInfo=new PageInfo(stuScores);
         System.out.println("teacId对应课程的成绩的分页信息"+pageInfo);
         return pageInfo;
@@ -168,7 +169,7 @@ public class TeacherServiceImpl implements TeacherService {
         return pageInfo;
     }
 
-    //根据teacId去得到teacCourse中的记录
+    //根据teacId去查询teacCourse中的记录
     List<TeacCourse> getTeacCourseByTeacId(Long teacId){
         TeacCourseExample example=new TeacCourseExample();
         TeacCourseExample.Criteria criteria=example.createCriteria();
@@ -189,7 +190,7 @@ public class TeacherServiceImpl implements TeacherService {
         return result;
     }
 
-    //根据teacCourseId去查学生成绩表，得到学生成绩表的记录的集合,遍历集合得到分数为优秀的人数
+    //根据teacCourseId去查学生成绩表，查询学生成绩表的记录的集合,遍历集合查询分数为优秀的人数
     @Override
     public Map<String, Integer> getPieData(Long teacCourseId){
         Map<String,Integer> map=new LinkedHashMap<>();
@@ -277,7 +278,7 @@ public class TeacherServiceImpl implements TeacherService {
         return result;
     }
 
-    //根据teacCourseId得到这门课的所有学生的成绩
+    //根据teacCourseId查询这门课的所有学生的成绩
     @Override
     public List<StuScore> getStuScoreByTeacCourseId(Long teacCourseId) {
         StuScoreExample example=new StuScoreExample();
@@ -287,7 +288,7 @@ public class TeacherServiceImpl implements TeacherService {
 
         return stuScores;
     }
-    //根据teacCourseId对应的List<StuScore>去得到名字和成绩的map对象
+    //根据teacCourseId对应的List<StuScore>去查询名字和成绩的map对象
     @Override
     public Map<String,Integer> getMapNameandScore(Long teacCourseId){
         Map<String,Integer> map=new HashMap<>();
@@ -302,15 +303,14 @@ public class TeacherServiceImpl implements TeacherService {
 
     //对map对象进行排序
     @Override
-    public List<Map.Entry<String, Integer>> Order(Map<String,Integer> map){
-        List<Map.Entry<String, Integer>> infoIds = new ArrayList<Map.Entry<String, Integer>>(
-                map.entrySet());
+    public List<Map.Entry<String, Integer>> gradeOrder(Map<String,Integer> map){
+        List<Map.Entry<String, Integer>> infoIds = new ArrayList<Map.Entry<String, Integer>>(map.entrySet());
         System.out.println("--------------排序前--------------");
         for (int i = 0; i < infoIds.size(); i++) {
             String id = infoIds.get(i).toString();
             System.out.println(id);
         }
-// 排序
+        // 排序
         Collections.sort(infoIds, new Comparator<Map.Entry<String, Integer>>() {
             public int compare(Map.Entry<String, Integer> o1,
                                Map.Entry<String, Integer> o2) {

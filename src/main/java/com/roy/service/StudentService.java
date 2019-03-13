@@ -9,6 +9,8 @@ import java.util.List;
 
 //@Repository
 public interface StudentService {
+    Student getStudentById(Long id);
+
     //根据学号查询学生信息
     Student selectByAccount(String stuNum);
     //更新学生信息

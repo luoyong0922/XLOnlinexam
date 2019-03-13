@@ -50,11 +50,11 @@ public class AchievementController {
 
     //查看排名
     @RequestMapping("showGradeOrder/{courseName}")
-    public String showGrageOrder(@PathVariable("courseName") String courseName,
+    public String showGradeOrder(@PathVariable("courseName") String courseName,
                                  @RequestParam("teacCourseId") Long teacCourseId,Model model){
         Map<String,Integer> map=teacherService. getMapNameandScore(teacCourseId);
         //排序后
-        List<Map.Entry<String, Integer>> infoIds =teacherService.Order(map);
+        List<Map.Entry<String, Integer>> infoIds =teacherService.gradeOrder(map);
         model.addAttribute("infoIds",infoIds);
         model.addAttribute("courseName",courseName);
         return "teacher/showGradeByStuScore";

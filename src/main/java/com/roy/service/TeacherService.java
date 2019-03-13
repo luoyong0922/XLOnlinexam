@@ -53,5 +53,5 @@ public interface TeacherService {
     Map<String,Integer> getMapNameandScore(Long teacCourseId);
 
     //对map对象进行排序
-    List<Map.Entry<String, Integer>> Order(Map<String, Integer> map);
+    List<Map.Entry<String, Integer>> gradeOrder(Map<String, Integer> map);
 }

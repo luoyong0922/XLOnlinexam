@@ -36,6 +36,7 @@ public class PaperController {
         model.addAttribute("teacCourses", teacCourses);
         System.out.println(teacCourses);
         if(teaccourseid != null) {
+            System.out.println(teaccourseid);
             model.addAttribute("teaccourseId", teaccourseid);
             model.addAttribute("courseName", courseName);
         }
@@ -49,7 +50,7 @@ public class PaperController {
      */
     @RequestMapping(value = "doPublicPaper",method = RequestMethod.POST)
     @ResponseBody
-    public RespResult dopublishPaper(@RequestBody String data){//数据被覆盖
+    public RespResult doPublishPaper(@RequestBody String data){
         boolean result = false;
         //teaccourseid,testTime,类型，数量，分值......
         //单选题，多选题，判断题，填空题，计算题，主观题
