@@ -77,6 +77,48 @@ public class PaperServiceImpl implements PaperService {
     }
 
     @Override
+    public Map getPaperStandardById(Long id) {
+        PaperStandard paperStandard = paperStandardDao.selectByPrimaryKey(id);
+        List<PaperStandard> testType = jsonToArrayObject(paperStandard.getTestType(),PaperStandard.class);
+        Map map = new HashMap();
+        map.put("testAmount",paperStandard.getTestAmount());
+        map.put("testValue",paperStandard.getTestValue());
+        map.put("testTime",paperStandard.getTestTime());
+        for (int i = 0; i < testType.size(); i++) {
+            PaperStandard  standard = testType.get(i);
+            String type = standard.getTestType();
+            switch (type){
+                case "单选题" :
+                    map.put("selCount", standard.getTestAmount());
+                    map.put("selVal", standard.getTestValue());
+                    break;
+                case "填空题":
+                    map.put("fillCount", standard.getTestAmount());
+                    map.put("fillVal", standard.getTestValue());
+                    break;
+                case "多选题":
+                    map.put("mutilCount", standard.getTestAmount());
+                    map.put("mutilVal", standard.getTestValue());
+                    break;
+                case "判断题":
+                    map.put("judgeCount", standard.getTestAmount());
+                    map.put("judgeVal", standard.getTestValue());
+                    break;
+                case "计算题":
+                    map.put("calculateCount", standard.getTestAmount());
+                    map.put("calculateVal", standard.getTestValue());
+                    break;
+                case "主观题":
+                    map.put("subjectCount", standard.getTestAmount());
+                    map.put("subjectVal", standard.getTestValue());
+                    break;
+                default:break;
+            }
+        }
+        return map;
+    }
+
+    @Override
     public List<Paper> getPaperByIds(Long teaccourseId, Long stuId) {
         PaperExample example = new PaperExample();
         PaperExample.Criteria criteria = example.createCriteria();
@@ -132,11 +174,9 @@ public class PaperServiceImpl implements PaperService {
      * @return
      */
     private List jsonToArrayObject(String jsonStr, Class clazz){
-        JSONObject jsonObject = JSON.parseObject(jsonStr);
         String className = clazz.getSimpleName();
-        JSONArray jsonArray = jsonObject.getJSONArray(className);
-        List parseObjectList = JSON.parseObject(jsonArray.toJSONString(), new TypeReference<List>() { });
-        return parseObjectList;
+        List objectList = JSON.parseArray(JSON.parseObject(jsonStr).getString(className), clazz);
+        return objectList;
     }
 
     /**
@@ -205,7 +245,6 @@ public class PaperServiceImpl implements PaperService {
             }
 
         }
-
         //所有单选题
         List<Select> allSelects=this.getQuestionsByExamId(2);
         for(int i=0;i<allSelects.size();i++){

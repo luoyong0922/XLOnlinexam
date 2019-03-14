@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/paperController")
@@ -34,9 +35,8 @@ public class PaperController {
         Long id = (Long) session.getAttribute("id");
         List<TeacCourse> teacCourses = courseService.getTeacCoursesMessage(id,0L);
         model.addAttribute("teacCourses", teacCourses);
-        System.out.println(teacCourses);
+        model.addAttribute("role","teacher");
         if(teaccourseid != null) {
-            System.out.println(teaccourseid);
             model.addAttribute("teaccourseId", teaccourseid);
             model.addAttribute("courseName", courseName);
         }
@@ -45,68 +45,21 @@ public class PaperController {
 
     /**
      * 教师发布考试标准
-     * @param data
+     * @param
      * @return
      */
     @RequestMapping(value = "doPublicPaper",method = RequestMethod.POST)
     @ResponseBody
-    public RespResult doPublishPaper(@RequestBody String data){
-        boolean result = false;
-        //teaccourseid,testTime,类型，数量，分值......
+    public RespResult doPublishPaper(@RequestBody PaperStandard standard){
         //单选题，多选题，判断题，填空题，计算题，主观题
-        List<String> datas = Arrays.asList(data.split(","));
         RespResult respResult = new RespResult();
-        if(paperService.getPaperStandard(Long.valueOf(datas.get(0).trim())).size()>0){//已存在记录
-            return new RespResult("default","你已发布过该考试！");
-        }
-        if(datas.get(0).trim() == null || "".equals(datas.get(0).trim()) ||
-                "#".equals(datas.get(1).trim())) {//数据不全，教师课程id为空或考试时长为空
-
-            respResult.setCode("default");
-            respResult.setMessage("请设置考试时长！");
-        }else{
-            //记录试题规格
-            List<PaperStandard> paperStandards = new ArrayList<>();
-            Long teacCourseId = Long.valueOf(datas.get(0).trim());
-            Integer type = Integer.valueOf(datas.get(1).trim());
-            int amount;
-            int value;
-            //获取所有题型对象
-            for (int i = 2; i < datas.size();) {
-                PaperStandard paperStandard = new PaperStandard();
-                //设置试题规格属性
-                paperStandard.setTeacCourseId(teacCourseId);
-                paperStandard.setTestTime(type);
-                //从第二项开始，每3项为一种题型的属性
-                paperStandard.setTestType(datas.get(i));
-                if ("#".equals(datas.get(i+1).trim())) {//默认为0
-                    amount = 0;
-                }else {
-                    amount = Integer.valueOf(datas.get(i+1).trim());
-                }
-                if ("#".equals(datas.get(i+2).trim())) {//默认为0
-                    value = 0;
-                }else {
-                    value = Integer.valueOf(datas.get(i+2).trim());
-                }
-                paperStandard.setTestAmount(amount);
-                paperStandard.setTestValue(value);
-                i = i+3;
-                paperStandards.add(paperStandard);
-            }
-            //遍历集合，新增记录
-            for (PaperStandard p: paperStandards) {
-                result = paperService.insertIntoPaperStandard(p);
-                System.out.println("publishPaperPage"+p);
-                if(!result){//新增失败
-                    respResult.setCode("default");
-                    respResult.setMessage("发布考试失败，请稍后重试！");
-                }
-            }
-        }
+        boolean result = paperService.insertIntoPaperStandard(standard);
         if(result){
             respResult.setCode("success");
             respResult.setMessage("发布考试成功");
+        }else {//新增失败
+            respResult.setCode("default");
+            respResult.setMessage("发布考试失败，请稍后重试！");
         }
         return respResult;
     }
@@ -120,17 +73,35 @@ public class PaperController {
      */
     //得到试卷的规格
     @RequestMapping("getPaperStandard")
-    public String showPaperStandard(@RequestParam("tI") Long teaccourseId,
+    public String getPaperStandard(@RequestParam("tI") Long teaccourseId,
                                     @RequestParam("cN") String courseName,
                                     Model model){
         List<PaperStandard> paperStandards= paperService.getPaperStandard(teaccourseId);
         if(paperStandards.size()>0) {
             model.addAttribute("paperStandards", paperStandards);
-            model.addAttribute("testTime", paperStandards.get(0).getTestTime());
         }
         model.addAttribute("teaccourseId",teaccourseId);
         model.addAttribute("courseName",courseName);
         return "student/toExam";
+    }
+
+    /**
+     * 学生查看考试通知详情
+     * @param teaccourseId
+     * @param courseName
+     * @param model
+     * @return
+     */
+    @RequestMapping("showPaperStandard")
+    public String showPaperStandard(@RequestParam("cN") String courseName,
+                                    @RequestParam("pI") Long paperStandardId,
+                                    Model model){
+        Map paperStandards= paperService.getPaperStandardById(paperStandardId);
+        if(paperStandards.size()>0) {
+            model.addAttribute("standardMap", paperStandards);
+        }
+        model.addAttribute("courseName",courseName);
+        return "paper/showPaperStandard";
     }
 
 
@@ -175,8 +146,8 @@ public class PaperController {
                 return "redirect:/studentController/toStudentIndex";
             }
         }
-            System.out.println("交卷*********失败");
-            return "redirect:/studentController/toStudentIndex";
+        System.out.println("交卷*********失败");
+        return "redirect:/studentController/toStudentIndex";
 
 
     }
@@ -300,7 +271,7 @@ public class PaperController {
 
         List<Long> ids = new ArrayList<>();
         ids.add(adminViewQuestion.getId());
-       int result= paperService.deleteQuestion(ids,adminViewQuestion.getQuestionType());
+        int result= paperService.deleteQuestion(ids,adminViewQuestion.getQuestionType());
         if(result>0){
             return new RespResult("success","删除成功！");
 

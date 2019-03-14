@@ -15,34 +15,32 @@
         <td>课程名称</td>
         <td><strong>${courseName!}</strong></td>
     </tr>
-         <#if testTime??>
-        <tr>
-            <td>考试时长</td>
-            <td><strong>${testTime!}</strong>分钟</td>
-        </tr>
+         <#if paperStandards??>
+        
     </table>
         <table class="table table-hover" id="Test">
             <thead>
             <tr>
                 <th>序号</th>
-                <th>试题类型</th>
-                <th>试题数量</th>
-                <th>试题分值</th>
+                <th>测评单元</th>
+                <th>测评周次</th>
+                <th>测评时长（分钟)</th>
+                <th>操作</th>
             </tr>
             </thead>
             <tbody>
-
                     <#list paperStandards as paperStandard>
                     <tr>
                         <td>${paperStandard?counter}</td>
-                        <td>${paperStandard.testType!}</td>
-                        <td>${paperStandard.testAmount!}</td>
-                        <td>${paperStandard.testValue!}</td>
+                        <td>第${paperStandard.testAmount!}单元</td>
+                        <td>测评${paperStandard.testValue!}</td>
+                        <td>${paperStandard.testTime!} min</td>
+                        <td><a href="${rc.contextPath}/paperController/showPaperStandard?cN=${courseName!}&pI=${paperStandard.id}" class="btn btn-info center-block">查看详情</a></td>
                     </tr>
                     </#list>
             </tbody>
         </table>
-                <a href="${rc.contextPath}/paperController/intoTest/${testTime!}?teaccourseid=${teaccourseId!}&cN=${courseName!}" class="btn btn-info center-block">进入考试</a>
+               
          <#else>
                     <tr><td></td><td style="font-size: 20px;font-weight:400;">暂无通知</td></tr>
           </tbody>

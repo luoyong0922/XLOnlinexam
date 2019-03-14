@@ -2,12 +2,9 @@ package com.roy.service;
 
 import com.github.pagehelper.PageInfo;
 import com.roy.model.*;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpSession;
-import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +15,8 @@ public interface PaperService {
     public boolean insertIntoPaperStandard(PaperStandard p);
     //查询考试规格信息
     public List<PaperStandard> getPaperStandard(Long id);
+
+    Map getPaperStandardById(Long id);
 
     //根据教师课程ID和学生ID查询考试记录
     public List<Paper> getPaperByIds(Long teaccourseId,Long stuId);
