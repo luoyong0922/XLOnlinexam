@@ -1,9 +1,6 @@
 package com.roy.service.serviceImpl;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.TypeReference;
 import com.github.pagehelper.PageInfo;
 import com.roy.mapper.*;
 import com.roy.model.*;
@@ -62,11 +59,10 @@ public class PaperServiceImpl implements PaperService {
     String subjectIds;
 
     /**
-     * 根据教师课程id查询测评标准 （学生查看测评通知）
+     * 根据教师课程id查询测评标准 （查看测评通知列表）
      * @param teac_course_id
      * @return
      */
-    //得到对应课程的试卷标准
     @Override
     public List<PaperStandard> getPaperStandard(Long teac_course_id) {
         PaperStandardExample example = new PaperStandardExample();
@@ -76,6 +72,11 @@ public class PaperServiceImpl implements PaperService {
         return paperStandards;
     }
 
+    /**
+     * 查看测评详情
+     * @param id
+     * @return
+     */
     @Override
     public Map getPaperStandardById(Long id) {
         PaperStandard paperStandard = paperStandardDao.selectByPrimaryKey(id);
@@ -84,6 +85,7 @@ public class PaperServiceImpl implements PaperService {
         map.put("testAmount",paperStandard.getTestAmount());
         map.put("testValue",paperStandard.getTestValue());
         map.put("testTime",paperStandard.getTestTime());
+        map.put("id",paperStandard.getId());
         for (int i = 0; i < testType.size(); i++) {
             PaperStandard  standard = testType.get(i);
             String type = standard.getTestType();
@@ -126,45 +128,6 @@ public class PaperServiceImpl implements PaperService {
         criteria.andTeacCourseIdEqualTo(teaccourseId);
         List<Paper> papers = paperDao.selectByExample(example);
         return papers;
-    }
-
-
-    /**
-     * 根据teac_course_id得到对应课程的试卷标准
-     * @param teac_course_id
-     * @return
-     */
-
-    @Override
-    public Map getPaperStandardMap(Long teac_course_id) {
-        PaperStandardExample example = new PaperStandardExample();
-        PaperStandardExample.Criteria criteria = example.createCriteria();
-        criteria.andTeacCourseIdEqualTo(teac_course_id);
-        List<PaperStandard> paperStandards = paperStandardDao.selectByExample(example);
-        Map map = new HashMap();
-        for (int i = 0; i < paperStandards.size(); i++) {
-            PaperStandard paperStandard = paperStandards.get(i);
-            if ("单选题".equals(paperStandard.getTestType())) {
-                map.put("selCount", paperStandard.getTestAmount());
-                map.put("selVal", paperStandard.getTestValue());
-            } else if ("填空题".equals(paperStandard.getTestType())) {
-                map.put("fillCount", paperStandard.getTestAmount());
-                map.put("fillVal", paperStandard.getTestValue());
-            } else if ("多选题".equals(paperStandard.getTestType())) {
-                map.put("mutilCount", paperStandard.getTestAmount());
-                map.put("mutilVal", paperStandard.getTestValue());
-            } else if ("判断题".equals(paperStandard.getTestType())) {
-                map.put("judgeCount", paperStandard.getTestAmount());
-                map.put("judgeVal", paperStandard.getTestValue());
-            } else if ("计算题".equals(paperStandard.getTestType())) {
-                map.put("calculateCount", paperStandard.getTestAmount());
-                map.put("calculateVal", paperStandard.getTestValue());
-            } else if ("主观题".equals(paperStandard.getTestType())) {
-                map.put("subjectCount", paperStandard.getTestAmount());
-                map.put("subjectVal", paperStandard.getTestValue());
-            }
-        }
-        return map;
     }
 
     /**
@@ -780,16 +743,17 @@ public class PaperServiceImpl implements PaperService {
     /**
      * 生成试卷
      *
-     * @param teaccourseid
+     * @param paperStandardId
      * @param stuid
      * @param model
      * @return
      */
     @Override
-    public Model createPaper(@RequestParam("teaccourseid") Long teaccourseid,
-                             @RequestParam("stuid") Long stuid, Model model) {
+    public Model createPaper(@RequestParam("standardId") Long paperStandardId,
+                             @RequestParam("stuid") Long stuid,
+                             Model model) {
 
-        Map paperStandardMap = getPaperStandardMap(teaccourseid);
+        Map paperStandardMap = getPaperStandardById(paperStandardId);
         selCount = (int) paperStandardMap.get("selCount");
         fillCount = (int) paperStandardMap.get("fillCount");
         mutilCount = (int) paperStandardMap.get("mutilCount");
@@ -797,45 +761,46 @@ public class PaperServiceImpl implements PaperService {
         calculateCount = (int) paperStandardMap.get("calculateCount");
         subjectCount = (int) paperStandardMap.get("subjectCount");
         Map map = new HashMap();
-
+        String unit = String.valueOf(paperStandardMap.get("testAmount"));
+        Long teaccourseid = getTeacCourseIdByPaperStandardId(paperStandardId);
         if (selCount > 0) {
-            map = getSelect(teaccourseid, selCount);
+            map = getSelect(teaccourseid, selCount, unit);
             selIds = myTrim(map.get("randomselectIds").toString());
             model.addAttribute("selects", map.get("selects"));
         }
 
         if (fillCount > 0) {
-            map = getFill(teaccourseid, fillCount);
+            map = getFill(teaccourseid, fillCount, unit);
             fillIds = myTrim(map.get("randomFillIds").toString());
             model.addAttribute("fills", map.get("fills"));
         }
 
         if (mutilCount > 0) {
-            map = getMutilSelect(teaccourseid, mutilCount);
+            map = getMutilSelect(teaccourseid, mutilCount, unit);
             mutilIds = myTrim(map.get("randomMutilIds").toString());
             model.addAttribute("multiSelects", map.get("multiSelects"));
         }
 
         if (judgeCount > 0) {
-            map = getJudge(teaccourseid, judgeCount);
+            map = getJudge(teaccourseid, judgeCount, unit);
             judgeIds = myTrim(map.get("randomJudgeIds").toString());
             model.addAttribute("judges", map.get("judges"));
         }
 
         if (calculateCount > 0) {
-            map = getCalculate(teaccourseid, calculateCount);
+            map = getCalculate(teaccourseid, calculateCount, unit);
             calculateIds = myTrim(map.get("randomCalculateIds").toString());
             model.addAttribute("calculates", map.get("calculates"));
         }
 
         if (subjectCount > 0) {
-            map = getSubject(teaccourseid, subjectCount);
+            map = getSubject(teaccourseid, subjectCount, unit);
             subjectIds = myTrim(map.get("randomSubjectIds").toString());
             model.addAttribute("subjects", map.get("subjects"));
         }
 
         Paper paper = new Paper();
-        paper.setTeacCourseId(teaccourseid);
+        paper.setTeacCourseId(paperStandardId);
         paper.setStuId(stuid);
         paper.setSelectionIds(selIds);
         paper.setMultiSelectionIds(mutilIds);
@@ -847,7 +812,7 @@ public class PaperServiceImpl implements PaperService {
         boolean flag = paperDao.insertSelective(paper) > 0;
 
         if (flag) {
-            Long paperId = searchPaperByIds(null, teaccourseid, stuid).getId();
+            Long paperId = searchPaperByIds(null, paperStandardId, stuid).getId();
             System.out.println("试卷生成成功");
             model.addAttribute("paperid", paperId);
             model.addAttribute("stuId", stuid);
@@ -860,6 +825,15 @@ public class PaperServiceImpl implements PaperService {
 
     }
 
+    /**
+     * 根据paperStandardId 查询 teacCourseId
+     * @param standardId
+     * @return
+     */
+    private Long getTeacCourseIdByPaperStandardId(Long standardId){
+        PaperStandard paperStandard = paperStandardDao.selectByPrimaryKey(standardId);
+        return paperStandard != null ? paperStandard.getTeacCourseId() : 1L;
+    }
     /**
      * 更新试卷信息
      *学生交卷
@@ -883,8 +857,7 @@ public class PaperServiceImpl implements PaperService {
     public Model toMarking(Long id, int score6, Model model,String role){
 
         Paper paper = paperDao.selectByPrimaryKey(id);
-        model.addAttribute("standard",getPaperStandardMap(paper.getTeacCourseId()));
-        System.out.println("standard"+getPaperStandardMap(paper.getTeacCourseId()));
+        model.addAttribute("standard",getPaperStandardById(paper.getTeacCourseId()));
         model.addAttribute("paperid",paper.getId());
         //试题
         String selectIds = paper.getSelectionIds();
@@ -1101,7 +1074,7 @@ public class PaperServiceImpl implements PaperService {
         //获取试卷
         Paper paper = paperDao.selectByPrimaryKey(id);
         //获取试卷规格
-        Map paperStandardMap= getPaperStandardMap(paper.getTeacCourseId());
+        Map paperStandardMap= getPaperStandardById(paper.getTeacCourseId());
         int selValue = (int)paperStandardMap.get("selVal");
         int fillVal = (int)paperStandardMap.get("fillVal");
         int mutilVal = (int)paperStandardMap.get("mutilVal");
@@ -1220,9 +1193,12 @@ public class PaperServiceImpl implements PaperService {
 
     //根据教师课程id查询所有sel_ids
     @Override
-    public List<String> selectAllSelectsIds(Long teaccourseid) {
+    public List<String> selectAllSelectsIds(Long teaccourseid, String unit) {
         SelectExample example=new SelectExample();
         SelectExample.Criteria criteria=example.createCriteria();
+        if(unit != null){
+            criteria.andDificultEqualTo(unit);
+        }
         criteria.andTeacCourseIdEqualTo(teaccourseid);
         List<Select>  selects=selectDao.selectByExample(example);
         List<String> selectIds=new ArrayList<>();
@@ -1243,9 +1219,12 @@ public class PaperServiceImpl implements PaperService {
     }
     //根据教师课程id查询所有多项选择题的mutil_id
     @Override
-    public List<String> selectAllMutilSelectsIds(Long teaccourseid) {
+    public List<String> selectAllMutilSelectsIds(Long teaccourseid, String unit) {
         MultiSelectExample example=new MultiSelectExample();
         MultiSelectExample .Criteria criteria=example.createCriteria();
+        if(unit != null){
+            criteria.andDificultEqualTo(unit);
+        }
         criteria.andTeacCourseIdEqualTo(teaccourseid);
         List<MultiSelect> multiSelects=multiSelectDao.selectByExample(example);
 
@@ -1267,9 +1246,12 @@ public class PaperServiceImpl implements PaperService {
     }
     //根据教师课程id查询所有填空题的fill_id
     @Override
-    public List<String> selectAllFillIds(Long teaccourseid) {
+    public List<String> selectAllFillIds(Long teaccourseid, String unit) {
         FillExample example=new FillExample();
         FillExample.Criteria criteria=example.createCriteria();
+        if(unit != null){
+            criteria.andDificultEqualTo(unit);
+        }
         criteria.andTeacCourseIdEqualTo(teaccourseid);
         List<Fill> fills=fillDao.selectByExample(example);
         List<String> fillIds=new ArrayList<>();
@@ -1291,9 +1273,12 @@ public class PaperServiceImpl implements PaperService {
     //根据教师课程id查询所有计算题的calculate_id
 
     @Override
-    public List<String> selectAllCalculateIds(Long teaccourseid) {
+    public List<String> selectAllCalculateIds(Long teaccourseid, String unit) {
         CalculateExample example=new  CalculateExample();
         CalculateExample.Criteria criteria=example.createCriteria();
+        if(unit != null){
+            criteria.andDificultEqualTo(unit);
+        }
         criteria.andTeacCourseIdEqualTo(teaccourseid);
         List<Calculate> calculates=calculateDao.selectByExample(example);
         List<String> calculateIds=new ArrayList<>();
@@ -1314,9 +1299,12 @@ public class PaperServiceImpl implements PaperService {
     }
     //根据教师课程id查询所有判断题的judgeId
     @Override
-    public List<String> selectAllJudegeIds(Long teaccourseid) {
+    public List<String> selectAllJudegeIds(Long teaccourseid, String unit) {
         JudgeExample example=new JudgeExample();
         JudgeExample.Criteria criteria=example.createCriteria();
+        if(unit != null){
+            criteria.andDificultEqualTo(unit);
+        }
         criteria.andTeacCourseIdEqualTo(teaccourseid);
         List<Judge> judges=judgeDao.selectByExample(example);
         List<String> judgeIds=new ArrayList<>();
@@ -1337,9 +1325,12 @@ public class PaperServiceImpl implements PaperService {
     }
     //根据教师课程id查询所有subject_id
     @Override
-    public List<String> selectAllSubjectIds(Long teaccourseid) {
+    public List<String> selectAllSubjectIds(Long teaccourseid, String unit) {
         SubjectExample example=new SubjectExample();
         SubjectExample.Criteria criteria=example.createCriteria();
+        if(unit != null){
+            criteria.andDificultEqualTo(unit);
+        }
         criteria.andTeacCourseIdEqualTo(teaccourseid);
         List<Subject> subjects=subjectDao.selectByExample(example);
         List<String> subjectIds=new ArrayList<>();
@@ -1403,12 +1394,12 @@ public class PaperServiceImpl implements PaperService {
      * @param teaccourseid
      * @return
      */
-    public Map getSelect(@RequestParam("teaccourseid") Long teaccourseid, int count){
+    public Map getSelect(@RequestParam("teaccourseid") Long teaccourseid, int count, String unit){
         Map map = new HashMap();
         //最终随机生成的单选题的sel_id的集合
         List<Select> selects = new ArrayList<>();
         //对应课程的所有单选题的sek-id集合
-        List<String> selectIds = selectAllSelectsIds(teaccourseid);
+        List<String> selectIds = selectAllSelectsIds(teaccourseid, unit);
 
         List<String> randomselectIds = getRandomIds(selectIds,count);
         for(int i=0;i<randomselectIds.size();i++){
@@ -1427,11 +1418,11 @@ public class PaperServiceImpl implements PaperService {
      * @return
      */
 
-    public Map getMutilSelect(@RequestParam("teaccourseid") Long teaccourseid,int count){
+    public Map getMutilSelect(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit){
         Map map = new HashMap();
         //多项选择题
         //对应课程的所有多选题的multi-id集合
-        List<String> multiselectIds= selectAllMutilSelectsIds(teaccourseid);
+        List<String> multiselectIds= selectAllMutilSelectsIds(teaccourseid,unit);
         // 生成随机试题集合
         List<String> randomMutilIds= getRandomIds(multiselectIds,count);
         //根据上面得到的随机生成的randomMutilIds去把多项选择题取出
@@ -1451,11 +1442,11 @@ public class PaperServiceImpl implements PaperService {
      * @param count
      * @return
      */
-    public Map getFill(@RequestParam("teaccourseid") Long teaccourseid,int count){
+    public Map getFill(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit){
         Map map = new HashMap();
         //填空题
         //对应课程的所有填空题的fill-id集合
-        List<String> fillIds= selectAllFillIds(teaccourseid);
+        List<String> fillIds= selectAllFillIds(teaccourseid, unit);
         // 生成随机试题集合
         List<String> randomFillIds= getRandomIds(fillIds,count);
         //根据randomFillIds去取题目
@@ -1475,10 +1466,10 @@ public class PaperServiceImpl implements PaperService {
      * @param count
      * @return
      */
-    public Map getCalculate(@RequestParam("teaccourseid") Long teaccourseid,int count){
+    public Map getCalculate(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit){
         Map map = new HashMap();
         //计算题
-        List<String> calculateIds= selectAllCalculateIds(teaccourseid);
+        List<String> calculateIds= selectAllCalculateIds(teaccourseid , unit);
         // 生成随机试题集合
         List<String> randomCalculateIds= getRandomIds(calculateIds,count);
         //根据randomCalculateIds去取题目
@@ -1499,11 +1490,11 @@ public class PaperServiceImpl implements PaperService {
      * @param count
      * @return
      */
-    public Map getJudge(@RequestParam("teaccourseid") Long teaccourseid,int count){
+    public Map getJudge(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit){
         Map map = new HashMap();
 
         // 判断题
-        List<String> judgeIds = selectAllJudegeIds(teaccourseid);
+        List<String> judgeIds = selectAllJudegeIds(teaccourseid , unit);
         //生成随机试题集合
         List<String> randomJudgeIds = getRandomIds(judgeIds, count);
         //根据randomJudgeIds取判断题
@@ -1524,10 +1515,10 @@ public class PaperServiceImpl implements PaperService {
      * @param count
      * @return
      */
-    public Map getSubject(@RequestParam("teaccourseid") Long teaccourseid, int count){
+    public Map getSubject(@RequestParam("teaccourseid") Long teaccourseid, int count, String unit){
         Map map = new HashMap();
         //subject题
-        List<String> subjectIds= selectAllSubjectIds(teaccourseid);
+        List<String> subjectIds= selectAllSubjectIds(teaccourseid , unit);
         // 生成随机试题集合
         List<String> randomSubjectIds = getRandomIds(subjectIds,count);
         //根据 randomSubjectIds取对应的试题

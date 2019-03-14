@@ -73,4 +73,12 @@
 			<input type="button" class="btn btn-info" style="padding:10px 76px; font-size:19px; margin-left: 43%;" value="开始测评" id="startTest" />
 			<div id="loading" style="display: none;"></div>
 	</body>
+	<script>
+	$('#startTest').click(function() {
+	    var time = ${standardMap["testTime"]};
+	    var standardId = ${standardMap["id"]};
+	    var courseName = "${courseName}";
+	    window.location = "${rc.contextPath}/paperController/intoTest/"+time+"?standardId="+standardId+"&cN="+courseName;
+	});
+	</script>
 </html>

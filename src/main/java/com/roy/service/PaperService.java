@@ -34,7 +34,7 @@ public interface PaperService {
     ///////////////////////////////////
 
     //得到对应课程的试卷标准
-    Map getPaperStandardMap(Long teac_course_id);
+//    Map getPaperStandardMap(Long teac_course_id);
 
     //老师阅卷
     boolean updatePaper(Paper paper);
@@ -44,51 +44,51 @@ public interface PaperService {
                              @RequestParam("stuid") Long stuid, Model model);
 
     //得到所有这门课程的sel_ids
-    List<String> selectAllSelectsIds(Long teaccourseid);
+    List<String> selectAllSelectsIds(Long teaccourseid, String unit);
 
     //根据sel_id去找试题
     Select getSelectBysel_id(String selId);
 
     //所有多项选择题的mutil_id
-    List<String> selectAllMutilSelectsIds(Long teaccourseid);
+    List<String> selectAllMutilSelectsIds(Long teaccourseid, String unit);
 
     //获得多项选择题题目
     MultiSelect getMultiSelectsByMultiId(String multiId);
 
     //所有填空题的fill_id
-    List<String> selectAllFillIds(Long teaccourseid);
+    List<String> selectAllFillIds(Long teaccourseid, String unit);
 
     //根据fill_id得到填空题
     Fill getFillByFillId(String fillId);
 
-    List<String> selectAllCalculateIds(Long teaccourseid);
+    List<String> selectAllCalculateIds(Long teaccourseid, String unit);
 
     //根据calculate_id获得计算题
     Calculate getCalculateByCalculateId(String calculateId);
 
     //所有判断题的judgeId
-    List<String> selectAllJudegeIds(Long teaccourseid);
+    List<String> selectAllJudegeIds(Long teaccourseid, String unit);
 
     //根据judgeId取判断题
     Judge getJudgeByJudgeId(String judgeId);
 
     //所有subject_id
-    List<String> selectAllSubjectIds(Long teaccourseid);
+    List<String> selectAllSubjectIds(Long teaccourseid, String unit);
 
     //根据subject_id取subject题
     Subject getSubjectBySubjectId(String subjectId);
 
-    public Map getSelect(@RequestParam("teaccourseid") Long teaccourseid, int count);
+    public Map getSelect(@RequestParam("teaccourseid") Long teaccourseid, int count, String unit);
 
-    public Map getMutilSelect(@RequestParam("teaccourseid") Long teaccourseid,int count);
+    public Map getMutilSelect(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit);
 
-    public Map getFill(@RequestParam("teaccourseid") Long teaccourseid,int count);
+    public Map getFill(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit);
 
-    public Map getCalculate(@RequestParam("teaccourseid") Long teaccourseid,int count);
+    public Map getCalculate(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit);
 
-    public Map getJudge(@RequestParam("teaccourseid") Long teaccourseid,int count);
+    public Map getJudge(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit);
 
-    public Map getSubject(@RequestParam("teaccourseid") Long teaccourseid,int count);
+    public Map getSubject(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit);
 
     public String myTrim(String s);
 

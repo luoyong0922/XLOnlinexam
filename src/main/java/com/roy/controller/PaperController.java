@@ -65,7 +65,7 @@ public class PaperController {
     }
 
     /**
-     * 学生查看考试通知
+     * 学生查看考试通知列表
      * @param teaccourseId
      * @param courseName
      * @param model
@@ -87,7 +87,7 @@ public class PaperController {
 
     /**
      * 学生查看考试通知详情
-     * @param teaccourseId
+     * @param paperStandardId
      * @param courseName
      * @param model
      * @return
@@ -107,22 +107,23 @@ public class PaperController {
 
     /**
      * 学生开始考试或查看考试详情
-     * @param teaccourseid
+     * @param standardId
      * @param model
      * @return
      */
     @RequestMapping("intoTest/{testTime}")
-    public String ToTest(@RequestParam("teaccourseid") Long teaccourseid,
+    public String ToTest(@RequestParam("standardId") Long standardId,
                          @RequestParam("cN") String courseName,
                          @PathVariable Integer testTime,
                          Model model, HttpSession session){
         Long stuid = (Long) session.getAttribute("id");
         model.addAttribute("courseName",courseName);
         model.addAttribute("testTime",testTime);
-        if(teaccourseid != null && !"".equals(teaccourseid) && stuid != null){
-            List<Paper> papers = paperService.getPaperByIds(teaccourseid,stuid);
+        if(standardId != null && !"".equals(standardId) && stuid != null){
+            List<Paper> papers = paperService.getPaperByIds(standardId,stuid);
+            System.out.println("----------"+papers);
             if(papers.size() == 0) {//不存在该学生的考试记录
-                model = paperService.createPaper(teaccourseid, stuid, model);
+                model = paperService.createPaper(standardId, stuid, model);
             }else {
                 return "redirect:/paperController/toMarking/"+papers.get(0).getId();
             }
