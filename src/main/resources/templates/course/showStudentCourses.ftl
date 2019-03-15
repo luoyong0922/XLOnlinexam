@@ -7,14 +7,8 @@
 </head>
 <body>
 <div class="container" style="margin-top: 40px;">
-<#--<form action="${rc.contextPath}/getAllCourseByPage" method="post">-->
-    <#--课程名称:<input type="text" name="courseName" value="${courseName}"/>-->
-    <#--<input type="text" name="pageIndex" id="pageIndex" value="1" style="display: none"/>-->
-    <#--<input type="submit" value="搜索">-->
-<#--</form>-->
     <table class="table table-hover" id="Test">
         <tr>
-            <#--<th>序号</th>-->
             <th>课程名称</th>
             <th>授课老师</th>
             <th>开课时间</th>
@@ -27,7 +21,6 @@
         <tbody>
     <#list pageInfo.list as courseManage>
         <tr>
-            <#--<td >${courseManage?counter}</td>-->
             <td style="display: none" id="teaccourseid">${courseManage.id!}</td>
             <td>${courseManage.courseName!}</td>
             <td>${courseManage.teacName!}</td>

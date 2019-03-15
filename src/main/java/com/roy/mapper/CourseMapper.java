@@ -95,4 +95,10 @@ public interface CourseMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(Course record);
+
+    Course getCourseByteacCourseId(@Param("tcId") Long tcId);
+
+    Course getCourseByStandardId(@Param("standardId") Long standardId);
+
+    Long getTeacCourseIdByStandardId(@Param("standardId")Long standardId);
 }

@@ -10,10 +10,9 @@
     <table class="table table-hover" id="Test">
         <thead>
         <tr>
-            <th>序号</th>
             <th>课程名称</th>
             <th>课程学分</th>
-            <th>老师名字</th>
+            <th>授课老师</th>
             <th>开课时间</th>
             <th>结课时间</th>
             <th colspan="4" style="text-align: center;">操作</th>
@@ -22,7 +21,6 @@
         <tbody>
     <#list pageInfo.list as teacCourse>
         <tr>
-            <td >${teacCourse?counter}</td>
             <td>${teacCourse.courseName}</td>
             <td>${teacCourse.courseCredit}</td>
             <td>${teacCourse.teacName}</td>

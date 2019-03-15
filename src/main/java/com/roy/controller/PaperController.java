@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,7 +37,6 @@ public class PaperController {
         Long id = (Long) session.getAttribute("id");
         List<TeacCourse> teacCourses = courseService.getTeacCoursesMessage(id,0L);
         model.addAttribute("teacCourses", teacCourses);
-        model.addAttribute("role","teacher");
         if(teaccourseid != null) {
             model.addAttribute("teaccourseId", teaccourseid);
             model.addAttribute("courseName", courseName);
@@ -65,7 +66,7 @@ public class PaperController {
     }
 
     /**
-     * 学生查看考试通知列表
+     * 查看考试通知列表
      * @param teaccourseId
      * @param courseName
      * @param model
@@ -75,13 +76,17 @@ public class PaperController {
     @RequestMapping("getPaperStandard")
     public String getPaperStandard(@RequestParam("tI") Long teaccourseId,
                                     @RequestParam("cN") String courseName,
-                                    Model model){
+                                    Model model,HttpSession session){
         List<PaperStandard> paperStandards= paperService.getPaperStandard(teaccourseId);
         if(paperStandards.size()>0) {
             model.addAttribute("paperStandards", paperStandards);
         }
         model.addAttribute("teaccourseId",teaccourseId);
         model.addAttribute("courseName",courseName);
+        String role = (String) session.getAttribute("role");
+        if(role.equals("teacher")){
+            return "paper/toShowPaper";
+        }
         return "student/toExam";
     }
 
@@ -138,17 +143,22 @@ public class PaperController {
      * @return
      */
     @RequestMapping("finishTest/{time}")
-    public String finishTest(Paper paper,@PathVariable Integer time){
-        boolean result = paperService.updatePaper(paper);
-        if(result){
-            boolean result2 = paperService.addStuScoreSelective(paper,time);
-            if(result2) {
-                System.out.println("交卷*********成功");
-                return "redirect:/studentController/toStudentIndex";
+    public String finishTest(Paper paper,@PathVariable Integer time) throws UnsupportedEncodingException {
+        if(paper.getId() != null && paper.getTeacCourseId() != null) {
+            boolean result = paperService.updatePaper(paper);
+            Long teacCourseId = (Long) paperService.getPaperStandardById(paper.getTeacCourseId()).get("tcId");
+            String courseName = courseService.getCourseByteacCourseId(teacCourseId).getCourseName();
+
+            if (result) {
+                boolean result2 = paperService.addStuScoreSelective(paper, time);
+                if (result2) {
+                    System.out.println(courseName+"------"+"交卷*********成功");
+                    return "redirect:/paperController/getPaperStandard?tI=" + teacCourseId + "&cN=" + URLEncoder.encode(courseName,"UTF-8");//解决中文乱码问题
+                }
             }
         }
         System.out.println("交卷*********失败");
-        return "redirect:/studentController/toStudentIndex";
+        return "redirect:/to500";
 
 
     }
@@ -185,7 +195,12 @@ public class PaperController {
                             Model model,HttpSession session){
         String role = (String) session.getAttribute("role");
         paperService.toMarking(id,score6,model,role);
-        return "redirect:/teacherController/getAllstuScore";
+        Long standardId = 0L;
+        Paper paper = paperService.getPaperById(id);
+        if(paper != null){
+            standardId = paper.getTeacCourseId();
+        }
+        return "redirect:/achievementController/getAllstuScore?teacCourseId="+ standardId;
 
     }
 

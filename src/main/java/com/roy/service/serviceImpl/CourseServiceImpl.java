@@ -59,6 +59,17 @@ public class CourseServiceImpl implements CourseService {
         Course course = courseDao.selectByPrimaryKey(id);
         return course;
     }
+
+    /**
+     * 根据教师课程id查询课程信息
+     * @param tcId
+     * @return
+     */
+    @Override
+    public Course getCourseByteacCourseId(Long tcId) {
+        Course course = courseDao.getCourseByteacCourseId(tcId);
+        return course;
+    }
     /**
      * 根据课程名称和学分查询课程信息
      * @param course
@@ -397,7 +408,7 @@ public class CourseServiceImpl implements CourseService {
         BigDecimal courseCredit = this.getCourseCreditByCourseId(teacCourse.getCourseId());
         teacCourse.setCourseName(courseName);
         teacCourse.setCourseCredit(courseCredit);
-
+        System.out.println("=-=-=-=-="+teacCourse);
         //通过老师id查询老师名字
         String teacName = this.getTeacNameByTeacId(teacCourse.getTeacId());
         teacCourse.setTeacName(teacName);

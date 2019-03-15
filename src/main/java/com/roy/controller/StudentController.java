@@ -119,7 +119,7 @@ public class StudentController {
     }
     //查看学生成绩
     @RequestMapping("getStuScore")
-    public String doShowTeacherViewQuestionsBypage(@RequestParam(value = "pageIndex",required =false,defaultValue = "1") Integer pageIndex,
+    public String showStuScore(@RequestParam(value = "pageIndex",required =false,defaultValue = "1") Integer pageIndex,
                                                    @RequestParam(value = "teacCourseId",required =false,defaultValue ="0") Long teacCourseId,
                                                    Model model, HttpSession session) {
 

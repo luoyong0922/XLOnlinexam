@@ -11,6 +11,8 @@ import java.util.Map;
 //@Repository
 public interface PaperService {
 
+    Paper getPaperById(Long paperId);
+
     //新增考试规格信息
     public boolean insertIntoPaperStandard(PaperStandard p);
     //查询考试规格信息

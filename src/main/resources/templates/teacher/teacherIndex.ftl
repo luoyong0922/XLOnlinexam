@@ -77,7 +77,7 @@
                 <ul class="sub-menu">
                     <#list courses as c>
                         <li>
-                            <a _href="${rc.contextPath}/achievementController/getAllstuScore?teacCourseId=${c.id}">
+                            <a _href="${rc.contextPath}/paperController/getPaperStandard?tI=${c.id}&cN=${c.courseName}">
                                 <i class="iconfont">&#xe6a7;</i>
                                 <cite>${c.courseName}试卷列表</cite>
                             </a>

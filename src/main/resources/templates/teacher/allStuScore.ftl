@@ -15,17 +15,10 @@
 
 			<h2 style="text-align: center">试卷列表</h2><br/>
 
-			<form action="${rc.contextPath}/achievementController/getAllstuScore?pageIndex=1" method="post" style="display: none;">
-				课程名称：
-				<select name="teacCourseId" id="selectValue">
-					<#list teacCourses as teacCourse>
-						<option value="${teacCourse.id}" <#if teacCourse.id==teacCourseId>selected</#if>>${teacCourse.courseName}</option>
-					</#list>
-				</select>
-				<input type="submit" class="btn-primary" value="搜索">
-			</form>
-			<input type="button" class="btn btn-info" value="统计表" onclick="javascript:toStatistics()" />
-			<input type="button" class="btn btn-info" value="成绩排名表" onclick="javascript:toScoreOrder()" />
+			<#if (pageInfo.total > 0)>
+                <input type="button" class="btn btn-info" value="统计表" onclick="javascript:toStatistics()" />
+                <input type="button" class="btn btn-info" value="成绩排名表" onclick="javascript:toScoreOrder()" />
+			</#if>
 			<div class="container">
 
 				<table class="table table-hover" id="Test">
@@ -42,7 +35,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<#if (pageInfo.list)??>
+						<#if (pageInfo.total > 0)>
 							<#list pageInfo.list as stuScore>
 								<tr <#if stuScore.paperState==0>class="table-warning"
 									<#elseif stuScore.paperState==1>class="table-info" </#if> >
@@ -63,7 +56,7 @@
                             </#list>
 						<#else>
 							<tr>
-								<td style="font-size: 25px;font-weight: 600;margin:auto auto;" colspan="8">
+								<td style="font-size: 25px;font-weight: 600;text-align: center;" colspan="8">
 									暂无数据
 								</td>
 							</tr>
@@ -71,20 +64,18 @@
 					</tbody>
 				</table>
 			</div>
-
-			<#include "../pageHelper2.ftl"/>
+            <#if (pageInfo.total > 0)>
+			    <#include "../pageHelper2.ftl"/>
+			</#if>
 		</div>
 
 		<script>
 			function toStatistics() {
-				var teacCourseId = $('#selectValue  option:selected').val();
-				window.location = '${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId=' + teacCourseId;
+				window.location = '${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId=${teacCourseId}';
 			}
 
 			function toScoreOrder() {
-				var teacCourseId = $('#selectValue  option:selected').val();
-				var courseName = $('#selectValue option:selected').text();
-				window.location = '${rc.contextPath}/achievementController/showGradeOrder/' + courseName + '?teacCourseId=' + teacCourseId;
+				window.location = '${rc.contextPath}/achievementController/showGradeOrder/${courseName}?teacCourseId=${teacCourseId}';
 			}
 		</script>
 

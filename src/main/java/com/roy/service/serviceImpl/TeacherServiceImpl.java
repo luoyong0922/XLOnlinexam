@@ -16,7 +16,8 @@ import java.util.*;
 public class TeacherServiceImpl implements TeacherService {
     @Resource
     private TeacherMapper teacherDao;
-
+    @Resource
+    private CourseMapper courseDao;
     @Resource
     private StuScoreMapper stuScoreDao;
     @Resource
@@ -75,7 +76,7 @@ public class TeacherServiceImpl implements TeacherService {
         List<StuScore> stuScores1=new ArrayList<>();
         for(int i=0;i<stuScores.size();i++){
             StuScore stuScore=stuScores.get(i);
-            String courseName= getCourseNameByteacCourseId( stuScore.getTeacCourseId()); //根据教师课程id去查询课程id--》课程名称
+            String courseName= getCourseNameBystandardId( stuScore.getTeacCourseId()); //根据教师课程id去查询课程id--》课程名称
             System.out.println("courseName"+courseName);
             String stuName= getStuNameBystuId( stuScore.getStuId());  //根据学生id去查询学生姓名
             System.out.println("stuName"+stuName);
@@ -101,6 +102,17 @@ public class TeacherServiceImpl implements TeacherService {
      */
     public String getCourseNameByteacCourseId(Long teacCourseId){
         TeacCourse teacCourse = courseService.getTeacCourse(teacCourseId);
+        String courseName=courseService.getCourseById(teacCourse.getCourseId()).getCourseName();
+        System.out.println("courseName"+courseName);
+        return courseName;
+    }
+
+    /**
+     * 根据standardId去查询课程名称
+     */
+    public String getCourseNameBystandardId(Long standardId){
+        Long teacCourseId = courseDao.getTeacCourseIdByStandardId(standardId);
+        TeacCourse teacCourse = courseService.getTeacCourse(teacCourseId);
 
         String courseName=courseService.getCourseById(teacCourse.getCourseId()).getCourseName();
         System.out.println("courseName"+courseName);
@@ -110,10 +122,21 @@ public class TeacherServiceImpl implements TeacherService {
      * 根据teacCourseId去查询老师姓名
      */
     private String getTeacNameByteacCourseId(Long teacCourseId){
+
         TeacCourse teacCourse = courseService.getTeacCourse(teacCourseId);
 
-        String teacName=teacherDao.selectByPrimaryKey(teacCourse.getCourseId()).getTeacName();
+        String teacName=teacherDao.selectByPrimaryKey(teacCourse.getTeacId()).getTeacName();
         System.out.println("teacName"+teacName);
+        return teacName;
+    }
+
+    /**
+     * 根据StandardId去查询老师姓名
+     */
+    private String getTeacNameByStandardId(Long standardId){
+        Long teacCourseId = courseDao.getTeacCourseIdByStandardId(standardId);
+        TeacCourse teacCourse = courseService.getTeacCourse(teacCourseId);
+        String teacName=teacherDao.selectByPrimaryKey(teacCourse.getTeacId()).getTeacName();
         return teacName;
     }
     /**
@@ -140,6 +163,7 @@ public class TeacherServiceImpl implements TeacherService {
      */
     @Override
     public PageInfo searchStuScore(Integer pageIndex,Long stuId, Long teacCourseId) {
+        System.out.println("=========="+teacCourseId);
         List<StuScore> stuScores= new ArrayList<>();
         List<StuScore> scores = new ArrayList<>();
         StuScoreExample example = new StuScoreExample();
@@ -155,9 +179,9 @@ public class TeacherServiceImpl implements TeacherService {
             for (int i = 0; i < stuScores.size(); i++) {
                 StuScore stuScore = stuScores.get(i);
                 Long tcId = stuScore.getTeacCourseId();
-                String courseName = getCourseNameByteacCourseId(tcId);
+                String courseName = getCourseNameBystandardId(tcId);
                 stuScore.setCourseName(courseName);
-                String teacName = getTeacNameByteacCourseId(tcId);
+                String teacName = getTeacNameByStandardId(tcId);
                 stuScore.setTeacName(teacName);
                 scores.add(stuScore);
             }
@@ -245,14 +269,18 @@ public class TeacherServiceImpl implements TeacherService {
         map.put("Absent",quekao);
         return map;
     }
-    //插入homeWork记录
+    //统计选课总人数
     @Override
-    public Integer selectCourseAmount(Long teacCourseId){
-        StuCourseExample example = new StuCourseExample();
-        StuCourseExample.Criteria criteria = example.createCriteria();
-        criteria.andTeacCourseIdEqualTo(teacCourseId);
+    public Integer selectCourseAmount(Long standardId){
+        Long teacCourseId = courseDao.getTeacCourseIdByStandardId(standardId);
 
-        int result= (int) stuCourseDao.countByExample(example);
+        int result= 0;
+        if(teacCourseId != null){
+            StuCourseExample example = new StuCourseExample();
+            StuCourseExample.Criteria criteria = example.createCriteria();
+            criteria.andTeacCourseIdEqualTo(teacCourseId);
+            result = (int) stuCourseDao.countByExample(example);
+        }
         return result;
     }
 

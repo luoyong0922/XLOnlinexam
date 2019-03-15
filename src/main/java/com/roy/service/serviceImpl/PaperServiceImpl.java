@@ -74,7 +74,7 @@ public class PaperServiceImpl implements PaperService {
 
     /**
      * 查看测评详情
-     * @param id
+     * @param id paperStandardId
      * @return
      */
     @Override
@@ -85,6 +85,7 @@ public class PaperServiceImpl implements PaperService {
         map.put("testAmount",paperStandard.getTestAmount());
         map.put("testValue",paperStandard.getTestValue());
         map.put("testTime",paperStandard.getTestTime());
+        map.put("tcId",paperStandard.getTeacCourseId());
         map.put("id",paperStandard.getId());
         for (int i = 0; i < testType.size(); i++) {
             PaperStandard  standard = testType.get(i);
@@ -128,6 +129,17 @@ public class PaperServiceImpl implements PaperService {
         criteria.andTeacCourseIdEqualTo(teaccourseId);
         List<Paper> papers = paperDao.selectByExample(example);
         return papers;
+    }
+
+    /**
+     * 根据 paperId 查询 Paper 信息
+     * @param paperId
+     * @return
+     */
+    @Override
+    public Paper getPaperById(Long paperId) {
+        Paper paper = paperDao.selectByPrimaryKey(paperId);
+        return paper;
     }
 
     /**
@@ -816,7 +828,7 @@ public class PaperServiceImpl implements PaperService {
             System.out.println("试卷生成成功");
             model.addAttribute("paperid", paperId);
             model.addAttribute("stuId", stuid);
-            model.addAttribute("teacCourseId", teaccourseid);
+            model.addAttribute("teacCourseId", paperStandardId);
             System.out.println("CreatePaper():" + model);
             return model;
         } else {

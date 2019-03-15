@@ -110,12 +110,4 @@ public class CourseController {
         }
         return viwe;
     }
-
-
-
-
-
-
-
-
 }

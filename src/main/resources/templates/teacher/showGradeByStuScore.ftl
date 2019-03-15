@@ -12,10 +12,11 @@
         <table class="table table-hover">
             <caption style="text-align:center"><span style="font-size: 18px;font-weight: 600;">${courseName}</span>成绩排名表</caption>
             <thead>
-            <tr>
-                <th>姓名</th>
-                <th>分数</th>
-                <th>名次</th></tr>
+                <tr>
+                    <th>姓名</th>
+                    <th>分数</th>
+                    <th>名次</th>
+                </tr>
             </thead>
             <tbody>
 
