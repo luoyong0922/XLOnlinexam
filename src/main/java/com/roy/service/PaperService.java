@@ -16,7 +16,7 @@ public interface PaperService {
     //新增考试规格信息
     public boolean insertIntoPaperStandard(PaperStandard p);
     //查询考试规格信息
-    public List<PaperStandard> getPaperStandard(Long id);
+    public List<PaperStandard> getPaperStandard(Long id, Integer testUnit);
 
     Map getPaperStandardById(Long id);
 
@@ -24,19 +24,18 @@ public interface PaperService {
     public List<Paper> getPaperByIds(Long teaccourseId,Long stuId);
 
     //得到所有teacId对应的所有课程的题目,每个老师查看的题目
-    List<TeacCourse> TeacherCourseQuestions(Long teacId);
+    List<TeacCourse> TeacherCourseQuestions(Long teacId, String testUnit);
 
     //根据courseName，questionType分页的信息
-    PageInfo SearchAdminViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String questionType, Long teaccourseId);
+    PageInfo SearchAdminViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String questionType, Long teaccourseId, String testUnit);
+
+    //根据课程名称，题目类型，教师课程id查询题库
+    PageInfo SearchTeacherViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String type, Long id, Long teacCourseId, String testUnit);
 
     //根据题目类型和题目id去查题目
     Object SearchQuestionByTitleAndType(Long title, String questionType);
 
-
     ///////////////////////////////////
-
-    //得到对应课程的试卷标准
-//    Map getPaperStandardMap(Long teac_course_id);
 
     //老师阅卷
     boolean updatePaper(Paper paper);
@@ -117,10 +116,6 @@ public interface PaperService {
     public boolean addCal(Calculate calculate);
     //新增主观题
     public boolean addSubject(Subject subject);
-
-    //根据课程名称，题目类型，教师课程id查询题库
-    PageInfo SearchTeacherViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String type, Long id, Long teacCourseId);
-
 
     int deleteQuestion(List<Long> questionIds, String questionType);
 }

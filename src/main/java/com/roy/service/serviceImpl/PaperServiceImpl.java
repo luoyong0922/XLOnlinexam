@@ -59,14 +59,18 @@ public class PaperServiceImpl implements PaperService {
     String subjectIds;
 
     /**
-     * 根据教师课程id查询测评标准 （查看测评通知列表）
+     * 根据 教师课程id ,  testUnit 查询测评标准 （查看测评通知列表）
      * @param teac_course_id
+     * @param testUnit
      * @return
      */
     @Override
-    public List<PaperStandard> getPaperStandard(Long teac_course_id) {
+    public List<PaperStandard> getPaperStandard(Long teac_course_id, Integer testUnit) {
         PaperStandardExample example = new PaperStandardExample();
         PaperStandardExample.Criteria criteria = example.createCriteria();
+        if(testUnit != 0){
+            criteria.andTestAmountEqualTo(testUnit);
+        }
         criteria.andTeacCourseIdEqualTo(teac_course_id);
         List<PaperStandard> paperStandards = paperStandardDao.selectByExample(example);
         return paperStandards;
@@ -165,25 +169,71 @@ public class PaperServiceImpl implements PaperService {
         return result>0;
     }
 
-
-    //根据examId去获取相对应的题型的集合
-    private List getQuestionsByExamId(int examId) {
+    /**
+     * 根据 examId, testUnit 去获取相对应的题型的集合
+     * @param examId 试题类型
+     * @param testUnit 所属单元
+     * @return list 试题集合
+     */
+    private List getQuestionsByExamId(int examId, String testUnit) {
         if(examId == 1){
-            List<MultiSelect> allMultiSelects=multiSelectDao.selectByExample(null);
+            if(!"0".equals(testUnit)){
+                MultiSelectExample example=new MultiSelectExample();
+                MultiSelectExample.Criteria criteria=example.createCriteria();
+                criteria.andDificultEqualTo(testUnit);
+                List<MultiSelect> allMultiSelects=multiSelectDao.selectByExample(example);
+                return allMultiSelects;
+            }
+            List<MultiSelect> allMultiSelects = multiSelectDao.selectByExample(null);
             return allMultiSelects;
         }else if(examId==2){
+            if(!"0".equals(testUnit)){
+                SelectExample example=new SelectExample();
+                SelectExample.Criteria criteria=example.createCriteria();
+                criteria.andDificultEqualTo(testUnit);
+                List<Select> allSelects=selectDao.selectByExample(example);
+                return allSelects;
+            }
             List<Select> allSelects=selectDao.selectByExample(null);
             return allSelects;
         }else if(examId==3){
+            if(!"0".equals(testUnit)){
+                JudgeExample example=new JudgeExample();
+                JudgeExample.Criteria criteria=example.createCriteria();
+                criteria.andDificultEqualTo(testUnit);
+                List<Judge> allJudges=judgeDao.selectByExample(example);
+                return allJudges;
+            }
             List<Judge> allJudges=judgeDao.selectByExample(null);
             return allJudges;
         }else if(examId==4){
+            if(!"0".equals(testUnit)){
+                FillExample example=new FillExample();
+                FillExample.Criteria criteria=example.createCriteria();
+                criteria.andDificultEqualTo(testUnit);
+                List<Fill> allFills=fillDao.selectByExample(example);
+                return allFills;
+            }
             List<Fill> allFills=fillDao.selectByExample(null);
             return allFills;
         }else if(examId==5){
+            if(!"0".equals(testUnit)){
+                CalculateExample example=new CalculateExample();
+                CalculateExample.Criteria criteria=example.createCriteria();
+                criteria.andDificultEqualTo(testUnit);
+                List<Calculate> allCalculates=calculateDao.selectByExample(example);
+                return allCalculates;
+            }
             List<Calculate> allCalculates=calculateDao.selectByExample(null);
             return allCalculates;
         }else if(examId==6){
+            if(!"0".equals(testUnit)){
+                SubjectExample example=new SubjectExample();
+                SubjectExample.Criteria criteria=example.createCriteria();
+                criteria.andDificultEqualTo(testUnit);
+                List<Subject> allSubjects=subjectDao.selectByExample(example);
+                return allSubjects;
+            }
             List<Subject> allSubjects=subjectDao.selectByExample(null);
             return allSubjects;
         }
@@ -191,11 +241,11 @@ public class PaperServiceImpl implements PaperService {
     }
 
     //得到所有的AdminViewQuestion
-    private List<AdminViewQuestion> getAllAdminViewQuestions(Long teaccourseId){
+    private List<AdminViewQuestion> getAllAdminViewQuestions(Long teaccourseId, String testUnit){
         //所有题目
         List<AdminViewQuestion> allAdminViewQuestions=new ArrayList<>();
         //所有多选题
-        List<MultiSelect> allMultiSelects=multiSelectDao.selectByExample(null);
+        List<MultiSelect> allMultiSelects = this.getQuestionsByExamId(1, testUnit);
         for(int i=0;i<allMultiSelects.size();i++){
             AdminViewQuestion adminViewQuestion=new AdminViewQuestion();
             MultiSelect multiSelect=allMultiSelects.get(i);
@@ -221,7 +271,7 @@ public class PaperServiceImpl implements PaperService {
 
         }
         //所有单选题
-        List<Select> allSelects=this.getQuestionsByExamId(2);
+        List<Select> allSelects=this.getQuestionsByExamId(2, testUnit);
         for(int i=0;i<allSelects.size();i++){
             AdminViewQuestion adminViewQuestion=new AdminViewQuestion();
             Select select=allSelects.get(i);
@@ -245,7 +295,7 @@ public class PaperServiceImpl implements PaperService {
             }
         }
         //所有判断题
-        List<Judge> allJudges=this.getQuestionsByExamId(3);
+        List<Judge> allJudges=this.getQuestionsByExamId(3, testUnit);
         for(int i=0;i<allJudges.size();i++){
             AdminViewQuestion adminViewQuestion=new AdminViewQuestion();
             Judge judge=allJudges.get(i);
@@ -270,7 +320,7 @@ public class PaperServiceImpl implements PaperService {
         }
 
         //所有填空题
-        List<Fill> allFills=this.getQuestionsByExamId(4);
+        List<Fill> allFills=this.getQuestionsByExamId(4, testUnit);
         for(int i=0;i<allFills.size();i++){
             AdminViewQuestion adminViewQuestion=new AdminViewQuestion();
             Fill fill=allFills.get(i);
@@ -294,7 +344,7 @@ public class PaperServiceImpl implements PaperService {
             }
         }
         //所有计算题
-        List<Calculate> allCalculates=this.getQuestionsByExamId(5);
+        List<Calculate> allCalculates=this.getQuestionsByExamId(5, testUnit);
         for(int i=0;i<allCalculates.size();i++){
             AdminViewQuestion adminViewQuestion=new AdminViewQuestion();
             Calculate calculate=allCalculates.get(i);
@@ -318,7 +368,7 @@ public class PaperServiceImpl implements PaperService {
             }
         }
         //所有主观题
-        List<Subject> allSubjects=this.getQuestionsByExamId(6);
+        List<Subject> allSubjects=this.getQuestionsByExamId(6, testUnit);
         for(int i=0;i<allSubjects.size();i++){
             AdminViewQuestion adminViewQuestion=new AdminViewQuestion();
             Subject subject=allSubjects.get(i);
@@ -362,7 +412,7 @@ public class PaperServiceImpl implements PaperService {
 
     //得到所有teacId对应的所有课程的题目,每个老师查看的题目
     @Override
-    public List<TeacCourse> TeacherCourseQuestions(Long teacId) {
+    public List<TeacCourse> TeacherCourseQuestions(Long teacId, String testUnit) {
 
         //所有teacCourses
         List<TeacCourse> teacCourses = getTeacCourseByteacId(teacId);
@@ -378,7 +428,7 @@ public class PaperServiceImpl implements PaperService {
             //根据课程id得到课程名字
             Course course = courseService.getCourseById(courseId);
             // 得到teac_course_id
-            Map<String, List> questionMap = getQuestionsMap(teacCourse1.getId());
+            Map<String, List> questionMap = getQuestionsMap(teacCourse1.getId(), testUnit);
             System.out.println("teacCourseId--"+teacCourse1.getId());
             //单选题
             List<Select> allSelects = questionMap.get("allSelects");
@@ -514,7 +564,7 @@ public class PaperServiceImpl implements PaperService {
     }
 
     //得到存放所有teacCourseId对应题目的Map集合
-    public Map<String,List> getQuestionsMap(Long teacCourseId){
+    public Map<String,List> getQuestionsMap(Long teacCourseId,String testUnit){
         //存放所有题目
         Map<String,List> questionMap=new HashMap<>();
         //根据teac_course_id去查找对应的题目
@@ -522,6 +572,9 @@ public class PaperServiceImpl implements PaperService {
         SelectExample selexample=new SelectExample();
         SelectExample.Criteria selcriteria=selexample.createCriteria();
         selcriteria.andTeacCourseIdEqualTo(teacCourseId);
+        if(!testUnit.equals("0")){
+            selcriteria.andDificultEqualTo(testUnit);
+        }
         List<Select> allSelects=selectDao.selectByExample(selexample);
         if(allSelects!=null) {
             questionMap.put("allSelects",allSelects);
@@ -532,6 +585,9 @@ public class PaperServiceImpl implements PaperService {
         MultiSelectExample mulexample=new MultiSelectExample();
         MultiSelectExample.Criteria mulcriteria=mulexample.createCriteria();
         mulcriteria.andTeacCourseIdEqualTo(teacCourseId);
+        if(!testUnit.equals("0")){
+            mulcriteria.andDificultEqualTo(testUnit);
+        }
         List<MultiSelect> allmultiSelects=multiSelectDao.selectByExample(mulexample);
         if(allmultiSelects!=null) {
             questionMap.put("allmultiSelects",allmultiSelects);
@@ -542,6 +598,9 @@ public class PaperServiceImpl implements PaperService {
         JudgeExample judgeExample=new JudgeExample();
         JudgeExample.Criteria judgecriteria=judgeExample.createCriteria();
         judgecriteria.andTeacCourseIdEqualTo(teacCourseId);
+        if(!testUnit.equals("0")){
+            judgecriteria.andDificultEqualTo(testUnit);
+        }
         List<Judge> alljudges=judgeDao.selectByExample(judgeExample);
         if(alljudges!=null) {
             questionMap.put("alljudges",alljudges);
@@ -552,6 +611,9 @@ public class PaperServiceImpl implements PaperService {
         FillExample fillExample=new FillExample();
         FillExample.Criteria fillcriteria=fillExample.createCriteria();
         fillcriteria.andTeacCourseIdEqualTo(teacCourseId);
+        if(!testUnit.equals("0")){
+            fillcriteria.andDificultEqualTo(testUnit);
+        }
         List<Fill> allfills=fillDao.selectByExample(fillExample);
         if(allfills!=null) {
             questionMap.put("allfills",allfills);
@@ -562,6 +624,9 @@ public class PaperServiceImpl implements PaperService {
         CalculateExample calculateExample=new CalculateExample();
         CalculateExample.Criteria calculatecriteria=calculateExample.createCriteria();
         calculatecriteria.andTeacCourseIdEqualTo(teacCourseId);
+        if(!testUnit.equals("0")){
+            calculatecriteria.andDificultEqualTo(testUnit);
+        }
         List<Calculate> allcalculates=calculateDao.selectByExample(calculateExample);
         if(allcalculates!=null) {
             questionMap.put("allcalculates",allcalculates);
@@ -572,6 +637,9 @@ public class PaperServiceImpl implements PaperService {
         SubjectExample subjectExample=new SubjectExample();
         SubjectExample.Criteria subjectcriteria=subjectExample.createCriteria();
         subjectcriteria.andTeacCourseIdEqualTo(teacCourseId);
+        if(!testUnit.equals("0")){
+            subjectcriteria.andDificultEqualTo(testUnit);
+        }
         List<Subject> allsubjects=subjectDao.selectByExample(subjectExample);
         if(allsubjects!=null) {
             questionMap.put("allsubjects",allsubjects);
@@ -582,17 +650,20 @@ public class PaperServiceImpl implements PaperService {
     }
 
     /**
-     * 老师根据courseName，questionType，teacCourseId查看题库
+     * 老师根据courseName，questionType，teacCourseId, dificult查看题库
      * @param pageIndex
-     * @param courseName
-     * @param questionType
+     * @param courseName 课程名称
+     * @param questionType 试题类型
+     * @param id 老师Id
+     * @param teaccourseId 教师课程Id
+     * @param dificult 所属单元
      * @return
      */
     @Override
-    public PageInfo SearchTeacherViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String questionType,Long id, Long teaccourseId) {
+    public PageInfo SearchTeacherViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String questionType,Long id, Long teaccourseId, String dificult) {
         List<TeacCourse> teacCourses = new ArrayList<>();
         //老师查看题库
-        teacCourses = this.TeacherCourseQuestions(id);
+        teacCourses = this.TeacherCourseQuestions(id, dificult);
         List<TeacCourse> courses = new ArrayList<>();
 
         for(int i=0;i<teacCourses.size();i++) {
@@ -600,7 +671,7 @@ public class PaperServiceImpl implements PaperService {
             //courseName，questionType都不为空
             if(!"".equals(courseName) && courseName != null && !"".equals(questionType) && questionType != null){
                 if (course.getCourseName().equals(courseName) && course.getQuestionType().equals(questionType)) {
-                //  if (course.getId().equals(teaccourseId) && course.getCourseName().equals(courseName) && course.getQuestionType().equals(questionType)) {
+                    //  if (course.getId().equals(teaccourseId) && course.getCourseName().equals(courseName) && course.getQuestionType().equals(questionType)) {
                     courses.add(course);
                 }
             }
@@ -617,7 +688,7 @@ public class PaperServiceImpl implements PaperService {
                 }
             }else {//courseName，questionType都为空
 
-                    courses.add(course);
+                courses.add(course);
 
             }
         }
@@ -679,10 +750,10 @@ public class PaperServiceImpl implements PaperService {
      * @return
      */
     @Override
-    public PageInfo SearchAdminViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String questionType, Long teaccourseId) {
+    public PageInfo SearchAdminViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String questionType, Long teaccourseId, String testUnit) {
         List<AdminViewQuestion> adminViewQuestions = new ArrayList<>();
-       //管理员查看题库
-            adminViewQuestions  = this.getAllAdminViewQuestions(teaccourseId);
+        //管理员查看题库
+        adminViewQuestions  = this.getAllAdminViewQuestions(teaccourseId, testUnit);
 
         List<AdminViewQuestion> adminViewQuestions1=new ArrayList<>();
 
@@ -995,9 +1066,14 @@ public class PaperServiceImpl implements PaperService {
      */
     @Override
     public boolean addSelect(Select select) {
-        int size = getQuestionsByExamId(2).size();
-        Select obj = (Select) getQuestionsByExamId(2).get(size-1);
-        select.setSelectionId("sel-"+(obj.getId()+1));
+        String testUnit = "0";
+        int size = getQuestionsByExamId(2, testUnit).size();
+        if(size > 0) {
+            Select obj = (Select) getQuestionsByExamId(2, testUnit).get(size - 1);
+            select.setSelectionId("sel-" + (obj.getId() + 1));
+        }else {
+            select.setSelectionId("sel-1");
+        }
         int result = selectDao.insertSelective(select);
         return result > 0;
     }
@@ -1009,9 +1085,14 @@ public class PaperServiceImpl implements PaperService {
      */
     @Override
     public boolean addMulSel(MultiSelect multiSelect) {
-        int size = getQuestionsByExamId(1).size();
-        MultiSelect obj = (MultiSelect) getQuestionsByExamId(1).get(size-1);
-        multiSelect.setMultiSelectionId("ms-"+(obj.getId()+1));
+        String testUnit = "0";
+        int size = getQuestionsByExamId(1, testUnit).size();
+        if(size > 0) {
+            MultiSelect obj = (MultiSelect) getQuestionsByExamId(1, testUnit).get(size - 1);
+            multiSelect.setMultiSelectionId("ms-" + (obj.getId() + 1));
+        }else {
+            multiSelect.setMultiSelectionId("ms-1");
+        }
         int result = multiSelectDao.insertSelective(multiSelect);
         return result > 0;
     }
@@ -1023,9 +1104,14 @@ public class PaperServiceImpl implements PaperService {
      */
     @Override
     public boolean addFill(Fill fill) {
-        int size = getQuestionsByExamId(4).size();
-        Fill obj = (Fill) getQuestionsByExamId(4).get(size-1);
-        fill.setFillId("f-"+(obj.getId()+1));
+        String testUnit = fill.getDificult();
+        int size = getQuestionsByExamId(4, "0").size();
+        if(size > 0) {
+            Fill obj = (Fill) getQuestionsByExamId(4, "0").get(size - 1);
+            fill.setFillId("f-" + (obj.getId() + 1));
+        }else {
+            fill.setFillId("f-1");
+        }
         int result = fillDao.insertSelective(fill);
         return result > 0;
     }
@@ -1037,9 +1123,14 @@ public class PaperServiceImpl implements PaperService {
      */
     @Override
     public boolean addJudge(Judge judge) {
-        int size = getQuestionsByExamId(3).size();
-        Judge obj = (Judge) getQuestionsByExamId(3).get(size-1);
-        judge.setJudgeId("j-"+(obj.getId()+1));
+        String testUnit = judge.getDificult();
+        int size = getQuestionsByExamId(3, "0").size();
+        if(size >0) {
+            Judge obj = (Judge) getQuestionsByExamId(3, "0").get(size - 1);
+            judge.setJudgeId("j-" + (obj.getId() + 1));
+        }else {
+            judge.setJudgeId("j-1");
+        }
         int result = judgeDao.insertSelective(judge);
         return result > 0;
     }
@@ -1051,9 +1142,14 @@ public class PaperServiceImpl implements PaperService {
      */
     @Override
     public boolean addCal(Calculate calculate) {
-        int size = getQuestionsByExamId(5).size();
-        Calculate calculate1 = (Calculate) getQuestionsByExamId(5).get(size-1);
-        calculate.setCalculateId("c-"+(calculate1.getId()+1));
+        String testUnit = calculate.getDificult();
+        int size = getQuestionsByExamId(5, "0").size();
+        if(size > 0) {
+            Calculate calculate1 = (Calculate) getQuestionsByExamId(5, "0").get(size - 1);
+            calculate.setCalculateId("c-" + (calculate1.getId() + 1));
+        }else {
+            calculate.setCalculateId("c-1");
+        }
         int result = calculateDao.insertSelective(calculate);
         return result > 0;
     }
@@ -1065,9 +1161,15 @@ public class PaperServiceImpl implements PaperService {
      */
     @Override
     public boolean addSubject(Subject subject) {
-        int size = getQuestionsByExamId(6).size();
-        Subject obj = (Subject) getQuestionsByExamId(6).get(size-1);
-        subject.setSubjectId("sub-"+(obj.getId()+1));
+        String testUnit = subject.getDificult();
+        int size = getQuestionsByExamId(6, "0").size();
+        if(size > 0){
+            Subject obj = (Subject) getQuestionsByExamId(6, "0").get(size-1);
+            subject.setSubjectId("sub-"+(obj.getId()+1));
+        }else {
+            subject.setSubjectId("sub-1");
+        }
+
         int result = subjectDao.insertSelective(subject);
         return result > 0;
     }
@@ -1167,7 +1269,7 @@ public class PaperServiceImpl implements PaperService {
         //试题id集合
         List<String> IdsList = new ArrayList<>();
         if(ids != null) {
-           IdsList  = Arrays.asList(ids.split(","));
+            IdsList  = Arrays.asList(ids.split(","));
         }
         //试题答案集合
         List<String> KeyList = new ArrayList<>();

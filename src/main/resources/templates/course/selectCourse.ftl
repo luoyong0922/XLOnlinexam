@@ -48,7 +48,9 @@
     <input type="password" name="stuId" value="${Session["id"]!}">
     <input type="password" name="teacCourseId" id="teacCourseId"><br/>
 </form>
-<#include "../pageHelper2.ftl"/>
+    <#if (pageInfo.total > 6)>
+        <#include "../pageHelper2.ftl"/>
+    </#if>
 </div>
 <script>
     function selCourse(id,name) {

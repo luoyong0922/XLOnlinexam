@@ -16,12 +16,12 @@
                     <input type="text" style="display: none;" name="id" value="${student.id!}"/>
                     <div class="form-group">
                         <label for="stuNum">学号</label>
-                        <input type="text" name="stuNum" id="stuNum" value="${student.stuNum!}" class="form-control">
-                        <span id="stuNum_tip"></span>
+                        <input type="text" name="stuNum" id="stuNum" value="${student.stuNum!}" class="form-control" readonly="true">
                     </div>
                     <div class="form-group">
                         <label for="stuPassword">密码</label>
-                        <input type="text" class="form-control" id="stuPassword" name="stuPassword" value="${student.stuPassword!}">
+                        <input type="password" class="form-control" value="......" readonly="true"/>
+                        <input type="text"  id="stuPassword" name="stuPassword" value="${student.stuPassword!}"  hidden="true">
                     </div>
                     <div class="form-group">
                         <label for="stuName">姓名</label>
@@ -61,7 +61,7 @@
 </form>
 <script>
     window.onload=function(){
-        var gender='${student.gender}';
+        var gender='${student.stuGender}';
         if(gender==='男'){
             document.getElementById('male').checked=true;
         }else{

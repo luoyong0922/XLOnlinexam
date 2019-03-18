@@ -37,7 +37,7 @@
 <div class="container" style="margin-top: 20px;">
 <form action="${rc.contextPath}/paperController/getMyQuestions" method="post" id="search">
     课程名称：
-    <select name="teacCourseId" id="selectValue" class="select-control">
+    <select name="teacCourseId" id="selectValue" class="select-control" >
         <option value="0">--请选择课程--</option>
 <#list teacCourses as teacCourse>
     <option class="" value="${teacCourse.id}" <#if teacCourse.id == teacCourseId>selected</#if>>${teacCourse.courseName}</option>
@@ -45,7 +45,7 @@
 </select>
     <input name="courseName" id="coursename" style="display: none;">
     试题类型：
-    <select name="questionType" id="questionType"  class="select-control">
+    <select name="questionType" id="questionType"  class="select-control" style="width:135px">
     <#-- // 1：多选题，2：单选题，3:判断题，4：填空题，5：计算题，6：主观题-->
         <option value="0">--请选择题型--</option>
         <option value="1">多选题</option>
@@ -55,12 +55,12 @@
         <option value="5">计算题</option>
         <option value="6">主观题</option>
     </select>
+    所属单元：<input type="number" id="testUnit" name="dificult" value="${testUnit!}"  class="select-control" style="width:80px"/>
     <input type="button" class="btn btn-primary" value="搜索" onclick="javascript:xyp()">
 </form>
 <script>
     function xyp(){
-       // alert($('#selectValue option:selected')[0].text)
-       // alert($('#questionType option:selected')[0].text)
+
         if($('#questionType option:selected').val() == 0 || $('#selectValue option:selected').val() == 0){
             alert('你还未选择课程名称或题型！');
         }else {
@@ -70,7 +70,7 @@
     }
 </script>
 <!-- 按钮：用于打开 添加试题 模态框 -->
-<button type="button" class="btn btn-success" onclick="addQuestion()" style="float: right;margin-top: -47px;">添加试题</button>
+<button type="button" class="btn btn-success" onclick="addQuestion()" style="float: right;margin-top: -47px;margin-right: 48px;">添加试题</button>
 
     <table class="table table-hover" id="Test">
         <thead>
@@ -79,7 +79,7 @@
             <th>课程名称</th>
             <th>题干</th>
             <th>授课老师</th>
-            <th>难易程度</th>
+            <th>所属单元</th>
             <th>试题类型</th>
             <th style="text-align: center;">操作</th>
         </tr>
@@ -134,12 +134,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="username" class="col-sm-4 control-label ">
-                            难易程度</label>
-                        <div class="col-sm-8" id="rad">
-                            <input type="radio" id="radio-1-1" name="dificult" class="regular-radio" value="容易"/><label for="radio-1-1"></label>容易
-                            <input type="radio" id="radio-1-2"  name="dificult" class="regular-radio" value="适中" /><label for="radio-1-2"></label>适中
-                            <input type="radio" id="radio-1-3"  name="dificult" class="regular-radio" value="困难"/><label for="radio-1-3"></label>困难
+                        <label for="username" class="col-sm-4 control-label ">所属单元</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" name="dificult" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -251,7 +248,9 @@
         </div>
     </div>
 </div>
-<#include  "../pageHelper2.ftl"/>
+<#if (pageInfo.total > 6)>
+        <#include "../pageHelper2.ftl"/>
+</#if>
 </div>
 <script type="text/javascript">
     //添加试题

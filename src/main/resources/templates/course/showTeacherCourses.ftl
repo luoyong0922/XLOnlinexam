@@ -35,7 +35,9 @@
 
         </tbody>
     </table>
-<#--<#include "../pageHelper2.ftl"/>-->
+    <#if (pageInfo.total > 6)>
+        <#include "../pageHelper2.ftl"/>
+    </#if>
 </div>
 
 </body>

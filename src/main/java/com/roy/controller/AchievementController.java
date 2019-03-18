@@ -33,7 +33,6 @@ public class AchievementController {
             standardId = teacCourses.get(0).getId();
         }else{
             courseName = courseDao.getCourseByStandardId(standardId).getCourseName();
-            System.out.println(courseName+"-=-=-=-=-=-=-");
         }
         PageInfo pageInfo = teacherService.SearchAllNeedStuScoreByPageHelper(pageIndex, standardId);
         model.addAttribute("teacCourseId",standardId);

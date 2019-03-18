@@ -39,7 +39,7 @@
     课程名称：
     <input type="text" name="courseName" value="${courseName!}"/>
     试题类型：
-    <select name="questionType" id="questionType"  class="select-control">
+    <select name="questionType" id="questionType"  class="select-control"  style="width:135px">
     <#-- // 1：多选题，2：单选题，3:判断题，4：填空题，5：计算题，6：主观题-->
         <option value="0">--请选择题型--</option>
         <option value="1">多选题</option>
@@ -49,12 +49,11 @@
         <option value="5">计算题</option>
         <option value="6">主观题</option>
     </select>
+      所属单元：<input type="number" id="testUnit" value="${testUnit!}" name="dificult" class="select-control" style="width:80px"/>
     <input type="button" class="btn btn-primary" value="搜索" onclick="javascript:xyp()">
 </form>
 <script>
     function xyp(){
-       // alert($('#selectValue option:selected')[0].text)
-       // alert($('#questionType option:selected')[0].text)
         if($('#questionType option:selected').val() == 0){
             alert('你还未选择题型！');
         }else {
@@ -69,8 +68,7 @@
             <th>序号</th>
             <th>课程名称</th>
             <th>题干</th>
-            <#--<th>授课老师</th>-->
-            <th>难易程度</th>
+            <th>所属单元</th>
             <th>试题类型</th>
             <th style="text-align: center;">操作</th>
         </tr>
@@ -81,7 +79,6 @@
             <td >${adminViewQuestion?counter}</td>
             <td>${adminViewQuestion.courseName}</td>
             <td>${adminViewQuestion.title}</td>
-            <#--<td><#if Session["name"]?exists>${Session["name"]}</#if></td>-->
             <td>${adminViewQuestion.dificult}</td>
             <td>${adminViewQuestion.questionType}</td>
             <td style="text-align: center;">
@@ -158,7 +155,9 @@
         </div>
     </div>
 </div>
+<#if (pageInfo.total > 6)>
 <#include  "../pageHelper2.ftl"/>
+</#if>
 </div>
 <script type="text/javascript">
 

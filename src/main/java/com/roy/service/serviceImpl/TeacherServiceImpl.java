@@ -23,6 +23,8 @@ public class TeacherServiceImpl implements TeacherService {
     @Resource
     private StuCourseMapper stuCourseDao;
     @Resource
+    private PaperStandardMapper paperStandardDao;
+    @Resource
     private CourseService courseService;
     @Resource
     private StudentService studentService;
@@ -76,6 +78,11 @@ public class TeacherServiceImpl implements TeacherService {
         List<StuScore> stuScores1=new ArrayList<>();
         for(int i=0;i<stuScores.size();i++){
             StuScore stuScore=stuScores.get(i);
+            int status = paperDao.selectByPrimaryKey(stuScore.getPaperId()).getPapeState();
+            stuScore.setPaperStatus(status);
+            PaperStandard standard = paperStandardDao.selectByPrimaryKey(stuScore.getTeacCourseId());
+            stuScore.setTestNum(standard.getTestValue());
+            stuScore.setTestUnit(standard.getTestAmount());
             String courseName= getCourseNameBystandardId( stuScore.getTeacCourseId()); //根据教师课程id去查询课程id--》课程名称
             System.out.println("courseName"+courseName);
             String stuName= getStuNameBystuId( stuScore.getStuId());  //根据学生id去查询学生姓名
@@ -163,8 +170,6 @@ public class TeacherServiceImpl implements TeacherService {
      */
     @Override
     public PageInfo searchStuScore(Integer pageIndex,Long stuId, Long teacCourseId) {
-        System.out.println("=========="+teacCourseId);
-        List<StuScore> stuScores= new ArrayList<>();
         List<StuScore> scores = new ArrayList<>();
         StuScoreExample example = new StuScoreExample();
         StuScoreExample.Criteria criteria = example.createCriteria();
@@ -174,11 +179,16 @@ public class TeacherServiceImpl implements TeacherService {
         if(stuId != null){
             criteria.andStuIdEqualTo(stuId);
         }
-        stuScores = stuScoreDao.selectByExample(example);
+        List<StuScore> stuScores = stuScoreDao.selectByExample(example);
         if(stuScores.size()>0) {
             for (int i = 0; i < stuScores.size(); i++) {
                 StuScore stuScore = stuScores.get(i);
                 Long tcId = stuScore.getTeacCourseId();
+                int status = paperDao.selectByPrimaryKey(stuScore.getPaperId()).getPapeState();
+                stuScore.setPaperStatus(status);
+                PaperStandard standard = paperStandardDao.selectByPrimaryKey(tcId);
+                stuScore.setTestNum(standard.getTestValue());
+                stuScore.setTestUnit(standard.getTestAmount());
                 String courseName = getCourseNameBystandardId(tcId);
                 stuScore.setCourseName(courseName);
                 String teacName = getTeacNameByStandardId(tcId);
@@ -186,10 +196,7 @@ public class TeacherServiceImpl implements TeacherService {
                 scores.add(stuScore);
             }
         }
-
-        // PageHelper.startPage(pageIndex,5);
         PageInfo pageInfo=new PageInfo(scores);
-        System.out.println("学生课程成绩的分页信息"+pageInfo);
         return pageInfo;
     }
 

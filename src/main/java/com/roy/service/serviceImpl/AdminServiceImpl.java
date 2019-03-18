@@ -27,6 +27,10 @@ public class AdminServiceImpl implements AdminService {
     @Resource
     private PaperMapper paperDao;
     @Resource
+    private CourseMapper courseDao;
+    @Resource
+    private TeacCourseMapper teacCourseDao;
+    @Resource
     private CourseService courseService;
     @Resource
     private TeacherService teacherService;
@@ -241,16 +245,15 @@ public class AdminServiceImpl implements AdminService {
         for(int i=0;i<allPapers.size();i++){
             Paper paper=allPapers.get(i);
             //根据stu_id去查询stu_name
-            String stuName= getStudentByStuId(paper.getStuId()).getStuName();//学生实体
+            String stuName= getStudentByStuId(paper.getStuId()).getStuName();
             paper.setStuName(stuName);
-            //根据teacCourseId去查询老师姓名和课程名
-            //根据teacCourseId查询teacCourse记录
-            TeacCourse teacCourse= courseService.getTeacCourse(paper.getTeacCourseId());
-            //查询课程id
-            Long courseId= teacCourse.getCourseId();
-            //根据课程id查询课程名字
-            String courseName= courseService.getCourseById(courseId).getCourseName();
+            //根据standardId去查询老师姓名和课程名
+            //根据standardId查询Course记录
+            Course course = courseDao.getCourseByStandardId(paper.getTeacCourseId());
+            String courseName= course.getCourseName();
             paper.setCourseName(courseName);
+            Long tcID = courseDao.getTeacCourseIdByStandardId(paper.getTeacCourseId());
+            TeacCourse teacCourse = teacCourseDao.selectByPrimaryKey(tcID);
             //教师id
             Long teacId=teacCourse.getTeacId();
             //根据teacId查询老师名字

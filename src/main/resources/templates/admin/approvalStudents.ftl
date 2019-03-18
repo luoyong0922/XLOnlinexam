@@ -49,10 +49,9 @@
 
          <#list pageInfo.list as student>
          <tr <#if student.stuState == 2>class="table-warning"<#elseif student.stuState == 1>class="table-info" </#if>>
-         <#--<tr class="table-info">-->
              <td>${student?counter}</td>
              <td>${student.stuNum}</td>
-             <td>${student.stuPassword}</td>
+             <td>......</td>
              <td>${student.stuName}</td>
              <td>${student.stuAddress}</td>
              <td>${student.stuGender}</td>
@@ -71,6 +70,7 @@
         </table>
         </div>
         <br/>
+        <#if (pageInfo.total > 0)>
         当前是第${pageInfo.pageNum}页,共${pageInfo.pages}页，总记录数为${pageInfo.total}条
         <br/>
 
@@ -82,7 +82,7 @@
                     <li>
                         <a href="${rc.contextPath}/adminController/toApprovalStudents?keywords=${keywords!}">首页</a>
                     </li>
-                <#--<!-- 如果还有前页就访问当前页码-1的页面， &ndash;&gt;-->
+                <#-- 如果还有前页就访问当前页码-1的页面，-->
                     <#if pageInfo.hasPreviousPage>
                         <li>
                             <a href="${rc.contextPath}/adminController/toApprovalStudents?pageIndex=${pageInfo.pageNum-1}&keywords=${keywords!}" aria-label="Previous">
@@ -91,7 +91,7 @@
                         </li>
                    </#if>
                 <li>
-                <#--<!--遍历所有导航页码，如果遍历的页码页当前页码相等就高亮显示，如果相等就普通显示  &ndash;&gt;-->
+                <#--遍历所有导航页码，如果遍历的页码页当前页码相等就高亮显示，如果相等就普通显示 -->
             <#list pageInfo.navigatepageNums as pageNums>
                 <#if pageNums==pageInfo.pageNum>
             <li class="active"><a href="#">${pageNums}</a></li>
@@ -103,7 +103,7 @@
                 </#if>
             </#list>
                     </li>
-                <#--<!-- 如果还有后页就访问当前页码+1的页面， &ndash;&gt;-->
+                <#--<!-- 如果还有后页就访问当前页码+1的页面，-->
                     <#if pageInfo.hasNextPage>
                         <li>
                             <a href="${rc.contextPath}/adminController/toApprovalStudents?pageIndex=${pageInfo.pageNum+1}&keywords=${keywords!}" aria-label="Next">
@@ -121,7 +121,9 @@
                 </div>
             </nav>
         </div>
-
+        <#else>
+        <div style="font-size:18px;text-align:center;">暂无数据</div>
+        </#if>
 </div>
 <script>
 
@@ -136,25 +138,6 @@
     function approval(ids,op) {
         window.location='${rc.contextPath}/adminController/doApprovalStudents/'+ids+'/'+op;
     }
-    // function  deletes() {
-    //     var f=document.forms[1];
-    //     var subcks=document.getElementsByName("ids");
-    //     var str="";
-    //     for(var i=0;i<subcks.length;i++){
-    //         if(subcks[i].checked==true) {
-    //             str+=subcks[i].value + ",";
-    //         }
-    //     }
-    //     str = str.substring(0,str.length-1);
-    //     if(str==''){
-    //         alert("请选择要删除的学生");
-    //     }else{
-    //         if(confirm('确定要删除这些学生吗？')){
-    //             f.action='deletes?id='+str;
-    //             f.submit();
-    //         }
-    //     }
-    // }
 </script>
 </body>
 </html>

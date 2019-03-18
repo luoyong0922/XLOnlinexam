@@ -25,8 +25,9 @@
 					<thead>
 						<tr>
 							<th>序号</th>
-							<th>试卷编号</th>
 							<th>课程名称</th>
+							<th>测评单元</th>
+                            <th>测评周次</th>
 							<th>学生姓名</th>
 							<th>考试用时</th>
 							<th>状态</th>
@@ -40,8 +41,9 @@
 								<tr <#if stuScore.paperState==0>class="table-warning"
 									<#elseif stuScore.paperState==1>class="table-info" </#if> >
                                         <td>${stuScore?counter}</td>
-                                        <td>${stuScore.paperId!}</td>
                                         <td>${stuScore.courseName!}</td>
+                                        <td>单元${stuScore.testUnit}</td>
+                                        <td>测评${stuScore.testNum}</td>
                                         <td>${stuScore.stuName!}</td>
                                         <td>${stuScore.testTime!}</td>
                                         <td>
@@ -64,9 +66,9 @@
 					</tbody>
 				</table>
 			</div>
-            <#if (pageInfo.total > 0)>
-			    <#include "../pageHelper2.ftl"/>
-			</#if>
+                <#if (pageInfo.total > 6)>
+                    <#include "../pageHelper2.ftl"/>
+                </#if>
 		</div>
 
 		<script>

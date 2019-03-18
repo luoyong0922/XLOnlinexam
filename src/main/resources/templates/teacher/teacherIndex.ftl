@@ -71,7 +71,7 @@
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe6fb;</i>
-                    <cite>试卷管理</cite>
+                    <cite>测评管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
@@ -79,7 +79,7 @@
                         <li>
                             <a _href="${rc.contextPath}/paperController/getPaperStandard?tI=${c.id}&cN=${c.courseName}">
                                 <i class="iconfont">&#xe6a7;</i>
-                                <cite>${c.courseName}试卷列表</cite>
+                                <cite><b>${c.courseName}</b>测评列表</cite>
                             </a>
                         </li >
                     </#list>

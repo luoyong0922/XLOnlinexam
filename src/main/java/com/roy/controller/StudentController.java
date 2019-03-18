@@ -120,8 +120,8 @@ public class StudentController {
     //查看学生成绩
     @RequestMapping("getStuScore")
     public String showStuScore(@RequestParam(value = "pageIndex",required =false,defaultValue = "1") Integer pageIndex,
-                                                   @RequestParam(value = "teacCourseId",required =false,defaultValue ="0") Long teacCourseId,
-                                                   Model model, HttpSession session) {
+                               @RequestParam(value = "teacCourseId",required =false,defaultValue ="0") Long teacCourseId,
+                               Model model, HttpSession session) {
 
         Long stuId = (Long) session.getAttribute("id");
         if(teacCourseId == 0){
@@ -133,7 +133,8 @@ public class StudentController {
         //成绩信息
         PageInfo pageInfo2 = teacherService.searchStuScore(pageIndex,stuId,teacCourseId);
         model.addAttribute("pageInfo",pageInfo2);
-        System.out.println(pageInfo2);
+        System.out.println("course"+pageInfo);
+        System.out.println("score"+pageInfo2);
         return "student/myScore";
 
     }

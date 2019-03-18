@@ -12,10 +12,18 @@
 
 <table class="table">
     <tr>
-        <td>课程名称</td>
-        <td><strong>${courseName!}</strong></td>
-    </tr>
-         <#if paperStandards??>
+            <td colspan="2">课程名称:<strong>${courseName!}</strong></td>
+            <td colspan="2">测评单元：
+            <#if unitSet??>
+                <select name="testUnit" id="testUnit" class="select-control" >
+                    <#list unitSet as unit>
+                        <option class="" value="${unit}" <#if (unit == testUnit) >selected</#if>>${unit}</option>
+                    </#list>
+                </select>
+              </#if>
+            </td>
+        </tr>
+             <#if paperStandards??>
         
     </table>
         <table class="table table-hover" id="Test">
@@ -42,12 +50,17 @@
         </table>
                
          <#else>
-                    <tr><td></td><td style="font-size: 20px;font-weight:400;">暂无通知</td></tr>
+                    <tr><td></td><td style="font-size: 20px;font-weight:400;" colspan="4">暂无通知</td></tr>
           </tbody>
         </table>
          </#if>
 
 
 </div>
+<script>
+    $("select#testUnit").change(function(){
+         window.location= '${rc.contextPath}/paperController/getPaperStandard?tI=${teaccourseId}&cN=${courseName}&unit='+$(this).val();
+     });
+</script>
 </body>
 </html>

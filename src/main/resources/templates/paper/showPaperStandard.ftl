@@ -14,7 +14,7 @@
 					<td>课程名称</td>
 					<td>
 						<#if courseName??>
-							${courseName}
+							<b>${courseName}</b>
 						</#if>
 					</td>
 				</tr>
@@ -23,7 +23,7 @@
                     <td>测试<span>${standardMap["testValue"]}</span></td>
                 </tr>
 				<tr>
-					<td>考试时长</td>
+					<td>测试时长</td>
 					<td><span>${standardMap["testTime"]}</span>分钟</td>
 				</tr>
 			</table>
@@ -34,7 +34,7 @@
 					<tr>
 						<th>题型</th>
 						<th>题量</th>
-						<th>分值</th>
+						<th>每题分值</th>
 					</tr>
 				</thead>
 				<tbody>

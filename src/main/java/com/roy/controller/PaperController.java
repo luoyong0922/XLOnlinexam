@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -76,13 +76,20 @@ public class PaperController {
     @RequestMapping("getPaperStandard")
     public String getPaperStandard(@RequestParam("tI") Long teaccourseId,
                                     @RequestParam("cN") String courseName,
+                                    @RequestParam(value = "unit",required = false,defaultValue = "0") Integer testUnit,
                                     Model model,HttpSession session){
-        List<PaperStandard> paperStandards= paperService.getPaperStandard(teaccourseId);
+        List<PaperStandard> paperStandards= paperService.getPaperStandard(teaccourseId, testUnit);
         if(paperStandards.size()>0) {
             model.addAttribute("paperStandards", paperStandards);
+            List<PaperStandard> paperStandards2= paperService.getPaperStandard(teaccourseId, 0);
+            //创建HashSet对象
+            HashSet<Integer> unitSet = new HashSet<Integer>();
+            paperStandards2.forEach( paperStandard3 -> unitSet.add(paperStandard3.getTestAmount()));
+            model.addAttribute("unitSet",unitSet);
         }
         model.addAttribute("teaccourseId",teaccourseId);
         model.addAttribute("courseName",courseName);
+        model.addAttribute("testUnit",testUnit);
         String role = (String) session.getAttribute("role");
         if(role.equals("teacher")){
             return "paper/toShowPaper";
@@ -204,9 +211,6 @@ public class PaperController {
 
     }
 
-
-
-
     /**
      * 老师或管理员查看题库
      * @param session
@@ -223,11 +227,12 @@ public class PaperController {
                                 @RequestParam(value = "courseName",required =false,defaultValue ="") String courseName,
                                 @RequestParam(value = "questionType",required =false,defaultValue ="1") Integer questionType,
                                 @RequestParam(value = "teacCourseId",required =false,defaultValue ="0") Long teacCourseId,
+                                @RequestParam(value = "dificult",required =false,defaultValue ="0") String dificult,
                                 Model model){
         //题型： 1：多选题，2：单选题，3:判断题，4：填空题，5：计算题，6：主观题
-        String type = "多选题";
+        String type = "";
         if(questionType == 1){
-
+            type = "多选题";
         }else if(questionType == 2){
             type = "单选题";
         }else if(questionType == 3){
@@ -239,21 +244,22 @@ public class PaperController {
         }else if(questionType == 6){
             type = "主观题";
         }
-        System.out.println("------------"+type);
         PageInfo pageInfo = new PageInfo();
         List<TeacCourse> teacCourses = new ArrayList<>();
         Long id = (Long) session.getAttribute("id");
         String role = (String) session.getAttribute("role");
-        System.out.println(role);
         if("teacher".equals(role)) {//教师查询题库
             teacCourses = teacherService.getCourseName(id);
-            pageInfo = paperService.SearchTeacherViewQuestionByCNameAndQType(pageIndex,courseName,type,id,teacCourseId);
-        }else {//管理员查询题库
+            pageInfo = paperService.SearchTeacherViewQuestionByCNameAndQType(pageIndex,courseName,type,id,teacCourseId,dificult);
+        }else if("admin".equals(role)){//管理员查询题库
             teacCourses = teacherService.getAllCourseName();
-            pageInfo = paperService.SearchAdminViewQuestionByCNameAndQType(pageIndex,courseName,type,teacCourseId);
+            pageInfo = paperService.SearchAdminViewQuestionByCNameAndQType(pageIndex,courseName,type,teacCourseId,dificult);
         }
         if(teacCourseId == 0 && teacCourses.size()>0) {
             teacCourseId = teacCourses.get(0).getId();
+        }
+        if(!dificult.equals("0")){
+            model.addAttribute("testUnit",dificult);
         }
         model.addAttribute("teacCourseId",teacCourseId);
         model.addAttribute("teacCourses",teacCourses);
@@ -263,12 +269,13 @@ public class PaperController {
         System.out.println(pageInfo);
         if("admin".equals(role)) {//管理员
             return "admin/showQuestion";
-        }else {//教师
+        }else if("teacher".equals(role)){//教师
             return "paper/addQuestion";
         }
+        return "403";
     }
 
-    //根据题目类型和题目去查题目
+    //根据题目类型和题目id去查题目
     @RequestMapping(value = "getQuestionAjax",method = RequestMethod.POST)
     @ResponseBody
     public Object GetQuestionAjax(@RequestBody AdminViewQuestion adminViewQuestion){

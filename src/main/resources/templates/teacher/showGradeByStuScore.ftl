@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-
+            <#if infoIds??>
             <#list infoIds as entry >
             <tr>
                 <td>${entry.key}</td>
@@ -27,6 +27,9 @@
                 <td>${entry?counter}</td>
             </tr>
             </#list>
+            <#else>
+            <tr>暂无数据</tr>
+            </#if>
 
             </tbody>
         </table>
