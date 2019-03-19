@@ -1,6 +1,5 @@
 package com.roy.controller;
 
-import com.roy.model.RespBean;
 import com.roy.model.RespResult;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
