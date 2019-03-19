@@ -27,7 +27,7 @@
         <li class="layui-nav-item">
             <a href="javascript:;">+新增</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a onclick="x_admin_show('作业','${rc.contextPath}/to404')"><i class="iconfont">&#xe6a2;</i>作业</a></dd>
+                <dd><a onclick="x_admin_show('作业','${rc.contextPath}/homeworkController/get')"><i class="iconfont">&#xe6a2;</i>作业</a></dd>
                 <dd><a onclick="x_admin_show('考试','${rc.contextPath}/paperController/toPublicPaper')"><i class="iconfont">&#xe6a8;</i>考试</a></dd>
             </dl>
         </li>

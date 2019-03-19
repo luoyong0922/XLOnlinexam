@@ -9,7 +9,7 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="homeWork_content" jdbcType="VARCHAR" property="homeworkContent" />
     <result column="course_name" jdbcType="VARCHAR" property="courseName" />
-    <result column="date" jdbcType="DATE" property="date" />
+    <result column="date" jdbcType="TIMESTAMP" property="date" />
     <result column="teac_course_id" jdbcType="BIGINT" property="teacCourseId" />
   </resultMap>
   <sql id="Example_Where_Clause">

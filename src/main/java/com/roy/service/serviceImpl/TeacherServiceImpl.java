@@ -294,8 +294,8 @@ public class TeacherServiceImpl implements TeacherService {
     //插入homeWork记录
     @Override
     public boolean insertIntoHomeWork(HomeWork homeWork){
-        int result=homeWorkDao.insertSelective(homeWork);
-        return result>0;
+        int result = homeWorkDao.insertSelective(homeWork);
+        return result > 0;
     }
 
     /**

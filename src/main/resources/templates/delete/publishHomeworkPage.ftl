@@ -8,7 +8,7 @@
 <body>
 <div class="container center-block" style="margin-top: 50px;">
 
-<form  action="${rc.contextPath}/teacherController/publicHomeWork" method="post">
+<form  action="${rc.contextPath}/homeworkController/publicHomeWork" method="post">
     <input type="text" name="teacCourseId" value="${teacCourseId}" style="display: none;">
     <input type="text" name="courseName" value="${courseName}" style="display: none;">
     课程名称：<span style="font-size: 18px;font-weight: 500;">${courseName!}</span><br/>

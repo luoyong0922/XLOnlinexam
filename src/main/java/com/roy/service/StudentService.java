@@ -20,5 +20,7 @@ public interface StudentService {
     //添加学生课程记录
     boolean addStuCourse(StuCourse stuCourse);
 
-    HomeWork getHomeWorkByTcId(Long teacCourseId);
+    List<HomeWork> getHomeWorkByTcId(Long teacCourseId);
+
+    HomeWork getHomeWorkById(Long homeWorkId);
 }

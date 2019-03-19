@@ -19,6 +19,7 @@
         </tr>
         </thead>
         <tbody>
+        <#if (pageInfo.total > 0)>
     <#list pageInfo.list as teacCourse>
         <tr>
             <td>${teacCourse.courseName}</td>
@@ -27,11 +28,14 @@
             <td>${teacCourse.startTime?string("yyyy-MM-dd")}</td>
             <td>${teacCourse.endTime?string("yyyy-MM-dd")}</td>
             <td style="text-align: center;">
-                <a href="${rc.contextPath}/teacherController/toPublicHomewWork?tcid=${teacCourse.id}&cname=${teacCourse.courseName}">布置作业</a>
-                <a href="${rc.contextPath}/paperController/toPublicPaper?id=${teacCourse.id}&courseName=${teacCourse.courseName}">发布考试</a>
+                <a href="${rc.contextPath}/homeworkController/getHomework?tcId=${teacCourse.id!}">查看作业</a>
+                <a href="${rc.contextPath}/paperController/toPublicPaper?id=${teacCourse.id}&courseName=${teacCourse.courseName}">发布测试</a>
             </td>
         </tr>
     </#list>
+    <#else>
+    <tr><td colspan="9" style="text-align:center;">暂无数据</td></th>
+    </#if>
 
         </tbody>
     </table>

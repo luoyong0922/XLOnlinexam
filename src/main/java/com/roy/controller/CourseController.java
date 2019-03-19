@@ -89,6 +89,7 @@ public class CourseController {
                                      @RequestParam(value = "courseName",required = false,defaultValue = "") String courseName,
                                      @RequestParam(value = "teacName",required = false,defaultValue = "")String teacName,
                                      @RequestParam(value = "tcid",required = false,defaultValue = "0")Long tcid,
+                                     @RequestParam(value = "opration",required = false,defaultValue = "0")Integer opration,
                                      Model model,
                                      HttpSession session){
         String viwe = "404";
@@ -101,6 +102,7 @@ public class CourseController {
         model.addAttribute("pageInfo",pageInfo);
         model.addAttribute("courseName",courseName);
         model.addAttribute("teacName",teacName);
+        model.addAttribute("opration",opration);
         if(role == 1) {//学生查询课程
             viwe = "course/showStudentCourses";
         }else if(role == 2) {//教师查询课程

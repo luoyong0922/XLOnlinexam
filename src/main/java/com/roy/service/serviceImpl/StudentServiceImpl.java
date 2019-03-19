@@ -87,21 +87,22 @@ public class StudentServiceImpl implements StudentService {
     }
 
     /**
-     * 根据教师课程id查询最新作业信息
+     * 根据教师课程id查询所有作业信息
      * @param teacCourseId
      * @return
      */
     @Override
-    public HomeWork getHomeWorkByTcId(Long teacCourseId){
-        HomeWork homeWork = new HomeWork();
+    public List<HomeWork> getHomeWorkByTcId(Long teacCourseId){
         HomeWorkExample example = new HomeWorkExample();
         HomeWorkExample.Criteria criteria = example.createCriteria();
         criteria.andTeacCourseIdEqualTo(teacCourseId);
         List<HomeWork> homeWorkList = homeWorkDao.selectByExample(example);
-        if(homeWorkList.size()>0){
-            homeWork = homeWorkList.get(homeWorkList.size()-1);
-        }
-        return homeWork;
+        return homeWorkList;
+    }
+
+    @Override
+    public HomeWork getHomeWorkById(Long homeWorkId) {
+        return homeWorkDao.selectByPrimaryKey(homeWorkId);
     }
 
 }

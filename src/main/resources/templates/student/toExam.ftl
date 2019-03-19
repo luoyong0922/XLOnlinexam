@@ -50,7 +50,7 @@
         </table>
                
          <#else>
-                    <tr><td></td><td style="font-size: 20px;font-weight:400;" colspan="4">暂无通知</td></tr>
+             <tr> <td style="font-size: 20px;font-weight:400;" colspan="4">暂无通知</td></tr>
           </tbody>
         </table>
          </#if>

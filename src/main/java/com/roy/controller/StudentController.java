@@ -138,18 +138,4 @@ public class StudentController {
         return "student/myScore";
 
     }
-    /**
-     * 学生查看作业通知
-     * @param teaccourseId
-     * @param model
-     * @return
-     */
-    @RequestMapping("getHomework")
-    public String getHomework(@RequestParam("tcI") Long teaccourseId,
-                              Model model){
-        HomeWork homeWork = studentService.getHomeWorkByTcId(teaccourseId);
-        model.addAttribute("homework",homeWork);
-        System.out.println(homeWork);
-        return "student/showHomework";
-    }
 }

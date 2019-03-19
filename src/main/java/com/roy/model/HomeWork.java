@@ -1,5 +1,7 @@
 package com.roy.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class HomeWork {
@@ -37,6 +39,7 @@ public class HomeWork {
      *
      * @mbg.generated
      */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date date;
 
     /**

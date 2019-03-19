@@ -29,8 +29,12 @@
             <td>${courseManage.courseType!}</td>
             <td>${courseManage.courseCredit!}</td>
             <td style="text-align: center;">
-                <a href="${rc.contextPath}/studentController/getHomework?tcI=${courseManage.id!}">查看作业通知</a><br>
-                <a href="${rc.contextPath}/paperController/getPaperStandard?cN=${courseManage.courseName!}&tI=${courseManage.id!}">查看考试通知</a>
+                <#if (opration != 2)>
+                    <a href="${rc.contextPath}/homeworkController/getHomework?tcId=${courseManage.id!}">查看作业通知</a><br>
+                </#if>
+                <#if (opration != 1)>
+                    <a href="${rc.contextPath}/paperController/getPaperStandard?cN=${courseManage.courseName!}&tI=${courseManage.id!}">查看测评通知</a>
+                </#if>
             </td>
         </tr>
     </#list>

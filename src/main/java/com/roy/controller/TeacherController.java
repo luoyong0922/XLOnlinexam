@@ -104,25 +104,6 @@ public class TeacherController {
         }
     }
 
-    //去到发布作业的页面
-    @RequestMapping("toPublicHomewWork")
-    public String toPublicHomeWork(@RequestParam("tcid") Long teacCourseId,@RequestParam("cname")String courseName,Model model){
-        model.addAttribute("teacCourseId",teacCourseId);
-        model.addAttribute("courseName",courseName);
-        return "course/publishHomeworkPage";
-    }
-    //发布作业
-    @RequestMapping("publicHomeWork")
-    public String doPublicHomeWork(HomeWork homeWork){
-        Date date=new Date();
-        homeWork.setDate(date);
-        RespResult respResult = new RespResult();
-        if(teacherService.insertIntoHomeWork(homeWork)){
-            respResult.setMessage("添加失败，请稍后重试！");
-        }
-        return "redirect:/courseController/getCourseMessage?role=2";
-    }
-
     //新增填空题
     @RequestMapping("addFill")
     public String doAddFill(Fill fill,HttpSession session){
