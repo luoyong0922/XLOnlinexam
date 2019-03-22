@@ -28,23 +28,11 @@ public class WSController {
 
     //  这里使用静态，让 service 属于类
     private static MessageService messageService;
-    private static TeacherService teacherService;
-    private static StudentService studentService;
 
     // 注入的时候，给类的 service 注入
     @Autowired
     public void setMessageService(MessageService messageService) {
         WSController.messageService = messageService;
-    }
-    // 注入的时候，给类的 service 注入
-    @Autowired
-    public void setTeacherService(TeacherService teacherService) {
-        WSController.teacherService = teacherService;
-    }
-    // 注入的时候，给类的 service 注入
-    @Autowired
-    public void setStudentService(StudentService studentService) {
-        WSController.studentService = studentService;
     }
 
     // 使用map来收集session，key为roomName，value为同一个房间的用户集合
@@ -87,13 +75,9 @@ public class WSController {
         chat.setTcid(Long.valueOf(roomName));
         chat.setSendId(userId);
         if("teacher".equals(role)){//教师
-            Teacher teacher = teacherService.getTeacByTeacId(userId);
             chat.setAttach("1");
-            userName = teacher.getTeacName();
         }else if("student".equals(role)){//教师
-            Student student = studentService.getStudentById(userId);
             chat.setAttach("2");
-            userName =student.getStuName();
         }else {
             try {
                 this.onError(new Throwable());
@@ -101,8 +85,11 @@ public class WSController {
                 throwable.printStackTrace();
             }
         }
+        String[] datas = msg.split("`"); // data形式   Lily`Hello,I'm Lily.
+        userName = datas[0];
+        String message = datas[1];
         chat.setSendName(userName);
-        chat.setMessage(msg);
+        chat.setMessage(message);
         boolean result = false;
         if(messageService != null) {
             System.out.println(chat);
@@ -111,10 +98,10 @@ public class WSController {
             System.out.println("messageService is null");
         }
         if(result){
-            msg = userName + ":" + msg;
-            System.out.println(msg);
+            String data = userName + "\\\\" + message;
+            System.out.println(data);
             // 接收到信息后进行广播
-            broadcast(roomName, msg);
+            broadcast(roomName, data);
         }else {
             System.out.println("消息发送失败");
         }
