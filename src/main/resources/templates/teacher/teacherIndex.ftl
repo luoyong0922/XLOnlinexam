@@ -164,6 +164,13 @@
                    </#list>
                 </ul>
             </li>
+             <li>
+                <a _href="${rc.contextPath}/courseController/getCourseMessage?role=2&opration=3">
+                    <i class="iconfont">&#xe6a2;</i>
+                    <cite>学习探讨小组</cite>
+                    <i class="iconfont nav_right">></i>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

@@ -113,7 +113,11 @@ public class CourseController {
                 view = "404";
             }
         }else if(role == 2) {//教师查询课程
-            view = "course/showTeacherCourses";
+            if (opration == 3){ // 查看讨论小组
+                view = "chat/showGroups";
+            }else {
+                view = "course/showTeacherCourses";
+            }
         }else if(role == 3){//管理员查询课程
             view = "course/showCourses";
         }

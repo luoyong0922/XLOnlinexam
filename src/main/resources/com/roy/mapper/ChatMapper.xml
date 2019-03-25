@@ -332,4 +332,57 @@
       tcId = #{tcid,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <!--//查询今天的聊天记录-->
+  <select id="selectTodayMsg" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select c.id,c.send_id,c.send_name,c.send_time,c.message,c.attach,c.tcId
+    FROM t_chat c
+    where to_days(c.send_time) = to_days(now()) and c.tcId = #{tcId,jdbcType=BIGINT}
+    order by c.send_time;
+  </select>
+  <!--//查询最近三天聊天记录-->
+  <!-- &lt;  表示 < ,  %lt;=  表示 <= -->
+  <select id="selectRecentThreeDaysMsg" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select c.id,c.send_id,c.send_name,c.send_time,c.message,c.attach,c.tcId
+    FROM t_chat c
+    where c.tcId = #{tcId,jdbcType=BIGINT} and to_days(NOW()) - TO_DAYS(c.send_time) &lt; 3
+    order by c.send_time;
+  </select>
+  <!--//查询最近一周聊天记录-->
+  <select id="selectRecentWeekMsg" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select c.id,c.send_id,c.send_name,c.send_time,c.message,c.attach,c.tcId
+    FROM t_chat c
+    where c.tcId = #{tcId,jdbcType=BIGINT} and YEARWEEK(date_format(c.send_time,'%Y-%m-%d')) = YEARWEEK(now())
+    order by c.send_time;
+  </select>
+  <!--//查询最近两周聊天记录-->
+  <select id="selectRecentTwoWeeksMsg" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select c.id,c.send_id,c.send_name,c.send_time,c.message,c.attach,c.tcId
+    FROM t_chat c
+    where c.tcId = #{tcId,jdbcType=BIGINT} and YEARWEEK(date_format(c.send_time,'%Y-%m-%d')) >= YEARWEEK(now())-1
+    order by c.send_time;
+  </select>
+  <!--//查询本月聊天记录-->
+  <select id="selectCurrentMouthMsg" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select c.id,c.send_id,c.send_name,c.send_time,c.message,c.attach,c.tcId
+    FROM t_chat c
+    where c.tcId = #{tcId,jdbcType=BIGINT} and DATE_FORMAT( c.send_time, '%Y%m' ) = DATE_FORMAT( CURDATE() , '%Y%m' )
+    order by c.send_time;
+  </select>
+  <!--//查询近三个月聊天记录-->
+  <select id="selectRecentThreeMouthsMsg" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select c.id,c.send_id,c.send_name,c.send_time,c.message,c.attach,c.tcId
+    FROM t_chat c
+    where c.tcId = #{tcId,jdbcType=BIGINT} and  PERIOD_DIFF( date_format( now( ) , '%Y%m' ) , date_format( c.send_time, '%Y%m' ) ) &lt;= 2
+    order by c.send_time;
+  </select>
+  <!--//查询今年聊天记录-->
+  <select id="selectCurrentYearMsg" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select c.id,c.send_id,c.send_name,c.send_time,c.message,c.attach,c.tcId
+    FROM t_chat c
+    where c.tcId = #{tcId,jdbcType=BIGINT} and YEAR(c.send_time)=YEAR(NOW())
+    order by c.send_time;
+  </select>
+
+
 </mapper>

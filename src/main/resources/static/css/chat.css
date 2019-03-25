@@ -1,8 +1,8 @@
 .msg_board {
           margin: 25px 0;
 		  float:right;
-  		width: 75%;
-  		min-height: 150px;
+          width: 75%;
+          min-height: 150px;
           border: solid 1px darkcyan;
           overflow-y: scroll;
           /* 文字长度大于div宽度时换行显示*/
@@ -52,7 +52,7 @@
         .receiver{
             clear:both;
         }
-        .receiver div:nth-child(1){
+        .receiver div:nth-of-type(1){
             float: right;
         }
         .receiver div:nth-of-type(2){

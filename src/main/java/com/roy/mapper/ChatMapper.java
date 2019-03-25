@@ -93,4 +93,19 @@ public interface ChatMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(Chat record);
+
+    //查询今天的聊天记录
+    List<Chat> selectTodayMsg(Long tcId);
+    //查询最近三天聊天记录
+    List<Chat> selectRecentThreeDaysMsg(Long tcId);
+    //查询最近一周聊天记录
+    List<Chat> selectRecentWeekMsg(Long tcId);
+    //查询最近两周聊天记录
+    List<Chat> selectRecentTwoWeeksMsg(Long tcId);
+    //查询本月聊天记录
+    List<Chat> selectCurrentMouthMsg(Long tcId);
+    //查询近三个月聊天记录
+    List<Chat> selectRecentThreeMouthsMsg(Long tcId);
+    //查询今年聊天记录
+    List<Chat> selectCurrentYearMsg(Long tcId);
 }
