@@ -22,6 +22,7 @@ public class SpringbootApplication {
 	public ServerEndpointExporter serverEndpointExporter() {
 		return new ServerEndpointExporter();
 	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootApplication.class, args);
 	}

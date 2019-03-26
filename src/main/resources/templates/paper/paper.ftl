@@ -8,9 +8,7 @@
     <meta http-equiv="expires" content="0">
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="This is my page">
-    <!--
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    -->
+
     <link href="${rc.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="${rc.contextPath}/static/js/jquery-1.11.0.js"></script>
@@ -115,7 +113,7 @@
 
         </div>
     </#list>
-</div>
+
 </#if>
 <#if calculates?? && (calculates?size > 0) >
     <!----------------------------------------------- 计算题 -->
@@ -130,7 +128,7 @@
             <input type="text" name="ac${item?counter}" id="" class=" "/>
         </div>
     </#list>
-</div>
+
 </#if>
 <#if subjects?? && (subjects?size > 0) >
 <!----------------------------------------------- 主观题 -->
@@ -146,9 +144,8 @@
         </textarea>
     </div>
     </#list>
-</div>
-</#if>
 
+</#if>
 </div>
 
 <input type="button" id="up" style="" onclick="getdate()" value="提交">

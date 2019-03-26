@@ -991,7 +991,7 @@ public class PaperServiceImpl implements PaperService {
         model.addAttribute("subjectAnsList",subjectAnsList);
         StuScore stuScore = new StuScore();
         //判断角色
-        if("teacher".equals(role)){//老师阅卷
+        if("teacher".equals(role) && paper.getPapeState() == 0){//老师阅卷
             //计算成绩
             Map map = doMarking(id, score6);
             stuScore = (StuScore) map.get("stuScore");

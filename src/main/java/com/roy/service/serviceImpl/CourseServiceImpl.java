@@ -239,7 +239,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     /**
-     * 根据教师课程ID查询
+     * 根据教师课程ID查询学生课程消息
      * 课程类型：必修，选修  courseType
      * 学生ID   stuId
      * @param teaccourseId
@@ -253,9 +253,10 @@ public class CourseServiceImpl implements CourseService {
 
         String courseType = "";
         Long stuId = 0L;
-        if(stuCourseDao.selectByExample(example).size()>0) {
-            courseType = stuCourseDao.selectByExample(example).get(0).getCourseType();
-            stuId = stuCourseDao.selectByExample(example).get(0).getStuId();
+        List<StuCourse> list = stuCourseDao.selectByExample(example);
+        if(list.size()>0) {
+            courseType = list.get(0).getCourseType();
+            stuId = list.get(0).getStuId();
         }
         map.put("courseType",courseType);
         map.put("stuId",stuId);

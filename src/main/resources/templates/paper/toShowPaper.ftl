@@ -33,7 +33,7 @@
                 <th>测评单元</th>
                 <th>测评周次</th>
                 <th>测评时长（分钟)</th>
-                <th>操作</th>
+                <th style="text-align:center;">操作</th>
             </tr>
             </thead>
             <tbody>
@@ -43,7 +43,7 @@
                         <td>第${paperStandard.testAmount!}单元</td>
                         <td>测评${paperStandard.testValue!}</td>
                         <td>${paperStandard.testTime!} min</td>
-                        <td><a href="${rc.contextPath}/achievementController/getAllstuScore?teacCourseId=${paperStandard.id}" class="btn btn-info center-block">查看详情</a></td>
+                        <td><a href="${rc.contextPath}/achievementController/getAllstuScore?teacCourseId=${paperStandard.id}" class="btn btn-info center-block">查看列表</a></td>
                     </tr>
                     </#list>
             </tbody>

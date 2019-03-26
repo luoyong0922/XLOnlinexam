@@ -140,7 +140,7 @@
     </#list>
     <label class=" " style="cursor: pointer;">判断题得分：</label>
     <input type="text" value="${stuScore.judgeCount}" style="color:red;font-size: 20px;border:none;"/><br/>
-</div>
+
 </#if>
 <#if calculates?? && (calculates?size > 0) >
     <!----------------------------------------------- 计算题 -->
@@ -152,7 +152,7 @@
         </div>
         <div class=" " style="">
             <label class=" " style="cursor: pointer;">回答：</label>
-            <input type="text" name="ac${item?counter}" id="ac${item?counter}" style="color:red;font-size: 16px;border:none;"/>
+            <input type="text" name="ac${item?counter}" id="ac${item?counter}" style="color:blue;font-size: 16px;border:none;"/>
             <label class=" " style="cursor: pointer;">参考答案：</label>
             <input type="text" value="${item.answer1}" style="color:red;font-size: 16px;border:none;"/><br/>
         </div>
@@ -162,7 +162,6 @@
     </#list>
     <label class=" " style="cursor: pointer;">计算题得分：</label>
     <input type="text" value="${stuScore.calculateCount}" style="color:red;font-size: 20px;border:none;"/><br/>
-</div>
 </#if>
 <#if subjects?? && (subjects?size > 0) >
 <!----------------------------------------------- 主观题 -->

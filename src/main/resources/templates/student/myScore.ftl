@@ -41,8 +41,8 @@
             </#list>
         </select>
         <input type="button" class="btn btn-primary" value="搜索" onclick="javascript:roy()">&emsp;&emsp;&emsp;
-        <input type="button" class="btn btn-info" value="成绩统计表" onclick="javascript:toStatistics()"/>&emsp;&emsp;
-        <input type="button" class="btn btn-info" value="成绩排名表" onclick="javascript:toScoreOrder()"/>
+    <!--    <input type="button" class="btn btn-info" value="成绩统计表" onclick="javascript:toStatistics()"/>&emsp;&emsp; -->
+    <!--   <input type="button" class="btn btn-info" value="成绩排名表" onclick="javascript:toScoreOrder()"/>  -->
     </form>
     <script>
         function roy(){
@@ -68,7 +68,7 @@
                 <th>测评用时</th>
                 <th>成绩</th>
                 <th>状态</th>
-                <th>操作</th>
+                <th colspan="2" style="text-align:center;">操作</th>
             </tr>
             </thead>
             <tbody>
@@ -88,7 +88,8 @@
           </#if>
          </td>
         <td>
-            <a href="${rc.contextPath}/paperController/toMarking/${stuScore.paperId}?courseName=${stuScore.courseName}">查看详情</a>
+            <a href="javascript:void(0);" onclick="toShowPaper(${stuScore.paperId},'${stuScore.courseName}')" >查看试题</a>&emsp;
+            <a href="javascript:void(0);" onclick="toScoreOrder(${stuScore.id},'${stuScore.courseName}')">查看排名</a>
         </td>
     </tr>
     </#list>
@@ -104,24 +105,27 @@
 </div>
 
 <script>
-
-    function toStatistics() {
-        var teacCourseId=$('#selectValue  option:selected').val();
-        if(teacCourseId == 0){
-            alert('你还未选择课程！');
-        }else {
-            window.location = '${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId=' + teacCourseId;
-        }
-    }
-    function toScoreOrder() {
-        var teacCourseId=$('#selectValue  option:selected').val();
-        var courseName=$('#selectValue option:selected').text();
-        if(teacCourseId == 0){
-            alert('你还未选择课程！');
-        }else {
+//
+//  function toStatistics() {
+//           var teacCourseId=$('#selectValue  option:selected').val();
+//           if(teacCourseId == 0){
+//               alert('你还未选择课程！');
+//           }else {
+//               window.location = '${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId=' + teacCourseId;
+//           }
+//       }
+    function toScoreOrder(teacCourseId , courseName) {
+     //   var teacCourseId=$('#selectValue  option:selected').val();
+     //   var courseName=$('#selectValue option:selected').text();
+     //   if(teacCourseId == 0){
+      //      alert('你还未选择课程！');
+      //  }else {
             window.location = '${rc.contextPath}/achievementController/showGradeOrder/' + courseName + '?teacCourseId=' + teacCourseId;
-        }
+      //  }
     }
+    function toShowPaper(paperId , courseName) {
+            window.location = '${rc.contextPath}/paperController/toMarking/'+paperId+'?courseName='+ courseName;
+        }
 </script>
 
 </body>

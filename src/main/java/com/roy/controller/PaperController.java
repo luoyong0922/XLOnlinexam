@@ -202,6 +202,7 @@ public class PaperController {
                             Model model,HttpSession session){
         String role = (String) session.getAttribute("role");
         paperService.toMarking(id,score6,model,role);
+        paperService.doMarking(id,score6);
         Long standardId = 0L;
         Paper paper = paperService.getPaperById(id);
         if(paper != null){

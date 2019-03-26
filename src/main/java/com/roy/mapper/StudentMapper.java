@@ -95,4 +95,6 @@ public interface StudentMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(Student record);
+
+    List<Student> selectStudentsByTeacCourseId(Long teacCourseId);
 }

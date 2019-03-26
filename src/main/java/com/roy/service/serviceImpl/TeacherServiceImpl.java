@@ -32,7 +32,8 @@ public class TeacherServiceImpl implements TeacherService {
     private TeacCourseMapper teacCourseDao;
     @Resource
     private PaperMapper paperDao;
-
+    @Resource
+    private StudentMapper studentDao;
     @Resource
     private HomeWorkMapper homeWorkDao;
     /**
@@ -333,6 +334,13 @@ public class TeacherServiceImpl implements TeacherService {
             String stuName=getStuNameBystuId(stuScores.get(i).getStuId());
             map.put(stuName,score);
         }
+        Long tcId = courseDao.getTeacCourseIdByStandardId(teacCourseId);
+        List<Student> students = studentDao.selectStudentsByTeacCourseId(tcId);
+        for (Student s : students) {
+            if(map.get(s.getStuName()) == null){    //统计缺考的学生
+                map.put(s.getStuName(),-1);
+            }
+        }
         return map;
     }
 
@@ -358,6 +366,21 @@ public class TeacherServiceImpl implements TeacherService {
             System.out.println(ent.getKey() + "=" + ent.getValue());
         }
         return infoIds;
+    }
+    @Override
+    public List getOrder(List<Map.Entry<String, Integer>> list){
+        Integer order = 1;
+        List orderList = new ArrayList();
+        for (int i = 0; i < list.size(); i++) {
+
+            if(i != 0){
+                if(list.get(i).getValue() != list.get(i-1).getValue()){
+                    order++;
+                }
+            }
+            orderList.add(order);
+        }
+        return orderList;
     }
 
 

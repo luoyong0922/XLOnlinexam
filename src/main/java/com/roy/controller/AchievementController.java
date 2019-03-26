@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -54,12 +55,18 @@ public class AchievementController {
     //查看排名
     @RequestMapping("showGradeOrder/{courseName}")
     public String showGradeOrder(@PathVariable("courseName") String courseName,
-                                 @RequestParam("teacCourseId") Long teacCourseId,Model model){
-        Map<String,Integer> map=teacherService. getMapNameandScore(teacCourseId);
-        //排序后
+                                 @RequestParam("teacCourseId") Long standardId,Model model){
+        Map<String,Integer> map=teacherService. getMapNameandScore(standardId);
+        //排序
         List<Map.Entry<String, Integer>> infoIds =teacherService.gradeOrder(map);
+        Integer maxGrade = 0;
+        if(infoIds.size()>0) {
+           maxGrade = infoIds.get(0).getValue();
+        }
         model.addAttribute("infoIds",infoIds);
+        model.addAttribute("maxGrade",maxGrade);
         model.addAttribute("courseName",courseName);
+        model.addAttribute("teacCourseId",standardId);
         return "teacher/showGradeByStuScore";
     }
 

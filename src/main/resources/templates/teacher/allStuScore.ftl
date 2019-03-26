@@ -15,10 +15,6 @@
 
 			<h2 style="text-align: center">试卷列表</h2><br/>
 
-			<#if (pageInfo.total > 0)>
-                <input type="button" class="btn btn-info" value="统计表" onclick="javascript:toStatistics()" />
-                <input type="button" class="btn btn-info" value="成绩排名表" onclick="javascript:toScoreOrder()" />
-			</#if>
 			<div class="container">
 
 				<table class="table table-hover" id="Test">
@@ -32,7 +28,7 @@
 							<th>考试用时</th>
 							<th>状态</th>
 							<th>成绩</th>
-							<th>操作</th>
+							<th style="text-align:center">操作</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -52,7 +48,8 @@
                                         </td>
                                         <td>${stuScore.score!}</td>
                                         <td>
-                                            <a href="${rc.contextPath}/paperController/toMarking/${stuScore.paperId}?courseName=${stuScore.courseName}">查看详情</a>
+                                            <a href="javascript:void(0);" onclick="toMaker(${stuScore.paperId},'${stuScore.courseName}')">查看详情</a>
+                                            <a href="javascript:void(0);" onclick="toScoreOrder(${stuScore.id})">查看排名</a>
                                         </td>
                                 </tr>
                             </#list>
@@ -76,9 +73,12 @@
 				window.location = '${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId=${teacCourseId}';
 			}
 
-			function toScoreOrder() {
-				window.location = '${rc.contextPath}/achievementController/showGradeOrder/${courseName}?teacCourseId=${teacCourseId}';
+			function toScoreOrder(id) {
+				window.location = '${rc.contextPath}/achievementController/showGradeOrder/${courseName}?teacCourseId='+ id;
 			}
+			function toMaker(paperId,courseName) {
+                window.location = '${rc.contextPath}/paperController/toMarking/'+ paperId +'?courseName='+ courseName;
+            }
 		</script>
 
 	</body>

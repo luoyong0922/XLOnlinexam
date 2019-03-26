@@ -380,4 +380,9 @@
       stu_phone = #{stuPhone,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectStudentsByTeacCourseId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select * from t_student where id in (select t.stu_id FROM t_stu_course t where t.teac_course_id = #{teacCourseId,jdbcType=BIGINT})
+  </select>
+
 </mapper>
