@@ -13,15 +13,17 @@ public interface CourseService {
 
     Course getCourseById(Long id);
 
+    Course getCourseByteacCourseId(Long tcId);
+
     Course getCourseIdByNameAndCredit(Course course);
 
     List<Teacher> getAllTeacher();
 
-    Teacher getTeacherById(Long id);
+//    Teacher getTeacherById(Long id);
 
     List<Student> getAllStudent();
 
-    Student getStudentById(Long id);
+//    Student getStudentById(Long id);
 
     //新增课程
     public boolean addCourse(Course course);
@@ -63,4 +65,5 @@ public interface CourseService {
     List<TeacCourse> getTeacCourseByteacId(Long teacId);
 
     int deleteTeacCourse(List<Long> tcId);
+
 }

@@ -52,10 +52,11 @@
              <td>${teacher.teacPhone}</td>
              <td>${teacher.teacGender}</td>
              <td>${teacher.teacName}</td>
-             <td>${teacher.teacPassword}</td>
+             <!--<td>${teacher.teacPassword}</td>-->
+             <td>涉及用户敏感信息，不予显示</td>
              <td id="age">${teacher.teacBirth?string("yyyy-MM-dd")}</td>
              <td>
-             <#if teacher.teacState == 2>待审核<#elseif teacher.teacState == 1>已审核</#if>
+             <#if teacher.teacState == 2>待审核 <#elseif teacher.teacState == 1>已审核 <#else>被禁用 </#if>
              </td>
              <td>
                  <a href="${rc.contextPath}/adminController/teacherUpdate/${teacher.id}">修改</a>

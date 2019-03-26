@@ -9,6 +9,8 @@ import java.util.List;
 
 //@Repository
 public interface StudentService {
+    Student getStudentById(Long id);
+
     //根据学号查询学生信息
     Student selectByAccount(String stuNum);
     //更新学生信息
@@ -18,5 +20,7 @@ public interface StudentService {
     //添加学生课程记录
     boolean addStuCourse(StuCourse stuCourse);
 
-    HomeWork getHomeWorkByTcId(Long teacCourseId);
+    List<HomeWork> getHomeWorkByTcId(Long teacCourseId);
+
+    HomeWork getHomeWorkById(Long homeWorkId);
 }

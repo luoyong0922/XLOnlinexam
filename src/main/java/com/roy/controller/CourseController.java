@@ -1,4 +1,5 @@
 package com.roy.controller;
+
 import com.github.pagehelper.PageInfo;
 import com.roy.model.Course;
 import com.roy.model.TeacCourse;
@@ -89,9 +90,10 @@ public class CourseController {
                                      @RequestParam(value = "courseName",required = false,defaultValue = "") String courseName,
                                      @RequestParam(value = "teacName",required = false,defaultValue = "")String teacName,
                                      @RequestParam(value = "tcid",required = false,defaultValue = "0")Long tcid,
+                                     @RequestParam(value = "opration",required = false,defaultValue = "0")Integer opration,
                                      Model model,
                                      HttpSession session){
-        String viwe = "404";
+        String view = "404";
         Long id = (Long) session.getAttribute("id");
         if(id == null){
             return "redirect:/loginController/tologin";
@@ -101,15 +103,24 @@ public class CourseController {
         model.addAttribute("pageInfo",pageInfo);
         model.addAttribute("courseName",courseName);
         model.addAttribute("teacName",teacName);
+        model.addAttribute("opration",opration);
         if(role == 1) {//学生查询课程
-            viwe = "course/showStudentCourses";
+            if(opration != 3) {
+                view = "course/showStudentCourses";
+            }else if (opration == 3){ // 查看讨论小组
+                view = "chat/showGroups";
+            }else {
+                view = "404";
+            }
         }else if(role == 2) {//教师查询课程
-            viwe = "course/showTeacherCourses";
+            if (opration == 3){ // 查看讨论小组
+                view = "chat/showGroups";
+            }else {
+                view = "course/showTeacherCourses";
+            }
         }else if(role == 3){//管理员查询课程
-            viwe = "course/showCourses";
+            view = "course/showCourses";
         }
-        return viwe;
+        return view;
     }
-
-
 }

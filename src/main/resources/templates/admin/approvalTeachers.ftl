@@ -51,7 +51,7 @@
              <td>${teacher.teacPhone}</td>
              <td>${teacher.teacGender}</td>
              <td>${teacher.teacName}</td>
-             <td>${teacher.teacPassword}</td>
+             <td>......</td>
              <td id="age">${teacher.teacBirth?string("yyyy-MM-dd")}</td>
              <td>待审核</td>
              <td style="text-align: center">
@@ -65,6 +65,7 @@
         </table>
         </div>
         <br/>
+        <#if (pageInfo.total > 0)>
         当前是第${pageInfo.pageNum}页,共${pageInfo.pages}页，总记录数为${pageInfo.total}条
         <br/>
         
@@ -113,7 +114,9 @@
                 </div>
             </nav>
         </div>
-
+        <#else>
+        <div style="font-size:18px;text-align:center;">暂无数据</div>
+        </#if>
 </div>
 <script>
 

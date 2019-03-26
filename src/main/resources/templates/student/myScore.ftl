@@ -61,33 +61,46 @@
             <thead>
             <tr>
                 <th>序号</th>
-                <th>试卷编号</th>
                 <th>课程名称</th>
-                <th>老师姓名</th>
-                <th>考试时间</th>
+                <th>授课老师</th>
+                <th>测评单元</th>
+                <th>测评周次</th>
+                <th>测评用时</th>
                 <th>成绩</th>
+                <th>状态</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
+            <#if (pageInfo.total > 0)>
     <#list pageInfo.list as stuScore>
     <tr>
         <td>${stuScore?counter}</td>
-        <td>${stuScore.paperId}</td>
         <td>${stuScore.courseName}</td>
         <td>${stuScore.teacName}</td>
-        <td>${stuScore.testTime}</td>
+        <td>单元${stuScore.testUnit}</td>
+        <td>测评${stuScore.testNum}</td>
+        <td>${stuScore.testTime} min</td>
         <td>${stuScore.score}</td>
+        <td>
+          <#if stuScore.paperStatus==0>待批阅
+          <#elseif stuScore.paperStatus==1>已批阅
+          </#if>
+         </td>
         <td>
             <a href="${rc.contextPath}/paperController/toMarking/${stuScore.paperId}?courseName=${stuScore.courseName}">查看详情</a>
         </td>
     </tr>
     </#list>
+    <#else>
+    <tr style="text-align:center">暂无数据</tr>
+    </#if>
             </tbody>
         </table>
     </div>
-
-<#include "../pageHelper2.ftl"/>
+    <#if (pageInfo.total > 6)>
+        <#include "../pageHelper2.ftl"/>
+    </#if>
 </div>
 
 <script>
@@ -97,7 +110,7 @@
         if(teacCourseId == 0){
             alert('你还未选择课程！');
         }else {
-            window.location = '${rc.contextPath}/teacherController/pieByTeacCourseId?teacCourseId=' + teacCourseId;
+            window.location = '${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId=' + teacCourseId;
         }
     }
     function toScoreOrder() {
@@ -106,7 +119,7 @@
         if(teacCourseId == 0){
             alert('你还未选择课程！');
         }else {
-            window.location = '${rc.contextPath}/teacherController/showGradeOrder/' + courseName + '?teacCourseId=' + teacCourseId;
+            window.location = '${rc.contextPath}/achievementController/showGradeOrder/' + courseName + '?teacCourseId=' + teacCourseId;
         }
     }
 </script>

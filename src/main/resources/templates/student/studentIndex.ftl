@@ -27,8 +27,8 @@
         <li class="layui-nav-item">
             <a href="javascript:;">消息</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a onclick="x_admin_show('作业通知','${rc.contextPath}/courseController/getCourseMessage?role=1')"><i class="iconfont">&#xe6a2;</i>作业通知</a></dd>
-                <dd><a onclick="x_admin_show('考试通知','${rc.contextPath}/courseController/getCourseMessage?role=1')"><i class="iconfont">&#xe6a8;</i>考试通知</a></dd>
+                <dd><a onclick="x_admin_show('作业通知','${rc.contextPath}/courseController/getCourseMessage?role=1&opration=1')"><i class="iconfont">&#xe6a2;</i>作业通知</a></dd>
+                <dd><a onclick="x_admin_show('考试通知','${rc.contextPath}/courseController/getCourseMessage?role=1&opration=2')"><i class="iconfont">&#xe6a8;</i>测评通知</a></dd>
             </dl>
         </li>
     </ul>
@@ -55,7 +55,7 @@
                 <a _href="${rc.contextPath}/studentController/toSelectCourse/">
                     <i class="iconfont">&#xe696;</i>
                     <cite>我要选课</cite>
-                    <i class="iconfont nav_right">&#xe6a7;</i>
+                    <i class="iconfont nav_right">></i>
                 </a>
             </li>
             <li>
@@ -95,6 +95,13 @@
                             </a>
                         </li >
                 </ul>
+            </li>
+            <li>
+                <a _href="${rc.contextPath}/courseController/getCourseMessage?role=1&opration=3">
+                    <i class="iconfont">&#xe6a2;</i>
+                    <cite>学习探讨小组</cite>
+                    <i class="iconfont nav_right">></i>
+                </a>
             </li>
         </ul>
     </div>

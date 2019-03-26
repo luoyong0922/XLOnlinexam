@@ -7,14 +7,8 @@
 </head>
 <body>
 <div class="container" style="margin-top: 40px;">
-<#--<form action="${rc.contextPath}/getAllCourseByPage" method="post">-->
-    <#--课程名称:<input type="text" name="courseName" value="${courseName}"/>-->
-    <#--<input type="text" name="pageIndex" id="pageIndex" value="1" style="display: none"/>-->
-    <#--<input type="submit" value="搜索">-->
-<#--</form>-->
     <table class="table table-hover" id="Test">
         <tr>
-            <#--<th>序号</th>-->
             <th>课程名称</th>
             <th>授课老师</th>
             <th>开课时间</th>
@@ -27,7 +21,6 @@
         <tbody>
     <#list pageInfo.list as courseManage>
         <tr>
-            <#--<td >${courseManage?counter}</td>-->
             <td style="display: none" id="teaccourseid">${courseManage.id!}</td>
             <td>${courseManage.courseName!}</td>
             <td>${courseManage.teacName!}</td>
@@ -36,15 +29,21 @@
             <td>${courseManage.courseType!}</td>
             <td>${courseManage.courseCredit!}</td>
             <td style="text-align: center;">
-                <a href="${rc.contextPath}/studentController/getHomework?tcI=${courseManage.id!}">查看作业通知</a><br>
-                <a href="${rc.contextPath}/paperController/getPaperStandard?cN=${courseManage.courseName!}&tI=${courseManage.id!}">查看考试通知</a>
+                <#if (opration != 2)>
+                    <a href="${rc.contextPath}/homeworkController/getHomework?tcId=${courseManage.id!}">查看作业通知</a><br>
+                </#if>
+                <#if (opration != 1)>
+                    <a href="${rc.contextPath}/paperController/getPaperStandard?cN=${courseManage.courseName!}&tI=${courseManage.id!}">查看测评通知</a>
+                </#if>
             </td>
         </tr>
     </#list>
 
     </tbody>
     </table>
-<#include "../pageHelper2.ftl"/>
+    <#if (pageInfo.total > 6)>
+        <#include "../pageHelper2.ftl"/>
+    </#if>
 </div>
 
 

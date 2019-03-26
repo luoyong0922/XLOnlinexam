@@ -2,40 +2,40 @@ package com.roy.service;
 
 import com.github.pagehelper.PageInfo;
 import com.roy.model.*;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpSession;
-import java.io.File;
 import java.util.List;
 import java.util.Map;
 
 //@Repository
 public interface PaperService {
 
+    Paper getPaperById(Long paperId);
+
     //新增考试规格信息
     public boolean insertIntoPaperStandard(PaperStandard p);
     //查询考试规格信息
-    public List<PaperStandard> getPaperStandard(Long id);
+    public List<PaperStandard> getPaperStandard(Long id, Integer testUnit);
+
+    Map getPaperStandardById(Long id);
 
     //根据教师课程ID和学生ID查询考试记录
     public List<Paper> getPaperByIds(Long teaccourseId,Long stuId);
 
     //得到所有teacId对应的所有课程的题目,每个老师查看的题目
-    List<TeacCourse> TeacherCourseQuestions(Long teacId);
+    List<TeacCourse> TeacherCourseQuestions(Long teacId, String testUnit);
 
     //根据courseName，questionType分页的信息
-    PageInfo SearchAdminViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String questionType, Long teaccourseId);
+    PageInfo SearchAdminViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String questionType, Long teaccourseId, String testUnit);
+
+    //根据课程名称，题目类型，教师课程id查询题库
+    PageInfo SearchTeacherViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String type, Long id, Long teacCourseId, String testUnit);
 
     //根据题目类型和题目id去查题目
     Object SearchQuestionByTitleAndType(Long title, String questionType);
 
-
     ///////////////////////////////////
-
-    //得到对应课程的试卷标准
-    Map getPaperStandardMap(Long teac_course_id);
 
     //老师阅卷
     boolean updatePaper(Paper paper);
@@ -45,51 +45,51 @@ public interface PaperService {
                              @RequestParam("stuid") Long stuid, Model model);
 
     //得到所有这门课程的sel_ids
-    List<String> selectAllSelectsIds(Long teaccourseid);
+    List<String> selectAllSelectsIds(Long teaccourseid, String unit);
 
     //根据sel_id去找试题
     Select getSelectBysel_id(String selId);
 
     //所有多项选择题的mutil_id
-    List<String> selectAllMutilSelectsIds(Long teaccourseid);
+    List<String> selectAllMutilSelectsIds(Long teaccourseid, String unit);
 
     //获得多项选择题题目
     MultiSelect getMultiSelectsByMultiId(String multiId);
 
     //所有填空题的fill_id
-    List<String> selectAllFillIds(Long teaccourseid);
+    List<String> selectAllFillIds(Long teaccourseid, String unit);
 
     //根据fill_id得到填空题
     Fill getFillByFillId(String fillId);
 
-    List<String> selectAllCalculateIds(Long teaccourseid);
+    List<String> selectAllCalculateIds(Long teaccourseid, String unit);
 
     //根据calculate_id获得计算题
     Calculate getCalculateByCalculateId(String calculateId);
 
     //所有判断题的judgeId
-    List<String> selectAllJudegeIds(Long teaccourseid);
+    List<String> selectAllJudegeIds(Long teaccourseid, String unit);
 
     //根据judgeId取判断题
     Judge getJudgeByJudgeId(String judgeId);
 
     //所有subject_id
-    List<String> selectAllSubjectIds(Long teaccourseid);
+    List<String> selectAllSubjectIds(Long teaccourseid, String unit);
 
     //根据subject_id取subject题
     Subject getSubjectBySubjectId(String subjectId);
 
-    public Map getSelect(@RequestParam("teaccourseid") Long teaccourseid, int count);
+    public Map getSelect(@RequestParam("teaccourseid") Long teaccourseid, int count, String unit);
 
-    public Map getMutilSelect(@RequestParam("teaccourseid") Long teaccourseid,int count);
+    public Map getMutilSelect(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit);
 
-    public Map getFill(@RequestParam("teaccourseid") Long teaccourseid,int count);
+    public Map getFill(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit);
 
-    public Map getCalculate(@RequestParam("teaccourseid") Long teaccourseid,int count);
+    public Map getCalculate(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit);
 
-    public Map getJudge(@RequestParam("teaccourseid") Long teaccourseid,int count);
+    public Map getJudge(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit);
 
-    public Map getSubject(@RequestParam("teaccourseid") Long teaccourseid,int count);
+    public Map getSubject(@RequestParam("teaccourseid") Long teaccourseid,int count, String unit);
 
     public String myTrim(String s);
 
@@ -116,10 +116,6 @@ public interface PaperService {
     public boolean addCal(Calculate calculate);
     //新增主观题
     public boolean addSubject(Subject subject);
-
-    //根据课程名称，题目类型，教师课程id查询题库
-    PageInfo SearchTeacherViewQuestionByCNameAndQType(Integer pageIndex, String courseName, String type, Long id, Long teacCourseId);
-
 
     int deleteQuestion(List<Long> questionIds, String questionType);
 }

@@ -1,0 +1,979 @@
+2019-03-25 15:30:11,465 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 16268 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-25 15:30:11,486 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 15:30:11,492 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-25 15:30:14,438 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 15:30:14,639 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-25 15:30:14,670 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 15:30:14,670 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-25 15:30:14,708 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-25 15:30:14,708 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 15:30:14,724 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 15:30:15,096 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-25 15:30:15,097 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3411 ms
+2019-03-25 15:30:15,229 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 15:30:15,230 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-25 15:30:15,231 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-25 15:30:15,231 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-25 15:30:15,231 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-25 15:30:15,233 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-25 15:30:15,234 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-25 15:30:15,513 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-25 15:30:15,854 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-25 15:30:17,889 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-25 15:30:17,889 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-25 15:30:17,889 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-25 15:30:17,942 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c241a9f, org.springframework.security.web.context.SecurityContextPersistenceFilter@39941489, org.springframework.security.web.header.HeaderWriterFilter@da4cf09, org.springframework.security.web.authentication.logout.LogoutFilter@43f03c23, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5d318e91, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67332b1e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e8fb66f, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@4342c13, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58fd1214, org.springframework.security.web.session.SessionManagementFilter@67f63d26, org.springframework.security.web.access.ExceptionTranslationFilter@64b70f41, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5af5d76f]
+2019-03-25 15:30:18,073 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-25 15:30:18,084 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-25 15:30:18,106 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-25 15:30:18,110 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.387 seconds (JVM running for 8.784)
+2019-03-25 15:30:54,618 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-25 15:30:54,619 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-25 15:30:54,642 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 23 ms
+2019-03-25 17:13:38,845 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 12892 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-25 17:13:38,845 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 17:13:38,845 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-25 17:13:41,372 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 17:13:41,506 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-25 17:13:41,526 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 17:13:41,526 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-25 17:13:41,542 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-25 17:13:41,543 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 17:13:41,557 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 17:13:41,784 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-25 17:13:41,784 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 2858 ms
+2019-03-25 17:13:41,880 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 17:13:41,881 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-25 17:13:41,882 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-25 17:13:41,882 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-25 17:13:41,882 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-25 17:13:41,884 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-25 17:13:41,885 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-25 17:13:42,119 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-25 17:13:42,376 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-25 17:13:44,273 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-25 17:13:44,274 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-25 17:13:44,274 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-25 17:13:44,357 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b0c3951, org.springframework.security.web.context.SecurityContextPersistenceFilter@6588b715, org.springframework.security.web.header.HeaderWriterFilter@7e87ef9e, org.springframework.security.web.authentication.logout.LogoutFilter@4342c13, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2f20f7ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52c9d3d0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d318e91, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@412c5e8b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60f77af, org.springframework.security.web.session.SessionManagementFilter@45843650, org.springframework.security.web.access.ExceptionTranslationFilter@7c1a8f0f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5d66e944]
+2019-03-25 17:13:44,478 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-25 17:13:44,498 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-25 17:13:44,523 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-25 17:13:44,529 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 16.262 seconds (JVM running for 17.361)
+2019-03-25 17:13:47,172 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-25 17:13:47,172 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-25 17:13:47,186 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 14 ms
+2019-03-25 17:14:20,313 [http-nio-8080-exec-3] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-25 17:14:20,351 [http-nio-8080-exec-3] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-25 17:14:20,379 [http-nio-8080-exec-3] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-25 17:14:20,384 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-25 17:14:20,385 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-25 17:14:20,393 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 17:14:32,724 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 17:14:32,727 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 17:14:32,735 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 17:14:32,737 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 17:14:32,738 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 17:14:32,768 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:14:32,768 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 17:14:32,769 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 17:14:32,777 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:14:32,779 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 17:14:32,780 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 17:14:32,787 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:14:32,789 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 17:14:32,790 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 17:14:32,792 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:14:32,793 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 17:14:32,795 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 17:14:32,796 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:14:32,798 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 17:14:32,799 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 17:14:32,800 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:14:32,801 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 17:14:32,802 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 17:14:32,803 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:14:32,805 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 17:14:32,805 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 17:14:32,807 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:14:32,808 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 17:14:32,808 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 17:14:32,811 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:14:32,812 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 17:14:32,813 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 17:14:32,814 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:14:32,816 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 17:14:32,817 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 17:14:32,818 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:14:32,819 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 17:14:32,820 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 17:14:32,821 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,083 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 17:38:47,085 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 17:38:47,087 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 17:38:47,090 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 17:38:47,090 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 17:38:47,092 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,093 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 17:38:47,094 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 17:38:47,096 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,097 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 17:38:47,098 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 17:38:47,100 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,101 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 17:38:47,102 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 17:38:47,104 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,105 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 17:38:47,106 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 17:38:47,107 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,109 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 17:38:47,109 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 17:38:47,112 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,113 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 17:38:47,114 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 17:38:47,116 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,117 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 17:38:47,119 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 17:38:47,122 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,123 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 17:38:47,123 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 17:38:47,126 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,127 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 17:38:47,127 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 17:38:47,129 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,130 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 17:38:47,132 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 17:38:47,133 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 17:38:47,134 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 17:38:47,135 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 17:38:47,137 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,491 [http-nio-8080-exec-8] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 18:03:36,492 [http-nio-8080-exec-8] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:03:36,494 [http-nio-8080-exec-8] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 18:03:36,495 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:03:36,495 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:03:36,498 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,499 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:03:36,500 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:03:36,502 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,504 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:03:36,504 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:03:36,506 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,507 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:03:36,508 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:03:36,509 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,510 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:03:36,510 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:03:36,511 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,514 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:03:36,515 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:03:36,517 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,519 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:03:36,520 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:03:36,521 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,522 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:03:36,523 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:03:36,525 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,525 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:03:36,525 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:03:36,527 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,528 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:03:36,528 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:03:36,530 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,532 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:03:36,533 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:03:36,535 [http-nio-8080-exec-8] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:36,537 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:03:36,538 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:03:36,539 [http-nio-8080-exec-8] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:03:52,947 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 13676 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-25 18:03:52,954 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 18:03:52,957 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-25 18:03:57,243 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 18:03:57,478 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-25 18:03:57,509 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 18:03:57,510 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-25 18:03:57,530 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-25 18:03:57,531 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 18:03:57,556 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 18:03:57,939 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-25 18:03:57,939 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 4801 ms
+2019-03-25 18:03:58,080 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 18:03:58,081 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-25 18:03:58,082 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-25 18:03:58,082 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-25 18:03:58,083 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-25 18:03:58,085 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-25 18:03:58,089 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-25 18:03:58,527 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-25 18:03:58,941 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-25 18:04:02,712 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-25 18:04:02,723 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-25 18:04:02,723 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-25 18:04:02,896 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d318e91, org.springframework.security.web.context.SecurityContextPersistenceFilter@789c3057, org.springframework.security.web.header.HeaderWriterFilter@7bbfc5ff, org.springframework.security.web.authentication.logout.LogoutFilter@1ca610a0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@373052b5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f5d0190, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1f9d4b0e, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3a8cea24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@298b64f7, org.springframework.security.web.session.SessionManagementFilter@1980a3f, org.springframework.security.web.access.ExceptionTranslationFilter@1ca3d25b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@15a3b42]
+2019-03-25 18:04:03,221 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-25 18:04:03,258 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-25 18:04:03,312 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-25 18:04:03,320 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 11.639 seconds (JVM running for 13.136)
+2019-03-25 18:04:19,633 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-25 18:04:19,633 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-25 18:04:19,653 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 20 ms
+2019-03-25 18:04:20,254 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-25 18:04:20,304 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 李商隐(String)
+2019-03-25 18:04:20,333 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-25 18:04:20,340 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-25 18:04:20,341 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 李商隐(String)
+2019-03-25 18:04:20,345 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 0
+2019-03-25 18:04:20,350 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher WHERE ( teac_worknum = ? ) 
+2019-03-25 18:04:20,351 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==> Parameters: 李商隐(String)
+2019-03-25 18:04:20,357 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - <==      Total: 0
+2019-03-25 18:04:34,339 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-25 18:04:34,340 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-25 18:04:34,341 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-25 18:04:34,342 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-25 18:04:34,343 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-25 18:04:34,346 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:04:46,560 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 18:04:46,562 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:04:46,570 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 18:04:46,572 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:04:46,573 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:04:46,581 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:04:46,583 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:04:46,584 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:04:46,591 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:04:46,593 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:04:46,594 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:04:46,598 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:04:46,599 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:04:46,600 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:04:46,601 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:04:46,603 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:04:46,603 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:04:46,605 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:04:46,607 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:04:46,608 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:04:46,610 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:04:46,612 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:04:46,613 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:04:46,615 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:04:46,616 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:04:46,617 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:04:46,619 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:04:46,621 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:04:46,622 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:04:46,624 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:04:46,626 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:04:46,627 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:04:46,631 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:04:46,634 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:04:46,635 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:04:46,637 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:04:46,638 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:04:46,639 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:04:46,641 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:02,037 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 9576 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-25 18:09:02,044 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 18:09:02,047 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-25 18:09:05,288 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 18:09:05,448 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-25 18:09:05,472 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 18:09:05,472 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-25 18:09:05,490 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-25 18:09:05,490 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 18:09:05,513 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 18:09:05,781 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-25 18:09:05,781 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3621 ms
+2019-03-25 18:09:05,875 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 18:09:05,876 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-25 18:09:05,877 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-25 18:09:05,877 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-25 18:09:05,877 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-25 18:09:05,879 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-25 18:09:05,880 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-25 18:09:06,193 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-25 18:09:06,533 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-25 18:09:08,880 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-25 18:09:08,880 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-25 18:09:08,880 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-25 18:09:08,957 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fe595dc, org.springframework.security.web.context.SecurityContextPersistenceFilter@da4cf09, org.springframework.security.web.header.HeaderWriterFilter@64b70f41, org.springframework.security.web.authentication.logout.LogoutFilter@1e8fb66f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6588b715, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67f63d26, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e5eb20a, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@67e0ff3a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5af5d76f, org.springframework.security.web.session.SessionManagementFilter@16134476, org.springframework.security.web.access.ExceptionTranslationFilter@3a4aadf8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@45843650]
+2019-03-25 18:09:09,151 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-25 18:09:09,174 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-25 18:09:09,205 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-25 18:09:09,211 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.884 seconds (JVM running for 9.224)
+2019-03-25 18:09:09,603 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-25 18:09:09,604 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-25 18:09:09,629 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 25 ms
+2019-03-25 18:09:20,547 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-25 18:09:20,579 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-25 18:09:20,599 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-25 18:09:20,603 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-25 18:09:20,604 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-25 18:09:20,610 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:09:32,840 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 18:09:32,842 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:09:32,849 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 18:09:32,851 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:09:32,852 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:09:32,859 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:32,861 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:09:32,861 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:09:32,868 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:32,874 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:09:32,875 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:09:32,883 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:32,884 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:09:32,885 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:09:32,887 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:32,889 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:09:32,890 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:09:32,892 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:32,893 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:09:32,894 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:09:32,896 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:32,897 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:09:32,898 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:09:32,899 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:32,905 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:09:32,906 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:09:32,908 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:32,910 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:09:32,911 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:09:32,913 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:32,914 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:09:32,915 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:09:32,916 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:32,918 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:09:32,919 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:09:32,926 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:32,927 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:09:32,928 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:09:32,929 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,501 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 18:09:51,502 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:09:51,505 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 18:09:51,507 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:09:51,508 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:09:51,511 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,512 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:09:51,513 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:09:51,515 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,516 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:09:51,517 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:09:51,518 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,519 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:09:51,520 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:09:51,522 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,523 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:09:51,524 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:09:51,526 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,527 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:09:51,527 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:09:51,529 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,529 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:09:51,530 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:09:51,531 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,532 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:09:51,533 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:09:51,534 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,535 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:09:51,535 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:09:51,537 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,538 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:09:51,539 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:09:51,541 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,542 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:09:51,542 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:09:51,543 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:09:51,544 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:09:51,545 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:09:51,546 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:06,279 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 7136 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-25 18:11:06,284 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 18:11:06,287 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-25 18:11:09,669 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 18:11:09,826 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-25 18:11:09,843 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 18:11:09,844 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-25 18:11:09,859 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-25 18:11:09,859 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 18:11:09,878 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-25 18:11:10,138 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-25 18:11:10,138 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3758 ms
+2019-03-25 18:11:10,239 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 18:11:10,240 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-25 18:11:10,240 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-25 18:11:10,240 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-25 18:11:10,241 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-25 18:11:10,242 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-25 18:11:10,243 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-25 18:11:10,543 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-25 18:11:10,838 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-25 18:11:13,478 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-25 18:11:13,479 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-25 18:11:13,479 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-25 18:11:13,547 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c302f38, org.springframework.security.web.context.SecurityContextPersistenceFilter@41b64020, org.springframework.security.web.header.HeaderWriterFilter@44dc7b7d, org.springframework.security.web.authentication.logout.LogoutFilter@51e754e1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3bc69ce9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78910096, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65514add, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@11dcd42c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75aea2ba, org.springframework.security.web.session.SessionManagementFilter@25ffd826, org.springframework.security.web.access.ExceptionTranslationFilter@7f6329cb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5d7d8613]
+2019-03-25 18:11:13,885 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-25 18:11:13,920 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-25 18:11:14,010 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-25 18:11:14,020 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 8.429 seconds (JVM running for 9.572)
+2019-03-25 18:11:19,938 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-25 18:11:19,938 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-25 18:11:19,953 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 14 ms
+2019-03-25 18:11:44,969 [http-nio-8080-exec-9] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-25 18:11:45,000 [http-nio-8080-exec-9] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-25 18:11:45,024 [http-nio-8080-exec-9] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-25 18:11:45,030 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-25 18:11:45,030 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-25 18:11:45,038 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:11:57,304 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 18:11:57,307 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:11:57,315 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 18:11:57,318 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:11:57,319 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:11:57,326 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:57,328 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:11:57,329 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:11:57,336 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:57,338 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:11:57,338 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:11:57,347 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:57,348 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:11:57,349 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:11:57,351 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:57,352 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:11:57,354 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:11:57,355 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:57,358 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:11:57,359 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:11:57,361 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:57,362 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:11:57,363 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:11:57,365 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:57,366 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:11:57,367 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:11:57,369 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:57,370 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:11:57,371 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:11:57,374 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:57,376 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:11:57,376 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:11:57,378 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:57,380 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:11:57,381 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:11:57,383 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:11:57,384 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:11:57,384 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:11:57,386 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:14:38,158 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course 
+2019-03-25 18:14:38,161 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==> Parameters: 
+2019-03-25 18:14:38,165 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - <==      Total: 7
+2019-03-25 18:14:38,168 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:14:38,170 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:14:38,171 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:14:38,173 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:14:38,174 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:14:38,175 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:14:38,182 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course WHERE ( id = ? ) 
+2019-03-25 18:14:38,183 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==> Parameters: 5(Long)
+2019-03-25 18:14:38,185 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:14:38,197 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-25 18:14:38,199 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:14:38,202 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 10
+2019-03-25 18:14:38,204 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:14:38,207 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:14:38,209 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:14:38,211 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:14:38,212 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:14:38,214 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:14:38,215 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course WHERE ( id = ? ) 
+2019-03-25 18:14:38,216 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:14:38,218 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:14:38,221 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-25 18:14:38,222 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 2(Long)
+2019-03-25 18:14:38,225 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:14:38,228 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:14:38,229 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:14:38,231 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:14:38,232 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:14:38,233 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:14:38,235 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:14:38,236 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course WHERE ( id = ? ) 
+2019-03-25 18:14:38,237 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==> Parameters: 2(Long)
+2019-03-25 18:14:38,239 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:14:38,241 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-25 18:14:38,242 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 3(Long)
+2019-03-25 18:14:38,243 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 0
+2019-03-25 18:14:38,244 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:14:38,245 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:14:38,247 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:14:38,249 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course WHERE ( id = ? ) 
+2019-03-25 18:14:38,250 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==> Parameters: 6(Long)
+2019-03-25 18:14:38,252 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:14:38,255 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-25 18:14:38,256 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 4(Long)
+2019-03-25 18:14:38,259 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:14:38,262 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:14:38,263 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:14:38,266 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:14:38,269 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course WHERE ( id = ? ) 
+2019-03-25 18:14:38,270 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==> Parameters: 3(Long)
+2019-03-25 18:14:38,271 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:14:38,275 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-25 18:14:38,277 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 5(Long)
+2019-03-25 18:14:38,279 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:14:38,281 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:14:38,282 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:14:38,285 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:14:38,289 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course WHERE ( id = ? ) 
+2019-03-25 18:14:38,290 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==> Parameters: 7(Long)
+2019-03-25 18:14:38,291 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:14:38,294 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-25 18:14:38,295 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 6(Long)
+2019-03-25 18:14:38,297 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:14:38,301 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:14:38,303 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:14:38,311 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:14:38,312 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course WHERE ( id = ? ) 
+2019-03-25 18:14:38,313 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - ==> Parameters: 4(Long)
+2019-03-25 18:14:38,315 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:14:38,318 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-25 18:14:38,319 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 7(Long)
+2019-03-25 18:14:38,320 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 0
+2019-03-25 18:16:07,042 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 18:16:07,042 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:07,044 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 18:16:07,045 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:16:07,046 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:07,049 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:07,049 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:16:07,050 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:16:07,051 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:07,052 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:16:07,053 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:16:07,054 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:07,055 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:16:07,055 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:16:07,057 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:07,057 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:16:07,058 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:16:07,059 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:07,061 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:16:07,062 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:16:07,063 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:07,065 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:16:07,065 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:16:07,066 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:07,066 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:16:07,067 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:07,068 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:07,070 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:16:07,070 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:16:07,073 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:07,074 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:16:07,075 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:07,076 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:07,077 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:16:07,078 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:16:07,081 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:07,082 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:16:07,083 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:16:07,084 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,899 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 18:16:35,900 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:35,902 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 18:16:35,903 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:16:35,904 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:35,906 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,907 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:16:35,908 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:16:35,910 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,911 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:16:35,912 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:16:35,915 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,916 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:16:35,917 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:16:35,918 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,920 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:16:35,921 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:16:35,922 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,925 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:16:35,926 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:16:35,927 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,927 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:16:35,928 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:16:35,930 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,931 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:16:35,932 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:35,934 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,934 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:16:35,935 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:16:35,936 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,936 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:16:35,937 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:35,938 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,939 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:16:35,939 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:16:35,941 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,942 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:16:35,942 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:16:35,943 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,953 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==>  Preparing: select id, paper_id, stu_id, teac_course_id, selection_count, multi_selection_count, judge_count, fill_count, subject_count, score, test_time, calculate_count from t_stu_score WHERE ( stu_id = ? ) 
+2019-03-25 18:16:35,954 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:35,959 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - <==      Total: 2
+2019-03-25 18:16:35,960 [http-nio-8080-exec-2] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_course_id, stu_id, selection_ids, multi_selection_ids, judge_ids, fill_ids, calculate_ids, subject_ids, selection_answers, multi_selection_answers, judge_answers, fill_answers, subject_answer1, subject_answer2, calculate_answers, subject_answer3, subject_answer4, subject_answer5, pape_state, total_score, test_time from t_paper where id = ? 
+2019-03-25 18:16:35,961 [http-nio-8080-exec-2] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:35,967 [http-nio-8080-exec-2] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,968 [http-nio-8080-exec-2] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, test_type, test_amount, test_value, teac_course_id, test_time from t_paper_standard where id = ? 
+2019-03-25 18:16:35,969 [http-nio-8080-exec-2] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:35,973 [http-nio-8080-exec-2] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,976 [http-nio-8080-exec-2] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==>  Preparing: select s.teac_course_id FROM t_paper_standard s where s.id = ?; 
+2019-03-25 18:16:35,976 [http-nio-8080-exec-2] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:35,978 [http-nio-8080-exec-2] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - <==      Total: 1
+2019-03-25 18:16:35,979 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:16:35,980 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:16:35,982 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,983 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:16:35,983 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:16:35,984 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,985 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:16:35,986 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:16:35,987 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,987 [http-nio-8080-exec-2] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_course_id, stu_id, selection_ids, multi_selection_ids, judge_ids, fill_ids, calculate_ids, subject_ids, selection_answers, multi_selection_answers, judge_answers, fill_answers, subject_answer1, subject_answer2, calculate_answers, subject_answer3, subject_answer4, subject_answer5, pape_state, total_score, test_time from t_paper where id = ? 
+2019-03-25 18:16:35,988 [http-nio-8080-exec-2] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==> Parameters: 12(Long)
+2019-03-25 18:16:35,989 [http-nio-8080-exec-2] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,990 [http-nio-8080-exec-2] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, test_type, test_amount, test_value, teac_course_id, test_time from t_paper_standard where id = ? 
+2019-03-25 18:16:35,991 [http-nio-8080-exec-2] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:16:35,992 [http-nio-8080-exec-2] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:16:35,993 [http-nio-8080-exec-2] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==>  Preparing: select s.teac_course_id FROM t_paper_standard s where s.id = ?; 
+2019-03-25 18:16:35,994 [http-nio-8080-exec-2] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==> Parameters: 3(Long)
+2019-03-25 18:16:35,996 [http-nio-8080-exec-2] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - <==      Total: 1
+2019-03-25 18:17:25,347 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 18:17:25,348 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:25,350 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 18:17:25,351 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:25,352 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:25,354 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,355 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:25,355 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:17:25,357 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,358 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:17:25,358 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:17:25,360 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,361 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:25,361 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:17:25,364 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,365 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:25,366 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:17:25,367 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,368 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:25,369 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:17:25,370 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,371 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:25,372 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:17:25,373 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,374 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:17:25,374 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:25,375 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,376 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:25,377 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:17:25,378 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,379 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:25,380 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:25,382 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,383 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:25,383 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:17:25,384 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,385 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:25,386 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:17:25,387 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,389 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==>  Preparing: select id, paper_id, stu_id, teac_course_id, selection_count, multi_selection_count, judge_count, fill_count, subject_count, score, test_time, calculate_count from t_stu_score WHERE ( stu_id = ? ) 
+2019-03-25 18:17:25,390 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:25,391 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - <==      Total: 2
+2019-03-25 18:17:25,392 [http-nio-8080-exec-7] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_course_id, stu_id, selection_ids, multi_selection_ids, judge_ids, fill_ids, calculate_ids, subject_ids, selection_answers, multi_selection_answers, judge_answers, fill_answers, subject_answer1, subject_answer2, calculate_answers, subject_answer3, subject_answer4, subject_answer5, pape_state, total_score, test_time from t_paper where id = ? 
+2019-03-25 18:17:25,392 [http-nio-8080-exec-7] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:25,393 [http-nio-8080-exec-7] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,394 [http-nio-8080-exec-7] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, test_type, test_amount, test_value, teac_course_id, test_time from t_paper_standard where id = ? 
+2019-03-25 18:17:25,395 [http-nio-8080-exec-7] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:25,396 [http-nio-8080-exec-7] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,397 [http-nio-8080-exec-7] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==>  Preparing: select s.teac_course_id FROM t_paper_standard s where s.id = ?; 
+2019-03-25 18:17:25,398 [http-nio-8080-exec-7] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:25,399 [http-nio-8080-exec-7] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - <==      Total: 1
+2019-03-25 18:17:25,400 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:25,400 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:25,401 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,402 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:25,402 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:17:25,403 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,404 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:17:25,405 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:17:25,406 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,407 [http-nio-8080-exec-7] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_course_id, stu_id, selection_ids, multi_selection_ids, judge_ids, fill_ids, calculate_ids, subject_ids, selection_answers, multi_selection_answers, judge_answers, fill_answers, subject_answer1, subject_answer2, calculate_answers, subject_answer3, subject_answer4, subject_answer5, pape_state, total_score, test_time from t_paper where id = ? 
+2019-03-25 18:17:25,407 [http-nio-8080-exec-7] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==> Parameters: 12(Long)
+2019-03-25 18:17:25,409 [http-nio-8080-exec-7] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,410 [http-nio-8080-exec-7] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, test_type, test_amount, test_value, teac_course_id, test_time from t_paper_standard where id = ? 
+2019-03-25 18:17:25,410 [http-nio-8080-exec-7] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:17:25,411 [http-nio-8080-exec-7] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:25,412 [http-nio-8080-exec-7] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==>  Preparing: select s.teac_course_id FROM t_paper_standard s where s.id = ?; 
+2019-03-25 18:17:25,413 [http-nio-8080-exec-7] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==> Parameters: 3(Long)
+2019-03-25 18:17:25,415 [http-nio-8080-exec-7] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - <==      Total: 1
+2019-03-25 18:17:36,484 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 18:17:36,484 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:36,485 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 18:17:36,486 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:36,487 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:36,488 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,488 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:36,489 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:17:36,490 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,491 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:17:36,492 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:17:36,493 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,494 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:36,495 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:17:36,496 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,497 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:36,499 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:17:36,501 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,501 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:36,502 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:17:36,503 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,504 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:36,504 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:17:36,505 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,506 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:17:36,507 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:36,508 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,508 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:36,509 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:17:36,510 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,511 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:36,511 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:36,512 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,514 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:36,515 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:17:36,516 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,517 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:36,517 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:17:36,518 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,521 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==>  Preparing: select id, paper_id, stu_id, teac_course_id, selection_count, multi_selection_count, judge_count, fill_count, subject_count, score, test_time, calculate_count from t_stu_score WHERE ( teac_course_id = ? and stu_id = ? ) 
+2019-03-25 18:17:36,522 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==> Parameters: 1(Long), 1(Long)
+2019-03-25 18:17:36,541 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:36,542 [http-nio-8080-exec-9] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_course_id, stu_id, selection_ids, multi_selection_ids, judge_ids, fill_ids, calculate_ids, subject_ids, selection_answers, multi_selection_answers, judge_answers, fill_answers, subject_answer1, subject_answer2, calculate_answers, subject_answer3, subject_answer4, subject_answer5, pape_state, total_score, test_time from t_paper where id = ? 
+2019-03-25 18:17:36,542 [http-nio-8080-exec-9] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:36,543 [http-nio-8080-exec-9] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,544 [http-nio-8080-exec-9] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, test_type, test_amount, test_value, teac_course_id, test_time from t_paper_standard where id = ? 
+2019-03-25 18:17:36,544 [http-nio-8080-exec-9] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:36,545 [http-nio-8080-exec-9] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,546 [http-nio-8080-exec-9] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==>  Preparing: select s.teac_course_id FROM t_paper_standard s where s.id = ?; 
+2019-03-25 18:17:36,547 [http-nio-8080-exec-9] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:36,548 [http-nio-8080-exec-9] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - <==      Total: 1
+2019-03-25 18:17:36,549 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:36,549 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:36,550 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,551 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:36,551 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:17:36,552 [http-nio-8080-exec-9] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:36,553 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:17:36,554 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:17:36,557 [http-nio-8080-exec-9] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:44,553 [http-nio-8080-exec-10] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_course_id, stu_id, selection_ids, multi_selection_ids, judge_ids, fill_ids, calculate_ids, subject_ids, selection_answers, multi_selection_answers, judge_answers, fill_answers, subject_answer1, subject_answer2, calculate_answers, subject_answer3, subject_answer4, subject_answer5, pape_state, total_score, test_time from t_paper where id = ? 
+2019-03-25 18:17:44,554 [http-nio-8080-exec-10] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:44,556 [http-nio-8080-exec-10] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:44,557 [http-nio-8080-exec-10] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, test_type, test_amount, test_value, teac_course_id, test_time from t_paper_standard where id = ? 
+2019-03-25 18:17:44,558 [http-nio-8080-exec-10] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:44,559 [http-nio-8080-exec-10] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:44,683 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - ==>  Preparing: select id, selection_id, teac_course_id, exam_id, title, dificult, type1, type2, type3, type4, answer from t_select WHERE ( selection_id = ? ) 
+2019-03-25 18:17:44,684 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - ==> Parameters: sel-9(String)
+2019-03-25 18:17:44,688 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,689 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - ==>  Preparing: select id, selection_id, teac_course_id, exam_id, title, dificult, type1, type2, type3, type4, answer from t_select WHERE ( selection_id = ? ) 
+2019-03-25 18:17:44,689 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - ==> Parameters: sel-3(String)
+2019-03-25 18:17:44,690 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,691 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - ==>  Preparing: select id, selection_id, teac_course_id, exam_id, title, dificult, type1, type2, type3, type4, answer from t_select WHERE ( selection_id = ? ) 
+2019-03-25 18:17:44,692 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - ==> Parameters: sel-5(String)
+2019-03-25 18:17:44,693 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,695 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - ==>  Preparing: select id, selection_id, teac_course_id, exam_id, title, dificult, type1, type2, type3, type4, answer from t_select WHERE ( selection_id = ? ) 
+2019-03-25 18:17:44,697 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - ==> Parameters: sel-10(String)
+2019-03-25 18:17:44,698 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,700 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - ==>  Preparing: select id, selection_id, teac_course_id, exam_id, title, dificult, type1, type2, type3, type4, answer from t_select WHERE ( selection_id = ? ) 
+2019-03-25 18:17:44,700 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - ==> Parameters: sel-7(String)
+2019-03-25 18:17:44,702 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SelectMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,706 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - ==>  Preparing: select id, judge_id, teac_course_id, exam_id, title, dificult, type1, type2, answer from t_judeg WHERE ( judge_id = ? ) 
+2019-03-25 18:17:44,706 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - ==> Parameters: j-9(String)
+2019-03-25 18:17:44,714 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,715 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - ==>  Preparing: select id, judge_id, teac_course_id, exam_id, title, dificult, type1, type2, answer from t_judeg WHERE ( judge_id = ? ) 
+2019-03-25 18:17:44,716 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - ==> Parameters: j-1(String)
+2019-03-25 18:17:44,718 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,719 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - ==>  Preparing: select id, judge_id, teac_course_id, exam_id, title, dificult, type1, type2, answer from t_judeg WHERE ( judge_id = ? ) 
+2019-03-25 18:17:44,720 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - ==> Parameters: j-5(String)
+2019-03-25 18:17:44,721 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,722 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - ==>  Preparing: select id, judge_id, teac_course_id, exam_id, title, dificult, type1, type2, answer from t_judeg WHERE ( judge_id = ? ) 
+2019-03-25 18:17:44,723 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - ==> Parameters: j-17(String)
+2019-03-25 18:17:44,724 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,725 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - ==>  Preparing: select id, judge_id, teac_course_id, exam_id, title, dificult, type1, type2, answer from t_judeg WHERE ( judge_id = ? ) 
+2019-03-25 18:17:44,726 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - ==> Parameters: j-2(String)
+2019-03-25 18:17:44,727 [http-nio-8080-exec-10] DEBUG com.roy.mapper.JudgeMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,731 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SubjectMapper.selectByExample:159 - ==>  Preparing: select id, subject_id, teac_course_id, exam_id, title, dificult, answer from t_subject WHERE ( subject_id = ? ) 
+2019-03-25 18:17:44,732 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SubjectMapper.selectByExample:159 - ==> Parameters: sub-2(String)
+2019-03-25 18:17:44,738 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SubjectMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,740 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SubjectMapper.selectByExample:159 - ==>  Preparing: select id, subject_id, teac_course_id, exam_id, title, dificult, answer from t_subject WHERE ( subject_id = ? ) 
+2019-03-25 18:17:44,740 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SubjectMapper.selectByExample:159 - ==> Parameters: sub-11(String)
+2019-03-25 18:17:44,741 [http-nio-8080-exec-10] DEBUG com.roy.mapper.SubjectMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:44,742 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==>  Preparing: select id, paper_id, stu_id, teac_course_id, selection_count, multi_selection_count, judge_count, fill_count, subject_count, score, test_time, calculate_count from t_stu_score WHERE ( paper_id = ? ) 
+2019-03-25 18:17:44,743 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:44,744 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:57,217 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 18:17:57,218 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:57,221 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 18:17:57,222 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:57,223 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:57,225 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,226 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:57,227 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:17:57,228 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,229 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:17:57,230 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:17:57,232 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,233 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:57,234 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:17:57,235 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,236 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:57,237 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:17:57,238 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,239 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:57,239 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:17:57,240 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,241 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:57,241 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:17:57,242 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,243 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:17:57,243 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:57,244 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,245 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:57,246 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:17:57,248 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,249 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:57,250 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:57,251 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,252 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:57,253 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:17:57,253 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,254 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:57,254 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:17:57,255 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,258 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==>  Preparing: select id, paper_id, stu_id, teac_course_id, selection_count, multi_selection_count, judge_count, fill_count, subject_count, score, test_time, calculate_count from t_stu_score WHERE ( teac_course_id = ? and stu_id = ? ) 
+2019-03-25 18:17:57,258 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==> Parameters: 1(Long), 1(Long)
+2019-03-25 18:17:57,259 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:17:57,260 [http-nio-8080-exec-3] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_course_id, stu_id, selection_ids, multi_selection_ids, judge_ids, fill_ids, calculate_ids, subject_ids, selection_answers, multi_selection_answers, judge_answers, fill_answers, subject_answer1, subject_answer2, calculate_answers, subject_answer3, subject_answer4, subject_answer5, pape_state, total_score, test_time from t_paper where id = ? 
+2019-03-25 18:17:57,261 [http-nio-8080-exec-3] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:57,262 [http-nio-8080-exec-3] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,262 [http-nio-8080-exec-3] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, test_type, test_amount, test_value, teac_course_id, test_time from t_paper_standard where id = ? 
+2019-03-25 18:17:57,263 [http-nio-8080-exec-3] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:57,265 [http-nio-8080-exec-3] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,266 [http-nio-8080-exec-3] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==>  Preparing: select s.teac_course_id FROM t_paper_standard s where s.id = ?; 
+2019-03-25 18:17:57,266 [http-nio-8080-exec-3] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:57,267 [http-nio-8080-exec-3] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - <==      Total: 1
+2019-03-25 18:17:57,268 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:17:57,268 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:17:57,269 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,270 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:17:57,270 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:17:57,271 [http-nio-8080-exec-3] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:17:57,271 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:17:57,272 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:17:57,273 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,352 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-25 18:18:04,352 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:18:04,354 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 5
+2019-03-25 18:18:04,355 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:18:04,355 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:18:04,356 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,357 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:18:04,357 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:18:04,358 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,359 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:18:04,359 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:18:04,360 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,361 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:18:04,361 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:18:04,365 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,366 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:18:04,366 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:18:04,368 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,369 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:18:04,369 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:18:04,370 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,371 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:18:04,371 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 7(Long)
+2019-03-25 18:18:04,372 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,373 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:18:04,373 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:18:04,374 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,375 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:18:04,375 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-25 18:18:04,376 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,377 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:18:04,377 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:18:04,378 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,379 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:18:04,379 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 4(Long)
+2019-03-25 18:18:04,380 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,381 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:18:04,382 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:18:04,384 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,387 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==>  Preparing: select id, paper_id, stu_id, teac_course_id, selection_count, multi_selection_count, judge_count, fill_count, subject_count, score, test_time, calculate_count from t_stu_score WHERE ( teac_course_id = ? and stu_id = ? ) 
+2019-03-25 18:18:04,387 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - ==> Parameters: 1(Long), 1(Long)
+2019-03-25 18:18:04,388 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuScoreMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:18:04,389 [http-nio-8080-exec-5] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_course_id, stu_id, selection_ids, multi_selection_ids, judge_ids, fill_ids, calculate_ids, subject_ids, selection_answers, multi_selection_answers, judge_answers, fill_answers, subject_answer1, subject_answer2, calculate_answers, subject_answer3, subject_answer4, subject_answer5, pape_state, total_score, test_time from t_paper where id = ? 
+2019-03-25 18:18:04,389 [http-nio-8080-exec-5] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:18:04,390 [http-nio-8080-exec-5] DEBUG com.roy.mapper.PaperMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,391 [http-nio-8080-exec-5] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, test_type, test_amount, test_value, teac_course_id, test_time from t_paper_standard where id = ? 
+2019-03-25 18:18:04,391 [http-nio-8080-exec-5] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:18:04,392 [http-nio-8080-exec-5] DEBUG c.r.mapper.PaperStandardMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,393 [http-nio-8080-exec-5] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==>  Preparing: select s.teac_course_id FROM t_paper_standard s where s.id = ?; 
+2019-03-25 18:18:04,393 [http-nio-8080-exec-5] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - ==> Parameters: 1(Long)
+2019-03-25 18:18:04,394 [http-nio-8080-exec-5] DEBUG c.r.m.CourseMapper.getTeacCourseIdByStandardId:159 - <==      Total: 1
+2019-03-25 18:18:04,395 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-25 18:18:04,395 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-25 18:18:04,396 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,398 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:18:04,399 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:18:04,400 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:04,401 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:18:04,402 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:18:04,403 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:36,717 [http-nio-8080-exec-2] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-25 18:18:36,718 [http-nio-8080-exec-2] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-25 18:18:36,719 [http-nio-8080-exec-2] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-25 18:18:36,720 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-25 18:18:36,720 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-25 18:18:36,721 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 0
+2019-03-25 18:18:36,724 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher WHERE ( teac_worknum = ? ) 
+2019-03-25 18:18:36,724 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-25 18:18:36,725 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:18:48,902 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course WHERE ( teac_id = ? ) 
+2019-03-25 18:18:48,903 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==> Parameters: 3(Long)
+2019-03-25 18:18:48,905 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-25 18:18:48,906 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:18:48,907 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-25 18:18:48,908 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:48,909 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-25 18:18:48,910 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:18:48,911 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:48,912 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-25 18:18:48,913 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-25 18:18:48,915 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 10
+2019-03-25 18:18:48,917 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:18:48,917 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-25 18:18:48,919 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:48,920 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-25 18:18:48,921 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 4(Long)
+2019-03-25 18:18:48,922 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:18:48,924 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-25 18:18:48,925 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-25 18:18:48,926 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-25 18:18:48,933 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-25 18:18:48,934 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 5(Long)
+2019-03-25 18:18:48,936 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-25 18:21:53,424 [http-nio-8080-exec-7] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-25 18:21:53,424 [http-nio-8080-exec-7] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-25 18:21:53,425 [http-nio-8080-exec-7] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1

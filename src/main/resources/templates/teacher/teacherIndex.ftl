@@ -27,7 +27,7 @@
         <li class="layui-nav-item">
             <a href="javascript:;">+新增</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a onclick="x_admin_show('作业','${rc.contextPath}/to404')"><i class="iconfont">&#xe6a2;</i>作业</a></dd>
+                <dd><a onclick="x_admin_show('作业','${rc.contextPath}/homeworkController/get')"><i class="iconfont">&#xe6a2;</i>作业</a></dd>
                 <dd><a onclick="x_admin_show('考试','${rc.contextPath}/paperController/toPublicPaper')"><i class="iconfont">&#xe6a8;</i>考试</a></dd>
             </dl>
         </li>
@@ -71,15 +71,15 @@
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe6fb;</i>
-                    <cite>试卷管理</cite>
+                    <cite>测评管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <#list courses as c>
                         <li>
-                            <a _href="${rc.contextPath}/teacherController/getAllstuScore?teacCourseId=${c.id}">
+                            <a _href="${rc.contextPath}/paperController/getPaperStandard?tI=${c.id}&cN=${c.courseName}">
                                 <i class="iconfont">&#xe6a7;</i>
-                                <cite>${c.courseName}试卷列表</cite>
+                                <cite><b>${c.courseName}</b>测评列表</cite>
                             </a>
                         </li >
                     </#list>
@@ -148,13 +148,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a _href="${rc.contextPath}/teacherController/pieByTeacCourseId?teacCourseId=${c.id}">
+                                <a _href="${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId=${c.id}">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>${c.courseName}成绩统计图</cite>
                                 </a>
                             </li >
                             <li >
-                                <a _href="${rc.contextPath}/teacherController/showGradeOrder/${c.courseName}?teacCourseId=${c.id}">
+                                <a _href="${rc.contextPath}/achievementController/showGradeOrder/${c.courseName}?teacCourseId=${c.id}">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>${c.courseName}成绩排名表</cite>
                                 </a>
@@ -163,6 +163,13 @@
                     </li>
                    </#list>
                 </ul>
+            </li>
+             <li>
+                <a _href="${rc.contextPath}/courseController/getCourseMessage?role=2&opration=3">
+                    <i class="iconfont">&#xe6a2;</i>
+                    <cite>学习探讨小组</cite>
+                    <i class="iconfont nav_right">></i>
+                </a>
             </li>
         </ul>
     </div>

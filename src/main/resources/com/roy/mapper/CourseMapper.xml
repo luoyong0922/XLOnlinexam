@@ -253,4 +253,15 @@
       course_credit = #{courseCredit,jdbcType=DECIMAL}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="getCourseByteacCourseId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select * FROM t_course where id = (select t_teac_course.course_id FROM t_teac_course where t_teac_course.id = #{tcId,jdbcType=BIGINT});
+  </select>
+  <select id="getCourseByStandardId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select * FROM t_course where id =
+    (select t_teac_course.course_id FROM t_teac_course where t_teac_course.id =
+    (select t_paper_standard.teac_course_id FROM t_paper_standard where t_paper_standard.id = #{standardId,jdbcType=BIGINT}));
+  </select>
+  <select id="getTeacCourseIdByStandardId" parameterType="java.lang.Long" resultType="java.lang.Long">
+    select s.teac_course_id FROM t_paper_standard s where s.id = #{standardId,jdbcType=BIGINT};
+  </select>
 </mapper>

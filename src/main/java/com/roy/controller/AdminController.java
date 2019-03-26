@@ -6,6 +6,8 @@ import com.roy.model.*;
 import com.roy.service.AdminService;
 import com.roy.service.CourseService;
 import com.roy.service.LoginService;
+import com.roy.utils.UserUtils;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,11 +27,10 @@ public class AdminController {
     @Resource
     private LoginService loginService;
 
-    //显示老师的资料
     //显示个人资料
     @RequestMapping(value = "showAdminMsg/{adminPhone}",method = RequestMethod.GET)
-    public String showStudentMessage(@PathVariable("adminPhone")String phone,
-                                     Model model){
+    public String showAdminMessage(@PathVariable("adminPhone")String phone,
+                                   Model model){
         List<Admin> admins = loginService.selectByAccount(phone,3);
         if(admins.size() > 0){
             model.addAttribute("admin",admins.get(0));
@@ -50,9 +51,10 @@ public class AdminController {
     public String toWelcome(){
         return"admin/welcome";
     }
-    //去更新老师界面
+
+    //去更新管理员密码界面
     @RequestMapping(value = "toModifyAdminMsg/{phone}",method = RequestMethod.GET)
-    public String toUpdateStudentPassword(@PathVariable("phone")String phone, Model model){
+    public String toUpdateAdminPassword(@PathVariable("phone")String phone, Model model){
         List admins = loginService.selectByAccount(phone,3);
         if(admins.size() > 0){
             model.addAttribute("admin",admins.get(0));
@@ -64,10 +66,14 @@ public class AdminController {
     @RequestMapping("updateAdminMsg")
     @ResponseBody
     public RespResult doModifyMessage(Admin admin){
-        List admins = loginService.selectByAccount(admin.getAdminPhone(),3);
-        if(admins.size() > 0) {
-            Admin admin1 = (Admin) admins.get(0);
-            if (admin.getOldPwd().equals(admin1.getAdminPassword())) {
+        if(admin != null){
+            boolean flag = false;
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            if(admin.getOldPwd() != null) {
+                Admin admin1 = (Admin)UserUtils.getCurrentUser();
+                flag = encoder.matches(admin.getOldPwd(), admin1.getAdminPassword());
+            }
+            if (flag || admin.getAdminPassword().length() == 60) {
                 boolean result = adminService.updateAdmin(admin);
                 if (result) {
                     return new RespResult("success", "修改成功!");
@@ -124,10 +130,10 @@ public class AdminController {
                                        @RequestParam(value = "keywords",required =false,defaultValue ="") String keywords,
                                        Model model){
 
-            PageInfo pageInfo =adminService.searchTeacherBykeywords(pageIndex,keywords,null);
-            model.addAttribute("pageInfo",pageInfo);
-            model.addAttribute("keywords",keywords);
-            return "admin/showTeachers";
+        PageInfo pageInfo =adminService.searchTeacherBykeywords(pageIndex,keywords,null);
+        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("keywords",keywords);
+        return "admin/showTeachers";
     }
     /**
      * 分页查看待审核老师信息
@@ -138,13 +144,13 @@ public class AdminController {
      */
     @RequestMapping("toApprovalTeachers")
     public String toApprovalTeachers(@RequestParam(value = "pageIndex",required = false,defaultValue = "1") Integer pageIndex,
-                                       @RequestParam(value = "keywords",required =false,defaultValue ="") String keywords,
-                                       Model model){
+                                     @RequestParam(value = "keywords",required =false,defaultValue ="") String keywords,
+                                     Model model){
 
-            PageInfo pageInfo = adminService.searchTeacherBykeywords(pageIndex,keywords,2);
-            model.addAttribute("pageInfo", pageInfo);
-            model.addAttribute("keywords", keywords);
-            return "admin/approvalTeachers";
+        PageInfo pageInfo = adminService.searchTeacherBykeywords(pageIndex,keywords,2);
+        model.addAttribute("pageInfo", pageInfo);
+        model.addAttribute("keywords", keywords);
+        return "admin/approvalTeachers";
 
     }
     /**
@@ -207,15 +213,22 @@ public class AdminController {
     public String ToAddTeacherPage(){
         return "admin/addteacher";
     }
+
     //添加老师
     @RequestMapping(value = "saveAddteac",method = RequestMethod.POST)
     public String doAddTeac(Teacher teacher){
         //System.out.println(user);
-        if((!adminService.getTeacherByTeacWorknum(teacher.getTeacWorknum()))&&adminService.addTeacher(teacher)){
-            return "redirect:getAllTeachersByPage";
+        if(!adminService.getTeacherByTeacWorknum(teacher.getTeacWorknum())){
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            String encode = encoder.encode(teacher.getTeacPassword());
+            teacher.setTeacPassword(encode);
+            if(adminService.addTeacher(teacher)){
+                return "redirect:getAllTeachersByPage";
+            }
         }
         return "redirect:saveAddteac";
     }
+
     //删除老师
     @RequestMapping("deleteTeacher")
     public String deleteTeacher(@RequestParam("id")Long id){
@@ -228,12 +241,13 @@ public class AdminController {
     //去老师的修改页面
     @RequestMapping("teacherUpdate/{teacId}")
     public ModelAndView ToTeacUpdatePage(@PathVariable("teacId") Long id){
-        ModelAndView mav=new ModelAndView();
+        ModelAndView mav = new ModelAndView();
         mav.addObject("teacher",adminService.getTeacherByTeacId(id));
         System.out.println(adminService.getTeacherByTeacId(id));
         mav.setViewName("admin/modifyteacher");
         return mav;
     }
+
     //保存老师的修改
     @RequestMapping("saveTeacUpdate")
     public String doUpdateTeacher(Teacher teacher){
@@ -242,6 +256,7 @@ public class AdminController {
         }
         return "500";
     }
+
     //老师的工号的验证
     @RequestMapping("teacajax")
     @ResponseBody
@@ -256,16 +271,17 @@ public class AdminController {
         }
         return msg;
     }
+
     //学生分页
     @RequestMapping("getAllStudentsByPage")
     public String doShowStudentsBypage(@RequestParam(value = "pageIndex",required = false,defaultValue = "1") Integer pageIndex,
                                        @RequestParam(value = "keywords",required =false,defaultValue ="") String keywords,
                                        Model model){
 
-            PageInfo pageInfo=adminService.searchStudentBykeywords(pageIndex,keywords,null);
-            model.addAttribute("pageInfo",pageInfo);
-            model.addAttribute("keywords",keywords);
-            return "admin/showStudents";
+        PageInfo pageInfo=adminService.searchStudentBykeywords(pageIndex,keywords,null);
+        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("keywords",keywords);
+        return "admin/showStudents";
     }
 
     //去学生修改页面
@@ -294,18 +310,25 @@ public class AdminController {
     }
     //去学生添加页面
     @RequestMapping("addstudent")
-    public String ToAddStudentPage(){
+    public String toAddStudentPage(){
         return "admin/addstudent";
     }
+
     //添加学生
     @RequestMapping("saveAdd")
-    public String doAddUser(Student student){
+    public String doAddStudent(Student student){
         //System.out.println(user);
-        if((!adminService.getStudentByStuNum(student.getStuNum()))&&adminService.addStudent(student)){
-            return "redirect:getAllStudentsByPage";
+        if(!adminService.getStudentByStuNum(student.getStuNum())){
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            String encode = encoder.encode(student.getStuPassword());
+            student.setStuPassword(encode);
+            if(adminService.addStudent(student)){
+                return "redirect:getAllStudentsByPage";
+            }
         }
         return "500";
     }
+
     //验证学号是否重复
     @RequestMapping("ajax")
     @ResponseBody

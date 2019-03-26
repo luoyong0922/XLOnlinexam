@@ -15,12 +15,12 @@
                     <input type="text" style="display: none;" name="id" value="${teacher.id!}"/>
                     <div class="form-group">
                         <label for="teacWorknum">工号</label>
-                        <input type="text" name="teacWorknum" id="teacWorknum" class="form-control" value="${teacher.teacWorknum!}">
-                        <span id="teacNum_tip"></span>
+                        <input type="text" name="teacWorknum" id="teacWorknum" class="form-control" value="${teacher.teacWorknum!}" readonly="true">
                     </div>
                     <div class="form-group">
                         <label for="teacPassword">密码</label>
-                        <input type="text" class="form-control" id="teacPassword" name="teacPassword" value="${teacher.teacPassword!}">
+                        <input type="password" class="form-control" value="......" readonly="true"/>
+                        <input type="text" id="teacPassword" name="teacPassword" value="${teacher.teacPassword!}"  hidden="true">
                     </div>
                     <div class="form-group">
                         <label for="teacName">姓名</label>
@@ -51,7 +51,7 @@
 </form>
 <script>
     window.onload=function(){
-        var gender='${student.gender}';
+        var gender='${teacher.teacGender}';
         if(gender==='男'){
             document.getElementById('male').checked=true;
         }else{
@@ -61,7 +61,7 @@
     }
     function roy() {
         if($('#teacWorknum').val() != ''){
-            $('#addTeac').submit();
+            $('#modifyTeac').submit();
         }else {
             alert("工号不能为空");
         }

@@ -1,0 +1,588 @@
+2018-12-13 15:02:25,106 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 7076 (C:\Users\royl\IdeaProjects\XLOnlinexam\target\classes started by royl in C:\Users\royl\IdeaProjects\XLOnlinexam)
+2018-12-13 15:02:25,109 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2018-12-13 15:02:25,113 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2018-12-13 15:02:26,729 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-12-13 15:02:26,733 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-13 15:02:26,845 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 93ms. Found 0 repository interfaces.
+2018-12-13 15:02:27,441 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-13 15:02:27,488 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2a4e756c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-13 15:02:28,403 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2018-12-13 15:02:28,428 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:02:28,448 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2018-12-13 15:02:28,448 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-13 15:02:28,466 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Users\royl\SoftWare\jdk1.8+\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\app\client\royl\product\12.2.0\client_1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Users\royl\SoftWare\mysql-5.7.18-winx64\bin;C:\Users\royl\SoftWare\redis;C:\Users\royl\SoftWare\Python3-7-1\Scripts\;C:\Users\royl\SoftWare\Python3-7-1\;C:\Users\royl\AppData\Local\Microsoft\WindowsApps;C:\Users\royl\SoftWare\jdk1.8+\bin;C:\Users\royl\SoftWare\jdk1.8+\jre\bin;C:\Users\royl\SoftWare\apache-maven-3.2.1\bin;C:\Users\royl\SoftWare\Git\cmd;C:\Users\royl\SoftWare\apache-tomcat-8.5.35\bin;C:\Users\royl\AppData\Roaming\npm;C:\Users\royl\SoftWare\apache-ant-1.10.5\bin;C:\Users\royl\SoftWare\mysql-5.7.18-winx64\bin;C:\Users\royl\SoftWare\redis;;.]
+2018-12-13 15:02:28,731 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2018-12-13 15:02:28,731 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 3514 ms
+2018-12-13 15:02:29,011 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2018-12-13 15:02:29,280 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2018-12-13 15:02:32,040 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:02:32,056 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2018-12-13 15:02:32,060 [main] ERROR org.apache.catalina.util.LifecycleBase:175 - Failed to start component [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1001)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:311)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.roy.SpringbootApplication.main(SpringbootApplication.java:23)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.Net.bind(Net.java:428)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1067)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1149)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:561)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:998)
+	... 14 common frames omitted
+2018-12-13 15:02:32,067 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Pausing ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:02:32,068 [main] INFO  org.apache.catalina.core.StandardService:173 - Stopping service [Tomcat]
+2018-12-13 15:02:32,078 [main] INFO  org.apache.catalina.util.LifecycleBase:173 - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2018-12-13 15:02:32,078 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Stopping ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:02:32,078 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Destroying ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:02:32,082 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:142 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-12-13 15:02:32,086 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter:42 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2018-12-13 15:02:32,110 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1825 - {dataSource-1} closed
+2018-12-13 15:06:33,367 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 7820 (C:\Users\royl\IdeaProjects\XLOnlinexam\target\classes started by royl in C:\Users\royl\IdeaProjects\XLOnlinexam)
+2018-12-13 15:06:33,375 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2018-12-13 15:06:33,378 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2018-12-13 15:06:34,984 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-12-13 15:06:34,989 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-13 15:06:35,083 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 76ms. Found 0 repository interfaces.
+2018-12-13 15:06:35,648 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-13 15:06:35,686 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$daf41f4c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-13 15:06:36,537 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2018-12-13 15:06:36,562 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:06:36,583 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2018-12-13 15:06:36,584 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-13 15:06:36,604 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Users\royl\SoftWare\jdk1.8+\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\app\client\royl\product\12.2.0\client_1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Users\royl\SoftWare\mysql-5.7.18-winx64\bin;C:\Users\royl\SoftWare\redis;C:\Users\royl\SoftWare\Python3-7-1\Scripts\;C:\Users\royl\SoftWare\Python3-7-1\;C:\Users\royl\AppData\Local\Microsoft\WindowsApps;C:\Users\royl\SoftWare\jdk1.8+\bin;C:\Users\royl\SoftWare\jdk1.8+\jre\bin;C:\Users\royl\SoftWare\apache-maven-3.2.1\bin;C:\Users\royl\SoftWare\Git\cmd;C:\Users\royl\SoftWare\apache-tomcat-8.5.35\bin;C:\Users\royl\AppData\Roaming\npm;C:\Users\royl\SoftWare\apache-ant-1.10.5\bin;C:\Users\royl\SoftWare\mysql-5.7.18-winx64\bin;C:\Users\royl\SoftWare\redis;;.]
+2018-12-13 15:06:36,846 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2018-12-13 15:06:36,847 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 3372 ms
+2018-12-13 15:06:37,113 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2018-12-13 15:06:37,358 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2018-12-13 15:06:39,995 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2018-12-13 15:06:40,010 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2018-12-13 15:06:40,031 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2018-12-13 15:06:40,035 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.347 seconds (JVM running for 8.485)
+2018-12-13 15:06:41,364 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-13 15:06:41,365 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2018-12-13 15:06:41,382 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 17 ms
+2019-03-08 15:24:45,005 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 11456 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-08 15:24:45,010 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-08 15:24:45,010 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-08 15:24:47,807 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 15:24:47,998 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-08 15:24:48,026 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 15:24:48,026 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-08 15:24:48,038 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-08 15:24:48,038 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-08 15:24:48,054 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 15:24:48,301 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-08 15:24:48,301 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3159 ms
+2019-03-08 15:24:48,386 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-08 15:24:48,386 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-08 15:24:48,386 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-08 15:24:48,386 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-08 15:24:48,401 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-08 15:24:48,401 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-08 15:24:48,661 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-08 15:24:48,923 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-08 15:24:50,735 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-08 15:24:50,735 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-08 15:24:50,736 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-08 15:24:50,786 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41fa769c, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f5827d0, org.springframework.security.web.header.HeaderWriterFilter@294aba23, org.springframework.security.web.authentication.logout.LogoutFilter@45900b64, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7a3269f5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4337afd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18d003cd, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3610f277, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40113163, org.springframework.security.web.session.SessionManagementFilter@5d3b58ca, org.springframework.security.web.access.ExceptionTranslationFilter@3596b249, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@580fd26b]
+2019-03-08 15:24:50,885 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-08 15:24:50,899 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-08 15:24:50,922 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-08 15:24:50,925 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 6.601 seconds (JVM running for 7.842)
+2019-03-08 15:25:04,139 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-08 15:25:04,139 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-08 15:25:04,154 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 15 ms
+2019-03-08 15:26:30,820 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Could not resolve view with name 'index' in servlet with name 'dispatcherServlet'] with root cause
+javax.servlet.ServletException: Could not resolve view with name 'index' in servlet with name 'dispatcherServlet'
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1350)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:998)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:890)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:875)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:150)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2019-03-08 15:29:13,951 [http-nio-8080-exec-4] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Could not resolve view with name '404' in servlet with name 'dispatcherServlet'] with root cause
+javax.servlet.ServletException: Could not resolve view with name '404' in servlet with name 'dispatcherServlet'
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1350)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:998)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:890)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:875)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:150)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2019-03-08 15:59:55,912 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 8416 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-08 15:59:55,916 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-08 15:59:55,920 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-08 15:59:59,778 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 15:59:59,940 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-08 15:59:59,961 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 15:59:59,962 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-08 15:59:59,976 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-08 15:59:59,977 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-08 16:00:00,002 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 16:00:00,415 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-08 16:00:00,416 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 4383 ms
+2019-03-08 16:00:00,552 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-08 16:00:00,555 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-08 16:00:00,556 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-08 16:00:00,557 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-08 16:00:00,565 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-08 16:00:00,568 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-08 16:00:01,096 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-08 16:00:01,520 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-08 16:00:03,804 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-08 16:00:03,804 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-08 16:00:03,805 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-08 16:00:03,870 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@285583d4, org.springframework.security.web.context.SecurityContextPersistenceFilter@4aa2877c, org.springframework.security.web.header.HeaderWriterFilter@4d09cade, org.springframework.security.web.authentication.logout.LogoutFilter@7412a438, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@ea04cab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a8a3ada, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61615b4a, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@9accff0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1039bfc4, org.springframework.security.web.session.SessionManagementFilter@4b862408, org.springframework.security.web.access.ExceptionTranslationFilter@6393bf8b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@627ff1b8]
+2019-03-08 16:00:03,975 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-08 16:00:03,986 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-08 16:00:04,022 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-08 16:00:04,027 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 8.661 seconds (JVM running for 10.93)
+2019-03-08 16:00:12,046 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-08 16:00:12,047 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-08 16:00:12,065 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 17 ms
+2019-03-08 16:01:09,032 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-08 16:01:09,068 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: roy(String)
+2019-03-08 16:01:09,092 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-08 16:02:04,987 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-08 16:02:04,988 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-08 16:02:04,991 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-08 16:02:04,994 [http-nio-8080-exec-10] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder:90 - Encoded password does not look like BCrypt
+2019-03-08 16:06:42,889 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-08 16:06:42,889 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-08 16:06:42,894 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-08 16:06:42,895 [http-nio-8080-exec-5] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder:90 - Encoded password does not look like BCrypt
+2019-03-08 16:14:06,603 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 11224 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-08 16:14:06,608 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-08 16:14:06,611 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-08 16:14:09,725 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 16:14:09,895 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-08 16:14:09,919 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 16:14:09,919 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-08 16:14:09,932 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-08 16:14:09,933 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-08 16:14:09,964 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 16:14:10,190 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-08 16:14:10,191 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3445 ms
+2019-03-08 16:14:10,280 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-08 16:14:10,281 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-08 16:14:10,282 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-08 16:14:10,282 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-08 16:14:10,284 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-08 16:14:10,284 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-08 16:14:10,567 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-08 16:14:10,892 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-08 16:14:12,792 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-08 16:14:12,793 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-08 16:14:12,795 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-08 16:14:12,855 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1150d471, org.springframework.security.web.context.SecurityContextPersistenceFilter@5cd96b41, org.springframework.security.web.header.HeaderWriterFilter@4b515eab, org.springframework.security.web.authentication.logout.LogoutFilter@3d620a1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@33bb3f86, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73041b7d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14447be, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3c952a33, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@709f0202, org.springframework.security.web.session.SessionManagementFilter@1536ea40, org.springframework.security.web.access.ExceptionTranslationFilter@306c7bf6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@500051c5]
+2019-03-08 16:14:12,968 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-08 16:14:12,984 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-08 16:14:13,008 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-08 16:14:13,015 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.081 seconds (JVM running for 8.019)
+2019-03-08 16:14:34,775 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-08 16:14:34,775 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-08 16:14:34,790 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 15 ms
+2019-03-08 16:14:35,281 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-08 16:14:35,336 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-08 16:14:35,357 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-08 16:14:35,360 [http-nio-8080-exec-1] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder:90 - Encoded password does not look like BCrypt
+2019-03-08 16:15:42,247 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.insertSelective:159 - ==>  Preparing: insert into t_teacher ( teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-03-08 16:15:42,252 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.insertSelective:159 - ==> Parameters: 12345254(String), 15579857200(String), 男(String), 22(String), 2(Integer), 2019-03-13(Date), who are you?(String), I don't konw.(String), $2a$10$rgsyROIoImw6btW7upK9H.24mAcxkC/Yei7GJxzD0FIEj0ldxqTUy(String)
+2019-03-08 16:15:42,335 [http-nio-8080-exec-7] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'teac_password' at row 1
+### The error may involve com.roy.mapper.TeacherMapper.insertSelective-Inline
+### The error occurred while setting parameters
+### SQL: insert into t_teacher      ( teac_worknum,                       teac_phone,                       teac_gender,                       teac_name,                       teac_state,                       teac_birth,                       teac_question,                       teac_key,                       teac_password )       values ( ?,                       ?,                       ?,                       ?,                       ?,                       ?,                       ?,                       ?,                       ? )
+### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'teac_password' at row 1
+; Data truncation: Data too long for column 'teac_password' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'teac_password' at row 1] with root cause
+com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'teac_password' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3974)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1197)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy117.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy115.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy71.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy76.insertSelective(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy77.insertSelective(Unknown Source)
+	at com.roy.service.serviceImpl.RegistServiceImpl.teacherRegist(RegistServiceImpl.java:29)
+	at com.roy.service.serviceImpl.RegistServiceImpl$$FastClassBySpringCGLIB$$b29ec58e.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$$Lambda$409/857088486.proceedWithInvocation(Unknown Source)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.roy.service.serviceImpl.RegistServiceImpl$$EnhancerBySpringCGLIB$$b9c43f11.teacherRegist(<generated>)
+	at com.roy.controller.RegistController.teacherRegist(RegistController.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:215)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:142)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:998)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:901)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:875)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:150)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2019-03-08 16:17:15,080 [http-nio-8080-exec-2] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-08 16:17:15,081 [http-nio-8080-exec-2] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-08 16:17:15,083 [http-nio-8080-exec-2] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-08 16:27:38,578 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 13284 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-08 16:27:38,584 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-08 16:27:38,586 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-08 16:27:42,397 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 16:27:42,648 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-08 16:27:42,676 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 16:27:42,682 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-08 16:27:42,706 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-08 16:27:42,707 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-08 16:27:42,729 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 16:27:43,171 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-08 16:27:43,172 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 4480 ms
+2019-03-08 16:27:43,325 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-08 16:27:43,328 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-08 16:27:43,328 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-08 16:27:43,329 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-08 16:27:43,339 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-08 16:27:43,340 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-08 16:27:43,749 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-08 16:27:44,144 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-08 16:27:46,884 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-08 16:27:46,885 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-08 16:27:46,885 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-08 16:27:46,976 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@563843f1, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f3c5308, org.springframework.security.web.header.HeaderWriterFilter@780ee3ad, org.springframework.security.web.authentication.logout.LogoutFilter@c754401, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1c0e4262, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51e94b7d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7573c7b5, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@4348fa35, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38cb1606, org.springframework.security.web.session.SessionManagementFilter@857f74a, org.springframework.security.web.access.ExceptionTranslationFilter@5b1ff8cd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@545604a9]
+2019-03-08 16:27:47,126 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-08 16:27:47,155 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-08 16:27:47,192 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-08 16:27:47,198 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 9.358 seconds (JVM running for 11.143)
+2019-03-08 16:29:58,962 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-08 16:29:58,962 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-08 16:29:58,979 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 17 ms
+2019-03-08 16:30:15,424 [http-nio-8080-exec-9] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-08 16:30:15,464 [http-nio-8080-exec-9] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-08 16:30:15,491 [http-nio-8080-exec-9] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-08 16:30:30,728 [http-nio-8080-exec-3] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-08 16:30:30,730 [http-nio-8080-exec-3] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-08 16:30:30,732 [http-nio-8080-exec-3] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-08 16:36:10,690 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 2496 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-08 16:36:10,695 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-08 16:36:10,698 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-08 16:36:14,233 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 16:36:14,456 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-08 16:36:14,480 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 16:36:14,480 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-08 16:36:14,494 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-08 16:36:14,494 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-08 16:36:14,511 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-08 16:36:14,754 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-08 16:36:14,755 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3943 ms
+2019-03-08 16:36:14,855 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-08 16:36:14,856 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-08 16:36:14,857 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-08 16:36:14,857 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-08 16:36:14,859 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-08 16:36:14,860 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-08 16:36:15,228 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-08 16:36:15,530 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-08 16:36:17,781 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-08 16:36:17,781 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-08 16:36:17,782 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-08 16:36:17,863 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ff4b223, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d37aa0f, org.springframework.security.web.header.HeaderWriterFilter@5c1c9881, org.springframework.security.web.authentication.logout.LogoutFilter@311a0b3e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@53b7bf01, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@485c84d7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48277712, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@6a6e9289, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@61554b6b, org.springframework.security.web.session.SessionManagementFilter@2f99d8c, org.springframework.security.web.access.ExceptionTranslationFilter@1c4057f9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51b51641]
+2019-03-08 16:36:17,990 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-08 16:36:18,016 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-08 16:36:18,046 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-08 16:36:18,055 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 8.019 seconds (JVM running for 9.47)
+2019-03-08 16:36:36,550 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-08 16:36:36,551 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-08 16:36:36,567 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 16 ms
+2019-03-08 16:37:00,538 [http-nio-8080-exec-9] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-08 16:37:00,573 [http-nio-8080-exec-9] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-08 16:37:00,598 [http-nio-8080-exec-9] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-08 16:50:36,237 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-08 16:50:36,238 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-08 16:50:36,241 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-08 16:54:31,029 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-08 16:54:31,030 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-08 16:54:31,036 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-08 16:54:51,856 [http-nio-8080-exec-8] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-08 16:54:51,857 [http-nio-8080-exec-8] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-08 16:54:51,860 [http-nio-8080-exec-8] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1

@@ -6,7 +6,7 @@
     <!-- 引入配置文件 -->
     <!--无法找到配置文件？？？-->
     <!--<properties resource="c3p0.properties"/>-->
-    <classPathEntry location="D:\maven\mysql\mysql-connector-java\5.1.47\mysql-connector-java-5.1.47.jar" />
+    <classPathEntry location="C:\Users\royl\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar" />
     <context id="MySqlContext"
 	         targetRuntime="MyBatis3"
 			 defaultModelType="flat">
@@ -19,7 +19,7 @@
 
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/onlinexame"
+                        connectionURL="jdbc:mysql://localhost:3306/onlinexam"
                         userId="root"
                         password="123456">
         </jdbcConnection>
@@ -77,7 +77,8 @@
             <table tableName="t_subject" domainObjectName="Subject"></table>
             <table tableName="t_teac_course" domainObjectName="TeacCourse"></table>
             <table tableName="t_teacher" domainObjectName="Teacher"></table>-->
-        <table tableName="t_stu_score" domainObjectName="StuScore"></table>
+        <!--<table tableName="t_stu_score" domainObjectName="StuScore"></table>-->
+        <table tableName="t_chat" domainObjectName="Chat"></table>
 
     </context>
 </generatorConfiguration>

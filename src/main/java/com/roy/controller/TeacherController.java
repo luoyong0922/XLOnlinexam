@@ -1,21 +1,18 @@
 package com.roy.controller;
 
-
-import com.github.pagehelper.PageInfo;
 import com.roy.model.*;
 import com.roy.service.LoginService;
 import com.roy.service.PaperService;
 import com.roy.service.TeacherService;
+import com.roy.utils.UserUtils;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/teacherController")
@@ -31,7 +28,7 @@ public class TeacherController {
      * 跳转至教师首页
      * @return
      */
-    @RequestMapping("toTeacherIndex")
+    @GetMapping("toTeacherIndex")
     public String toTeacherIndex(){
         return "teacher/teacherIndex";
     }
@@ -39,7 +36,7 @@ public class TeacherController {
      * welcome
      * @return
      */
-    @RequestMapping("/toWelcome")
+    @GetMapping("/toWelcome")
     public String toWelcome(){
         return"teacher/welcome";
     }
@@ -49,7 +46,6 @@ public class TeacherController {
      * @param model
      * @return
      */
-    //显示老师的资料
     @RequestMapping(value = "showTeacherMessage/{teacWorknum}",method = RequestMethod.GET)
     public String showTeacherMessage(@PathVariable("teacWorknum")String teacWorknum,
                                         Model model){
@@ -68,14 +64,13 @@ public class TeacherController {
      * @return
      */
     @RequestMapping(value = "toModifyMessage/{teacWorknum}",method = RequestMethod.GET)
-    public String toModifyMessage(@PathVariable("teacWorknum")String teacWorknum,
-                                     Model model){
+    public String toModifyMessage(@PathVariable("teacWorknum")String teacWorknum, Model model){
         List teacher = loginService.selectByAccount(teacWorknum,2);
         if(teacher.size() > 0){
             model.addAttribute("teacher",teacher.get(0));
             return "teacher/updateTeacherPassword";
         }
-        return "teacher/teacherIndex";
+        return "404";
     }
 
     /**
@@ -83,72 +78,30 @@ public class TeacherController {
      * @param teacher
      * @return
      */
-    @RequestMapping("modifyTeacherPassword")
+    @RequestMapping("modifyTeacherMsg")
     @ResponseBody
-    public RespResult doModifyMessage(Teacher teacher){
-        System.out.println(teacher);
-        Teacher teacher1 = (Teacher) loginService.selectByAccount(teacher.getTeacWorknum(),2).get(0);
-        if(teacher.getOldPwd().equals(teacher1.getTeacPassword())){
-            boolean result = teacherService.updateTeacherById(teacher);
-            if(result){
-                return new RespResult("success", "修改成功!");
-            }else{
-                return new RespResult("fail", "修改失败!");
+    public RespResult doModifyMessage(Teacher teacher) {
+        if (teacher != null) {
+            boolean flag = false;
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            if (teacher.getOldPwd() != null) {
+                Teacher teacher1 = (Teacher) UserUtils.getCurrentUser();
+                flag = encoder.matches(teacher.getOldPwd(), teacher1.getTeacPassword());
             }
-        }else{
-            return new RespResult("fail", "原密码错误!");
+            if (flag || teacher.getTeacPassword().length() == 60) {
+                boolean result = teacherService.updateTeacherById(teacher);
+                if (result) {
+                    return new RespResult("success", "修改成功!");
+                } else {
+                    return new RespResult("fail", "修改失败!");
+                }
+            } else {
+                return new RespResult("fail", "原密码错误!");
+            }
+        } else {
+            return new RespResult("fail", "请先登录!");
         }
     }
-
-    //去到发布作业的页面
-    @RequestMapping("toPublicHomewWork")
-    public String toPublicHomeWork(@RequestParam("tcid") Long teacCourseId,@RequestParam("cname")String courseName,Model model){
-        model.addAttribute("teacCourseId",teacCourseId);
-        model.addAttribute("courseName",courseName);
-        return "course/publishHomeworkPage";
-    }
-    //发布作业
-    @RequestMapping("publicHomeWork")
-    public String doPublicHomeWork(HomeWork homeWork){
-        Date date=new Date();
-        homeWork.setDate(date);
-        RespResult respResult = new RespResult();
-        if(teacherService.insertIntoHomeWork(homeWork)){
-            respResult.setMessage("添加失败，请稍后重试！");
-        }
-        return "redirect:/courseController/getCourseMessage?role=2";
-    }
-
-
-    //根据老师课程id查看学生成绩统计表
-    //adminViewQuestios分页
-    @RequestMapping("getAllstuScore")
-    public String doShowTeacherViewQuestionsBypage(@RequestParam(value = "pageIndex",required =false,defaultValue = "1") Integer pageIndex,
-                                                   @RequestParam(value = "teacCourseId",required =false,defaultValue ="0") Long teacCourseId,
-                                                   Model model, HttpSession session) throws IOException {
-
-        List<TeacCourse> teacCourses=teacherService.getCourseName((Long) session.getAttribute("id"));
-        if(teacCourseId == 0) {
-            teacCourseId = teacCourses.get(0).getId();
-        }
-        PageInfo pageInfo = teacherService.SearchAllNeedStuScoreByPageHelper(pageIndex, teacCourseId);
-        model.addAttribute("teacCourseId",teacCourseId);
-        model.addAttribute("pageInfo",pageInfo);
-        model.addAttribute("teacCourses",teacCourses);
-        System.out.println(pageInfo);
-        return "teacher/allstuScore";
-
-    }
-    //饼图，根据成绩表teacCourseId
-    @RequestMapping("pieByTeacCourseId")
-    public String toShowPieByTeacCourseId(Long teacCourseId,Model model){
-        Map<String,Integer> map=teacherService.getPieData(teacCourseId);
-        model.addAttribute("map",map);
-        System.out.println(map);
-        return "teacher/pie";
-    }
-
-
 
     //新增填空题
     @RequestMapping("addFill")
@@ -223,17 +176,5 @@ public class TeacherController {
         }
         return "redirect:/paperController/getMyQuestions?id="+id;
     }
-    //查看排名
-    @RequestMapping("showGradeOrder/{courseName}")
-    public String showGrageOrder(@PathVariable("courseName") String courseName,
-                                 @RequestParam("teacCourseId") Long teacCourseId,Model model){
-        Map<String,Integer> map=teacherService. getMapNameandScore(teacCourseId);
-        //排序后
-        List<Map.Entry<String, Integer>> infoIds =teacherService.Order(map);
-        model.addAttribute("infoIds",infoIds);
-        model.addAttribute("courseName",courseName);
-        return "teacher/showGradeByStuScore";
-    }
-
 
 }

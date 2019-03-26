@@ -1,0 +1,408 @@
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>我的课程</title>
+<!-- <link href="./css/ionic.css" rel="stylesheet">
+  <script src="./js/ionic.bundle.min.js"></script> 	-->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <script src="./js/jquery-1.11.0.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+	
+    
+</head>
+<style type="text/css">
+      .msg_board {
+          margin: 25px 0;
+		  float:right;
+  		width: 75%;
+  		min-height: 150px;
+          border: solid 1px darkcyan;
+          overflow-y: scroll;
+          /* 文字长度大于div宽度时换行显示*/
+          word-break: break-all;
+      }
+      /*set srcoll start*/
+      ::-webkit-scrollbar
+      {
+          width: 10px;
+          height: 10px;
+          background-color: #D6F2FD;
+      }
+      ::-webkit-scrollbar-track
+      {
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          /*border-radius: 5px;*/
+          background-color: #D6F2FD;
+      }
+      ::-webkit-scrollbar-thumb
+      {
+          height: 20px;
+          /*border-radius: 10px;*/
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+          background-color: #89D7F7;
+      }
+      /*set srcoll end*/
+	  
+	  /* bubble style */
+        .sender{
+            clear:both;
+        }
+        .sender div:nth-of-type(1){
+            float: left;
+
+        }
+        .sender div:nth-of-type(2){
+			max-width: 80%;
+            background-color: aquamarine;
+            float: left;
+            margin: 5px 20px 10px 15px;
+            padding: 5px 10px 5px 0px;
+            border-radius:7px;
+        }
+		.name{
+			padding: 7px 0px 5px 10px;
+		}
+        .receiver{
+            clear:both;
+        }
+        .receiver div:nth-of-type(1){
+            float: right;
+        }
+        .receiver div:nth-of-type(2){
+			max-width: 80%;
+            float:right;
+            background-color: gold;
+            margin: 0 10px 10px 20px;
+            padding: 5px 0px 5px 10px;
+            border-radius:7px;
+        }
+ 
+        .left_triangle{
+            height:0px;  
+            width:0px;  
+            border-width:8px;  
+            border-style:solid;  
+            border-color:transparent aquamarine transparent transparent;  
+            position: relative;
+            left:-16px;
+            top:3px;
+        }
+ 
+        .right_triangle{
+            height:0px;  
+            width:0px;  
+            border-width:8px;  
+            border-style:solid;  
+            border-color:transparent transparent transparent gold;  
+            position: relative;
+            right:-16px;
+            top:3px;
+        }
+		
+
+</style>
+<body>
+<div class="container" style="margin-top: 40px;min-width: 514px;">
+<div id="courseInfo" style="display:none">
+    <table class="table table-hover" id="Test">
+	<thead>
+        <tr>
+            <th>课程名称</th>
+            <th>授课老师</th>
+            <th>开课时间</th>
+            <th>结课时间</th>
+            <th>课程类型</th>
+            <th>课程学分</th>
+            <th style="text-align: center;">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+    <#list pageInfo.list as courseManage>
+        <tr>
+            <td style="display: none" id="teaccourseid">${courseManage.id!}</td>
+            <td>${courseManage.courseName!}</td>
+            <td>${courseManage.teacName!}</td>
+            <td>${courseManage.startTime?string("yyyy-MM-dd")}</td>
+            <td>${courseManage.endTime?string("yyyy-MM-dd")}</td>
+            <td>${courseManage.courseType!}</td>
+            <td>${courseManage.courseCredit!}</td>
+            <td style="text-align: center;">
+               <a style="display: block;cursor: pointer;"onclick="initWebSocket(${courseManage.id},'${courseManage.courseName!}',${Session["id"]!},'${Session["role"]!}')">参与讨论</a>
+            </td>
+        </tr>
+    </#list>
+    </tbody>
+    </table>
+    <#if (pageInfo.total > 6)>
+        <#include "../pageHelper2.ftl"/>
+    </#if>
+</div>
+<span id="top"></span>
+<div id="chatting" style="display:block; font-size:18px;">
+
+<label>课程：</label>
+<input id="input_roomName" width="30%" readonly="true">
+<input type="button" value="退出聊天室" style="float:right;" />
+<div class="msg_board" id="msg_board">
+
+<!-- Left -->
+<div class="sender">
+<p style="text-align:center;"> 2018-03-22 11:32:15</p>
+      <div class="name">
+          李明
+      </div>
+  <div>
+      <div class="left_triangle"></div>
+      <span> hello, man! hello world id="input_msg" contenteditable="true" style="width:82%; float:right; min-width:170px; min-height: 31px; margin-right:6px;  border: 0.2px solid #0F5;">v><pan></span>
+   </div>
+  </div>
+
+<!-- Right -->
+  <div class="receiver">
+    <p style="text-align:center;"> 2018-03-22 11:33:14</p>
+      <div class="name">
+          刘莉莉
+      </div>
+   <div>
+        <div class="right_triangle"></div>
+        <span> hello world id="input_msg" contenteditable="true" style="width:82%; float:right; min-width:170px; min-height: 31px; margin-right:6px;  border: 0.2px solid #0F5;"></span>
+		</div>
+   </div>
+   
+ 
+<!-- Right -->
+  <div class="receiver">
+  <p style="text-align:center;"> 2018-03-22 11:34:15</p>
+      <div class="name">
+          刘莉莉
+      </div>
+   <div>
+        <div class="right_triangle"></div>
+        <span> hello world </span>
+   </div>
+   </div>
+     <!-- Left -->
+<div class="sender">
+<p style="text-align:center;"> 2018-03-22 11:35:15</p>
+      <div class="name">
+          李明
+      </div>
+  <div>
+      <div class="left_triangle"></div>
+      <span> hello, man! </span>
+   </div>
+  </div>
+  <!-- Right -->
+  <div class="receiver">
+  <p style="text-align:center;"> 2018-03-22 11:34:15</p>
+      <div class="name">
+          刘莉莉
+      </div>
+   <div>
+        <div class="right_triangle"></div>
+        <span> hello world </span>
+   </div>
+   </div>
+     <!-- Left -->
+<div class="sender">
+<p style="text-align:center;"> 2018-03-22 11:35:15</p>
+      <div class="name">
+          李明
+      </div>
+  <div>
+      <div class="left_triangle"></div>
+      <span> hello, man! </span>
+   </div>
+  </div><!-- Right -->
+  <div class="receiver">
+  <p style="text-align:center;"> 2018-03-22 11:34:15</p>
+      <div class="name">
+          刘莉莉
+      </div>
+   <div>
+        <div class="right_triangle"></div>
+        <span> hello world </span>
+   </div>
+   </div>
+     <!-- Left -->
+<div class="sender">
+<p style="text-align:center;"> 2018-03-22 11:35:15</p>
+      <div class="name">
+          李明
+      </div>
+  <div>
+      <div class="left_triangle"></div>
+      <span> hello, man! </span>
+   </div>
+  </div><!-- Right -->
+  <div class="receiver">
+  <p style="text-align:center;"> 2018-03-22 11:34:15</p>
+      <div class="name">
+          刘莉莉
+      </div>
+   <div>
+        <div class="right_triangle"></div>
+        <span> hello world </span>
+   </div>
+   </div>
+     <!-- Left -->
+<div class="sender">
+<p style="text-align:center;"> 2018-03-22 11:35:15</p>
+      <div class="name">
+          李明
+      </div>
+  <div>
+      <div class="left_triangle"></div>
+      <span> hello, man! </span>
+   </div>
+  </div><!-- Right -->
+  <div class="receiver">
+  <p style="text-align:center;"> 2018-03-22 11:34:15</p>
+      <div class="name">
+          刘莉莉
+      </div>
+   <div>
+        <div class="right_triangle"></div>
+        <span> hello world </span>
+   </div>
+   </div>
+     <!-- Left -->
+<div class="sender">
+<p style="text-align:center;"> 2018-03-22 11:35:15</p>
+      <div class="name">
+          李明
+      </div>
+  <div>
+      <div class="left_triangle"></div>
+      <span> hello, man! </span>
+   </div>
+  </div><!-- Right -->
+  <div class="receiver">
+  <p style="text-align:center;"> 2018-03-22 11:34:15</p>
+      <div class="name">
+          刘莉莉
+      </div>
+   <div>
+        <div class="right_triangle"></div>
+        <span> hello world </span>
+   </div>
+   </div>
+     <!-- Left -->
+<div class="sender">
+<p style="text-align:center;"> 2018-03-22 11:35:15</p>
+      <div class="name">
+          李明
+      </div>
+  <div>
+      <div class="left_triangle"></div>
+      <span> hello, man! </span>
+   </div>
+  </div><!-- Right -->
+  <div class="receiver">
+  <p style="text-align:center;"> 2018-03-22 11:34:15</p>
+      <div class="name">
+          刘莉莉
+      </div>
+   <div>
+        <div class="right_triangle"></div>
+        <span> hello world </span>
+   </div>
+   </div>
+     <!-- Left -->
+<div class="sender">
+<p style="text-align:center;"> 2018-03-22 11:35:15</p>
+      <div class="name">
+          李明
+      </div>
+  <div>
+      <div class="left_triangle"></div>
+      <span> hello, man! </span>
+   </div>
+  </div>
+  
+</div>
+<div style="background:white;margin: 26px 0;min-width:115px; position: fixed;">
+<a href="#top"><img  src="./images/top.png" style="margin-left: 30%;width:50px;height:50px;"/></a>
+          <div style="margin:auto;width:115px;">
+            <div class="">
+              查看聊天记录
+            </div>
+            <select id="record">
+              <option value="1">今天</option>
+              <option value="2" >最近三天</option>
+              <option value="3">最近一周</option>
+			  <option value="4">最近两周</option>
+			  <option value="5">本月</option>
+			  <option value="6">最近三个月</option>
+			  <option value="7">今年</option>
+			  <option value="8">所有记录</option>
+            </select>
+          </div>
+<a href="#bottom"><img src="./images/bottom.png" style="margin-left: 30%;width:50px;height:50px;"/></a>
+</div>
+<input type="button" value="发送" onclick="send_msg()" style="float:right;margin-left:10px; background: #00FF94; margin-bottom: 10px;clear:both;"/>
+<div  id="input_msg" contenteditable="true" style="width:62%; float:right; min-width:170px; min-height: 31px; margin-right:0px;  border: 0.2px solid #0F5;"></div>
+<span id="bottom"></span>
+</div>
+</div>
+<script>
+        var webSocket;
+
+        function send_msg() {
+           
+                var input_msg = $("#input_msg").text().trim();
+                if (input_msg == "") {
+                    return;
+                }
+				var username = input_msg.split("\\")[0];
+				var message = input_msg.substr(username.length+2);
+				var currentTime = new Date();
+				var datetime = currentTime.getFullYear()+"-"+(currentTime.getMonth()+1)+"-"+currentTime.getDate()+" "+currentTime.getHours()+":"+currentTime.getMinutes()+":"+currentTime.getSeconds();
+				var html = ''; 
+				html += '<div class="receiver">'; 
+				html += '<p style="text-align:center">'+datetime+'</p>';
+				html += '<div class="name">' + username + '</div>'; 
+				html += '<div>'; 
+				html += '<div class="right_triangle"></div>'; 
+				html += '<span>'+ message + '</span>'; 
+				html += '</div>'; 
+				html += '</div>'; 
+
+				$('#msg_board').append(html);
+			
+                // 清空div框里的信息
+                $("#input_msg").html("");
+          
+        };
+
+    $("#record").bind("change",function(){
+		var option = this.value;
+		var url = "localhost:8080/messageController";
+		if(option == 1){
+			url += "/getTodayMsg";
+		}else if(option == 2){
+			url += "/getRecentThreeDaysMsg";
+		}else if(option == 3){
+			url += "/getRecentWeekMsg";
+		}else if(option == 4){
+			url += "/getRecentTwoWeeksMsg";
+		}else if(option == 5){
+			url += "/getCurrentMouthMsg";
+		}else if(option == 6){
+			url += "/getRecentThreeMouthsMsg";
+		}else if(option == 7){
+			url += "/getCurrentYearMsg";
+		}else if(option == 8){
+			url += "/getAllMsg";
+		}else {
+			url = "";
+		}
+		$.get(url,{"tcId":1},function(data){
+			console.log(data);
+		});
+	
+	});
+</script>
+
+</body>
+</html>

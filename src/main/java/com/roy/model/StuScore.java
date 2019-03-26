@@ -10,6 +10,36 @@ public class StuScore {
 
     private Integer paperState;
 
+    private Integer testUnit;
+
+    private Integer testNum;
+
+    public Integer getTestUnit() {
+        return testUnit;
+    }
+
+    public void setTestUnit(Integer testUnit) {
+        this.testUnit = testUnit;
+    }
+
+    public Integer getTestNum() {
+        return testNum;
+    }
+
+    public void setTestNum(Integer testNum) {
+        this.testNum = testNum;
+    }
+
+    public Integer getPaperStatus() {
+        return paperStatus;
+    }
+
+    public void setPaperStatus(Integer paperStatus) {
+        this.paperStatus = paperStatus;
+    }
+
+    private Integer paperStatus;
+
     public Integer getPaperState() {
         return paperState;
     }
