@@ -201,12 +201,8 @@
 																	<div class="column_containter" style="z-index:3;position:relative;">
 																		<div m-padding="16px 0 19px 0" p-padding="77px 0 19px 0" css_animation_delay="0" qfyuuid="qfy_column_text_2fryk" data-anitime="0.7" class="qfy-element qfy-text qfy-text-10419 qfe_text_column qfe_content_element  mobile_fontsize " style="position: relative;;;line-height:1.5em;;background-position:left top;background-repeat: no-repeat;;margin-top:0;margin-bottom:0;padding-top:77px;padding-bottom:19px;padding-right:0;padding-left:0;border-radius:0px;">
 																			<div class="qfe_wrapper">
-																				<p style="position: relative; text-align: center;"><span style="font-family:arial;"><span style="font-size:18px;"><span style="color: rgb(55, 58, 65); text-align: center; word-spacing: normal;font-size:30px;">XL在线考试管理系统</span></span>
-																					</span>
-																				</p>
-																				<p style="position: relative; text-align: center;"><span style="font-size:14px;"><span style="font-family:arial;"><span style="color: rgb(55, 58, 65); text-align: center; word-spacing: normal;"></span><span style="color: rgb(55, 58, 65); text-align: center; word-spacing: normal;font-size:24px;">终于等到你٩(๑❛ᴗ❛๑)۶</span></span>
-																					</span>
-																				</p>
+																				<p style="position: relative; text-align: center;"><span style="font-family:arial;"><span style="font-size:18px;"><span style="color: rgb(55, 58, 65); text-align: center; word-spacing: normal;font-size:30px;">课堂测评系统</span></p><br/>
+																				<p style="position: relative; text-align: center;"><span style="font-size:14px;"><span style="font-family:arial;"><span style="color: rgb(55, 58, 65); text-align: center; word-spacing: normal;"></span><span style="color: rgb(55, 58, 65); text-align: center; word-spacing: normal;font-size:24px;">终于等到你٩(๑❛ᴗ❛๑)۶</p>
 																			</div>
 																		</div>
 																		<div id="" data-loading="" data-loading-w="" data-open="" data-post="products" data-cate="" m-padding="0px 0px 0px 0px" p-padding="0 0 0 0" css_animation_delay="0" qfyuuid="qfy_posts_grid_l8bda" class="qfy-element  UUID qfe_teaser_grid qfe_content_element  qfe_grid columns_count_3 columns_count_3 qfe_teaser_grid_products  " style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
@@ -436,7 +432,7 @@
 																			<div class="qfe_wrapper">
 																				<div style="position: relative;">
 																					<div class="introbox">
-																						<h3>使用XLOnlinexam，<br>&emsp;&emsp;竟然可以如此简单地发布一场考试！</h3>
+																						<h3>使用XLOnlinexam，<br>&emsp;&emsp;竟然可以如此简单地发布一场测评！</h3>
 																						<dl><dt><i>&nbsp;1.&nbsp;</i>支持六种题型</dt>
 																							<dd>支持单选、多选、判断、填空、计算、主观题等题型任意组合</dd>
 																						</dl>
@@ -446,8 +442,8 @@
 																						<dl><dt><i>&nbsp;3.&nbsp;</i>客观题无需人工判卷，系统会自动分析成绩</dt>
 																							<dd>主观题由老师判分，批阅后即可查看分数和结果，自动进行全员分析</dd>
 																						</dl>
-																						<dl><dt><i>&nbsp;4.&nbsp;</i>考后自动分析成绩及排名</dt>
-																							<dd>老师发放考试规则后，系统即可自动分析考试结果，按分数段生成统计图，并按成绩形成排名表</dd>
+																						<dl><dt><i>&nbsp;4.&nbsp;</i>测评后自动分析成绩及排名</dt>
+																							<dd>系统即可自动分析测评结果，按分数段生成统计图，并按成绩形成排名表</dd>
 																						</dl>
 																						<div></div>
 																					</div>
@@ -610,12 +606,12 @@
 																					<div><span style="color:#666666;"></span>
 
 																								<h2><span style="font-size: 46px;color: lightskyblue;font-weight: 400;">省</span>时省力省心</h2>
-																								<h3>&emsp;&emsp;&nbsp;在线完成课程考试，爽歪歪！</h3>
+																								<h3>&emsp;&emsp;&nbsp;在线完成课堂测评，爽歪歪！</h3>
 																								<div class="zhicwl-aplsmrt">
-																									<p><i></i>告别纸笔时代，再也不用担心考试忘记带笔了，和满是印刷味的纸质试卷 Say ByeBye</p>
-																									<p><i></i>学生在线即可参加考试，再也不用东奔西跑找考场</p>
+																									<p><i></i>告别纸笔时代，再也不用担心忘记带笔了，和满是印刷味的纸质试卷 Say ByeBye</p>
+																									<p><i></i>学生在线即可参加测评，还可在讨论小组参与探讨或留言哦</p>
 																									<p><i></i>详尽的数据报告，学生成绩尽收眼底</p>
-																									<p><i></i>测试数据随时查阅，给考试提供理论支撑</p>
+																									<p><i></i>测试数据随时查阅，给测评提供理论支撑</p>
 																								</div>
 																							
 																					</div>

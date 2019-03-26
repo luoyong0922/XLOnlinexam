@@ -62,7 +62,7 @@ public class LoginController {
      * 跳转到系统主页面
      * @return
      */
-    @GetMapping({"/", "/index", "/home","toIndex","/#"})
+    @GetMapping({"/", "/index", "/home","toIndex","/#/"})
     public String toIndex(){
 
         System.out.println("((    ))  ()        ");

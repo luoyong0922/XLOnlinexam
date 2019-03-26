@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <title>HTML5/CSS3圆盘时钟动画</title>
 
-      <link rel="stylesheet" href="${rc.contextPath}/static/css/studentIndex.css">
+      <link rel="stylesheet" href="./css/studentIndex.css">
 
 </head>
 
 <body>
 
-		<div class="clock" onclick="playMusic();">
+		<div class="clock">
         <div class="hourHand"></div>
         <div class="minuteHand"></div>
         <div class="secondHand"></div>
@@ -33,15 +33,19 @@
 			</ul>
 		</div>
 
+    <audio class="audio">
+	
+	<source src="./sounds/dida.mp3" type="audio/mpeg">
+	
+	</audio>
+  
+  
 
+    <script  src="./js/studentIndex.js"></script>
 
-    <script  src="${rc.contextPath}/static/js/studentIndex.js"></script>
+	<div style="text-align:center;clear:both"></div>
 
-	<div style="text-align:center;clear:both">
-	        <audio class="audio" controls style="float:right;">
-                <source id="music" src="${rc.contextPath}/static/sounds/dida.mp3" type="audio/mpeg">
-            </audio>
-    </div>
 
 </body>
+
 </html>

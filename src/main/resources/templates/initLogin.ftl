@@ -1,72 +1,137 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
 
-	<head>
-		<base href="<%=basePath%>">
-		<meta charset="utf-8">
-		<title>正在登录</title>
-		<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
-		<link rel="stylesheet" type="text/css" href="${rc.contextPath}/static/css/bootstrap-grid.min.css" />
-		<link href="${rc.contextPath}/static/css/btn.css" type="text/css" rel="stylesheet">
-		<link href="${rc.contextPath}/static/css/Location.css" type="text/css" rel="stylesheet">
-	</head>
+<head>
 
-	<script type="text/javascript">
-		document.onkeydown = function(event) {
-			if((event.ctrlKey) && (event.keyCode == 115 || event.keyCode == 83)) {
-				event.returnValue = false;
-				return;
-			}
-		}
-	</script>
+  <meta charset="UTF-8">
 
-	<body class="body--ready" data-pinterest-extension-installed="cr1.39.1" oncontextmenu=self.event.returnValue=false onselectstart="return false">
+  <title>正在登录</title>
 
-		<canvas class="canvas" width="100%" height="100%"></canvas>
-		<div id="willerce">
-			<div>
-				<img src="${rc.contextPath}/static/images/pkq.png" id="logo" title="皮" />
-				<h1>课堂测评系统</h1>
-				<a>我们用心在做！</a>
-			</div>
-			<script type="text/javascript">
-				function duihua() {
-					alert("公告：课堂测评系统致力于数字化校园的建设,欢迎你的加入！")
-				}
-			</script>
-			<br>
-			<div class="menu">
-				<!--  Hi ${Session.SPRING_SECURITY_CONTEXT.authentication.principal.username!} ! -->
-				<a style=" padding: 0px 20px; " class="btn btn-lg ju" href="javascript:void(0);" onclick="duihua()">公告</a>
-			</div>
-		</div>
+  <link rel="stylesheet" href="${rc.contextPath}/static/css/normalize.css">
 
-		<!--动画脚本-->
-		<script src="${rc.contextPath}/static/js/S.js"></script>
-		<script type="text/javascript">
-			S.init();
-		</script>
-		<script src="${rc.contextPath}/static/js/jquery-1.11.0.js"></script>
-		<script src="${rc.contextPath}/static/js/jquery.marquee.min.js"></script>
+    <link rel="stylesheet" href="${rc.contextPath}/static/css/initStyle.css" media="screen" type="text/css" />
 
-		<script>
-			function bgChange() {
-				var lis = $('.lib');
-				for(var i = 0; i < lis.length; i += 2) {
-					lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
-				}
-				//定时执行，12秒后执行
-				var t1 = window.setTimeout(reDirectPage, 1000 * 12);
-				//去掉定时器的方法  
-			//  window.clearTimeout(t1);
-			}
-			window.onload = bgChange();
+</head>
 
-			function reDirectPage() {
-				window.location.href = '${rc.contextPath}/loginController/redirectPage';
-			}
-			
-		</script>
-	</body>
+<body>
 
+  <div class="code-editor"><span class="control" onclick="redirect();"></span><span class="control" onclick="redirect();"></span><span class="control" onclick="redirect();"></span>
+            <pre class="numbers linenums prettyprint prettyprinted">
+				<ol class="linenums" style=" line-height: 5px;">
+				<li class="L0">
+				<code class="css">
+						<span class="pln">$</span>
+						<span class="pun">(</span>
+						<span class="kwd">function</span>
+						<span class="pun">(){</span>
+						</code>
+						</li>
+						<li class="L1">
+						<code class="css">
+						<span class="pln" style="margin-left: 20px;"></span>
+						<span class="kwd">var</span>
+						<span class="pln"> date </span>
+						<span class="pun">=</span>
+						<span class="pln"></span>
+						<span class="str">'欢迎进入课堂测评系统，'</span>
+						<span class="pun">;</span>
+						</code>
+						</li>
+						<li class="L2">
+						<code class="css">
+						<span class="pln" style="margin-left: 20px;"></span>
+						<span class="pln"> date </span>
+						<span class="pun">+=</span>
+						<span class="pln"></span>
+						<span class="str">'本系统致力于数字化校园的建设。'</span>
+						<span class="pun">;</span>
+						</code>
+						</li>
+						<li class="L3">
+						<code class="css">
+						<span class="pln" style="margin-left: 20px;"></span>
+						<span class="pln"> date </span>
+						<span class="pun">+=</span>
+						<span class="pln"></span>
+						<span class="str">'如果你对软件开发感兴趣的话，'</span>
+						<span class="pun">;</span>
+						</code>
+						</li>
+						<li class="L4">
+						<code class="css">
+						<span class="pln" style="margin-left: 20px;"></span>
+						<span class="pln"> date </span>
+						<span class="pun">+=</span>
+						<span class="pln"></span>
+						<span class="str">'我们诚挚欢迎你的加入！'</span>
+						<span class="pun">;</span>
+						</code>
+						</li>
+						<li class="L5">
+						<code class="css">
+						<span class="pln" style="margin-left: 20px;"></span>
+						<span class="kwd">console</span>
+						<span class="pun">.</span>
+						<span class="kwd">log</span>
+						<span class="pun">(</span>
+						<span class="pln">date</span>
+						<span class="pun">)</span>
+						<span class="pun">;</span>
+						</code>
+						</li>
+						<li class="L6">
+						<code class="css">
+						<span class="pln" style="margin-left: 20px;"></span>
+						<span class="kwd">alert</span>
+						<span class="pun">(</span>
+						<span class="str">'打开开发者工具，有彩蛋在等你哦！'</span>
+						<span class="pun">)</span>
+						<span class="pun">;</span>
+						</code>
+						</li>
+						<li class="L1">
+						<code class="css">
+						<span class="pln"> </span>
+						<span class="pun">})</span>
+						</code>
+						</li>
+						</ol>
+						</pre>
+          </div>
+
+  <script src='${rc.contextPath}/static/js/jquery.js'></script>
+  <script src='${rc.contextPath}/static/js/prettify.js'></script>
+  <script src='${rc.contextPath}/static/js/timer.js'></script>
+<div style="text-align:center;clear:both"></div>
+</body>
+<script>
+$('body').oneTime('21s','A',function(){
+alert('打开开发者工具，有彩蛋在等你哦！')
+
+ var d1 = '           .##......##.########.##........######...#######..##.....##.########';
+ var d2 = '           .##..##..##.##.......##.......##....##.##.....##.###...###.##......';
+ var d3 = '           .##..##..##.##.......##.......##.......##.....##.####.####.##......';
+ var d4 = '           .##..##..##.######...##.......##.......##.....##.##.###.##.######..';
+ var d5 = '           .##..##..##.##.......##.......##.......##.....##.##.....##.##......';
+ var d6 = '           .##..##..##.##.......##.......##....##.##.....##.##.....##.##......';
+ var d7 = '           ..###..###..########.########..######...#######..##.....##.########';
+ console.log(d1);
+ console.log(d2);
+ console.log(d3);
+ console.log(d4);
+ console.log(d5);
+ console.log(d6);
+ console.log(d7);
+ console.log('');
+ console.log('欢迎进入课堂测评系统，本系统致力于数字化校园的建设。如果你对软件开发感兴趣的话，我们诚挚欢迎你的加入！');
+ console.log('QQ群：229872283');
+ });
+ 
+$('body').oneTime('25s','B',function(){
+	window.location.href = '${rc.contextPath}/loginController/redirectPage';
+ })
+ function redirect(){
+ 	window.location.href = '${rc.contextPath}/loginController/redirectPage';
+ }
+</script>
 </html>

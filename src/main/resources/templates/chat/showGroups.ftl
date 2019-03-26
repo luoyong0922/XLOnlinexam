@@ -78,6 +78,7 @@
 <script src="${rc.contextPath}/static/js/dateToLocaleString.js"></script>
 <script>
         var name = "";
+        var tcId = 0;
         // 查询历史记录
         $("#record").bind("change",function(){
         		var option = this.value;
@@ -101,7 +102,7 @@
         		}else {
         			url = "";
         		}
-        		$.get(url,{"tcId":1},function(data){
+        		$.get(url,{"tcId":tcId},function(data){
         			console.log(data);
 
         			var html = '';
@@ -171,7 +172,8 @@
                 }
 
                 webSocket.onopen = function () {
-                    name = username
+                    name = username;
+                    tcId = teacCourseId;
                     $("#input_roomName").val(courseName);
                     $("#courseInfo").css("display","none");
                     $("#chatting").css("display","block");
@@ -183,7 +185,7 @@
                     var name = received_msg.split("\\")[0];
                     var message = received_msg.substr(name.length+2);
                     var currentTime = new Date();
-                    var datetime = currentTime.getFullYear()+"-"+(currentTime.getMonth()+1)+"-"+currentTime.getDate()+" "+currentTime.getHours()+":"+currentTime.getMinutes()+":"+currentTime.getSeconds();
+                    var datetime = currentTime.getFullYear()+"/"+((currentTime.getMonth()+1)<10?"0"+currentTime.getMonth():currentTime.getMonth())+"/"+(currentTime.getDate()<10?"0"+currentTime.getDate():currentTime.getDate())+" "+(currentTime.getHours()<10?"0"+currentTime.getHours():currentTime.getHours())+":"+(currentTime.getMinutes()<10?"0"+currentTime.getMinutes():currentTime.getMinutes())+":"+(currentTime.getSeconds()<10?"0"+currentTime.getSeconds():currentTime.getSeconds());
                     var html = '';
                     if( name == username){
                         html += '<div class="receiver">';

@@ -1,75 +1,41 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-
 	<head>
 		<title>Login</title>
-
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="expires" content="0">
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
-		<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 		<link href="${rc.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
-
+        <link href="${rc.contextPath}/static/css/style.css" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="${rc.contextPath}/static/css/radio.css">
 	</head>
 
 	<body>
-		<div class="container" style="margin-top:80px;">
+		<div class="container" style="margin-top:70px;">
 			<div class="row clearfix">
 				<div class="col-md-1 column">
 				</div>
 				<div class="col-md-6 column" style="margin-bottom:20px;">
-					<div class="carousel slide" id="carousel-782648">
-						<ol class="carousel-indicators">
-							<li class="active" data-slide-to="0" data-target="#carousel-782648">
-							</li>
-							<li data-slide-to="1" data-target="#carousel-782648">
-							</li>
-							<li data-slide-to="2" data-target="#carousel-782648">
-							</li>
-						</ol>
-						<div class="carousel-inner">
-							<div class="item active">
-								<img alt="" src="${rc.contextPath}/static/images/1.jpg" />
-								<div class="carousel-caption">
-									<h4>
-                                  First Thumbnail label
-                              </h4>
-									<p>
-										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-									</p>
-								</div>
-							</div>
-							<div class="item">
-								<img alt="" src="${rc.contextPath}/static/images/2.jpg" />
-								<div class="carousel-caption">
-									<h4>
-                                  Second Thumbnail label
-                              </h4>
-									<p>
-										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-									</p>
-								</div>
-							</div>
-							<div class="item">
-								<img alt="" src="${rc.contextPath}/static/images/3.jpg" />
-								<div class="carousel-caption">
-									<h4>
-                                  Third Thumbnail label
-                              </h4>
-									<p>
-										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-									</p>
-								</div>
-							</div>
-						</div>
-						<a class="left carousel-control" href="#carousel-782648" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-						<a class="right carousel-control" href="#carousel-782648" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-					</div>
-				</div>
+                    <div class="calendar">
+                        <div class="header">
+                            <a data-action="prev-month" href="javascript:void(0)" title="Previous Month"><i></i></a>
+                            <div class="text" data-render="month-year"></div>
+                            <a data-action="next-month" href="javascript:void(0)" title="Next Month"><i></i></a>
+                        </div>
+                        <div class="months" data-flow="left">
+                            <div class="month month-a">
+                                <div class="render render-a"></div>
+                            </div>
+                            <div class="month month-b">
+                                <div class="render render-b"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <script  src="${rc.contextPath}/static/js/index-data.js"></script>
+                    <div style="text-align:center;clear:both;margin-top:50px;"></div>
+                </div>
 				<div class="col-md-4 column">
 					<form role="form" action="${rc.contextPath}/loginController/dologin" method="post" id="loginForm">
 						<div class="form-group">
@@ -77,31 +43,26 @@
 						</div>
 						<div class="form-group">
 							<label for="password">密码：</label><input type="password" class="form-control" id="password" name="password" />
-
 						</div>
-<!--
-						<div class="form-group">
-							<label for="account">角色：</label>
-							<select id="select" name="role" class="item-select" style="border-radius: 5px;height:34px;">
-								<option value="1">学生</option>
-								<option value="2">教师</option>
-								<option value="3">管理员</option>
-							</select>
-						</div>
--->
-
 						<div class="form-group">
 							<label for="validate">验证码：</label>
 							<input type="text" class="form-control" id="validate" name="validate" style="max-width:150px;size:10px;display:inline;" />
 							<img style="cursor:hand;border:none;}" name="imgcode" id="imgcode" align="absmiddle" src="${rc.contextPath}/ImageValidController/getImage" onclick="changeImg(this)" />
 							<!--验证码当图片处理，点击可刷新-->
 						</div>
-						<div class="checkbox">
-							<label style="float:left;"><input  type="checkbox" name="remember-me" id="remember-me" />记住密码</label>
-							<label style="float:right;"><a href="${rc.contextPath}/loginController/toFindPassword">忘记密码？</a></label><br/>
-						</div>
-						<div class="form-group"><input type="button" value="登录" class="btn btn-default center-block" style="width:70%;" onclick="checkForm();"></input>
-						</div>
+						<div class="checkbox form-group">
+                            <div class="toggle_switch">
+                                <input type="checkbox" class="switch_3"name="remember-me" id="remember-me">
+                                <svg class="checkbox" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate" viewBox="0 0 168 80" >
+                                   <path class="outer-ring" d="M41.534 9h88.932c17.51 0 31.724 13.658 31.724 30.482 0 16.823-14.215 30.48-31.724 30.48H41.534c-17.51 0-31.724-13.657-31.724-30.48C9.81 22.658 24.025 9 41.534 9z" fill="none" stroke="#233043" stroke-width="3" stroke-linecap="square" stroke-miterlimit="3"/>
+                                   <path class="is_checked" d="M17 39.482c0-12.694 10.306-23 23-23s23 10.306 23 23-10.306 23-23 23-23-10.306-23-23z"/>
+                                    <path class="is_unchecked" d="M132.77 22.348c7.705 10.695 5.286 25.617-5.417 33.327-2.567 1.85-5.38 3.116-8.288 3.812 7.977 5.03 18.54 5.024 26.668-.83 10.695-7.706 13.122-22.634 5.418-33.33-5.855-8.127-15.88-11.474-25.04-9.23 2.538 1.582 4.806 3.676 6.66 6.25z"/>
+                                </svg>
+                                <label style="margin: 13px 0px 10px 80px;font-size:21px;">记住密码</label>
+                                <label style="float:right;margin-top:13px;font-size:21px;"><a href="${rc.contextPath}/loginController/toFindPassword">忘记密码？</a></label><br/>
+                            </div>
+                        </div>
+                        <div class="form-group"><input type="button" value="登  录" class="btn btn-success center-block" style="width:70%;font-size:20px;" onclick="checkForm();"/></div>
 					</form>
 					<div class="col-md-1 column">
 					</div>
