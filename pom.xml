@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.roy</groupId>
-	<artifactId>springboot</artifactId>
+	<artifactId>XLOnlinexam</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>XLOnlinexam</name>
-	<description>Demo project for Spring Boot</description>
+	<description>课堂测评系统</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
