@@ -15,20 +15,15 @@ public class testJson2Entity {
     public void jsonToEntity(){
         String jsonStr = "{\"testType\": \"选择题\",\"testAmount\": \"5\", \"testValue\" : \"2\"}";
         PaperStandard paperStandard = JSON.parseObject(jsonStr,PaperStandard.class);
-        System.out.println(paperStandard);
-        //  PaperStandard{id=null, testType='选择题', testAmount=5, testValue=2, teacCourseId=null, testTime=null}
+        System.out.println("json:"+jsonStr);
+        System.out.println("Entity:"+paperStandard);
     }
     @Test
     public void jsonToArrayEntity(){
         String jsonStr = "{\"PaperStandard\":[{\"testType\": \"单选题\",\"testAmount\": \"5\", \"testValue\" : \"2\"},{\"testType\": \"填空题\",\"testAmount\": \"10\", \"testValue\" : \"1\"},{\"testType\": \"判断题\",\"testAmount\": \"10\", \"testValue\" : \"1\"},{\"testType\": \"多选题\",\"testAmount\": \"10\", \"testValue\" : \"1\"},{\"testType\": \"计算题\",\"testAmount\": \"10\", \"testValue\" : \"1\"},{\"testType\": \"主观题\",\"testAmount\": \"10\", \"testValue\" : \"1\"}]}";
-        System.out.println(jsonStr.length());
-//        JSONObject jsonObject = JSON.parseObject(jsonStr);
-//        JSONArray paperStandard = jsonObject.getJSONArray("PaperStandard");
-//        List<PaperStandard> paperStandards = JSON.parseObject(paperStandard.toJSONString(), new TypeReference<List<PaperStandard>>() { });
         List paperStandards = jsonToArrayObject(jsonStr,PaperStandard.class);
-
-        System.out.println(paperStandards);
-        // [PaperStandard{id=null, testType='选择题', testAmount=5, testValue=2, teacCourseId=null, testTime=null}, PaperStandard{id=null, testType='填空题', testAmount=10, testValue=1, teacCourseId=null, testTime=null}]
+        System.out.println("json:"+jsonStr);
+        System.out.println("Entity:"+paperStandards);
     }
 
     /**

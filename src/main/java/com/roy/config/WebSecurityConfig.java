@@ -36,7 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
 
                 .antMatchers("/").permitAll()
-                .antMatchers("/loginController/**").permitAll();
+                .antMatchers("/loginController/**","/ImageValidController/**","/registController/**").permitAll();
 
         http.authorizeRequests()
                 .antMatchers("/adminController/**").hasRole("ADMIN")
@@ -45,7 +45,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .antMatchers("/teacherController/**").hasRole("TEACHER")
 
-                .antMatchers("/achievementController/**").hasAnyRole("TEACHER","STUDENT")
+                .antMatchers("/webSocket/**","/messageController/**").hasAnyRole("TEACHER","STUDENT")
+
+                .antMatchers("/achievementController/**","/paperController/**","/homeworkController/**","/courseController/**").hasAnyRole("ADMIN","TEACHER","STUDENT")
 
                 .withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
                     @Override

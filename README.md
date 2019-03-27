@@ -107,7 +107,7 @@ MySQL进行存储，使用Maven做项目管理，提高项目的易开发性、�
 2. 修改src\main\resources\application.properties文件中的数据库连接参数。
 3. 根据修改参数创建对应MySql数据库用户和参数。
 4. onlinexam.sql导入本地数据库即可
-5. 运行mvn package脚本，即可创建项目jar文件，同时也可以通过java -jar *.jar 即可本地预览
+5. 运行SpringbootApplication启动类， 即可本地预览
 6. 管理员账号，用户名：110 密码：123
 
 ## 版权声明

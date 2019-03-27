@@ -283,7 +283,15 @@ public class AdminController {
         model.addAttribute("keywords",keywords);
         return "admin/showStudents";
     }
+    //学生分页
+    @RequestMapping("getStudentsByPage")
+    @ResponseBody
+    public PageInfo showStudentsBypage(@RequestParam(value = "pageIndex",required = false,defaultValue = "1") Integer pageIndex,
+                                       @RequestParam(value = "keywords",required =false,defaultValue ="") String keywords){
 
+        PageInfo pageInfo=adminService.searchStudentBykeywords(pageIndex,keywords,null);
+        return pageInfo;
+    }
     //去学生修改页面
     @RequestMapping("studentUpdate/{stuId}")
     public ModelAndView ToStuUpdatePage(@PathVariable("stuId") Long id){
