@@ -75,8 +75,31 @@ MySQL进行存储，使用Maven做项目管理，提高项目的易开发性、�
 
 ## 功能预览
 
-![icon](./src/main/resources/static/images/1.jpg?raw=true)
-![icon](./src/main/resources/static/images/2.jpg?raw=true)
+* 系统首页
+![icon](./src/main/resources/static/screenshot/index.png?raw=true)
+* 关于我们
+![icon](./src/main/resources/static/screenshot/aboutUs.png?raw=true)
+* 注册页面
+![icon](./src/main/resources/static/screenshot/regist.png?raw=true)
+* 登录页面
+![icon](./src/main/resources/static/screenshot/login.png?raw=true)
+* 登录初始化页面
+![icon](./src/main/resources/static/screenshot/loginInit.png?raw=true)
+* 管理员首页
+![icon](./src/main/resources/static/screenshot/adminIndex.png?raw=true)
+* 管理员页面
+![icon](./src/main/resources/static/screenshot/adminPage.png?raw=true)
+* 老师首页
+![icon](./src/main/resources/static/screenshot/teacherIndex.png?raw=true)
+* 成绩统计页面
+![icon](./src/main/resources/static/screenshot/grade.png?raw=true)
+![icon](./src/main/resources/static/screenshot/grade2.png?raw=true)
+* 学生首页
+![icon](./src/main/resources/static/screenshot/studentIndex.png?raw=true)
+* 学生修改密码
+![icon](./src/main/resources/static/screenshot/modifyPWD.png?raw=true)
+* 讨论页面
+![icon](./src/main/resources/static/screenshot/chatting.png?raw=true)
 
 ## 快速体验
 

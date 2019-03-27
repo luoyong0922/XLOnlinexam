@@ -185,7 +185,7 @@
                     var name = received_msg.split("\\")[0];
                     var message = received_msg.substr(name.length+2);
                     var currentTime = new Date();
-                    var datetime = currentTime.getFullYear()+"/"+((currentTime.getMonth()+1)<10?"0"+currentTime.getMonth():currentTime.getMonth())+"/"+(currentTime.getDate()<10?"0"+currentTime.getDate():currentTime.getDate())+" "+(currentTime.getHours()<10?"0"+currentTime.getHours():currentTime.getHours())+":"+(currentTime.getMinutes()<10?"0"+currentTime.getMinutes():currentTime.getMinutes())+":"+(currentTime.getSeconds()<10?"0"+currentTime.getSeconds():currentTime.getSeconds());
+                    var datetime = currentTime.getFullYear()+"/"+((currentTime.getMonth()+1)<10?"0"+(currentTime.getMonth()+1):(currentTime.getMonth()+1))+"/"+(currentTime.getDate()<10?"0"+currentTime.getDate():currentTime.getDate())+" "+(currentTime.getHours()<10?"0"+currentTime.getHours():currentTime.getHours())+":"+(currentTime.getMinutes()<10?"0"+currentTime.getMinutes():currentTime.getMinutes())+":"+(currentTime.getSeconds()<10?"0"+currentTime.getSeconds():currentTime.getSeconds());
                     var html = '';
                     if( name == username){
                         html += '<div class="receiver">';
