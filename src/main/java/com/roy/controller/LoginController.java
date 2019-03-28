@@ -131,18 +131,22 @@ public class LoginController {
         Class clazz = object.getClass();
         if(clazz.equals(Student.class)){
             Student student = (Student) object;
-            Long id = student.getId();
-            String name = student.getStuName();
-            model.addAttribute("student", student);
-            session.setAttribute("name",student.getStuName());
-            session.setAttribute("id",student.getId());
-            session.setAttribute("num",student.getStuNum());
-            session.setAttribute("role","student");
-            //初始化课程信息
-            PageInfo pageInfo = courseService.getMyCoursesMessage(id,1,null,null, 0L);
-            model.addAttribute("courses", pageInfo.getList());
-            System.out.println("课程信息："+pageInfo.getList());
-            return "student/studentIndex";
+            if( student.getStuState() == 1 ) {
+                Long id = student.getId();
+                String name = student.getStuName();
+                model.addAttribute("student", student);
+                session.setAttribute("name", name);
+                session.setAttribute("id", id);
+                session.setAttribute("num", student.getStuNum());
+                session.setAttribute("role", "student");
+                //初始化课程信息
+                PageInfo pageInfo = courseService.getMyCoursesMessage(id, 1, null, null, 0L);
+                model.addAttribute("courses", pageInfo.getList());
+                System.out.println("课程信息：" + pageInfo.getList());
+                return "student/studentIndex";
+            }else{
+                model.addAttribute("msg", "账号正在审核中！");
+            }
         }else if (clazz.equals(Admin.class)) {
             Admin admin = (Admin) object;
 
@@ -155,23 +159,26 @@ public class LoginController {
 
         } else if (clazz.equals(Teacher.class)) {
             Teacher teacher = (Teacher) object;
-
-            Long id = teacher.getId();
-            String name = teacher.getTeacName();
-            model.addAttribute("teacher", teacher);
-            session.setAttribute("name",name);
-            session.setAttribute("id",id);
-            session.setAttribute("num",teacher.getTeacWorknum());
-            session.setAttribute("role","teacher");
-            //初始化课程信息
-            PageInfo pageInfo = courseService.getMyCoursesMessage(id,2,null,name, 0L);
-            System.out.println("课程信息："+pageInfo.getList());
-            model.addAttribute("courses", pageInfo.getList());
-            return "teacher/teacherIndex";
+            if( teacher.getTeacState() == 1 ) {
+                Long id = teacher.getId();
+                String name = teacher.getTeacName();
+                model.addAttribute("teacher", teacher);
+                session.setAttribute("name", name);
+                session.setAttribute("id", id);
+                session.setAttribute("num", teacher.getTeacWorknum());
+                session.setAttribute("role", "teacher");
+                //初始化课程信息
+                PageInfo pageInfo = courseService.getMyCoursesMessage(id, 2, null, name, 0L);
+                System.out.println("课程信息：" + pageInfo.getList());
+                model.addAttribute("courses", pageInfo.getList());
+                return "teacher/teacherIndex";
+            }else{
+                model.addAttribute("msg", "账号正在审核中！");
+            }
         }else {
             model.addAttribute("msg", "账号或密码错误");
-            return "login";
         }
+        return "login";
     }
 
     /**
