@@ -347,7 +347,7 @@ public class Admin implements UserDetails {
 
     @Override
     public String getUsername() {
-        return adminName;
+        return adminPhone;
     }
 
     @Override

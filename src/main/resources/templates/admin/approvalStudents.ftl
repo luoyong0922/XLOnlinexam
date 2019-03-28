@@ -60,7 +60,7 @@
              <td>${student.stuPhone}</td>
              <td>待审核</td>
              <td style="text-align: center">
-                 <a style="cursor: pointer;" onclick="approval('${student.id}',1)">通过审核</a><br>
+                 <a style="cursor: pointer;" onclick="approval('${student.id}',2)">通过审核</a><br>
                  <a style="cursor: pointer;" onclick="approval('${student.id}',0)">未通过审核</a>
              </td>
          </tr>

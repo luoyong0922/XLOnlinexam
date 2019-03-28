@@ -488,7 +488,7 @@ public class Student implements UserDetails {
 
     @Override
     public String getUsername() {
-        return stuName;
+        return stuNum;
     }
 
     @Override

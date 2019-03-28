@@ -18,7 +18,7 @@ public interface LoginService extends UserDetailsService {
     public List<Student> studenLogin(String stuNum, String stuPassword);
     public List<Teacher> teacherLogin(String teacWorknum, String teacPassword);
     /**
-     * 找回密码
+     *
      * 根据账号查询信息
      * @param account 账号：学号  工号   手机号
      * @param role 角色：1 学生，2 教师，3 管理员

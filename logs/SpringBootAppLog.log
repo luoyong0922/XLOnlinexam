@@ -445,3 +445,401 @@ Caused by: org.yaml.snakeyaml.scanner.ScannerException: mapping values are not a
 2019-03-28 11:22:06,954 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher WHERE ( teac_worknum = ? ) 
 2019-03-28 11:22:06,954 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==> Parameters: t10010(String)
 2019-03-28 11:22:06,957 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:22:28,873 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 6324 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-28 15:22:28,878 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-28 15:22:28,880 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-28 15:22:31,957 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:22:32,205 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:22:32,240 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:22:32,241 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:22:32,261 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-28 15:22:32,262 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-28 15:22:32,281 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:22:32,572 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:22:32,573 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3518 ms
+2019-03-28 15:22:32,672 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 15:22:32,673 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-28 15:22:32,674 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-28 15:22:32,674 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-28 15:22:32,674 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-28 15:22:32,676 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-28 15:22:32,677 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-28 15:22:32,979 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-28 15:22:33,296 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-28 15:22:35,200 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-28 15:22:35,201 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-28 15:22:35,201 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-28 15:22:35,275 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3cc053, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a950fdd, org.springframework.security.web.header.HeaderWriterFilter@4d464510, org.springframework.security.web.authentication.logout.LogoutFilter@12417468, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@160e99e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27dc627a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@623e0631, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1a1ccaaf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@388c519, org.springframework.security.web.session.SessionManagementFilter@2519026b, org.springframework.security.web.access.ExceptionTranslationFilter@778a1250, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4b425577]
+2019-03-28 15:22:35,418 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:22:35,441 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-28 15:22:35,463 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 15:22:35,468 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.562 seconds (JVM running for 9.362)
+2019-03-28 15:25:56,745 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 15:25:56,745 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-28 15:25:56,763 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 18 ms
+2019-03-28 15:26:12,245 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 15:26:12,287 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 15:26:12,309 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 15:26:12,314 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 15:26:12,315 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 15:26:12,321 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:35:46,831 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 3636 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-28 15:35:46,836 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-28 15:35:46,839 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-28 15:35:49,872 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:35:50,034 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:35:50,052 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:35:50,052 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:35:50,069 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-28 15:35:50,069 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-28 15:35:50,085 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:35:50,332 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:35:50,332 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3363 ms
+2019-03-28 15:35:50,432 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 15:35:50,433 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-28 15:35:50,433 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-28 15:35:50,434 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-28 15:35:50,434 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-28 15:35:50,436 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-28 15:35:50,437 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-28 15:35:50,722 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-28 15:35:51,023 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-28 15:35:52,901 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-28 15:35:52,901 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-28 15:35:52,902 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-28 15:35:52,969 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@27585351, org.springframework.security.web.context.SecurityContextPersistenceFilter@2ce03e86, org.springframework.security.web.header.HeaderWriterFilter@388c519, org.springframework.security.web.authentication.logout.LogoutFilter@2b80e5a9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2180e789, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9b47400, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5bde57ab, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@285005b8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2de6f1bc, org.springframework.security.web.session.SessionManagementFilter@198536f6, org.springframework.security.web.access.ExceptionTranslationFilter@43471a7e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5934ca1e]
+2019-03-28 15:35:53,097 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:35:53,115 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-28 15:35:53,137 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 15:35:53,140 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.106 seconds (JVM running for 8.038)
+2019-03-28 15:38:43,055 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 15:38:43,055 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-28 15:38:43,075 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 20 ms
+2019-03-28 15:38:43,700 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 15:38:43,718 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 李商隐(String)
+2019-03-28 15:38:43,735 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 15:38:43,740 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 15:38:43,740 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 李商隐(String)
+2019-03-28 15:38:43,746 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 15:38:43,750 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher WHERE ( teac_worknum = ? ) 
+2019-03-28 15:38:43,751 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==> Parameters: 李商隐(String)
+2019-03-28 15:38:43,756 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 15:39:04,827 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 15:39:04,828 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 15:39:04,829 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 15:39:04,830 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 15:39:04,831 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 15:39:04,834 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:39:07,160 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-28 15:39:07,162 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 15:39:07,170 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 15:39:07,172 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:39:07,173 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:39:07,182 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:39:07,183 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:39:07,184 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 15:39:07,189 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:39:07,190 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 15:39:07,191 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 15:39:07,193 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:39:07,195 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:39:07,196 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 15:39:07,199 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:39:07,200 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:39:07,201 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 15:39:07,203 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:39:07,205 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:39:07,206 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-28 15:39:07,207 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:39:07,209 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:39:07,210 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:39:07,211 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:39:07,212 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 15:39:07,214 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:39:07,216 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:39:54,533 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 5216 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-28 15:39:54,539 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-28 15:39:54,541 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-28 15:39:57,676 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:39:57,874 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:39:57,919 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:39:57,919 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:39:57,939 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-28 15:39:57,939 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-28 15:39:57,958 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:39:58,229 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:39:58,229 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3557 ms
+2019-03-28 15:39:58,345 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 15:39:58,346 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-28 15:39:58,346 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-28 15:39:58,346 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-28 15:39:58,346 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-28 15:39:58,349 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-28 15:39:58,350 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-28 15:39:58,923 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-28 15:39:59,270 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-28 15:40:01,440 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-28 15:40:01,441 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-28 15:40:01,441 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-28 15:40:01,545 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a4f8009, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f61371d, org.springframework.security.web.header.HeaderWriterFilter@2ed9f6f8, org.springframework.security.web.authentication.logout.LogoutFilter@322204dc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2e1eb85f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3292d91a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a7c678b, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2401856, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a85644c, org.springframework.security.web.session.SessionManagementFilter@35650279, org.springframework.security.web.access.ExceptionTranslationFilter@5d508d22, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5fdfe8cf]
+2019-03-28 15:40:01,692 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:40:01,718 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-28 15:40:01,745 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 15:40:01,754 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 8.101 seconds (JVM running for 9.198)
+2019-03-28 15:40:12,313 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 15:40:12,313 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-28 15:40:12,328 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 15 ms
+2019-03-28 15:41:15,670 [http-nio-8080-exec-6] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 15:41:15,699 [http-nio-8080-exec-6] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-28 15:41:15,723 [http-nio-8080-exec-6] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:41:31,117 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 9972 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-28 15:41:31,123 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-28 15:41:31,125 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-28 15:41:34,056 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:41:34,249 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:41:34,281 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:41:34,282 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:41:34,303 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-28 15:41:34,303 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-28 15:41:34,323 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:41:34,612 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:41:34,612 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3405 ms
+2019-03-28 15:41:34,706 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 15:41:34,707 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-28 15:41:34,707 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-28 15:41:34,708 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-28 15:41:34,708 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-28 15:41:34,711 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-28 15:41:34,712 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-28 15:41:34,953 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-28 15:41:35,227 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-28 15:41:37,229 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-28 15:41:37,230 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-28 15:41:37,230 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-28 15:41:37,293 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d4436d0, org.springframework.security.web.context.SecurityContextPersistenceFilter@43471a7e, org.springframework.security.web.header.HeaderWriterFilter@5934153e, org.springframework.security.web.authentication.logout.LogoutFilter@7bee8621, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1cbc5693, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a1ccaaf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c628f6a, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@ab2e6d2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39da5e49, org.springframework.security.web.session.SessionManagementFilter@160e99e0, org.springframework.security.web.access.ExceptionTranslationFilter@196624bf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@32227215]
+2019-03-28 15:41:37,439 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:41:37,457 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-28 15:41:37,482 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 15:41:37,487 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.377 seconds (JVM running for 8.323)
+2019-03-28 15:41:46,559 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 15:41:46,560 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-28 15:41:46,575 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 15 ms
+2019-03-28 15:41:47,135 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 15:41:47,147 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: roy(String)
+2019-03-28 15:41:47,164 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 15:41:47,170 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 15:41:47,170 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: roy(String)
+2019-03-28 15:41:47,176 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 15:41:47,185 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher WHERE ( teac_worknum = ? ) 
+2019-03-28 15:41:47,186 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==> Parameters: roy(String)
+2019-03-28 15:41:47,193 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 15:49:34,317 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 4300 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-28 15:49:34,387 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-28 15:49:34,392 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-28 15:49:37,548 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:49:37,706 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:49:37,727 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:49:37,728 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:49:37,746 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-28 15:49:37,747 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-28 15:49:37,762 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:49:38,002 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:49:38,003 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3480 ms
+2019-03-28 15:49:38,108 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 15:49:38,109 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-28 15:49:38,110 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-28 15:49:38,110 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-28 15:49:38,110 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-28 15:49:38,112 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-28 15:49:38,113 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-28 15:49:38,382 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-28 15:49:38,675 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-28 15:49:40,602 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-28 15:49:40,603 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-28 15:49:40,603 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-28 15:49:40,679 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e7af36e, org.springframework.security.web.context.SecurityContextPersistenceFilter@4bf80c29, org.springframework.security.web.header.HeaderWriterFilter@a85644c, org.springframework.security.web.authentication.logout.LogoutFilter@160e99e0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@63fd4dda, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@515b9d4a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5df7e31b, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@4a058df8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1283ca23, org.springframework.security.web.session.SessionManagementFilter@1e3f0aea, org.springframework.security.web.access.ExceptionTranslationFilter@6af5b246, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55c57422]
+2019-03-28 15:49:40,824 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:49:40,839 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-28 15:49:40,901 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 15:49:40,906 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.346 seconds (JVM running for 8.315)
+2019-03-28 15:49:45,688 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 15:49:45,689 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-28 15:49:45,703 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 14 ms
+2019-03-28 15:50:00,067 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 15:50:00,096 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-28 15:50:00,118 [http-nio-8080-exec-5] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:50:26,468 [http-nio-8080-exec-6] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 15:50:26,469 [http-nio-8080-exec-6] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-28 15:50:26,473 [http-nio-8080-exec-6] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:50:45,785 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 13240 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-28 15:50:45,789 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-28 15:50:45,791 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-28 15:50:49,113 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:50:49,349 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:50:49,391 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:50:49,394 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:50:49,423 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-28 15:50:49,423 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-28 15:50:49,443 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:50:49,721 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:50:49,721 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3836 ms
+2019-03-28 15:50:49,851 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 15:50:49,852 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-28 15:50:49,853 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-28 15:50:49,853 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-28 15:50:49,853 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-28 15:50:49,855 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-28 15:50:49,855 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-28 15:50:50,190 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-28 15:50:50,529 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-28 15:50:52,534 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-28 15:50:52,535 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-28 15:50:52,535 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-28 15:50:52,602 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7459a21e, org.springframework.security.web.context.SecurityContextPersistenceFilter@55c57422, org.springframework.security.web.header.HeaderWriterFilter@76f2dad9, org.springframework.security.web.authentication.logout.LogoutFilter@741ac284, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@52bd9a27, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@335f5c69, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1283ca23, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5ed5b321, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7eeb38b2, org.springframework.security.web.session.SessionManagementFilter@72b0a004, org.springframework.security.web.access.ExceptionTranslationFilter@715f45c6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d15c0a1]
+2019-03-28 15:50:52,735 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:50:52,753 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-28 15:50:52,777 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 15:50:52,781 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.674 seconds (JVM running for 9.005)
+2019-03-28 15:50:57,191 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 15:50:57,192 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-28 15:50:57,211 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 18 ms
+2019-03-28 15:50:57,689 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 15:50:57,699 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-28 15:50:57,721 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:51:57,836 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 15:51:57,837 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 110(String)
+2019-03-28 15:51:57,839 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:53:38,809 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 15:53:38,810 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 15:53:38,812 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 15:53:38,817 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 15:53:38,818 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 15:53:38,825 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:53:40,683 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-28 15:53:40,685 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 15:53:40,691 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 15:53:40,695 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:53:40,696 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:53:40,704 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:53:40,705 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:53:40,706 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 15:53:40,712 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:53:40,714 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 15:53:40,714 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 15:53:40,719 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:53:40,720 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:53:40,721 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 15:53:40,723 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:53:40,724 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:53:40,726 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 15:53:40,728 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:53:40,729 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:53:40,730 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-28 15:53:40,732 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:53:40,733 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:53:40,734 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:53:40,735 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:53:40,737 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 15:53:40,737 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:53:40,739 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:00,925 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 5304 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-28 15:54:00,974 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-28 15:54:00,978 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-28 15:54:04,232 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:54:04,435 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:54:04,469 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:54:04,469 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:54:04,488 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-28 15:54:04,489 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-28 15:54:04,517 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 15:54:04,780 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:54:04,781 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3709 ms
+2019-03-28 15:54:04,902 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 15:54:04,902 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-28 15:54:04,903 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-28 15:54:04,903 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-28 15:54:04,904 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-28 15:54:04,908 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-28 15:54:04,909 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-28 15:54:05,283 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-28 15:54:05,698 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-28 15:54:07,938 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-28 15:54:07,938 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-28 15:54:07,939 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-28 15:54:08,015 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53aa2fc9, org.springframework.security.web.context.SecurityContextPersistenceFilter@67fb5025, org.springframework.security.web.header.HeaderWriterFilter@12417468, org.springframework.security.web.authentication.logout.LogoutFilter@3f9b7fe1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1e12a5a6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@392781e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e02721d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@10a18e3e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4792f119, org.springframework.security.web.session.SessionManagementFilter@d325518, org.springframework.security.web.access.ExceptionTranslationFilter@623e0631, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51d0ec6f]
+2019-03-28 15:54:08,186 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:54:08,202 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-28 15:54:08,227 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 15:54:08,231 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 8.165 seconds (JVM running for 9.133)
+2019-03-28 15:54:10,303 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 15:54:10,303 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-28 15:54:10,321 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 18 ms
+2019-03-28 15:54:10,791 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 15:54:10,802 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 15:54:10,815 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 15:54:10,819 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 15:54:10,820 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 15:54:10,827 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:54:10,900 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-28 15:54:10,902 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 15:54:10,909 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 15:54:10,911 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:54:10,912 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:54:10,918 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:10,920 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:54:10,921 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 15:54:10,928 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:10,930 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 15:54:10,930 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 15:54:10,938 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:10,940 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:54:10,941 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 15:54:10,945 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:10,946 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:54:10,947 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 15:54:10,949 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:10,951 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:54:10,952 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-28 15:54:10,954 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:10,956 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:54:10,957 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:54:10,959 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:10,960 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 15:54:10,961 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:54:10,964 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:22,652 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-28 15:54:22,653 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 15:54:22,655 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 15:54:22,656 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:54:22,657 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:54:22,659 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:22,660 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:54:22,661 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 15:54:22,666 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:22,668 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 15:54:22,670 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 15:54:22,672 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:22,674 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:54:22,676 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 15:54:22,678 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:22,681 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:54:22,682 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 15:54:22,684 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:22,685 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 15:54:22,686 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-28 15:54:22,687 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:22,688 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 15:54:22,689 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:54:22,690 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:54:22,691 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 15:54:22,691 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 15:54:22,693 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 15:55:29,348 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 15:55:29,350 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 15:55:29,358 [http-nio-8080-exec-9] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:55:48,059 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 15:55:48,060 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 15:55:48,062 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 15:55:54,655 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 15:55:54,657 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 15:55:54,659 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1

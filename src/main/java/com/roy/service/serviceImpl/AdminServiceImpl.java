@@ -308,7 +308,7 @@ public class AdminServiceImpl implements AdminService {
     /**
      * 审核学生/老师注册信息
      * @param ids
-     * @param op
+     * @param op  0 ：审核未通过  ， 2 ： 审核通过
      * @param i 角色： 1 学生， 2 老师
      * @return
      */

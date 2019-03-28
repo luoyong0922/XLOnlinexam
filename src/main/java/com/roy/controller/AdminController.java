@@ -175,7 +175,7 @@ public class AdminController {
     /**
      * 批量审核老师信息
      * @param ids
-     * @param op
+     * @param op  0 : 未通过  ， 2：通过
      * @return
      */
     @RequestMapping("doApprovalTeachers/{ids}/{op}")
@@ -192,7 +192,7 @@ public class AdminController {
     /**
      * 批量审核学生信息
      * @param ids
-     * @param op
+     * @param op 0 : 未通过  ， 2：通过
      * @return
      */
     @RequestMapping("doApprovalStudents/{ids}/{op}")

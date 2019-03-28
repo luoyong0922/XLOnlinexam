@@ -1423,6 +1423,9 @@ CREATE TABLE `t_chat` (
 -- 查询所有记录
 -- select c.id,c.send_id,c.send_name,c.send_time,c.message,c.attach FROM t_chat c where c.tcId = 1 order by c.send_time;
 
+-- Remember-me
+create table persistent_logins (username varchar(64) not null, series varchar(64) primary key, token varchar(64) not null, last_used timestamp not null);
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

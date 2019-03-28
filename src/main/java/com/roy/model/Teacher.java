@@ -440,7 +440,7 @@ public class Teacher implements UserDetails {
 
     @Override
     public String getUsername() {
-        return teacName;
+        return teacWorknum;
     }
 
     @Override

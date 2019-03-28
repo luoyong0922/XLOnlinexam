@@ -55,7 +55,7 @@
              <td id="age">${teacher.teacBirth?string("yyyy-MM-dd")}</td>
              <td>待审核</td>
              <td style="text-align: center">
-                 <a style="cursor: pointer;" onclick="approval('${teacher.id}',1)">通过审核</a><br>
+                 <a style="cursor: pointer;" onclick="approval('${teacher.id}',2)">通过审核</a><br>
                  <a style="cursor: pointer;" onclick="approval('${teacher.id}',0)">未通过审核</a>
              </td>
          </tr>

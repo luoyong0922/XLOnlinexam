@@ -131,7 +131,7 @@ public class LoginController {
         Class clazz = object.getClass();
         if(clazz.equals(Student.class)){
             Student student = (Student) object;
-            if( student.getStuState() == 1 ) {
+            if( student.getStuState() == 2 ) {
                 Long id = student.getId();
                 String name = student.getStuName();
                 model.addAttribute("student", student);
@@ -159,7 +159,7 @@ public class LoginController {
 
         } else if (clazz.equals(Teacher.class)) {
             Teacher teacher = (Teacher) object;
-            if( teacher.getTeacState() == 1 ) {
+            if( teacher.getTeacState() == 2 ) {
                 Long id = teacher.getId();
                 String name = teacher.getTeacName();
                 model.addAttribute("teacher", teacher);
