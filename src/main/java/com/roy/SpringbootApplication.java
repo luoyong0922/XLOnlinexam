@@ -1,8 +1,10 @@
 package com.roy;
 
+import com.roy.config.ClassPathTldsLoader;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
@@ -21,6 +23,13 @@ public class SpringbootApplication {
 	@Bean
 	public ServerEndpointExporter serverEndpointExporter() {
 		return new ServerEndpointExporter();
+	}
+
+	//配置Security标签的支持，用于判断用户是否具有对应权限，从而控制其限制的内容
+	@Bean
+	@ConditionalOnMissingBean(ClassPathTldsLoader.class)
+	public ClassPathTldsLoader classPathTldsLoader(){
+		return new ClassPathTldsLoader();
 	}
 
 	public static void main(String[] args) {

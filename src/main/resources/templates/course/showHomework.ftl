@@ -1,3 +1,5 @@
+<!-- 引入标签-->
+<#assign  sec=JspTaglibs["http://www.springframework.org/security/tags"] />
 <html>
 <head>
     <title>作业通知</title>
@@ -20,9 +22,10 @@
 <div class="container center-block" style="margin-top: 50px;">
 <div style="text-align:center;font-size: 24px;">
     课程名称：<b>${courseName!}</b>
-    <#if (role == "teacher")>
+    <!--  权限控制：只有老师才有权限新增作业  -->
+     <@sec.authorize access="hasRole('ROLE_TEACHER')">
         <input type="button" class="btn btn-success" style="float:right;" value="新增作业" onclick="toAddHomeWork()"/>
-    </#if>
+     </@sec.authorize>
 </div><br/>
     <table class="table table-hover" id="Test">
         <thead>

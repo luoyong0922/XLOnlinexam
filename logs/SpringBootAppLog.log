@@ -843,3 +843,608 @@ Caused by: org.yaml.snakeyaml.scanner.ScannerException: mapping values are not a
 2019-03-28 15:55:54,655 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
 2019-03-28 15:55:54,657 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
 2019-03-28 15:55:54,659 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:09:39,422 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 1260 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-28 16:09:39,427 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-28 16:09:39,430 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-28 16:09:42,503 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 16:09:42,683 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 16:09:42,702 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 16:09:42,703 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 16:09:42,726 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-28 16:09:42,727 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-28 16:09:42,749 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 16:09:42,974 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-28 16:09:42,974 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3424 ms
+2019-03-28 16:09:43,076 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 16:09:43,077 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-28 16:09:43,077 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-28 16:09:43,078 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-28 16:09:43,078 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-28 16:09:43,080 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-28 16:09:43,081 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-28 16:09:43,364 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-28 16:09:43,676 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-28 16:09:45,575 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-28 16:09:45,576 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-28 16:09:45,576 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-28 16:09:45,639 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a50b32d, org.springframework.security.web.context.SecurityContextPersistenceFilter@7dee835, org.springframework.security.web.header.HeaderWriterFilter@28cd2c2, org.springframework.security.web.authentication.logout.LogoutFilter@31723307, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5bde57ab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e02721d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e8b357d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2b80e5a9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36c7cbe1, org.springframework.security.web.session.SessionManagementFilter@18a096b5, org.springframework.security.web.access.ExceptionTranslationFilter@2233cac0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@69364b2d]
+2019-03-28 16:09:45,765 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 16:09:45,777 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-28 16:09:45,803 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 16:09:45,806 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.168 seconds (JVM running for 8.3)
+2019-03-28 16:14:02,327 [http-nio-8080-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 16:14:02,328 [http-nio-8080-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-28 16:14:02,350 [http-nio-8080-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 21 ms
+2019-03-28 16:14:02,837 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 16:14:02,851 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 16:14:02,863 [http-nio-8080-exec-10] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:14:02,868 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 16:14:02,869 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 16:14:02,877 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:14:02,972 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-28 16:14:02,974 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 16:14:02,980 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 16:14:02,982 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 16:14:02,983 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 16:14:02,990 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:14:02,991 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:14:02,992 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:14:02,997 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:14:03,000 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:14:03,001 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:14:03,007 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:14:03,008 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 16:14:03,009 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:14:03,011 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:14:03,011 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:14:03,012 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:14:03,014 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:14:03,016 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 16:14:03,017 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-28 16:14:03,019 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:14:03,021 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:14:03,021 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 16:14:03,023 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:14:03,024 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:14:03,025 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 16:14:03,027 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:14:07,606 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? and teac_course_id = ? ) 
+2019-03-28 16:14:07,607 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long), 1(Long)
+2019-03-28 16:14:07,610 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:14:07,611 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 16:14:07,612 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 16:14:07,614 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:14:07,615 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:14:07,616 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:14:07,618 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:14:07,620 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:14:07,621 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:14:07,623 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:14:09,108 [http-nio-8080-exec-4] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - ==>  Preparing: select id, homeWork_content, course_name, date, teac_course_id from t_homework WHERE ( teac_course_id = ? ) 
+2019-03-28 16:14:09,109 [http-nio-8080-exec-4] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 16:14:09,115 [http-nio-8080-exec-4] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:14:09,124 [http-nio-8080-exec-4] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - ==>  Preparing: select * FROM t_course where id = (select t_teac_course.course_id FROM t_teac_course where t_teac_course.id = ?); 
+2019-03-28 16:14:09,126 [http-nio-8080-exec-4] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - ==> Parameters: 1(Long)
+2019-03-28 16:14:09,152 [http-nio-8080-exec-4] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - <==      Total: 1
+2019-03-28 16:14:09,209 [http-nio-8080-exec-4] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is freemarker.template.TemplateModelException: Error while looking for TLD file for "http://www.springframework.org/security/tags"; see cause exception.
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #assign sec = JspTaglibs["http://www...  [in template "course/showHomework.ftl" at line 2, column 1]
+----] with root cause
+freemarker.ext.jsp.TaglibFactory$TaglibGettingException: No TLD was found for the "http://www.springframework.org/security/tags" JSP taglib URI. (TLD-s are searched according the JSP 2.2 specification. In development- and embedded-servlet-container setups you may also need the "MetaInfTldSources" and "ClasspathTlds" freemarker.ext.servlet.FreemarkerServlet init-params or the similar system properites.)
+	at freemarker.ext.jsp.TaglibFactory.get(TaglibFactory.java:222)
+	at freemarker.core.DynamicKeyName.dealWithStringKey(DynamicKeyName.java:140)
+	at freemarker.core.DynamicKeyName._eval(DynamicKeyName.java:75)
+	at freemarker.core.Expression.eval(Expression.java:83)
+	at freemarker.core.Assignment.accept(Assignment.java:134)
+	at freemarker.core.Environment.visit(Environment.java:330)
+	at freemarker.core.Environment.visit(Environment.java:336)
+	at freemarker.core.Environment.process(Environment.java:309)
+	at freemarker.template.Template.process(Template.java:384)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:389)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:302)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:253)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:178)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:998)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:890)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:875)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:63)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2019-03-28 16:14:09,231 [http-nio-8080-exec-4] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] threw exception
+javax.servlet.ServletException: Cannot expose request attribute 'rc' because of an existing model object of the same name
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:123)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:998)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:890)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:875)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580)
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:388)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:348)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:173)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2019-03-28 16:14:09,231 [http-nio-8080-exec-4] ERROR o.a.c.core.ContainerBase.[Tomcat].[localhost]:175 - Exception Processing ErrorPage[errorCode=0, location=/error]
+javax.servlet.ServletException: Cannot expose request attribute 'rc' because of an existing model object of the same name
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:123)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:998)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:890)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:875)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580)
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:388)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:348)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:173)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2019-03-28 16:26:38,742 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 4300 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-28 16:26:38,771 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-28 16:26:38,774 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-28 16:26:42,241 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 16:26:42,451 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 16:26:42,469 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 16:26:42,470 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 16:26:42,508 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-28 16:26:42,508 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-28 16:26:42,534 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 16:26:43,183 [main] INFO  org.apache.jasper.servlet.TldScanner:173 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-03-28 16:26:43,199 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-28 16:26:43,199 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 4186 ms
+2019-03-28 16:26:43,340 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 16:26:43,341 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-28 16:26:43,341 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-28 16:26:43,341 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-28 16:26:43,343 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-28 16:26:43,348 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-28 16:26:43,349 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-28 16:26:43,683 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-28 16:26:44,071 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-28 16:26:46,418 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-28 16:26:46,418 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-28 16:26:46,419 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-28 16:26:46,498 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@bc09d57, org.springframework.security.web.context.SecurityContextPersistenceFilter@3c19592c, org.springframework.security.web.header.HeaderWriterFilter@23310248, org.springframework.security.web.authentication.logout.LogoutFilter@4b033eac, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@16ee9aa7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2eb60c71, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@49edcb30, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@4d0cc83e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d963d70, org.springframework.security.web.session.SessionManagementFilter@41f3aaf1, org.springframework.security.web.access.ExceptionTranslationFilter@2c30c81d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@678a9516]
+2019-03-28 16:26:46,673 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 16:26:46,694 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-28 16:26:46,753 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 16:26:46,765 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 8.836 seconds (JVM running for 9.95)
+2019-03-28 16:26:46,838 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 16:26:46,839 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-28 16:26:46,856 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 17 ms
+2019-03-28 16:26:47,456 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 16:26:47,470 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 16:26:47,485 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:26:47,490 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 16:26:47,491 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 16:26:47,499 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:26:47,579 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-28 16:26:47,581 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 16:26:47,587 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 16:26:47,589 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 16:26:47,589 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 16:26:47,595 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:26:47,596 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:26:47,597 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:26:47,603 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:26:47,604 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:26:47,605 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:26:47,613 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:26:47,615 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 16:26:47,617 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:26:47,619 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:26:47,620 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:26:47,621 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:26:47,623 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:26:47,624 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 16:26:47,625 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-28 16:26:47,626 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:26:47,627 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:26:47,628 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 16:26:47,630 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:26:47,631 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:26:47,633 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 16:26:47,635 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:26:54,539 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? and teac_course_id = ? ) 
+2019-03-28 16:26:54,540 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long), 1(Long)
+2019-03-28 16:26:54,542 [http-nio-8080-exec-5] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:26:54,543 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 16:26:54,543 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 16:26:54,546 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:26:54,547 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:26:54,548 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:26:54,550 [http-nio-8080-exec-5] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:26:54,551 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:26:54,552 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:26:54,553 [http-nio-8080-exec-5] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:26:55,732 [http-nio-8080-exec-9] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - ==>  Preparing: select id, homeWork_content, course_name, date, teac_course_id from t_homework WHERE ( teac_course_id = ? ) 
+2019-03-28 16:26:55,734 [http-nio-8080-exec-9] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 16:26:55,742 [http-nio-8080-exec-9] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:26:55,749 [http-nio-8080-exec-9] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - ==>  Preparing: select * FROM t_course where id = (select t_teac_course.course_id FROM t_teac_course where t_teac_course.id = ?); 
+2019-03-28 16:26:55,750 [http-nio-8080-exec-9] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - ==> Parameters: 1(Long)
+2019-03-28 16:26:55,752 [http-nio-8080-exec-9] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - <==      Total: 1
+2019-03-28 16:27:28,889 [http-nio-8080-exec-3] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 16:27:28,890 [http-nio-8080-exec-3] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-28 16:27:28,891 [http-nio-8080-exec-3] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:27:28,892 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 16:27:28,892 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-28 16:27:28,893 [http-nio-8080-exec-3] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:27:28,900 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher WHERE ( teac_worknum = ? ) 
+2019-03-28 16:27:28,900 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-28 16:27:28,903 [http-nio-8080-exec-3] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:28:48,692 [http-nio-8080-exec-4] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 16:28:48,693 [http-nio-8080-exec-4] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-28 16:28:48,695 [http-nio-8080-exec-4] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:28:48,696 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 16:28:48,697 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-28 16:28:48,698 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:28:48,700 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher WHERE ( teac_worknum = ? ) 
+2019-03-28 16:28:48,701 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-28 16:28:48,702 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:28:51,840 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course WHERE ( teac_id = ? ) 
+2019-03-28 16:28:51,841 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==> Parameters: 3(Long)
+2019-03-28 16:28:51,843 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 16:28:51,843 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:28:51,844 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:28:51,846 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:28:51,847 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:28:51,848 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:28:51,850 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:28:51,853 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:28:51,854 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 16:28:51,856 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 10
+2019-03-28 16:28:51,858 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:28:51,859 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-28 16:28:51,860 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:28:51,862 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:28:51,863 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 4(Long)
+2019-03-28 16:28:51,866 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:28:51,867 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:28:51,868 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:28:51,869 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:28:51,871 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:28:51,872 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 5(Long)
+2019-03-28 16:28:51,874 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 2
+2019-03-28 16:29:04,340 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course WHERE ( teac_id = ? ) 
+2019-03-28 16:29:04,341 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==> Parameters: 3(Long)
+2019-03-28 16:29:04,343 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 16:29:04,344 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:29:04,345 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:29:04,346 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:29:04,349 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:29:04,350 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:29:04,352 [http-nio-8080-exec-6] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:29:04,354 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:29:04,355 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 16:29:04,357 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 10
+2019-03-28 16:29:04,359 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:29:04,360 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-28 16:29:04,362 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:29:04,363 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:29:04,365 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 4(Long)
+2019-03-28 16:29:04,366 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:29:04,367 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:29:04,368 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:29:04,370 [http-nio-8080-exec-6] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:29:04,372 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:29:04,373 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 5(Long)
+2019-03-28 16:29:04,374 [http-nio-8080-exec-6] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 2
+2019-03-28 16:29:09,524 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course WHERE ( teac_id = ? and id = ? ) 
+2019-03-28 16:29:09,525 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==> Parameters: 3(Long), 4(Long)
+2019-03-28 16:29:09,527 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:29:09,528 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:29:09,528 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-28 16:29:09,530 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:29:09,530 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:29:09,531 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:29:09,533 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:29:09,535 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:29:09,536 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 4(Long)
+2019-03-28 16:29:09,539 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:29:11,544 [http-nio-8080-exec-3] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - ==>  Preparing: select id, homeWork_content, course_name, date, teac_course_id from t_homework WHERE ( teac_course_id = ? ) 
+2019-03-28 16:29:11,544 [http-nio-8080-exec-3] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - ==> Parameters: 4(Long)
+2019-03-28 16:29:11,547 [http-nio-8080-exec-3] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:29:11,551 [http-nio-8080-exec-3] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - ==>  Preparing: select * FROM t_course where id = (select t_teac_course.course_id FROM t_teac_course where t_teac_course.id = ?); 
+2019-03-28 16:29:11,552 [http-nio-8080-exec-3] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - ==> Parameters: 4(Long)
+2019-03-28 16:29:11,554 [http-nio-8080-exec-3] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - <==      Total: 1
+2019-03-28 16:30:02,721 [main] INFO  com.roy.SpringbootApplication:50 - Starting SpringbootApplication on XMLENG562 with PID 7556 (started by royl in C:\Users\royl\Desktop\work\git\mygit\a new work\XLOnlinexam)
+2019-03-28 16:30:02,726 [main] DEBUG com.roy.SpringbootApplication:53 - Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-28 16:30:02,729 [main] INFO  com.roy.SpringbootApplication:675 - No active profile set, falling back to default profiles: default
+2019-03-28 16:30:05,817 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 16:30:06,004 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 16:30:06,026 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 16:30:06,029 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 16:30:06,052 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-03-28 16:30:06,053 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-28 16:30:06,070 [main] ERROR org.apache.catalina.core.AprLifecycleListener:173 - An incompatible version [1.1.32] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2019-03-28 16:30:06,545 [main] INFO  org.apache.jasper.servlet.TldScanner:173 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-03-28 16:30:06,561 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2019-03-28 16:30:06,562 [main] INFO  org.springframework.web.context.ContextLoader:285 - Root WebApplicationContext: initialization completed in 3736 ms
+2019-03-28 16:30:06,687 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 16:30:06,688 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:248 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-28 16:30:06,690 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:261 - Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-28 16:30:06,690 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean:248 - Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-28 16:30:06,690 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet dispatcherServlet mapped to [/]
+2019-03-28 16:30:06,692 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet statViewServlet mapped to [/druid/*]
+2019-03-28 16:30:06,693 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean:186 - Servlet imageValidController mapped to [/]
+2019-03-28 16:30:07,007 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2019-03-28 16:30:07,350 [main] INFO  com.alibaba.druid.pool.DruidDataSource:930 - {dataSource-1} inited
+2019-03-28 16:30:09,450 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/login.ftl'], []
+2019-03-28 16:30:09,451 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2019-03-28 16:30:09,451 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/loginController/tologin'], []
+2019-03-28 16:30:09,519 [main] INFO  o.s.security.web.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ca14cf4, org.springframework.security.web.context.SecurityContextPersistenceFilter@383cb5ce, org.springframework.security.web.header.HeaderWriterFilter@1d7eb170, org.springframework.security.web.authentication.logout.LogoutFilter@ce12fbb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5927f904, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@96897c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@267f9765, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@184823ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f4f0fcc, org.springframework.security.web.session.SessionManagementFilter@67d4c48d, org.springframework.security.web.access.ExceptionTranslationFilter@7af0affa, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b0f2d91]
+2019-03-28 16:30:09,713 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 16:30:09,728 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool:173 - Using a shared selector for servlet write/read
+2019-03-28 16:30:09,781 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 16:30:09,790 [main] INFO  com.roy.SpringbootApplication:59 - Started SpringbootApplication in 7.827 seconds (JVM running for 9.544)
+2019-03-28 16:30:13,475 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 16:30:13,475 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:521 - Initializing Servlet 'dispatcherServlet'
+2019-03-28 16:30:13,494 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:543 - Completed initialization in 19 ms
+2019-03-28 16:30:13,946 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 16:30:13,960 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-28 16:30:13,976 [http-nio-8080-exec-1] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:30:13,981 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 16:30:13,983 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-28 16:30:13,995 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:30:14,002 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher WHERE ( teac_worknum = ? ) 
+2019-03-28 16:30:14,003 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - ==> Parameters: t110(String)
+2019-03-28 16:30:14,010 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:30:14,269 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course WHERE ( teac_id = ? ) 
+2019-03-28 16:30:14,271 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==> Parameters: 3(Long)
+2019-03-28 16:30:14,278 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 16:30:14,280 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:30:14,281 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:30:14,288 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:30:14,290 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:30:14,291 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:30:14,294 [http-nio-8080-exec-1] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:30:14,297 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:30:14,298 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 16:30:14,306 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 10
+2019-03-28 16:30:14,307 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:30:14,308 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-28 16:30:14,309 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:30:14,311 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:30:14,311 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 4(Long)
+2019-03-28 16:30:14,313 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:30:14,314 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:30:14,315 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:30:14,316 [http-nio-8080-exec-1] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:30:14,318 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:30:14,320 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 5(Long)
+2019-03-28 16:30:14,322 [http-nio-8080-exec-1] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 2
+2019-03-28 16:30:19,012 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course WHERE ( teac_id = ? and id = ? ) 
+2019-03-28 16:30:19,013 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==> Parameters: 3(Long), 1(Long)
+2019-03-28 16:30:19,018 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:30:19,020 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:30:19,021 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:30:19,023 [http-nio-8080-exec-2] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:30:19,024 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:30:19,025 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:30:19,027 [http-nio-8080-exec-2] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:30:19,030 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:30:19,030 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 16:30:19,035 [http-nio-8080-exec-2] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 10
+2019-03-28 16:30:21,076 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course WHERE ( teac_id = ? and id = ? ) 
+2019-03-28 16:30:21,078 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==> Parameters: 3(Long), 5(Long)
+2019-03-28 16:30:21,081 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:30:21,085 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:30:21,086 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:30:21,089 [http-nio-8080-exec-10] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:30:21,090 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:30:21,091 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:30:21,092 [http-nio-8080-exec-10] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:30:21,094 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:30:21,094 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 5(Long)
+2019-03-28 16:30:21,095 [http-nio-8080-exec-10] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 2
+2019-03-28 16:30:22,188 [http-nio-8080-exec-8] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - ==>  Preparing: select id, homeWork_content, course_name, date, teac_course_id from t_homework WHERE ( teac_course_id = ? ) 
+2019-03-28 16:30:22,189 [http-nio-8080-exec-8] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - ==> Parameters: 5(Long)
+2019-03-28 16:30:22,193 [http-nio-8080-exec-8] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - <==      Total: 2
+2019-03-28 16:30:22,198 [http-nio-8080-exec-8] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - ==>  Preparing: select * FROM t_course where id = (select t_teac_course.course_id FROM t_teac_course where t_teac_course.id = ?); 
+2019-03-28 16:30:22,201 [http-nio-8080-exec-8] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - ==> Parameters: 5(Long)
+2019-03-28 16:30:22,203 [http-nio-8080-exec-8] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - <==      Total: 1
+2019-03-28 16:35:20,842 [http-nio-8080-exec-5] DEBUG com.roy.mapper.HomeWorkMapper.insertSelective:159 - ==>  Preparing: insert into t_homework ( homeWork_content, course_name, teac_course_id ) values ( ?, ?, ? ) 
+2019-03-28 16:35:20,843 [http-nio-8080-exec-5] DEBUG com.roy.mapper.HomeWorkMapper.insertSelective:159 - ==> Parameters: 翻译下列句子
+1.I have given thanks to God for delivering me from that pain.
+2.He delivered the line perfectly, and everybody roared with laughter.(String), 大学英语(String), 5(Long)
+2019-03-28 16:35:20,846 [http-nio-8080-exec-5] DEBUG com.roy.mapper.HomeWorkMapper.insertSelective:159 - <==    Updates: 1
+2019-03-28 16:35:20,882 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course WHERE ( teac_id = ? ) 
+2019-03-28 16:35:20,882 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==> Parameters: 3(Long)
+2019-03-28 16:35:20,886 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 16:35:20,887 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:35:20,888 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:35:20,890 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:20,891 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:35:20,892 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:35:20,895 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:20,897 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:35:20,898 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 16:35:20,900 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 10
+2019-03-28 16:35:20,901 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:35:20,902 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-28 16:35:20,903 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:20,907 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:35:20,908 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 4(Long)
+2019-03-28 16:35:20,909 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:35:20,910 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:35:20,911 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:35:20,912 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:20,914 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:35:20,916 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 5(Long)
+2019-03-28 16:35:20,918 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 2
+2019-03-28 16:35:25,838 [http-nio-8080-exec-1] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - ==>  Preparing: select id, homeWork_content, course_name, date, teac_course_id from t_homework WHERE ( teac_course_id = ? ) 
+2019-03-28 16:35:25,839 [http-nio-8080-exec-1] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - ==> Parameters: 5(Long)
+2019-03-28 16:35:25,841 [http-nio-8080-exec-1] DEBUG com.roy.mapper.HomeWorkMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 16:35:25,846 [http-nio-8080-exec-1] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - ==>  Preparing: select * FROM t_course where id = (select t_teac_course.course_id FROM t_teac_course where t_teac_course.id = ?); 
+2019-03-28 16:35:25,846 [http-nio-8080-exec-1] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - ==> Parameters: 5(Long)
+2019-03-28 16:35:25,848 [http-nio-8080-exec-1] DEBUG c.roy.mapper.CourseMapper.getCourseByteacCourseId:159 - <==      Total: 1
+2019-03-28 16:35:32,553 [http-nio-8080-exec-3] DEBUG com.roy.mapper.HomeWorkMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, homeWork_content, course_name, date, teac_course_id from t_homework where id = ? 
+2019-03-28 16:35:32,556 [http-nio-8080-exec-3] DEBUG com.roy.mapper.HomeWorkMapper.selectByPrimaryKey:159 - ==> Parameters: 10(Long)
+2019-03-28 16:35:32,558 [http-nio-8080-exec-3] DEBUG com.roy.mapper.HomeWorkMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:49,265 [http-nio-8080-exec-4] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==>  Preparing: select id, admin_name, admin_gender, admin_birth, admin_phone, admin_question, admin_key, admin_password from t_admin WHERE ( admin_phone = ? ) 
+2019-03-28 16:35:49,266 [http-nio-8080-exec-4] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 16:35:49,267 [http-nio-8080-exec-4] DEBUG com.roy.mapper.AdminMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:35:49,268 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==>  Preparing: select id, stu_name, stu_num, stu_grade, stu_gender, stu_address, stu_class, stu_password, stu_question, stu_key, stu_state, stu_phone from t_student WHERE ( stu_num = ? ) 
+2019-03-28 16:35:49,268 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - ==> Parameters: 123(String)
+2019-03-28 16:35:49,270 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StudentMapper.selectByExample:159 - <==      Total: 1
+2019-03-28 16:35:49,275 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( stu_id = ? ) 
+2019-03-28 16:35:49,276 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 16:35:49,278 [http-nio-8080-exec-4] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 16:35:49,279 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 16:35:49,280 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 16:35:49,281 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:49,282 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:35:49,283 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:35:49,284 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:49,285 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:35:49,286 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:35:49,287 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:49,288 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 16:35:49,289 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:35:49,291 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:49,292 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:35:49,293 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:35:49,294 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:49,296 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course where id = ? 
+2019-03-28 16:35:49,297 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - ==> Parameters: 2(Long)
+2019-03-28 16:35:49,299 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacCourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:49,300 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:35:49,301 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 16:35:49,302 [http-nio-8080-exec-4] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:35:49,303 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:35:49,304 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 1(Long)
+2019-03-28 16:35:49,305 [http-nio-8080-exec-4] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:36:02,183 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==>  Preparing: select id, teac_id, course_id, start_time, end_time from t_teac_course WHERE ( teac_id = ? ) 
+2019-03-28 16:36:02,184 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - ==> Parameters: 3(Long)
+2019-03-28 16:36:02,186 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacCourseMapper.selectByExample:159 - <==      Total: 3
+2019-03-28 16:36:02,186 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:36:02,187 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 5(Long)
+2019-03-28 16:36:02,189 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:36:02,190 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, teac_worknum, teac_phone, teac_gender, teac_name, teac_state, teac_birth, teac_question, teac_key, teac_password from t_teacher where id = ? 
+2019-03-28 16:36:02,191 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:36:02,194 [http-nio-8080-exec-7] DEBUG com.roy.mapper.TeacherMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:36:02,195 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:36:02,195 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 1(Long)
+2019-03-28 16:36:02,197 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 10
+2019-03-28 16:36:02,198 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:36:02,199 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 6(Long)
+2019-03-28 16:36:02,201 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:36:02,202 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:36:02,202 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 4(Long)
+2019-03-28 16:36:02,203 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 0
+2019-03-28 16:36:02,204 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==>  Preparing: select id, course_num, course_name, course_credit from t_course where id = ? 
+2019-03-28 16:36:02,205 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - ==> Parameters: 3(Long)
+2019-03-28 16:36:02,208 [http-nio-8080-exec-7] DEBUG com.roy.mapper.CourseMapper.selectByPrimaryKey:159 - <==      Total: 1
+2019-03-28 16:36:02,210 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==>  Preparing: select id, stu_id, teac_course_id, course_type from t_stu_course WHERE ( teac_course_id = ? ) 
+2019-03-28 16:36:02,211 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - ==> Parameters: 5(Long)
+2019-03-28 16:36:02,212 [http-nio-8080-exec-7] DEBUG com.roy.mapper.StuCourseMapper.selectByExample:159 - <==      Total: 2
