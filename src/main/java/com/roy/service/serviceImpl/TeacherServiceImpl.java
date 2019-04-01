@@ -172,15 +172,7 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public PageInfo searchStuScore(Integer pageIndex,Long stuId, Long teacCourseId) {
         List<StuScore> scores = new ArrayList<>();
-        StuScoreExample example = new StuScoreExample();
-        StuScoreExample.Criteria criteria = example.createCriteria();
-        if(teacCourseId != null){
-            criteria.andTeacCourseIdEqualTo(teacCourseId);
-        }
-        if(stuId != null){
-            criteria.andStuIdEqualTo(stuId);
-        }
-        List<StuScore> stuScores = stuScoreDao.selectByExample(example);
+        List<StuScore> stuScores = stuScoreDao.selectStuScoreByStuIdAndTeacCourseId(stuId,teacCourseId);
         if(stuScores.size()>0) {
             for (int i = 0; i < stuScores.size(); i++) {
                 StuScore stuScore = stuScores.get(i);

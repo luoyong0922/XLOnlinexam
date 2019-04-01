@@ -41,8 +41,6 @@
             </#list>
         </select>
         <input type="button" class="btn btn-primary" value="搜索" onclick="javascript:roy()">&emsp;&emsp;&emsp;
-    <!--    <input type="button" class="btn btn-info" value="成绩统计表" onclick="javascript:toStatistics()"/>&emsp;&emsp; -->
-    <!--   <input type="button" class="btn btn-info" value="成绩排名表" onclick="javascript:toScoreOrder()"/>  -->
     </form>
     <script>
         function roy(){
@@ -86,9 +84,9 @@
           <#if stuScore.paperStatus==0>待批阅
           <#elseif stuScore.paperStatus==1>已批阅
           </#if>
-         </td>
-        <td>
-            <a href="javascript:void(0);" onclick="toShowPaper(${stuScore.paperId},'${stuScore.courseName}')" >查看试题</a>&emsp;
+        </td>
+        <td style="text-align:center;">
+            <a href="javascript:void(0);" onclick="toShowPaper(${stuScore.paperId},'${stuScore.courseName}',${stuScore.testTime})" >查看试题</a>&emsp;
             <a href="javascript:void(0);" onclick="toScoreOrder(${stuScore.teacCourseId},'${stuScore.courseName}')">查看排名</a>
         </td>
     </tr>
@@ -105,28 +103,12 @@
 </div>
 
 <script>
-//
-//  function toStatistics() {
-//           var teacCourseId=$('#selectValue  option:selected').val();
-//           if(teacCourseId == 0){
-//               alert('你还未选择课程！');
-//           }else {
-//               window.location = '${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId=' + teacCourseId;
-//           }
-//       }
     function toScoreOrder(teacCourseId , courseName) {
-     //   var teacCourseId=$('#selectValue  option:selected').val();
-     //   var courseName=$('#selectValue option:selected').text();
-     //   if(teacCourseId == 0){
-      //      alert('你还未选择课程！');
-      //  }else {
             window.location = '${rc.contextPath}/achievementController/showGradeOrder/' + courseName + '?teacCourseId=' + teacCourseId;
-      //  }
     }
-    function toShowPaper(paperId , courseName) {
-            window.location = '${rc.contextPath}/paperController/toMarking/'+paperId+'?courseName='+ courseName;
+    function toShowPaper(paperId , courseName, testTime) {
+            window.location = '${rc.contextPath}/paperController/toMarking/'+paperId+'?courseName='+ courseName + '&testTime=' + testTime;
         }
 </script>
-
 </body>
 </html>

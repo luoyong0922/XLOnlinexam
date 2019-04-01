@@ -95,4 +95,6 @@ public interface StuScoreMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(StuScore record);
+
+    List<StuScore> selectStuScoreByStuIdAndTeacCourseId(@Param("studentId")Long stuId, @Param("teacCourseId")Long teacCourseId);
 }

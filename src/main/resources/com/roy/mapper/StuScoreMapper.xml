@@ -380,4 +380,7 @@
       calculate_count = #{calculateCount,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectStuScoreByStuIdAndTeacCourseId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select * from t_stu_score where stu_id = #{studentId,jdbcType=BIGINT} and teac_course_id in (select s.id FROM t_paper_standard s where s.teac_course_id = #{teacCourseId,jdbcType=BIGINT})
+  </select>
 </mapper>

@@ -77,7 +77,7 @@ public class PaperController {
     @RequestMapping("getPaperStandard")
     public String getPaperStandard(@RequestParam("tI") Long teaccourseId,
                                     @RequestParam("cN") String courseName,
-                                    @RequestParam("op") Integer opration,
+                                    @RequestParam(value = "op",required = false,defaultValue = "1") Integer opration,
                                     @RequestParam(value = "unit",required = false,defaultValue = "0") Integer testUnit,
                                     Model model,HttpSession session){
         List<PaperStandard> paperStandards= paperService.getPaperStandard(teaccourseId, testUnit);
@@ -88,11 +88,11 @@ public class PaperController {
             HashSet<Integer> unitSet = new HashSet<Integer>();
             paperStandards2.forEach( paperStandard3 -> unitSet.add(paperStandard3.getTestAmount()));
             model.addAttribute("unitSet",unitSet);
+            model.addAttribute("opration",opration);
         }
         model.addAttribute("teaccourseId",teaccourseId);
         model.addAttribute("courseName",courseName);
         model.addAttribute("testUnit",testUnit);
-        model.addAttribute("opration",opration);
         String role = (String) session.getAttribute("role");
         if(role.equals("teacher")){
             return "paper/toShowPaper";

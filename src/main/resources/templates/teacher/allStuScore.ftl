@@ -48,7 +48,7 @@
                                         </td>
                                         <td>${stuScore.score!}</td>
                                         <td style="text-align:center;">
-                                            <a href="javascript:void(0);" onclick="toMaker(${stuScore.paperId},'${stuScore.courseName}')">查看详情</a>
+                                            <a href="javascript:void(0);" onclick="toMaker(${stuScore.paperId},'${stuScore.courseName}',${stuScore.testTime!})">查看详情</a>
                                             <a href="javascript:void(0);" onclick="toScoreOrder(${stuScore.teacCourseId})">查看排名</a>
                                         </td>
                                 </tr>
@@ -76,8 +76,8 @@
 			function toScoreOrder(id) {
 				window.location = '${rc.contextPath}/achievementController/showGradeOrder/${courseName}?teacCourseId='+ id;
 			}
-			function toMaker(paperId,courseName) {
-                window.location = '${rc.contextPath}/paperController/toMarking/'+ paperId +'?courseName='+ courseName;
+			function toMaker(paperId,courseName,testTime) {
+                window.location = '${rc.contextPath}/paperController/toMarking/'+ paperId +'?courseName='+ courseName + '&testTime=' + testTime;
             }
 		</script>
 
