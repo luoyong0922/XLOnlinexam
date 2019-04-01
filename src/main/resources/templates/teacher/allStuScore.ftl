@@ -47,9 +47,9 @@
                                                 <#elseif stuScore.paperState==1>已批阅</#if>
                                         </td>
                                         <td>${stuScore.score!}</td>
-                                        <td>
+                                        <td style="text-align:center;">
                                             <a href="javascript:void(0);" onclick="toMaker(${stuScore.paperId},'${stuScore.courseName}')">查看详情</a>
-                                            <a href="javascript:void(0);" onclick="toScoreOrder(${stuScore.id})">查看排名</a>
+                                            <a href="javascript:void(0);" onclick="toScoreOrder(${stuScore.teacCourseId})">查看排名</a>
                                         </td>
                                 </tr>
                             </#list>

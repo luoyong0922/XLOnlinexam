@@ -43,7 +43,14 @@
                         <td>第${paperStandard.testAmount!}单元</td>
                         <td>测评${paperStandard.testValue!}</td>
                         <td>${paperStandard.testTime!} min</td>
-                        <td><a href="${rc.contextPath}/achievementController/getAllstuScore?teacCourseId=${paperStandard.id}" class="btn btn-info center-block">查看列表</a></td>
+                        <td style="text-align: center;">
+                        <#if (opration == 1)>
+                              <a href="javascript:void(0);" onclick="toShowPaperList(${paperStandard.id})" >查看列表</a>
+                        <#else>
+                            <a href="javascript:void(0);" onclick="toShowGradeOrder(${paperStandard.id})" >成绩排名</a>&emsp;
+                            <a href="javascript:void(0);" onclick="toShowGradePic(${paperStandard.id},'${courseName}')">成绩统计图</a>
+                        </#if>
+                        </td>
                     </tr>
                     </#list>
             </tbody>
@@ -59,6 +66,15 @@
     $("select#testUnit").change(function(){
          window.location= '${rc.contextPath}/paperController/getPaperStandard?tI=${teaccourseId}&cN=${courseName}&unit='+$(this).val();
      });
+         function toShowPaperList(paperStandardId) {
+                 window.location = '${rc.contextPath}/achievementController/getAllstuScore?teacCourseId='+ paperStandardId;
+             };
+         function toShowGradeOrder(paperStandardId) {
+                 window.location = '${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId='+ paperStandardId;
+             };
+         function toShowGradePic(paperStandardId , courseName) {
+                 window.location = '${rc.contextPath}/achievementController/showGradeOrder/'+ courseName + '?teacCourseId=' + paperStandardId;
+             };
 </script>
 </body>
 </html>

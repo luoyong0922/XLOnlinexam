@@ -89,7 +89,7 @@
          </td>
         <td>
             <a href="javascript:void(0);" onclick="toShowPaper(${stuScore.paperId},'${stuScore.courseName}')" >查看试题</a>&emsp;
-            <a href="javascript:void(0);" onclick="toScoreOrder(${stuScore.id},'${stuScore.courseName}')">查看排名</a>
+            <a href="javascript:void(0);" onclick="toScoreOrder(${stuScore.teacCourseId},'${stuScore.courseName}')">查看排名</a>
         </td>
     </tr>
     </#list>

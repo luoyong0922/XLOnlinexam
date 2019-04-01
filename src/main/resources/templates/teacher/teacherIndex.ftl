@@ -77,7 +77,7 @@
                 <ul class="sub-menu">
                     <#list courses as c>
                         <li>
-                            <a _href="${rc.contextPath}/paperController/getPaperStandard?tI=${c.id}&cN=${c.courseName}">
+                            <a _href="${rc.contextPath}/paperController/getPaperStandard?tI=${c.id}&cN=${c.courseName}&op=1">
                                 <i class="iconfont">&#xe6a7;</i>
                                 <cite><b>${c.courseName}</b>测评列表</cite>
                             </a>
@@ -134,34 +134,19 @@
             </li>
             <li>
                 <a href="javascript:;">
-                    <i class="iconfont">&#xe828;</i>
-                    <cite>成绩统计</cite>
+                     <i class="iconfont">&#xe828;</i>
+                        <cite>成绩统计</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
-                   <#list courses as c>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="iconfont">&#xe70b;</i>
-                            <cite>${c.courseName}</cite>
-                            <i class="iconfont nav_right">&#xe697;</i>
-                        </a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a _href="${rc.contextPath}/achievementController/pieByTeacCourseId?teacCourseId=${c.id}">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>${c.courseName}成绩统计图</cite>
-                                </a>
-                            </li >
-                            <li >
-                                <a _href="${rc.contextPath}/achievementController/showGradeOrder/${c.courseName}?teacCourseId=${c.id}">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>${c.courseName}成绩排名表</cite>
-                                </a>
-                            </li >
-                        </ul>
-                    </li>
-                   </#list>
+                    <#list courses as c>
+                        <li>
+                            <a _href="${rc.contextPath}/paperController/getPaperStandard?tI=${c.id}&cN=${c.courseName}&op=2">
+                                <i class="iconfont">&#xe6a7;</i>
+                                <cite><b>${c.courseName}</b>成绩列表</cite>
+                            </a>
+                        </li >
+                    </#list>
                 </ul>
             </li>
              <li>

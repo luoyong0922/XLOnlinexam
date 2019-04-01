@@ -69,6 +69,7 @@ public class PaperController {
      * 查看考试通知列表
      * @param teaccourseId
      * @param courseName
+     * @param opration 操作：1  查看测评列表  ，2  查看测评成绩
      * @param model
      * @return
      */
@@ -76,6 +77,7 @@ public class PaperController {
     @RequestMapping("getPaperStandard")
     public String getPaperStandard(@RequestParam("tI") Long teaccourseId,
                                     @RequestParam("cN") String courseName,
+                                    @RequestParam("op") Integer opration,
                                     @RequestParam(value = "unit",required = false,defaultValue = "0") Integer testUnit,
                                     Model model,HttpSession session){
         List<PaperStandard> paperStandards= paperService.getPaperStandard(teaccourseId, testUnit);
@@ -90,6 +92,7 @@ public class PaperController {
         model.addAttribute("teaccourseId",teaccourseId);
         model.addAttribute("courseName",courseName);
         model.addAttribute("testUnit",testUnit);
+        model.addAttribute("opration",opration);
         String role = (String) session.getAttribute("role");
         if(role.equals("teacher")){
             return "paper/toShowPaper";
