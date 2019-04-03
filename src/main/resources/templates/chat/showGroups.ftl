@@ -72,9 +72,9 @@
 </div>
 <input type="button" value="发送" onclick="send_msg('${Session["name"]!}')" style="float:right;margin-left:10px; background: #00FF94; margin-bottom: 10px;clear:both;"/>
 <div  id="input_msg" contenteditable="true" style="width:62%; float:right; min-width:170px; min-height: 31px; margin-right:0px;  border: 0.2px solid #0F5;"></div>
+</div>
+</div>
 <span id="bottom"></span>
-</div>
-</div>
 <script src="${rc.contextPath}/static/js/dateToLocaleString.js"></script>
 <script>
         var name = "";

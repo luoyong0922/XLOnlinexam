@@ -183,7 +183,7 @@ public class AdminController {
                                      @PathVariable("op") Integer op){
 
         System.out.println(ids+"---"+op);
-        if(adminService.approvel(ids,op,2)) {//审核老师信息
+        if(adminService.approvel(ids,op,2)) {//审核老师信息，i=1 表示操作对象为老师
             return "redirect:/adminController/toApprovalTeachers";
         }else {
             return "500";
@@ -199,7 +199,7 @@ public class AdminController {
     public String doApprovalStudents(@PathVariable("ids") Long ids,
                                      @PathVariable("op") Integer op){
 
-        if(adminService.approvel(ids,op,1)) {//审核学生信息
+        if(adminService.approvel(ids,op,1)) {//审核学生信息，i=1 表示操作对象为学生
             return "redirect:/adminController/toApprovalStudents";
         }else {
             return "500";

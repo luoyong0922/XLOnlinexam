@@ -41,7 +41,7 @@
                                         <td>单元${stuScore.testUnit}</td>
                                         <td>测评${stuScore.testNum}</td>
                                         <td>${stuScore.stuName!}</td>
-                                        <td>${stuScore.testTime!}</td>
+                                        <td>${stuScore.testTime!} min</td>
                                         <td>
                                             <#if stuScore.paperState==0>待批阅
                                                 <#elseif stuScore.paperState==1>已批阅</#if>

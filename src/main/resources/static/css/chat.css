@@ -39,7 +39,7 @@
 
         }
         .sender div:nth-of-type(2){
-			max-width: 87%;
+			max-width: 70%;
             background-color: aquamarine;
             float: left;
             margin: 5px 20px 10px 15px;
@@ -56,7 +56,7 @@
             float: right;
         }
         .receiver div:nth-of-type(2){
-			max-width: 87%;
+			max-width: 70%;
             float:right;
             background-color: gold;
             margin: 0 10px 10px 20px;
